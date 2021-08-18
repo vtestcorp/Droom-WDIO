@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Droom Automation",
   "main": "index.js",
-  
   "scripts": {
     "test": "npx wdio run wdio.conf.js"
   },
