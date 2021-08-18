@@ -21,7 +21,8 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/**/*.js'
+       // './test/**/*.js'
+       './test/SearchPageTest/search.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -94,7 +95,8 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://www.google.com/',
+
+    baseUrl: 'https://droom.in/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
