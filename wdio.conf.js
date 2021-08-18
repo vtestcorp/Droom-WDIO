@@ -14,7 +14,7 @@ exports.config = {
     // The specs are defined as an array of spec files (optionally using wildcards
     // that will be expanded). The test for each spec file will be run in a separate
     // worker process. In order to have a group of spec files run in the same worker
-    // process simply enclose them in an array within the specs array.
+    // process simply enclose them in a n array within the specs array.
     //
     // If you are calling `wdio` from an NPM script (see https://docs.npmjs.com/cli/run-script),
     // then the current working directory is where your `package.json` resides, so `wdio`
@@ -94,7 +94,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://www.google.com/',
+    baseUrl: 'https://qa2.droom.in/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
