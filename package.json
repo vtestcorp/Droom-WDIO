@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Droom Automation",
   "main": "index.js",
-  
   "scripts": {
     "test": "npx wdio run wdio.conf.js"
   },
@@ -17,6 +16,7 @@
     "@wdio/spec-reporter": "^7.9.0",
     "chromedriver": "^92.0.1",
     "wdio-chromedriver-service": "^7.2.0",
+    "wdio-wait-for": "^2.1.0",
     "webdriverio": "^7.9.1"
   }
 }
