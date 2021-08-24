@@ -15,6 +15,7 @@ class Base
       await(await $("#password")).setValue("Vtest@123");
       await(await $("input[value='Login']")).click();
       await(await $("div[class='profile'] img[alt='Seller image']")).waitForDisplayed({timeout:10000});
+      await browser.pause(2000);      
     }
 }
 module.exports=new Base();
