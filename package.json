@@ -7,7 +7,7 @@
     "webtest": "npx wdio run wdio.confweb.js",
     "androidtest": "npx wdio run wdio.confandroid.js",
     "iostest": "npx wdio run wdio.confios.js",
-    "all": "npm-run-all --parallel webtest androidtest"
+    "all": "npm-run-all --parallel webtest androidtest iostest"
   },
   "author": "Bhushan_Vtest",
   "license": "ISC",
@@ -22,6 +22,7 @@
     "@wdio/spec-reporter": "^7.9.0",
     "chromedriver": "^92.0.1",
     "npm-run-all": "^4.1.5",
+    "wdio-appium-service": "^0.2.3",
     "wdio-chromedriver-service": "^7.2.0",
     "wdio-wait-for": "^2.1.0",
     "webdriverio": "^7.9.1"
@@ -29,7 +30,7 @@
   "dependencies": {
     "@babel/register": "^7.15.3",
     "@wdio/sync": "^7.10.1",
-    "appium": "^1.12.0",
+    "appium": "^1.20.2",
     "browserstack-local": "^1.4.8"
   }
 }

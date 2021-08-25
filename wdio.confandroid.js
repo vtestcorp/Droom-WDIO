@@ -1,7 +1,7 @@
 exports.config = {
 
     runner : 'local',
-    port : 4723,
+    port : 4724,
     host : 'localhost',
     path : '/wd/hub',
     loglevel : 'info',
@@ -11,6 +11,7 @@ exports.config = {
         timeout: 80000,
     },
     maxInstances : 1,
+    services: ['selenium-standalone'],
     specs: [
         './test/Android/**/LoginWithPassword.js'
     ],
