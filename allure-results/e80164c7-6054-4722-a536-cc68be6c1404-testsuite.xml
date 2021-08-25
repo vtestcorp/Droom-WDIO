@@ -1,0 +1,123 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1629809778445' stop='1629809892917'>
+    <name>Login Via Password</name>
+    <title>Login Via Password</title>
+    <test-cases>
+        <test-case start='1629809778448' status='passed' stop='1629809808797'>
+            <name>TC_01_Login With Valid Username and Valid Password</name>
+            <title>TC_01_Login With Valid Username and Valid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+                <label name='feature' value='TC_01_Login With Valid Username and Valid Password'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1629809808798' status='broken' stop='1629809808801'>
+            <name>TC_02_Login with Valid UserName and Invalid Password</name>
+            <title>TC_02_Login with Valid UserName and Invalid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>allureReporter is not defined</message>
+                <stack-trace>ReferenceError: allureReporter is not defined
+                    at Context.&lt;anonymous> (C:\Users\Dell\Desktop\droom\Droom Automation\test\LoginWithPasswordTests\LoginWithPassword.js:30:10)
+                    at Context.executeAsync (C:\Users\Dell\Desktop\droom\Droom Automation\node_modules\@wdio\utils\build\shim.js:284:25)
+                    at Context.testFrameworkFnWrapper (C:\Users\Dell\Desktop\droom\Droom Automation\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:45:32)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1629809808801' status='passed' stop='1629809826202'>
+            <name>TC_03_Login with Valid UserName and Invalid Password</name>
+            <title>TC_03_Login with Valid UserName and Invalid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1629809826202' status='passed' stop='1629809834607'>
+            <name>TC_04_Login With InValid Username and InValid Password</name>
+            <title>TC_04_Login With InValid Username and InValid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1629809834608' status='passed' stop='1629809841011'>
+            <name>TC_05_To_Verify_Login_Functionality_With_Blank_Username</name>
+            <title>TC_05_To_Verify_Login_Functionality_With_Blank_Username</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1629809841011' status='passed' stop='1629809847957'>
+            <name>TC_06_To_Verify_Login_Functionality_With Valid_Username_Blank_Password</name>
+            <title>TC_06_To_Verify_Login_Functionality_With Valid_Username_Blank_Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1629809847958' status='broken' stop='1629809892915'>
+            <name>TC_01_To_Verify_Login_With_Social_Login</name>
+            <title>TC_01_To_Verify_Login_With_Social_Login</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>No window found with title or url matching "facebook.com"</message>
+                <stack-trace>Error: No window found with title or url matching "facebook.com"
+                    at Browser.switchWindow (C:\Users\Dell\Desktop\droom\Droom Automation\node_modules\webdriverio\build\commands\browser\switchWindow.js:62:11)
+                    at processTicksAndRejections (node:internal/process/task_queues:94:5)
+                    at async Browser.wrapCommandFn (C:\Users\Dell\Desktop\droom\Droom Automation\node_modules\@wdio\utils\build\shim.js:103:29)
+                    at async Context.&lt;anonymous> (C:\Users\Dell\Desktop\droom\Droom Automation\test\LoginWithPasswordTests\LoginWithPassword.js:120:12)
+                    at async Context.executeAsync (C:\Users\Dell\Desktop\droom\Droom Automation\node_modules\@wdio\utils\build\shim.js:284:16)
+                    at async Context.testFrameworkFnWrapper (C:\Users\Dell\Desktop\droom\Droom Automation\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

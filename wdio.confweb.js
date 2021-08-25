@@ -21,7 +21,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/**/*.js'
+        './test/Web/**/LoginWithPassword.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -148,7 +148,13 @@ exports.config = {
           },
           addConsoleLogs: true,
 
-    }],'dot'],
+    }],'dot',
+    ['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+    }]
+],
 
 
     
@@ -157,7 +163,8 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 80000
+        timeout: 80000,
+        require:['@babel/register']
     },
     //
     // =====

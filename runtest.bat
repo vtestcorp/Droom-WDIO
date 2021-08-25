@@ -1,0 +1,1 @@
+start /b npm run webtest & start /b npm run androidtest
