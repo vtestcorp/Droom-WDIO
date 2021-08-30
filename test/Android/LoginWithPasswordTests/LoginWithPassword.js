@@ -1,126 +1,94 @@
 const base = require("../../../BaseClass/base");
-
-
+const page = require("../../../Pages/Android/LoginWithPassword")
 describe("Login Via Password", ()=>{
+   beforeEach(async  ()=>{
+      await driver.closeApp()
+      await driver.launchApp()
+    });  
+
    it("TC_01_Login With Valid Username and Valid Password", async()=>{
-       //await(await $('#userLogin')).setValue("poonam@vtestcorp.com");
-       //await(await $("#password")).setValue("Punam@123");
-         await (await base.getByResourceId("in.droom:id/btn_close")).isDisplayed()
-         await (await base.getByResourceId("in.droom:id/btn_close")).click()
-         await (await base.getByText("My Account")).click()
-         await (await base.getByResourceId("in.droom:id/email_field")).setValue("poonam@vtestcorp.com")
-         await (await base.getByResourceId("in.droom:id/btn_login_via_password")).click()
-         await (await base.getByResourceId("in.droom:id/password_field")).setValue("Punam@123")
-         await (await base.getByResourceId("in.droom:id/text_input_end_icon")).click()
-         await (await base.getByResourceId("in.droom:id/btn_login_via_otp_email")).click()
-         await (await base.getByResourceId("in.droom:id/imgViewForClose")).waitForDisplayed()
-         await (await base.getByResourceId("in.droom:id/imgViewForClose")).click()
-         expect(await base.getByResourceId("in.droom:id/user_info_flow")).toBeDisplayed()
-         await driver.pause(3000)
+         await (await page.mainPopup).isDisplayed()
+         await (await page.mainPopup).click()
+         await (await page.myAccount).click()
+         await (await page.emailText).setValue("poonam@vtestcorp.com")
+         await (await page.loginViaPassBtn).click()
+         await (await page.passText).setValue("Punam@123")
+         await (await page.showPassword).click()
+         await (await page.loginFinal).click()
+         await (await page.afterLoginPopup).waitForDisplayed()
+         await (await page.afterLoginPopup).click()
+         expect(await page.userInfo).toBeDisplayed()
+         console.log("User is able to Login using valid credentials")
       });
 
-      // it("TC_02_Login with Valid UserName and Invalid Password", async()=>{
-      //    allureReporter.addFeature("TC_02_Login With Valid Username and Valid Password");
-      //    browser.url('/')
-      //    await(await $('#user_details')).moveTo();
-      //    await (await $('//a[text()="Log In"]')).click();
-      //    await(await $('#userLogin')).setValue("poonam@vtestcorp.com");
-      //    await(await $(".d-letter-spacing-1[href='#viaPassword']")).click();
-      //    await(await $("#password")).setValue("Vtest@12");
-      //    await(await $('//input[@type="submit"]')).click();
-      //    browser.pause('20000');
-      //    //await(await $('//div[@id="div-gpt-ad-1617177992772-0"]'))
-      //    //const errorpopup= $('//div[@id="div-gpt-ad-1617177992772-0"]')
-      //    //expect(errorpopup).toBeDisplayed()
-      //    //div[@class='"toast toast-error"]
-      //    const errormsg= $('//small[@class="text-error text-left d-display-block"]')
-      //    expect (errormsg).toBeDisplayed()
-      //    console.log('User is unable to login valid username & invalid password')
-      //    console.log('error popup shows:User Does not exists')
-      // });
+      it("TC_02_Login with Valid UserName and Invalid Password", async()=>{
+         await (await page.mainPopup).isDisplayed()
+         await (await page.mainPopup).click()
+         await (await page.myAccount).click()
+         await (await page.emailText).setValue("poonam@vtestcorp.com")
+         await (await page.loginViaPassBtn).click()
+         await (await page.passText).setValue("Punam@1234")
+         await (await page.showPassword).click()
+         await (await page.loginFinal).click()
+         await (await page.incorrectCredPopup).waitForDisplayed()
+         expect(await page.incorrectCredMsg).toHaveTextContaining('Your username or password is incorrect')
+         console.log("Error message displayed as : Your username or password is incorrect")
+      });
 
-      // it("TC_03_Login with Valid UserName and Invalid Password", async()=>{
-      //    browser.url('/')
-      //    await(await $('#user_details')).moveTo();
-      //    await (await $('//a[text()="Log In"]')).click();
-      //    await(await $('#userLogin')).setValue("poonam1@vtestcorp.com");
-      //    await(await $(".d-letter-spacing-1[href='#viaPassword']")).click();
-      //    await(await $("#password")).setValue("Punam@123");
-      //    await(await $('//input[@type="submit"]')).click();
-      //    const errormsg= $('//div[@class="toast toast-error"]')
-      //    expect (errormsg).toBeDisplayed()
-      //    console.log('User is unable to login Invalid username & Valid password')
-      //    console.log('error popup shows: User Does not exists')
-      // });
+      it("TC_03_Login with Invalid UserName and Valid Password", async()=>{
+         await (await page.mainPopup).isDisplayed()
+         await (await page.mainPopup).click()
+         await (await page.myAccount).click()
+         await (await page.emailText).setValue("poonam123@vtestcorp.com")
+         await (await page.loginViaPassBtn).click()
+         await (await page.passText).setValue("Punam@123")
+         await (await page.showPassword).click()
+         await (await page.loginFinal).click()
+         await (await page.incorrectCredPopup).waitForDisplayed()
+         expect(await page.incorrectCredMsg).toHaveTextContaining('User does not exist')
+         console.log("Error message displayed as : User does not exist")
+      });
 
-      // it("TC_04_Login With InValid Username and InValid Password", async()=>{
-      //    ////div[@class='toast-message']
-         
-      //    browser.url('/')
-      //     await(await $('#user_details')).moveTo();
-      //     await (await $('//a[text()="Log In"]')).click();
-      //     await(await $('#userLogin')).setValue("poonam1@vtestcorp.com");
-      //     await(await $(".d-letter-spacing-1[href='#viaPassword']")).click();
-      //     await(await $("#password")).setValue("vtest@123");
-      //     await(await $('//input[@type="submit"]')).click();
-      //     const errormsg= $('//div[@class="toast-message"]')
-      //     expect (errormsg).toBeDisplayed()
-      //     console.log('User is unable to login Invalid Credentials')
-      //     console.log('error popup shows: User Does not exists')
+      it("TC_04_Login With Invalid Username and Invalid Password", async()=>{
+         await (await page.mainPopup).isDisplayed()
+         await (await page.mainPopup).click()
+         await (await page.myAccount).click()
+         await (await page.emailText).setValue("poonam123@vtestcorp.com")
+         await (await page.loginViaPassBtn).click()
+         await (await page.passText).setValue("Punam@12345")
+         await (await page.showPassword).click()
+         await (await page.loginFinal).click()
+         await (await page.incorrectCredPopup).waitForDisplayed()
+         expect(await page.incorrectCredMsg).toHaveTextContaining('User does not exist')
+         console.log("Error message displayed as : User does not exist")
+         });
  
-      //    });
- 
-      //    it("TC_05_To_Verify_Login_Functionality_With_Blank_Username", async()=>{
-      //      ////span[@class='text-danger email-error text-left d-display-block']
-      //      browser.url('/')
-      //      await(await $('#user_details')).moveTo();
-      //      await (await $('//a[text()="Log In"]')).click();
-      //      let ele = await $('//a[normalize-space()="Login Via Password"]')
-      //      let clickable= await ele.isClickable();
-      //      //const isEnabled = await ele.isEnabled();
-      //      console.log(clickable);
-      //      await(await $(".d-letter-spacing-1[href='#viaPassword']")).click();
-      //      const usernameerrormsg=$('//span[@class="text-danger email-error text-left d-display-block"]')
-      //      expect(usernameerrormsg).toBeDisplayed()
-      //      console.log('User is unable to click on Login Via Password button')
-      //      console.log('error message: Please Enter A Valid Email Id or Mobile Number')
-   
-      //    });
-      //    it("TC_06_To_Verify_Login_Functionality_With Valid_Username_Blank_Password", async()=>{
-      //      ////small[@class='text-error text-left d-display-block']
-      //      browser.url('/')
-      //     await(await $('#user_details')).moveTo();
-      //     await (await $('//a[text()="Log In"]')).click();
-      //     await(await $('#userLogin')).setValue("poonam@vtestcorp.com");
-      //     await(await $(".d-letter-spacing-1[href='#viaPassword']")).click();
-      //     await(await $('//input[@type="submit"]')).click();
-      //     const passwrderrormsg= $('//small[@class="text-error text-left d-display-block"]')
-      //     expect(passwrderrormsg).toBeDisplayed();
-      //     console.log('User unable to login with valid email and blank password')
-      //     console.log('error message: Please enter a password')
- 
-      //    });
+         it("TC_05 To Verify Login Functionality With Blank Username", async()=>{
+            await (await page.mainPopup).isDisplayed()
+            await (await page.mainPopup).click()
+            await (await page.myAccount).click()
+            await (await page.loginViaPassBtn).click()
+            expect(await page.blanckEmailMsg).toHaveTextContaining('Please Enter A Valid Mobile Number')
+            console.log("Error message displayed as : Please Enter A Valid Mobile Number")
+         });
+
+      it("TC_06 To Verify Login Functionality With Valid Username Blank Password", async()=>{
+            await (await page.mainPopup).click()
+            await (await page.myAccount).click()
+            await (await page.emailText).setValue("poonam@vtestcorp.com")
+            await (await page.loginViaPassBtn).click()
+            await (await page.loginFinal).click()
+            expect(await page.blanckPasswordMsg).toHaveTextContaining('Please enter password')
+            console.log("Error message displayed as : Please enter password")
+         });
  
      
-      //    it("TC_01_To_Verify_Login_With_Social_Login", async()=>{
-      //       browser.url('/')
-      //       await(await $('#user_details')).moveTo();
-      //       await (await $('//a[text()="Log In"]')).click();
-      //       browser.pause('30000')
-      //       const facebookloginBtn= $ ('//a[text()="Login with Facebook"]')
-      //       expect (facebookloginBtn).toBeDisplayed()
-      //       await(await $('//a[text()="Login with Facebook"]')).click();
-      //      await browser.switchWindow('facebook.com')
-      //      await (await $('//input[@id="email"]')).setValue("matade10@rediffmail.com");
-      //      await (await $('//input[@id="pass"]')).setValue("punuganu123");
-      //      console.log('User entered facebook credentials for droom login');
-      //      await (await $('//input[@name="login"]')).click();
-      //      //await (await $('(//button[@type="submit"])[1]')).click();
-      //      browser.back()
-      //      const ele=$('(//div[@class="seller-name"])[2]')
-      //      expect (ele).toHaveTextContaining('Welcome,')
-      //      console.log('User sucessfully login to droom through facebook credentials');
+      // it("TC_01_To_Verify_Login_With_Social_Login", async()=>{
+      //    await (await page.mainPopup).click()
+      //    await (await page.myAccount).click()
+      //    await (await page.fbLoginBtn).click()
 
-      //    });
-
+      //    expect(await page.blanckPasswordMsg).toHaveTextContaining('Please enter password')
+      //    console.log("Error message displayed as : Please enter password")          
+      // });
       });

@@ -4,9 +4,9 @@ class Base
     async loginAsBuyer()
     {
         try{
-      await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});}
+      await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+      await (await $('(//button[@class="close em-show-later"])[2]')).click();}
       catch{ }
-      await (await $('(//button[@class="close em-show-later"])[2]')).click();
       await(await $('#user_details')).click();
       await(await $("a[class='btn btn-primary']")).click();
       await(await $("#userLogin")).setValue("vikasy898@gmail.com");

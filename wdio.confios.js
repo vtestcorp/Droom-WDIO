@@ -1,8 +1,7 @@
 exports.config = {
-
     runner : 'local',
-    port : 4723,
-    host : '127.0.0.1',
+    port : 4728,
+    host : 'localhost',
     path : '/wd/hub',
     loglevel : 'info',
     framework : 'mocha',

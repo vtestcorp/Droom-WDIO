@@ -7,7 +7,7 @@
     "webtest": "npx wdio run wdio.confweb.js",
     "androidtest": "npx wdio run wdio.confandroid.js",
     "iostest": "npx wdio run wdio.confios.js",
-    "all": "npm-run-all --parallel webtest androidtest iostest"
+    "all": "npm-run-all --parallel webtest androidtest"
   },
   "author": "Bhushan_Vtest",
   "license": "ISC",
@@ -31,6 +31,7 @@
     "@babel/register": "^7.15.3",
     "@wdio/sync": "^7.10.1",
     "appium": "^1.20.2",
-    "browserstack-local": "^1.4.8"
+    "browserstack-local": "^1.4.8",
+    "wdio-video-reporter": "^3.1.2"
   }
 }
