@@ -1,13 +1,12 @@
 const { default: waitForDisplayed } = require("webdriverio/build/commands/element/waitForDisplayed");
-
 class Base
 {
     async loginAsBuyer()
     {
         try{
-      await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});}
+      await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+      await (await $('(//button[@class="close em-show-later"])[2]')).click();}
       catch{ }
-      await (await $('(//button[@class="close em-show-later"])[2]')).click();
       await(await $('#user_details')).click();
       await(await $("a[class='btn btn-primary']")).click();
       await(await $("#userLogin")).setValue("vikasy898@gmail.com");
@@ -15,6 +14,20 @@ class Base
       await(await $("#password")).setValue("Vtest@123");
       await(await $("input[value='Login']")).click();
       await(await $("div[class='profile'] img[alt='Seller image']")).waitForDisplayed({timeout:10000});
+      await browser.pause(2000);      
     }
+    async getByResourceId(id)
+    {
+      const selector = 'new UiSelector().resourceId("'+id+'")'
+      const a=await $(`android=${selector}`)
+      return a
+    }
+    async getByText(text)
+    {
+      const selector = 'new UiSelector().text("'+text+'")'
+      const a=await $(`android=${selector}`)
+      return a
+    }
+    
 }
 module.exports=new Base();
