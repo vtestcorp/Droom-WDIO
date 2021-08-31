@@ -1,0 +1,114 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1630375677273' stop='1630375769933'>
+    <name>Login Via Password</name>
+    <title>Login Via Password</title>
+    <test-cases>
+        <test-case start='1630375677351' status='broken' stop='1630375716355'>
+            <name>TC_02_Login with Valid UserName and Invalid Password</name>
+            <title>TC_02_Login with Valid UserName and Invalid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='ece691a1-f732-4f9e-9209-e5c10b058836-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='5a4201f2-b514-49ec-8d8d-3de48d7ed86d-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='b84efe13-a0a2-4e3b-808f-0a1346b004cb-attachment.png' type='image/png' size='70821'/>
+                <attachment title='Screenshot' source='e5ff4cd2-f2a9-4faa-987c-31c8cbff35bf-attachment.png' type='image/png' size='64559'/>
+                <attachment title='Screenshot' source='0e8ed26a-1c3c-4d1c-ad2e-42fe0ad87400-attachment.png' type='image/png' size='64559'/>
+                <attachment title='Screenshot' source='e2610a1c-815c-49d9-aef5-c138d3c6206d-attachment.png' type='image/png' size='65308'/>
+                <attachment title='Screenshot' source='2a4c7786-a550-48ce-9330-b37251c6bac6-attachment.png' type='image/png' size='71684'/>
+                <attachment title='Screenshot' source='f35c71a1-a73e-4789-9d12-a115c08ea0a6-attachment.png' type='image/png' size='66826'/>
+                <attachment title='Console Logs' source='8156df4c-9e3d-42d7-9763-7e09ce2cf608-attachment.html' type='text/html' size='3164'/>
+                <attachment title='Execution video' source='0cfa3b39-0226-4a79-ab89-1b16e20d5764-attachment.mp4' type='video/mp4' size='145'/>
+            </attachments>
+            <failure>
+                <message>Cannot read property 'getText' of undefined</message>
+                <stack-trace>TypeError: Cannot read property 'getText' of undefined
+                    at Login.loginWithValidUsernameInvalidPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:69:57)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:29:10)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630375716430' status='broken' stop='1630375755027'>
+            <name>TC_03_Login with InValid UserName and Valid Password</name>
+            <title>TC_03_Login with InValid UserName and Valid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='11e98f8c-c32a-41e3-8633-feb900abef81-attachment.png' type='image/png' size='66826'/>
+                <attachment title='Screenshot' source='604314ed-25d5-481f-81e0-3ebc881511a5-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='2f3b8724-537b-4326-b13c-e74589d2c079-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='cc3583f6-25b0-4763-a632-a6cd67a45427-attachment.png' type='image/png' size='70742'/>
+                <attachment title='Screenshot' source='fd0a5822-c391-4e6f-a68d-d9cbdee599ee-attachment.png' type='image/png' size='64505'/>
+                <attachment title='Screenshot' source='ca2010e9-7a0d-4da2-bd6e-951e8f265501-attachment.png' type='image/png' size='64505'/>
+                <attachment title='Screenshot' source='0c596e97-d42b-4d23-b652-189d632d463f-attachment.png' type='image/png' size='65267'/>
+                <attachment title='Screenshot' source='aaf72571-3ffb-4a10-9d0c-87cfc36fc2bf-attachment.png' type='image/png' size='69059'/>
+                <attachment title='Screenshot' source='3f39201b-c1ff-4672-a096-75c00c690e20-attachment.png' type='image/png' size='65854'/>
+                <attachment title='Console Logs' source='0e799dc7-724c-4f89-b97e-537a7710acda-attachment.html' type='text/html' size='3167'/>
+                <attachment title='Execution video' source='968cd0e1-d0df-4cb9-ace8-62a3959d0a34-attachment.mp4' type='video/mp4' size='145'/>
+            </attachments>
+            <failure>
+                <message>Cannot read property 'getText' of undefined</message>
+                <stack-trace>TypeError: Cannot read property 'getText' of undefined
+                    at Login.loginWithInvalidUserValidPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:89:53)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:43:10)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630375755068' status='broken' stop='1630375769920'>
+            <name>TC_01_To Verify Login With Social Login</name>
+            <title>TC_01_To Verify Login With Social Login</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='d6b5624a-e45b-415c-a833-52fe0728e1c8-attachment.png' type='image/png' size='65854'/>
+                <attachment title='Screenshot' source='4a76dede-bd24-4e89-97f7-2d2239820a6d-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='7b27da96-269a-4c66-992d-2e4a037912e3-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='07111a04-8370-4deb-93c0-153ac494d562-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='a74e189a-7e54-4bc5-be4b-713ede9ef737-attachment.png' type='image/png' size='15119'/>
+                <attachment title='Screenshot' source='d660ee46-1f51-4d00-8aaa-b6245fcfe759-attachment.png' type='image/png' size='15119'/>
+                <attachment title='Screenshot' source='3697ebec-e238-472d-a394-97f751103f40-attachment.png' type='image/png' size='16593'/>
+                <attachment title='Screenshot' source='f6a59657-b4f6-4dee-aac9-4a9b79ba5284-attachment.png' type='image/png' size='16593'/>
+                <attachment title='Screenshot' source='3ac03908-6140-4a58-9312-083eb3aba589-attachment.png' type='image/png' size='16724'/>
+                <attachment title='Screenshot' source='8d5cbde2-126a-4694-9c9d-5b8779aae952-attachment.png' type='image/png' size='16415'/>
+                <attachment title='Console Logs' source='dfe2d6d1-6371-46ef-9f73-3b4f1c855d94-attachment.html' type='text/html' size='322'/>
+                <attachment title='Execution video' source='d9c7eb48-9e6a-4f33-a8de-8ebb18fe814d-attachment.mp4' type='video/mp4' size='132'/>
+            </attachments>
+            <failure>
+                <message>LoginWithPasswordPage.welcomemsg.toHaveTextContaining is not a function</message>
+                <stack-trace>TypeError: LoginWithPasswordPage.welcomemsg.toHaveTextContaining is not a function
+                    at Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:110:60)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

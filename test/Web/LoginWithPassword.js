@@ -1,30 +1,29 @@
-const LoginWithPasswordPage = require('../../Pages/LoginWithPasswordPage/LoginWithPasswordPage');
+const LoginWithPasswordPage = require('../../Pages/Web/LoginWithPasswordPage');
 
  describe("Login Via Password", ()=>{
   
    it("TC_01_Login With Valid Username and Valid Password", async()=>{
       try{
         
-         await (await LoginWithPasswordPage.popup.waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"}));
-         await (await LoginWithPasswordPage.popupclose.click());
+          await LoginWithPasswordPage.popup.waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+          await LoginWithPasswordPage.popupclose.click();
          }
       catch{ }
       await LoginWithPasswordPage.loginViaPassword()
       await LoginWithPasswordPage.loginwithValidCredentials()
-      expect(await browser).toHaveTitle('My StoreManager | Droom');
+      await expect(browser).toHaveTitle('My StoreManager | Droom');
       console.log('After login user navigate to StoreManager Page')
       console.log("User is able to Login using valid credentials")
-      await LoginWithPasswordPage.logout()
+      await  LoginWithPasswordPage.logout()
       
       });
 
      it("TC_02_Login with Valid UserName and Invalid Password", async()=>{
       try{
-         await (await LoginWithPasswordPage.popup.waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"}));
-         await (await LoginWithPasswordPage.popupclose.click());
+         await LoginWithPasswordPage.popup.waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+         await LoginWithPasswordPage.popupclose.click();
          }
       catch{ }
-        // browser.url('/')
          await LoginWithPasswordPage.loginViaPassword()
          await LoginWithPasswordPage.loginWithValidUsernameInvalidPassword()
         expect(await LoginWithPasswordPage.errorMsgForInvalidPasswd).toBeDisplayed()
@@ -35,8 +34,8 @@ const LoginWithPasswordPage = require('../../Pages/LoginWithPasswordPage/LoginWi
 
       it("TC_03_Login with InValid UserName and Valid Password", async()=>{
          try{
-            await (await LoginWithPasswordPage.popup.waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"}));
-            await (await LoginWithPasswordPage.popupclose.click());
+            await LoginWithPasswordPage.popup.waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+            await LoginWithPasswordPage.popupclose.click();
          }
          catch{ }
          await LoginWithPasswordPage.loginViaPassword()
@@ -93,39 +92,22 @@ const LoginWithPasswordPage = require('../../Pages/LoginWithPasswordPage/LoginWi
  
      
          it("TC_01_To Verify Login With Social Login", async()=>{
-            //browser.url('/')
             try{
-               await (await LoginWithPasswordPage.popup.waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"}));
+                await LoginWithPasswordPage.popup.waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
                 await LoginWithPasswordPage.popupclose.click();}
             catch{ }
             await LoginWithPasswordPage.loginViaPassword()
-            await LoginWithPasswordPage.facebookLoginBtn.click()
+            await (await LoginWithPasswordPage.facebookLoginBtn).click()
             await browser.switchWindow('facebook.com')
-            await LoginWithPasswordPage.email.setValue("matade10@rediffmail.com")
-            await LoginWithPasswordPage.password.setValue("punuganu123")
-            console.log('User entered facebook credentials for droom login')
-            await LoginWithPasswordPage.facebooklogin.click()
-            //await LoginWithPasswordPage.submitBtn.click()
-            await browser.back()
-            expect (await LoginWithPasswordPage.welcomemsg.toHaveTextContaining('Welcome,'))
-            console.log('User sucessfully login to droom through facebook credentials')
-           /* browser.url('/')
-            await(await $('#user_details')).moveTo();
-            await (await $('//a[text()="Log In"]')).click();
-            await browser.pause('30000')
-            const facebookloginBtn= $ ('//a[text()="Login with Facebook"]')
-            expect (facebookloginBtn).toBeDisplayed()
-            await(await $('//a[text()="Login with Facebook"]')).click();
-           await browser.switchWindow('facebook.com')
-           await (await $('//input[@id="email"]')).setValue("matade10@rediffmail.com");
-           await (await $('//input[@id="pass"]')).setValue("punuganu123");
-           console.log('User entered facebook credentials for droom login');
-           await (await $('//input[@name="login"]')).click();
-           //await (await $('(//button[@type="submit"])[1]')).click();
-           browser.back()
-           const ele=$('(//div[@class="seller-name"])[2]')
-           expect (ele).toHaveTextContaining('Welcome,')
-           console.log('User sucessfully login to droom through facebook credentials');*/
+            await (await LoginWithPasswordPage.email).setValue("matade10@rediffmail.com")
+            await (await LoginWithPasswordPage.password).setValue("punuganu123")
+            console.log("User entered facebook credentials for droom login")
+            await (await LoginWithPasswordPage.facebooklogin).click()
+            await browser.switchWindow('droom.in')
+            browser.refresh()
+            expect (await LoginWithPasswordPage.welcomemsg).toHaveTextContaining('Welcome,')
+            console.log("User sucessfully login to droom through facebook credentials")
+           
 
          });
 

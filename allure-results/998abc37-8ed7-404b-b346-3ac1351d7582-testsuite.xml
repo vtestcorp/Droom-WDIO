@@ -1,0 +1,189 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1630346466167' stop='1630346466918'>
+    <name>Login Via Password</name>
+    <title>Login Via Password</title>
+    <test-cases>
+        <test-case start='1630346466356' status='broken' stop='1630346466441'>
+            <name>TC_01_Login With Valid Username and Valid Password</name>
+            <title>TC_01_Login With Valid Username and Valid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Console Logs' source='35f8782d-bae4-455e-a989-60cda4768e3b-attachment.html' type='text/html' size='224'/>
+                <attachment title='Execution video' source='3bc633ec-2d95-41cd-8b8e-390065ff7431-attachment.mp4' type='video/mp4' size='143'/>
+            </attachments>
+            <failure>
+                <message>this.profileicon.moveTo is not a function</message>
+                <stack-trace>TypeError: this.profileicon.moveTo is not a function
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:27:37)
+                    at Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:12:35)
+                    at Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:25)
+                    at Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:45:32)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630346466505' status='broken' stop='1630346466550'>
+            <name>TC_02_Login with Valid UserName and Invalid Password</name>
+            <title>TC_02_Login with Valid UserName and Invalid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Console Logs' source='4c0eadff-828c-4a6d-a51e-446759da6d95-attachment.html' type='text/html' size='224'/>
+                <attachment title='Execution video' source='b2e94209-c0fe-4a7a-8e67-e5539ee893d6-attachment.mp4' type='video/mp4' size='145'/>
+            </attachments>
+            <failure>
+                <message>this.profileicon.moveTo is not a function</message>
+                <stack-trace>TypeError: this.profileicon.moveTo is not a function
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:27:37)
+                    at Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:28:38)
+                    at Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:25)
+                    at Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:45:32)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630346466577' status='broken' stop='1630346466621'>
+            <name>TC_03_Login with InValid UserName and Valid Password</name>
+            <title>TC_03_Login with InValid UserName and Valid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Console Logs' source='65b21f7f-89af-4218-b368-afe5740c0658-attachment.html' type='text/html' size='224'/>
+                <attachment title='Execution video' source='e3273af5-b938-4158-9e9e-0b5073eacd0d-attachment.mp4' type='video/mp4' size='145'/>
+            </attachments>
+            <failure>
+                <message>this.profileicon.moveTo is not a function</message>
+                <stack-trace>TypeError: this.profileicon.moveTo is not a function
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:27:37)
+                    at Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:42:38)
+                    at Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:25)
+                    at Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:45:32)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630346466648' status='broken' stop='1630346466675'>
+            <name>TC_04_Login With InValid Username and InValid Password</name>
+            <title>TC_04_Login With InValid Username and InValid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Console Logs' source='71dc2c0c-a442-4d41-940a-491647525965-attachment.html' type='text/html' size='224'/>
+                <attachment title='Execution video' source='87289d39-77e4-4c04-9b35-586c36534261-attachment.mp4' type='video/mp4' size='147'/>
+            </attachments>
+            <failure>
+                <message>this.profileicon.moveTo is not a function</message>
+                <stack-trace>TypeError: this.profileicon.moveTo is not a function
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:27:37)
+                    at Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:57:41)
+                    at Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:25)
+                    at Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:45:32)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630346466720' status='broken' stop='1630346466769'>
+            <name>TC_05_To Verify Login Functionality With Blank Username</name>
+            <title>TC_05_To Verify Login Functionality With Blank Username</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Console Logs' source='de06710d-9345-4ff3-b0c7-09769f92cbe0-attachment.html' type='text/html' size='224'/>
+                <attachment title='Execution video' source='0e6eeaa9-8a77-4e24-a63a-0c15949be32b-attachment.mp4' type='video/mp4' size='148'/>
+            </attachments>
+            <failure>
+                <message>this.profileicon.moveTo is not a function</message>
+                <stack-trace>TypeError: this.profileicon.moveTo is not a function
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:27:37)
+                    at Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:72:41)
+                    at Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:25)
+                    at Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:45:32)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630346466793' status='broken' stop='1630346466830'>
+            <name>TC_06_To Verify Login Functionality With Valid Username Blank Password</name>
+            <title>TC_06_To Verify Login Functionality With Valid Username Blank Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Console Logs' source='88fc814e-4b43-4b5c-9f3a-7874b4f3ed8b-attachment.html' type='text/html' size='224'/>
+                <attachment title='Execution video' source='52477cbf-3cb8-4f39-b1e2-f9c1b1535176-attachment.mp4' type='video/mp4' size='163'/>
+            </attachments>
+            <failure>
+                <message>this.profileicon.moveTo is not a function</message>
+                <stack-trace>TypeError: this.profileicon.moveTo is not a function
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:27:37)
+                    at Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:86:41)
+                    at Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:25)
+                    at Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:45:32)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630346466865' status='broken' stop='1630346466896'>
+            <name>TC_01_To Verify Login With Social Login</name>
+            <title>TC_01_To Verify Login With Social Login</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Console Logs' source='75d68b7c-8774-43ba-bc4d-572df141f9eb-attachment.html' type='text/html' size='224'/>
+                <attachment title='Execution video' source='355bede1-a9fb-4eaf-8115-4c995e4e8c63-attachment.mp4' type='video/mp4' size='132'/>
+            </attachments>
+            <failure>
+                <message>this.profileicon.moveTo is not a function</message>
+                <stack-trace>TypeError: this.profileicon.moveTo is not a function
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:27:37)
+                    at Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:101:41)
+                    at Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:25)
+                    at Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:45:32)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

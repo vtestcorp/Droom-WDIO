@@ -1,0 +1,223 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1630376567325' stop='1630376787694'>
+    <name>Login Via Password</name>
+    <title>Login Via Password</title>
+    <test-cases>
+        <test-case start='1630376567399' status='passed' stop='1630376616470'>
+            <name>TC_01_Login With Valid Username and Valid Password</name>
+            <title>TC_01_Login With Valid Username and Valid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='f07c92f0-aa93-4cfc-9adf-c54ecdaca494-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='3db8b0ca-221a-4fc4-87e4-4d33a82ce0cf-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='71974e5b-9735-42bd-9b41-59ac518fa4b6-attachment.png' type='image/png' size='70801'/>
+                <attachment title='Screenshot' source='bd899612-7bb7-40dd-8829-3d42367fbbad-attachment.png' type='image/png' size='64559'/>
+                <attachment title='Screenshot' source='28f30f20-61cb-4233-8fe5-894fa3897a93-attachment.png' type='image/png' size='64559'/>
+                <attachment title='Screenshot' source='3c4bee0f-0c06-4d67-8fd3-e6aed1e8bb90-attachment.png' type='image/png' size='65319'/>
+                <attachment title='Screenshot' source='0e0a2a3e-7e9d-4ba9-a94e-0f26035db56d-attachment.png' type='image/png' size='105570'/>
+                <attachment title='Console Logs' source='47ba9e2d-d765-4a44-a690-e9efbb83ee1f-attachment.html' type='text/html' size='451'/>
+                <attachment title='Execution video' source='02c9d470-60e2-4cc2-a9f9-2414ad3edf11-attachment.mp4' type='video/mp4' size='143'/>
+            </attachments>
+        </test-case>
+        <test-case start='1630376616486' status='passed' stop='1630376656451'>
+            <name>TC_02_Login with Valid UserName and Invalid Password</name>
+            <title>TC_02_Login with Valid UserName and Invalid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='69efb2f4-788c-40de-a59d-4d97a101ed98-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='1555399c-c739-40cf-b584-94fd98740c46-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='fb20c2a2-d198-4215-aa7f-3d759aeda564-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='d36936eb-675b-4bae-a07b-50dab616bffe-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='c91e8ae2-9987-4a7a-af64-b8c4326a51ff-attachment.png' type='image/png' size='70820'/>
+                <attachment title='Screenshot' source='9762bc27-d9c3-4fe5-97ef-487740cd1b2d-attachment.png' type='image/png' size='64559'/>
+                <attachment title='Screenshot' source='d5597fde-3e97-4cb4-bc2b-deb355eeeddb-attachment.png' type='image/png' size='64559'/>
+                <attachment title='Screenshot' source='d08b94a6-e0eb-4a9d-9096-2e9919a1521e-attachment.png' type='image/png' size='65298'/>
+                <attachment title='Screenshot' source='d998405e-476c-43eb-8b23-a70e8b096c44-attachment.png' type='image/png' size='71684'/>
+                <attachment title='Screenshot' source='8e7224b1-614d-49ae-916e-5172d5a82abd-attachment.png' type='image/png' size='66826'/>
+                <attachment title='Console Logs' source='628756fd-c94b-409d-a28d-6b63f5be526f-attachment.html' type='text/html' size='456'/>
+                <attachment title='Execution video' source='7ea18995-86b6-419e-b94c-af281b35861d-attachment.mp4' type='video/mp4' size='145'/>
+            </attachments>
+        </test-case>
+        <test-case start='1630376656495' status='passed' stop='1630376696867'>
+            <name>TC_03_Login with InValid UserName and Valid Password</name>
+            <title>TC_03_Login with InValid UserName and Valid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='f5787f34-9ed0-4e04-80e3-c3754a27354e-attachment.png' type='image/png' size='66826'/>
+                <attachment title='Screenshot' source='96d72ae9-bd78-4f3d-ab78-17bab067699d-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='e4d80685-aa3a-4fe4-9769-862c897552a0-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='eb36f35a-76b3-4b28-8b90-45e7628da4b1-attachment.png' type='image/png' size='70749'/>
+                <attachment title='Screenshot' source='71af2417-a64e-4922-9e81-35785ac565ef-attachment.png' type='image/png' size='64505'/>
+                <attachment title='Screenshot' source='25f02fe6-1d27-4707-a3ea-e3c290d96f3c-attachment.png' type='image/png' size='64505'/>
+                <attachment title='Screenshot' source='e485bc28-38a0-45a8-9abb-994d64da5317-attachment.png' type='image/png' size='65259'/>
+                <attachment title='Screenshot' source='80026ff2-0b6d-4b55-9e4b-9afdea897677-attachment.png' type='image/png' size='69059'/>
+                <attachment title='Screenshot' source='4e375e5a-8c33-4c4b-a0e3-1dad7ab09b51-attachment.png' type='image/png' size='65854'/>
+                <attachment title='Console Logs' source='7de95ed5-d287-4eb2-8ac0-fa45b88ff14d-attachment.html' type='text/html' size='439'/>
+                <attachment title='Execution video' source='51f8b797-b0e2-44f5-9a1b-151403ada049-attachment.mp4' type='video/mp4' size='145'/>
+            </attachments>
+        </test-case>
+        <test-case start='1630376696882' status='passed' stop='1630376737138'>
+            <name>TC_04_Login With InValid Username and InValid Password</name>
+            <title>TC_04_Login With InValid Username and InValid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='3ef18e1b-d6c4-47fa-b39a-06df658c8ae3-attachment.png' type='image/png' size='65854'/>
+                <attachment title='Screenshot' source='f97d8229-ce0a-4935-a87e-4bf72e7367a6-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='c2728091-aed3-473a-9312-1568972f25a8-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='5a91cb2d-4f41-4cf0-8d7e-1a5e3c0eb248-attachment.png' type='image/png' size='70762'/>
+                <attachment title='Screenshot' source='2be38b13-cf39-40ed-b1ae-6f9586e41d62-attachment.png' type='image/png' size='64505'/>
+                <attachment title='Screenshot' source='d3c695e4-884d-4094-9abc-bb644d78eac6-attachment.png' type='image/png' size='64505'/>
+                <attachment title='Screenshot' source='d1b60c9f-e5c0-49c1-9349-dd2447de67ff-attachment.png' type='image/png' size='64286'/>
+                <attachment title='Screenshot' source='e8de3c51-7428-4b20-ae75-84918e0ab422-attachment.png' type='image/png' size='69059'/>
+                <attachment title='Screenshot' source='5e378dc6-ee4e-4649-b70a-64ce3640aee1-attachment.png' type='image/png' size='65854'/>
+                <attachment title='Console Logs' source='04b462bd-a3c9-4d2d-a1ea-ccb6e7f5dd01-attachment.html' type='text/html' size='367'/>
+                <attachment title='Execution video' source='109115a3-a0c5-45ad-affa-77e7ace925c1-attachment.mp4' type='video/mp4' size='147'/>
+            </attachments>
+        </test-case>
+        <test-case start='1630376737160' status='passed' stop='1630376751075'>
+            <name>TC_05_To Verify Login Functionality With Blank Username</name>
+            <title>TC_05_To Verify Login Functionality With Blank Username</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='5b27ec78-01e3-4232-a7e3-8ffd166f3b51-attachment.png' type='image/png' size='65854'/>
+                <attachment title='Screenshot' source='12b8c2dd-b72d-4f43-bef7-280bc1cb89a0-attachment.png' type='image/png' size='566402'/>
+                <attachment title='Screenshot' source='dd23de33-08a9-40d0-acee-8f0df51f03d2-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='f7c5450b-bd40-4b3d-8443-2a2622d5d854-attachment.png' type='image/png' size='69925'/>
+                <attachment title='Console Logs' source='37196017-3d7b-4c44-b939-970ea3482d7c-attachment.html' type='text/html' size='376'/>
+                <attachment title='Execution video' source='81ed974b-5503-47aa-a892-7a14f5954a4f-attachment.mp4' type='video/mp4' size='148'/>
+            </attachments>
+        </test-case>
+        <test-case start='1630376751092' status='passed' stop='1630376774256'>
+            <name>TC_06_To Verify Login Functionality With Valid Username Blank Password</name>
+            <title>TC_06_To Verify Login Functionality With Valid Username Blank Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='0994b389-5b2c-4234-bd31-9812f047495b-attachment.png' type='image/png' size='69925'/>
+                <attachment title='Screenshot' source='271ab236-5025-40ad-bc53-4f1d0f39fd88-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='700559f9-6023-4009-91a4-94f95b0d5b4d-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='1547a619-8b4d-4f96-b93b-43ddcffeea29-attachment.png' type='image/png' size='70806'/>
+                <attachment title='Screenshot' source='2ebe8f4a-19ed-42f1-b210-0d660f822342-attachment.png' type='image/png' size='64559'/>
+                <attachment title='Screenshot' source='f7789b9a-d41f-4ccc-a361-650854725f85-attachment.png' type='image/png' size='66431'/>
+                <attachment title='Console Logs' source='57de836c-ab96-4249-b9f6-30a4a841b8de-attachment.html' type='text/html' size='408'/>
+                <attachment title='Execution video' source='5bea94b3-23a3-45a5-8ba1-bb25c8e2be60-attachment.mp4' type='video/mp4' size='163'/>
+            </attachments>
+        </test-case>
+        <test-case start='1630376774270' status='broken' stop='1630376787682'>
+            <name>TC_01_To Verify Login With Social Login</name>
+            <title>TC_01_To Verify Login With Social Login</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='caf89b20-d207-4334-b376-60c1fa6f0178-attachment.png' type='image/png' size='66431'/>
+                <attachment title='Screenshot' source='5706ed07-15e5-400a-b864-19aca598c735-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='f8eebd55-059b-4f99-a0e2-a6ceeccf81e6-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='6cf8f29b-86c2-43a9-8700-3d3bd19e3cbc-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='2f39ca30-053d-4ae0-908d-9d673bb5f513-attachment.png' type='image/png' size='15119'/>
+                <attachment title='Screenshot' source='f5019f20-105a-4651-b631-eb132258a198-attachment.png' type='image/png' size='15119'/>
+                <attachment title='Screenshot' source='4d8c81b0-b633-4430-a9d3-08199135ef53-attachment.png' type='image/png' size='16593'/>
+                <attachment title='Screenshot' source='6d07c522-98b8-4e08-96f0-9fff82d394cf-attachment.png' type='image/png' size='16593'/>
+                <attachment title='Screenshot' source='9b3e50f2-d813-4888-904d-bf080ba5b187-attachment.png' type='image/png' size='16724'/>
+                <attachment title='Console Logs' source='7797f8fa-ebca-4b07-92be-9632b158faae-attachment.html' type='text/html' size='322'/>
+                <attachment title='Execution video' source='b30084b1-89c1-4efb-8727-ebf074c86b60-attachment.mp4' type='video/mp4' size='132'/>
+            </attachments>
+            <failure>
+                <message>no such window: window was already closed
+                  (Session info: chrome=92.0.4515.159)</message>
+                <stack-trace>Backtrace:
+                	Ordinal0 [0x006D2A33+2501171]
+                	Ordinal0 [0x0066D1C1+2085313]
+                	Ordinal0 [0x00571FA8+1056680]
+                	Ordinal0 [0x00567F3B+1015611]
+                	Ordinal0 [0x00568EB5+1019573]
+                	Ordinal0 [0x00563086+995462]
+                	Ordinal0 [0x005731C0+1061312]
+                	Ordinal0 [0x005C4092+1392786]
+                	Ordinal0 [0x005B551B+1332507]
+                	Ordinal0 [0x00591D74+1187188]
+                	Ordinal0 [0x00592BD9+1190873]
+                	GetHandleVerifier [0x0084EFE6+1504438]
+                	GetHandleVerifier [0x008FDDA5+2220661]
+                	GetHandleVerifier [0x00755589+481881]
+                	GetHandleVerifier [0x00754639+477961]
+                	Ordinal0 [0x006728BD+2107581]
+                	Ordinal0 [0x00676728+2123560]
+                	Ordinal0 [0x00676862+2123874]
+                	Ordinal0 [0x0067FA81+2161281]
+                	BaseThreadInitThunk [0x752BFA29+25]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A7E+286]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A4E+238]
+                    at Browser.runCommandWithHooks (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:100:24)
+                    at Browser.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:67:44)
+                    at Browser.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:239:24)
+                    at global.$ (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\runner\build\index.js:190:42)
+                    at Login.get welcomemsg [as welcomemsg] (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:20:29)
+                    at Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:108:49)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

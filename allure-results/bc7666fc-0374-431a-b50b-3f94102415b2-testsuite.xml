@@ -1,0 +1,337 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1630347180287' stop='1630347229214'>
+    <name>Login Via Password</name>
+    <title>Login Via Password</title>
+    <test-cases>
+        <test-case start='1630347180529' status='broken' stop='1630347182424'>
+            <name>TC_01_Login With Valid Username and Valid Password</name>
+            <title>TC_01_Login With Valid Username and Valid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Console Logs' source='5fdc4232-88db-4aa5-a7f4-ddf24d3f795f-attachment.html' type='text/html' size='245'/>
+                <attachment title='Execution video' source='9a3408f3-5712-491e-a7b4-350b3d1ee0e6-attachment.mp4' type='video/mp4' size='143'/>
+            </attachments>
+            <failure>
+                <message>element not interactable
+                  (Session info: chrome=92.0.4515.159)</message>
+                <stack-trace>Backtrace:
+                	Ordinal0 [0x00462A33+2501171]
+                	Ordinal0 [0x003FD1C1+2085313]
+                	Ordinal0 [0x00301E70+1056368]
+                	Ordinal0 [0x0032D547+1234247]
+                	Ordinal0 [0x003231B7+1192375]
+                	Ordinal0 [0x00345653+1332819]
+                	Ordinal0 [0x00322FD6+1191894]
+                	Ordinal0 [0x0034573A+1333050]
+                	Ordinal0 [0x003548BC+1394876]
+                	Ordinal0 [0x0034551B+1332507]
+                	Ordinal0 [0x00321D74+1187188]
+                	Ordinal0 [0x00322BD9+1190873]
+                	GetHandleVerifier [0x005DEFE6+1504438]
+                	GetHandleVerifier [0x0068DDA5+2220661]
+                	GetHandleVerifier [0x004E5589+481881]
+                	GetHandleVerifier [0x004E4639+477961]
+                	Ordinal0 [0x004028BD+2107581]
+                	Ordinal0 [0x00406728+2123560]
+                	Ordinal0 [0x00406862+2123874]
+                	Ordinal0 [0x0040FA81+2161281]
+                	BaseThreadInitThunk [0x752BFA29+25]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A7E+286]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A4E+238]
+                    at Element.runCommandWithHooks (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:100:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:67:44)
+                    at Element.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:239:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:60:23)
+                    at Element.elementErrorHandlerCallbackFn (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:23:65)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at Element.elementErrorHandlerCallback (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:44:12)
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:29:34)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:12:7)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630347182449' status='broken' stop='1630347184844'>
+            <name>TC_02_Login with Valid UserName and Invalid Password</name>
+            <title>TC_02_Login with Valid UserName and Invalid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='db60aad5-ff6b-4869-826c-6309d0bdbb69-attachment.png' type='image/png' size='327205'/>
+                <attachment title='Console Logs' source='43b11cae-27fd-4144-a62e-37d024c425c8-attachment.html' type='text/html' size='245'/>
+                <attachment title='Execution video' source='38847947-2e24-4ff2-8036-770ae5d556e1-attachment.mp4' type='video/mp4' size='145'/>
+            </attachments>
+            <failure>
+                <message>element not interactable
+                  (Session info: chrome=92.0.4515.159)</message>
+                <stack-trace>Backtrace:
+                	Ordinal0 [0x00462A33+2501171]
+                	Ordinal0 [0x003FD1C1+2085313]
+                	Ordinal0 [0x00301E70+1056368]
+                	Ordinal0 [0x0032D547+1234247]
+                	Ordinal0 [0x003231B7+1192375]
+                	Ordinal0 [0x00345653+1332819]
+                	Ordinal0 [0x00322FD6+1191894]
+                	Ordinal0 [0x0034573A+1333050]
+                	Ordinal0 [0x003548BC+1394876]
+                	Ordinal0 [0x0034551B+1332507]
+                	Ordinal0 [0x00321D74+1187188]
+                	Ordinal0 [0x00322BD9+1190873]
+                	GetHandleVerifier [0x005DEFE6+1504438]
+                	GetHandleVerifier [0x0068DDA5+2220661]
+                	GetHandleVerifier [0x004E5589+481881]
+                	GetHandleVerifier [0x004E4639+477961]
+                	Ordinal0 [0x004028BD+2107581]
+                	Ordinal0 [0x00406728+2123560]
+                	Ordinal0 [0x00406862+2123874]
+                	Ordinal0 [0x0040FA81+2161281]
+                	BaseThreadInitThunk [0x752BFA29+25]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A7E+286]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A4E+238]
+                    at Element.runCommandWithHooks (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:100:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:67:44)
+                    at Element.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:239:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:60:23)
+                    at Element.elementErrorHandlerCallbackFn (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:23:65)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at Element.elementErrorHandlerCallback (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:44:12)
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:29:34)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:28:10)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630347184858' status='broken' stop='1630347186268'>
+            <name>TC_03_Login with InValid UserName and Valid Password</name>
+            <title>TC_03_Login with InValid UserName and Valid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='98fc4935-e74f-4049-81fa-360cfbdd73f0-attachment.png' type='image/png' size='332761'/>
+                <attachment title='Console Logs' source='80a9ecb4-0d60-4075-a979-83c90f0ccd10-attachment.html' type='text/html' size='245'/>
+                <attachment title='Execution video' source='7778e2e4-5e66-4fa1-92da-5602de1f36bb-attachment.mp4' type='video/mp4' size='145'/>
+            </attachments>
+            <failure>
+                <message>element not interactable
+                  (Session info: chrome=92.0.4515.159)</message>
+                <stack-trace>Backtrace:
+                	Ordinal0 [0x00462A33+2501171]
+                	Ordinal0 [0x003FD1C1+2085313]
+                	Ordinal0 [0x00301E70+1056368]
+                	Ordinal0 [0x0032D547+1234247]
+                	Ordinal0 [0x003231B7+1192375]
+                	Ordinal0 [0x00345653+1332819]
+                	Ordinal0 [0x00322FD6+1191894]
+                	Ordinal0 [0x0034573A+1333050]
+                	Ordinal0 [0x003548BC+1394876]
+                	Ordinal0 [0x0034551B+1332507]
+                	Ordinal0 [0x00321D74+1187188]
+                	Ordinal0 [0x00322BD9+1190873]
+                	GetHandleVerifier [0x005DEFE6+1504438]
+                	GetHandleVerifier [0x0068DDA5+2220661]
+                	GetHandleVerifier [0x004E5589+481881]
+                	GetHandleVerifier [0x004E4639+477961]
+                	Ordinal0 [0x004028BD+2107581]
+                	Ordinal0 [0x00406728+2123560]
+                	Ordinal0 [0x00406862+2123874]
+                	Ordinal0 [0x0040FA81+2161281]
+                	BaseThreadInitThunk [0x752BFA29+25]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A7E+286]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A4E+238]
+                    at Element.runCommandWithHooks (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:100:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:67:44)
+                    at Element.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:239:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:60:23)
+                    at Element.elementErrorHandlerCallbackFn (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:23:65)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at Element.elementErrorHandlerCallback (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:44:12)
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:29:34)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:42:10)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630347186282' status='broken' stop='1630347187482'>
+            <name>TC_04_Login With InValid Username and InValid Password</name>
+            <title>TC_04_Login With InValid Username and InValid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='adf0e099-4d8c-4a7e-a7b1-035502979a05-attachment.png' type='image/png' size='332761'/>
+                <attachment title='Console Logs' source='6e414c85-c4d3-4d48-9760-51630718abb4-attachment.html' type='text/html' size='245'/>
+                <attachment title='Execution video' source='29ef38cd-97da-4643-9164-f1d8d358d02b-attachment.mp4' type='video/mp4' size='147'/>
+            </attachments>
+            <failure>
+                <message>element not interactable
+                  (Session info: chrome=92.0.4515.159)</message>
+                <stack-trace>Backtrace:
+                	Ordinal0 [0x00462A33+2501171]
+                	Ordinal0 [0x003FD1C1+2085313]
+                	Ordinal0 [0x00301E70+1056368]
+                	Ordinal0 [0x0032D547+1234247]
+                	Ordinal0 [0x003231B7+1192375]
+                	Ordinal0 [0x00345653+1332819]
+                	Ordinal0 [0x00322FD6+1191894]
+                	Ordinal0 [0x0034573A+1333050]
+                	Ordinal0 [0x003548BC+1394876]
+                	Ordinal0 [0x0034551B+1332507]
+                	Ordinal0 [0x00321D74+1187188]
+                	Ordinal0 [0x00322BD9+1190873]
+                	GetHandleVerifier [0x005DEFE6+1504438]
+                	GetHandleVerifier [0x0068DDA5+2220661]
+                	GetHandleVerifier [0x004E5589+481881]
+                	GetHandleVerifier [0x004E4639+477961]
+                	Ordinal0 [0x004028BD+2107581]
+                	Ordinal0 [0x00406728+2123560]
+                	Ordinal0 [0x00406862+2123874]
+                	Ordinal0 [0x0040FA81+2161281]
+                	BaseThreadInitThunk [0x752BFA29+25]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A7E+286]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A4E+238]
+                    at Element.runCommandWithHooks (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:100:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:67:44)
+                    at Element.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:239:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:60:23)
+                    at Element.elementErrorHandlerCallbackFn (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:23:65)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at Element.elementErrorHandlerCallback (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:44:12)
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:29:34)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:57:13)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630347187496' status='broken' stop='1630347197364'>
+            <name>TC_05_To Verify Login Functionality With Blank Username</name>
+            <title>TC_05_To Verify Login Functionality With Blank Username</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='295935bb-a986-412e-be05-9c22e3c64791-attachment.png' type='image/png' size='332761'/>
+                <attachment title='Screenshot' source='a773cc73-539e-40f8-8aa3-842dfa117122-attachment.png' type='image/png' size='566402'/>
+                <attachment title='Screenshot' source='c446ec42-768c-40eb-b043-03087d3edefe-attachment.png' type='image/png' size='42257'/>
+                <attachment title='Console Logs' source='a92975c5-2058-42b2-81a1-4e7afa54cc5a-attachment.html' type='text/html' size='272'/>
+                <attachment title='Execution video' source='d987a03a-bc68-4109-8228-fcb38cfe7ac2-attachment.mp4' type='video/mp4' size='148'/>
+            </attachments>
+            <failure>
+                <message>this.loginViaPasswordBtn.click is not a function</message>
+                <stack-trace>TypeError: this.loginViaPasswordBtn.click is not a function
+                    at Login.verifyBlankUserName (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:117:34)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:73:13)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630347197381' status='broken' stop='1630347213012'>
+            <name>TC_06_To Verify Login Functionality With Valid Username Blank Password</name>
+            <title>TC_06_To Verify Login Functionality With Valid Username Blank Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='f35d481b-7e34-4fd5-ad5d-5e784feb9be7-attachment.png' type='image/png' size='42257'/>
+                <attachment title='Console Logs' source='87580210-9dc6-4aee-bd13-c243c5b04c85-attachment.html' type='text/html' size='224'/>
+                <attachment title='Execution video' source='4ab94324-9425-406c-bd97-609ac737b77e-attachment.mp4' type='video/mp4' size='163'/>
+            </attachments>
+            <failure>
+                <message>Can't call moveTo on element with selector "#user_details" because element wasn't found</message>
+                <stack-trace>Error: Can't call moveTo on element with selector "#user_details" because element wasn't found
+                    at Object.implicitWait [as default] (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\utils\implicitWait.js:34:19)
+                    at async Element.elementErrorHandlerCallbackFn (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:19:29)
+                    at async Element.runCommandWithHooks (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:105:25)
+                    at Element.runCommandWithHooks (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:100:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:67:44)
+                    at Element.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:239:24)
+                    at Element.elementErrorHandlerCallback (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:44:12)
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:27:38)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:86:13)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630347213043' status='broken' stop='1630347229194'>
+            <name>TC_01_To Verify Login With Social Login</name>
+            <title>TC_01_To Verify Login With Social Login</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='0c424fd4-0074-41b0-8222-f9f95ddc1288-attachment.png' type='image/png' size='42257'/>
+                <attachment title='Console Logs' source='e682a3ea-b212-4b8e-932e-4538f2bc3954-attachment.html' type='text/html' size='224'/>
+                <attachment title='Execution video' source='40c61b64-03e8-4c9d-b356-d5e146147168-attachment.mp4' type='video/mp4' size='132'/>
+            </attachments>
+            <failure>
+                <message>Can't call moveTo on element with selector "#user_details" because element wasn't found</message>
+                <stack-trace>Error: Can't call moveTo on element with selector "#user_details" because element wasn't found
+                    at Object.implicitWait [as default] (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\utils\implicitWait.js:34:19)
+                    at async Element.elementErrorHandlerCallbackFn (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:19:29)
+                    at async Element.runCommandWithHooks (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:105:25)
+                    at Element.runCommandWithHooks (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:100:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:67:44)
+                    at Element.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:239:24)
+                    at Element.elementErrorHandlerCallback (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:44:12)
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:27:38)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:101:13)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

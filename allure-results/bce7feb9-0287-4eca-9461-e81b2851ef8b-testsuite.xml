@@ -1,0 +1,35 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1630377866592' stop='1630377895131'>
+    <name>Login Via Password</name>
+    <title>Login Via Password</title>
+    <test-cases>
+        <test-case start='1630377866680' status='passed' stop='1630377895092'>
+            <name>TC_01_To Verify Login With Social Login</name>
+            <title>TC_01_To Verify Login With Social Login</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='5336ca09-5830-44c2-8ef5-c264d971bc5d-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='1c933eaa-f25a-4576-9e2c-12140791f83a-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='22932900-87b6-48a0-af0b-45bac6470605-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='205defcf-a03c-4047-b09e-8e94ba9211e1-attachment.png' type='image/png' size='15119'/>
+                <attachment title='Screenshot' source='65a3b797-0010-4a5b-adab-e87379789e5e-attachment.png' type='image/png' size='15138'/>
+                <attachment title='Screenshot' source='b5ccbde8-3491-47ce-bd8d-27cf540adac0-attachment.png' type='image/png' size='16593'/>
+                <attachment title='Screenshot' source='90895233-7bc7-419e-a814-8d87d978bb4c-attachment.png' type='image/png' size='16593'/>
+                <attachment title='Screenshot' source='2897d683-35f8-446a-a99f-ad24bc6473e9-attachment.png' type='image/png' size='16724'/>
+                <attachment title='Screenshot' source='dfbcf753-cbd4-45ca-9557-feec08aceec9-attachment.png' type='image/png' size='16415'/>
+                <attachment title='Screenshot' source='53d85311-2fb8-4429-9382-a44f198a79d1-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Console Logs' source='4e07a5ea-4a8a-4aff-9977-7fbe0d778fa7-attachment.html' type='text/html' size='383'/>
+                <attachment title='Execution video' source='d7b235ca-31a8-417f-a88f-15f8da4f70c2-attachment.mp4' type='video/mp4' size='132'/>
+            </attachments>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

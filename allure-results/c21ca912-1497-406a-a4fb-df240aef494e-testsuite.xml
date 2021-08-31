@@ -1,0 +1,69 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1630376882367' stop='1630376896496'>
+    <name>Login Via Password</name>
+    <title>Login Via Password</title>
+    <test-cases>
+        <test-case start='1630376882473' status='broken' stop='1630376896469'>
+            <name>TC_01_To Verify Login With Social Login</name>
+            <title>TC_01_To Verify Login With Social Login</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='fb7dd156-322c-41f1-bfb7-d7649bcc276a-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='3751c2b3-8ed2-4ec2-a62e-66cbdf668809-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='bd379647-2742-4aa8-8c25-dd86a1b055ab-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='1a473991-269e-4951-a825-380d7d59e6fd-attachment.png' type='image/png' size='15119'/>
+                <attachment title='Screenshot' source='957ae924-4de0-49a7-aaeb-c3cdffc39b47-attachment.png' type='image/png' size='15119'/>
+                <attachment title='Screenshot' source='b8a456b0-ccde-46a7-8b53-57a8871297c5-attachment.png' type='image/png' size='16593'/>
+                <attachment title='Screenshot' source='fc819fc2-47c1-4a0a-80da-0c38cfcf5458-attachment.png' type='image/png' size='16593'/>
+                <attachment title='Screenshot' source='adce0bae-a115-4277-8c14-e9bf82b2f472-attachment.png' type='image/png' size='16724'/>
+                <attachment title='Screenshot' source='7f6abeb3-0326-48ca-8988-d3d1468599c4-attachment.png' type='image/png' size='16415'/>
+                <attachment title='Console Logs' source='68fb95d1-7783-4937-8e27-c79f3914beba-attachment.html' type='text/html' size='322'/>
+                <attachment title='Execution video' source='bf6ba090-0873-48d6-8b0b-70da5db446a0-attachment.mp4' type='video/mp4' size='132'/>
+            </attachments>
+            <failure>
+                <message>no such window: target window already closed
+                from unknown error: web view not found
+                  (Session info: chrome=92.0.4515.159)</message>
+                <stack-trace>Backtrace:
+                	Ordinal0 [0x006D2A33+2501171]
+                	Ordinal0 [0x0066D1C1+2085313]
+                	Ordinal0 [0x00571FA8+1056680]
+                	Ordinal0 [0x0055BB46+965446]
+                	Ordinal0 [0x005B7959+1341785]
+                	Ordinal0 [0x005C4052+1392722]
+                	Ordinal0 [0x005B551B+1332507]
+                	Ordinal0 [0x00591D74+1187188]
+                	Ordinal0 [0x00592BD9+1190873]
+                	GetHandleVerifier [0x0084EFE6+1504438]
+                	GetHandleVerifier [0x008FDDA5+2220661]
+                	GetHandleVerifier [0x00755589+481881]
+                	GetHandleVerifier [0x00754639+477961]
+                	Ordinal0 [0x006728BD+2107581]
+                	Ordinal0 [0x00676728+2123560]
+                	Ordinal0 [0x00676862+2123874]
+                	Ordinal0 [0x0067FA81+2161281]
+                	BaseThreadInitThunk [0x752BFA29+25]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A7E+286]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A4E+238]
+                    at Browser.runCommandWithHooks (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:100:24)
+                    at Browser.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:67:44)
+                    at Browser.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:239:24)
+                    at Browser.findElement (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\utils\index.js:234:20)
+                    at Browser.$ (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\commands\browser\$.js:83:43)
+                    at Browser.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:60:23)
+                    at global.$ (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\runner\build\index.js:190:42)
+                    at Login.get welcomemsg [as welcomemsg] (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:20:29)
+                    at Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:108:49)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

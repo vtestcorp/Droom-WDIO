@@ -1,0 +1,293 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1630347489900' stop='1630347544930'>
+    <name>Login Via Password</name>
+    <title>Login Via Password</title>
+    <test-cases>
+        <test-case start='1630347490028' status='broken' stop='1630347498657'>
+            <name>TC_01_Login With Valid Username and Valid Password</name>
+            <title>TC_01_Login With Valid Username and Valid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='ff678807-54ee-406b-b57d-417d9b1372b1-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Console Logs' source='e75e54c3-ca9c-46a1-8c4e-80c661cd56c2-attachment.html' type='text/html' size='272'/>
+                <attachment title='Execution video' source='fa31135a-7a49-4a61-b337-266b8cbbed1f-attachment.mp4' type='video/mp4' size='143'/>
+            </attachments>
+            <failure>
+                <message>this.emailTB.setValue is not a function</message>
+                <stack-trace>TypeError: this.emailTB.setValue is not a function
+                    at Login.loginwithValidCredentials (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:35:22)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:13:7)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630347498683' status='broken' stop='1630347505532'>
+            <name>TC_02_Login with Valid UserName and Invalid Password</name>
+            <title>TC_02_Login with Valid UserName and Invalid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='4630095a-9b73-4578-bcc7-6f1ba57ae96c-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='c85e2373-c0e6-484b-afae-6de506d95d22-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Console Logs' source='1f1a8407-7be8-43a1-8d0c-25ad78e82b5f-attachment.html' type='text/html' size='272'/>
+                <attachment title='Execution video' source='3d901f96-5fc4-475c-a677-8dbb5dc30f69-attachment.mp4' type='video/mp4' size='145'/>
+            </attachments>
+            <failure>
+                <message>this.emailTB.setValue is not a function</message>
+                <stack-trace>TypeError: this.emailTB.setValue is not a function
+                    at Login.loginWithValidUsernameInvalidPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:57:22)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:29:10)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630347505553' status='broken' stop='1630347512894'>
+            <name>TC_03_Login with InValid UserName and Valid Password</name>
+            <title>TC_03_Login with InValid UserName and Valid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='32657271-94c9-4f21-9763-845f1ebfe8e7-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='8ad67f01-6526-40b8-b10e-30bbd2a87dfd-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Console Logs' source='2cbf35d7-2885-4b04-acbb-c2f55d756bc6-attachment.html' type='text/html' size='272'/>
+                <attachment title='Execution video' source='822e0732-2abc-4fe7-9847-ad47fe37d691-attachment.mp4' type='video/mp4' size='145'/>
+            </attachments>
+            <failure>
+                <message>this.emailTB.setValue is not a function</message>
+                <stack-trace>TypeError: this.emailTB.setValue is not a function
+                    at Login.loginWithInvalidUserValidPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:77:18)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:43:10)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630347512946' status='broken' stop='1630347524377'>
+            <name>TC_04_Login With InValid Username and InValid Password</name>
+            <title>TC_04_Login With InValid Username and InValid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='1e22d703-cb52-46ca-b471-c9368121ba63-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='71849c6a-b1c9-446b-8b02-5465cb0d6546-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Console Logs' source='cc6154b9-e81a-4e58-93a9-7cc019c590cf-attachment.html' type='text/html' size='272'/>
+                <attachment title='Execution video' source='60235f04-a4fd-4b03-a160-9fef6fe58240-attachment.mp4' type='video/mp4' size='147'/>
+            </attachments>
+            <failure>
+                <message>this.emailTB.setValue is not a function</message>
+                <stack-trace>TypeError: this.emailTB.setValue is not a function
+                    at Login.loginwithInValidCredentials (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:97:22)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:58:13)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630347524398' status='broken' stop='1630347539499'>
+            <name>TC_05_To Verify Login Functionality With Blank Username</name>
+            <title>TC_05_To Verify Login Functionality With Blank Username</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='ce6963d3-4935-4e2a-a4a0-690fd9e204a4-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='2a5f2b66-521d-47fd-8ef7-a226c9c46d4b-attachment.png' type='image/png' size='566402'/>
+                <attachment title='Console Logs' source='ae903cf4-bb5e-4a8b-b161-94d983a5612c-attachment.html' type='text/html' size='245'/>
+                <attachment title='Execution video' source='bd4079c6-62bf-4091-887e-531392fc136a-attachment.mp4' type='video/mp4' size='148'/>
+            </attachments>
+            <failure>
+                <message>element not interactable
+                  (Session info: chrome=92.0.4515.159)</message>
+                <stack-trace>Backtrace:
+                	Ordinal0 [0x00462A33+2501171]
+                	Ordinal0 [0x003FD1C1+2085313]
+                	Ordinal0 [0x00301E70+1056368]
+                	Ordinal0 [0x0032D547+1234247]
+                	Ordinal0 [0x003231B7+1192375]
+                	Ordinal0 [0x00345653+1332819]
+                	Ordinal0 [0x00322FD6+1191894]
+                	Ordinal0 [0x0034573A+1333050]
+                	Ordinal0 [0x003548BC+1394876]
+                	Ordinal0 [0x0034551B+1332507]
+                	Ordinal0 [0x00321D74+1187188]
+                	Ordinal0 [0x00322BD9+1190873]
+                	GetHandleVerifier [0x005DEFE6+1504438]
+                	GetHandleVerifier [0x0068DDA5+2220661]
+                	GetHandleVerifier [0x004E5589+481881]
+                	GetHandleVerifier [0x004E4639+477961]
+                	Ordinal0 [0x004028BD+2107581]
+                	Ordinal0 [0x00406728+2123560]
+                	Ordinal0 [0x00406862+2123874]
+                	Ordinal0 [0x0040FA81+2161281]
+                	BaseThreadInitThunk [0x752BFA29+25]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A7E+286]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A4E+238]
+                    at Element.runCommandWithHooks (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:100:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:67:44)
+                    at Element.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:239:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:60:23)
+                    at Element.elementErrorHandlerCallbackFn (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:23:65)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at Element.elementErrorHandlerCallback (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:44:12)
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:29:34)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:72:13)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630347539521' status='broken' stop='1630347542286'>
+            <name>TC_06_To Verify Login Functionality With Valid Username Blank Password</name>
+            <title>TC_06_To Verify Login Functionality With Valid Username Blank Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='cbc2829c-8458-43c6-9a4a-3acf535db6e0-attachment.png' type='image/png' size='393177'/>
+                <attachment title='Console Logs' source='87a7a2d4-d318-47aa-850e-9e8bedfdb93a-attachment.html' type='text/html' size='245'/>
+                <attachment title='Execution video' source='7361904f-81a4-4aec-83ad-a277ea5bfc6a-attachment.mp4' type='video/mp4' size='163'/>
+            </attachments>
+            <failure>
+                <message>element not interactable
+                  (Session info: chrome=92.0.4515.159)</message>
+                <stack-trace>Backtrace:
+                	Ordinal0 [0x00462A33+2501171]
+                	Ordinal0 [0x003FD1C1+2085313]
+                	Ordinal0 [0x00301E70+1056368]
+                	Ordinal0 [0x0032D547+1234247]
+                	Ordinal0 [0x003231B7+1192375]
+                	Ordinal0 [0x00345653+1332819]
+                	Ordinal0 [0x00322FD6+1191894]
+                	Ordinal0 [0x0034573A+1333050]
+                	Ordinal0 [0x003548BC+1394876]
+                	Ordinal0 [0x0034551B+1332507]
+                	Ordinal0 [0x00321D74+1187188]
+                	Ordinal0 [0x00322BD9+1190873]
+                	GetHandleVerifier [0x005DEFE6+1504438]
+                	GetHandleVerifier [0x0068DDA5+2220661]
+                	GetHandleVerifier [0x004E5589+481881]
+                	GetHandleVerifier [0x004E4639+477961]
+                	Ordinal0 [0x004028BD+2107581]
+                	Ordinal0 [0x00406728+2123560]
+                	Ordinal0 [0x00406862+2123874]
+                	Ordinal0 [0x0040FA81+2161281]
+                	BaseThreadInitThunk [0x752BFA29+25]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A7E+286]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A4E+238]
+                    at Element.runCommandWithHooks (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:100:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:67:44)
+                    at Element.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:239:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:60:23)
+                    at Element.elementErrorHandlerCallbackFn (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:23:65)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at Element.elementErrorHandlerCallback (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:44:12)
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:29:34)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:86:13)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1630347542300' status='broken' stop='1630347544912'>
+            <name>TC_01_To Verify Login With Social Login</name>
+            <title>TC_01_To Verify Login With Social Login</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='6344bafd-9f84-4938-8da1-86aec61539bb-attachment.png' type='image/png' size='393177'/>
+                <attachment title='Console Logs' source='a509aa8e-2fb7-4686-9a71-2a472ee35258-attachment.html' type='text/html' size='245'/>
+                <attachment title='Execution video' source='03200826-5b1d-49bc-a11d-07274b9844c0-attachment.mp4' type='video/mp4' size='132'/>
+            </attachments>
+            <failure>
+                <message>element not interactable
+                  (Session info: chrome=92.0.4515.159)</message>
+                <stack-trace>Backtrace:
+                	Ordinal0 [0x00462A33+2501171]
+                	Ordinal0 [0x003FD1C1+2085313]
+                	Ordinal0 [0x00301E70+1056368]
+                	Ordinal0 [0x0032D547+1234247]
+                	Ordinal0 [0x003231B7+1192375]
+                	Ordinal0 [0x00345653+1332819]
+                	Ordinal0 [0x00322FD6+1191894]
+                	Ordinal0 [0x0034573A+1333050]
+                	Ordinal0 [0x003548BC+1394876]
+                	Ordinal0 [0x0034551B+1332507]
+                	Ordinal0 [0x00321D74+1187188]
+                	Ordinal0 [0x00322BD9+1190873]
+                	GetHandleVerifier [0x005DEFE6+1504438]
+                	GetHandleVerifier [0x0068DDA5+2220661]
+                	GetHandleVerifier [0x004E5589+481881]
+                	GetHandleVerifier [0x004E4639+477961]
+                	Ordinal0 [0x004028BD+2107581]
+                	Ordinal0 [0x00406728+2123560]
+                	Ordinal0 [0x00406862+2123874]
+                	Ordinal0 [0x0040FA81+2161281]
+                	BaseThreadInitThunk [0x752BFA29+25]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A7E+286]
+                	RtlGetAppContainerNamedObjectPath [0x76FE7A4E+238]
+                    at Element.runCommandWithHooks (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:100:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:67:44)
+                    at Element.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:239:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:60:23)
+                    at Element.elementErrorHandlerCallbackFn (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:23:65)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at Element.elementErrorHandlerCallback (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:44:12)
+                    at Login.loginViaPassword (C:\DroomFinal\Droom-WDIO\Pages\Web\LoginWithPasswordPage.js:29:34)
+                    at async Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:101:13)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

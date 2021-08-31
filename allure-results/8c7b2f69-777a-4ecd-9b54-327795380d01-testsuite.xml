@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1630377174016' stop='1630377203340'>
+    <name>Login Via Password</name>
+    <title>Login Via Password</title>
+    <test-cases>
+        <test-case start='1630377174127' status='broken' stop='1630377203307'>
+            <name>TC_01_To Verify Login With Social Login</name>
+            <title>TC_01_To Verify Login With Social Login</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='3bcd509e-8b9c-4901-b891-12c3c649c85f-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='4d73b49a-7360-4405-8210-6762612a89e4-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='05803b2b-20ea-404a-a667-b57c07cdab61-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='bdf77379-d601-4904-8d5e-5d78adc56ac2-attachment.png' type='image/png' size='15119'/>
+                <attachment title='Screenshot' source='881f4754-c74e-4ef3-bcec-e7ac34d6adbe-attachment.png' type='image/png' size='15119'/>
+                <attachment title='Screenshot' source='c7eadbab-6960-4aa7-b53d-2a977d2eae21-attachment.png' type='image/png' size='16593'/>
+                <attachment title='Screenshot' source='63a37437-b70e-48ca-9577-6846a9604add-attachment.png' type='image/png' size='16593'/>
+                <attachment title='Screenshot' source='b0190fd0-7914-4980-9557-776f6d2c78e4-attachment.png' type='image/png' size='16724'/>
+                <attachment title='Screenshot' source='8e3e8185-e55b-4c6e-a47f-236b1a81ab28-attachment.png' type='image/png' size='16415'/>
+                <attachment title='Console Logs' source='b86a0d62-e2a8-4cb7-bf08-1ce564358d87-attachment.html' type='text/html' size='322'/>
+                <attachment title='Execution video' source='62afd98b-7f77-40f9-b505-bdb7171e6de1-attachment.mp4' type='video/mp4' size='132'/>
+            </attachments>
+            <failure>
+                <message>Can't call click on element with selector "(//button[@type="submit"])[1]" because element wasn't found</message>
+                <stack-trace>Error: Can't call click on element with selector "(//button[@type="submit"])[1]" because element wasn't found
+                    at Object.implicitWait [as default] (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\utils\implicitWait.js:34:19)
+                    at async Element.elementErrorHandlerCallbackFn (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:19:29)
+                    at async Element.runCommandWithHooks (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:105:25)
+                    at Element.runCommandWithHooks (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:100:24)
+                    at Element.wrapCommandFn (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\sync\build\wrapCommand.js:67:44)
+                    at Element.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:239:24)
+                    at Element.elementErrorHandlerCallback (C:\DroomFinal\Droom-WDIO\node_modules\webdriverio\build\middlewares.js:44:12)
+                    at Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:106:59)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -1,0 +1,88 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1630376298145' stop='1630376392342'>
+    <name>Login Via Password</name>
+    <title>Login Via Password</title>
+    <test-cases>
+        <test-case start='1630376298234' status='passed' stop='1630376339336'>
+            <name>TC_02_Login with Valid UserName and Invalid Password</name>
+            <title>TC_02_Login with Valid UserName and Invalid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='bc28267c-458c-4aec-9a24-1afa9097a337-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='95814cfd-782d-4df6-90e9-f5073cfbea05-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='da21719c-a114-49fe-8b33-79d959254138-attachment.png' type='image/png' size='70807'/>
+                <attachment title='Screenshot' source='2e0a4e69-f194-4bca-acc3-3daf4143829f-attachment.png' type='image/png' size='64559'/>
+                <attachment title='Screenshot' source='1a405e2a-7fad-4185-8eb5-bce0fca8068c-attachment.png' type='image/png' size='64559'/>
+                <attachment title='Screenshot' source='afa82d7d-765b-4dbd-ae0a-280ca75b31e4-attachment.png' type='image/png' size='65291'/>
+                <attachment title='Screenshot' source='ab220b44-526b-4359-a956-fb2eed767806-attachment.png' type='image/png' size='71684'/>
+                <attachment title='Screenshot' source='ecbd00aa-b19e-4f3b-9784-14838a9ec36f-attachment.png' type='image/png' size='66826'/>
+                <attachment title='Console Logs' source='a4fd43c8-eb62-4240-8a9e-6c204b8330d4-attachment.html' type='text/html' size='456'/>
+                <attachment title='Execution video' source='bca92dbc-a764-4f78-9a69-99a5352e7afb-attachment.mp4' type='video/mp4' size='145'/>
+            </attachments>
+        </test-case>
+        <test-case start='1630376339373' status='passed' stop='1630376379494'>
+            <name>TC_03_Login with InValid UserName and Valid Password</name>
+            <title>TC_03_Login with InValid UserName and Valid Password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='d3a1cdca-7c59-4b36-84b7-50bfd16d87a7-attachment.png' type='image/png' size='66826'/>
+                <attachment title='Screenshot' source='4fa8afb8-1221-4ff8-96f8-e5610c88643e-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='e4b767ff-aabc-488d-ae2b-121da0eb5589-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='eb4a2ae2-9a6f-48f8-bb34-fca9fda0e20e-attachment.png' type='image/png' size='70761'/>
+                <attachment title='Screenshot' source='74dc7d75-3770-4471-a85c-8b9f303eea30-attachment.png' type='image/png' size='64505'/>
+                <attachment title='Screenshot' source='1d20ec7a-6ec3-4d78-bc3f-0c4747547721-attachment.png' type='image/png' size='64505'/>
+                <attachment title='Screenshot' source='f00fcac7-8163-49c6-ac72-9973e1f30564-attachment.png' type='image/png' size='65259'/>
+                <attachment title='Screenshot' source='92a0102b-5ed1-4d34-ae2d-fe78ede881c2-attachment.png' type='image/png' size='69059'/>
+                <attachment title='Screenshot' source='b78a7acc-b9bc-42f2-91ff-5823b2e15c5b-attachment.png' type='image/png' size='65854'/>
+                <attachment title='Console Logs' source='654d2e62-c00f-401e-8ce1-736e7da8df51-attachment.html' type='text/html' size='439'/>
+                <attachment title='Execution video' source='ca1372ba-0afc-4d9e-a2e2-06d9ea0a121e-attachment.mp4' type='video/mp4' size='145'/>
+            </attachments>
+        </test-case>
+        <test-case start='1630376379509' status='passed' stop='1630376392283'>
+            <name>TC_01_To Verify Login With Social Login</name>
+            <title>TC_01_To Verify Login With Social Login</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='fe776f1b-2275-431e-ad57-6d77da846a56-attachment.png' type='image/png' size='65854'/>
+                <attachment title='Screenshot' source='1e7f16c1-19b9-469c-acda-a1da78a06875-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='43d721e3-1faf-4f9c-9b9b-28d8cef3db63-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='3d71b990-3a76-4791-9ec7-d54d9a598b42-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='3030f67f-14b5-4ce1-9958-01ca7d675849-attachment.png' type='image/png' size='15119'/>
+                <attachment title='Screenshot' source='d558994a-2472-428c-af68-c18958260d2f-attachment.png' type='image/png' size='15138'/>
+                <attachment title='Screenshot' source='a4078c83-5a83-48b8-bcb6-1863d9e32db8-attachment.png' type='image/png' size='16593'/>
+                <attachment title='Screenshot' source='4c0bccd1-29a3-44b4-85d1-f78d5a6b4142-attachment.png' type='image/png' size='16593'/>
+                <attachment title='Screenshot' source='d26475b1-8e34-44e0-aa6b-b6f9728a6882-attachment.png' type='image/png' size='16724'/>
+                <attachment title='Screenshot' source='61532f86-efbe-4d0c-b6d0-05fd0489bab8-attachment.png' type='image/png' size='16415'/>
+                <attachment title='Console Logs' source='019bc45a-10c5-4d61-a373-4119320f620d-attachment.html' type='text/html' size='383'/>
+                <attachment title='Execution video' source='2c5fb4f0-1195-4315-8a4e-5fdb34e80d6d-attachment.mp4' type='video/mp4' size='132'/>
+            </attachments>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

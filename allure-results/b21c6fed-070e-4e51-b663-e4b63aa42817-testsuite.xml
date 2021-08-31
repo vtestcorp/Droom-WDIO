@@ -1,0 +1,41 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1630377108410' stop='1630377118452'>
+    <name>Login Via Password</name>
+    <title>Login Via Password</title>
+    <test-cases>
+        <test-case start='1630377108544' status='broken' stop='1630377118437'>
+            <name>TC_01_To Verify Login With Social Login</name>
+            <title>TC_01_To Verify Login With Social Login</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-92.0.4515.159'/>
+                <parameter kind='argument' name='browserVersion' value='92.0.4515.159'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='4ffa50f9-9eb7-4f1b-9cf8-574419cd6f7a-attachment.png' type='image/png' size='66468'/>
+                <attachment title='Screenshot' source='4cbbf6f2-6f4a-4c2f-958b-2b469d057ea3-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='802fca7b-4eec-4b98-b844-2595ba950f65-attachment.png' type='image/png' size='66428'/>
+                <attachment title='Screenshot' source='2a8caa02-6a4b-4b16-a53d-b76a4f97d3bb-attachment.png' type='image/png' size='15119'/>
+                <attachment title='Screenshot' source='d3e6f948-a1aa-4375-bf79-6d0a2c1b324b-attachment.png' type='image/png' size='15119'/>
+                <attachment title='Screenshot' source='97a6b77f-eaef-499d-905b-4d6644d3461e-attachment.png' type='image/png' size='16593'/>
+                <attachment title='Screenshot' source='4c25b98e-2021-4276-86ba-f2351c847a5d-attachment.png' type='image/png' size='16593'/>
+                <attachment title='Screenshot' source='3e804856-1c68-4ad2-b9b1-1c6976948493-attachment.png' type='image/png' size='16724'/>
+                <attachment title='Console Logs' source='fe63730d-c869-4419-aaef-ac686a6a03c0-attachment.html' type='text/html' size='322'/>
+                <attachment title='Execution video' source='c614b097-1c0e-40cf-9e0d-4eae03b93129-attachment.mp4' type='video/mp4' size='132'/>
+            </attachments>
+            <failure>
+                <message>LoginWithPasswordPage.submitBtn.click is not a function</message>
+                <stack-trace>TypeError: LoginWithPasswordPage.submitBtn.click is not a function
+                    at Context.&lt;anonymous> (C:\DroomFinal\Droom-WDIO\test\Web\LoginWithPassword.js:106:51)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at async Context.executeAsync (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\shim.js:285:16)
+                    at async Context.testFrameworkFnWrapper (C:\DroomFinal\Droom-WDIO\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:52:18)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
