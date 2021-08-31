@@ -21,6 +21,6 @@ class Search {
     get filterForActiva() { return $('//label[normalize-space()="Most Relevant"]') }
     get priceFilter(){return $('//a[normalize-space()="Price (Low to High)"]')}
     get headingAfterFilter(){return $('//h1[contains(text(),"No results found for")]')}
-
+get trendingItem(){return $('(//a[@href="https://droom.in/cars/new/tata-nexon"][1])')}
 }
 module.exports = new Search()
