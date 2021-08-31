@@ -1,7 +1,7 @@
 const video = require('wdio-video-reporter');
 exports.config = {
     specs: [
-        './test/Web/**/LoginWithPassword.js'
+        './test/Web/LoginWithPassword.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -59,7 +59,6 @@ beforeSuite: function (suite) {
     mochaOpts: {
         ui: 'bdd',
         timeout: 80000,
-        require:['@babel/register']
     },
     //
     // =====
@@ -103,7 +102,7 @@ beforeSuite: function (suite) {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-     beforeEach: function (capabilities, specs) {
+     before: function (capabilities, specs) {
         browser.url('/');
         browser.maximizeWindow();
     
