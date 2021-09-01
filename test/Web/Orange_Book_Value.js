@@ -1,199 +1,214 @@
-
-const Base = require('../../BaseClass/base');
-const { orangeBookValue_2 } = require('../../Pages/OBVPage/Orange_Book_ValuePage');
-const Orange_Book_ValuePage = require('../../Pages/OBVPage/Orange_Book_ValuePage')
+const Base = require('../../BaseClass/base')
+const Orange_Book_ValuePage = require('../../Pages/Web/Orange_Book_ValuePage')
 describe('Orange Book Value', () => {
     it('TC_01 Verify the fields on OBV page', async () => {
         await Base.loginAsBuyer()
-        await browser.pause(5000)
-        await Orange_Book_ValuePage.shop_by_category.click()
+        await (await Orange_Book_ValuePage.shop_by_category).waitForClickable({ timeout: 3000 })
+        await (await Orange_Book_ValuePage.shop_by_category).click()
         console.log("Clicked on Shop By category")
-        await Orange_Book_ValuePage.services.moveTo()
+        await (await Orange_Book_ValuePage.services).moveTo()
         console.log("Moved to Certification Services")
-        await Orange_Book_ValuePage.obv.click()
+        await (await Orange_Book_ValuePage.obv).click()
         console.log("Clicked on OBV")
-        await expect(Orange_Book_ValuePage.title_pricing_report).toBeDisplayed()
+        expect(await Orange_Book_ValuePage.title_pricing_report).toBeDisplayed()
         console.log("Get the new Pricing report Title dispalyed on the page")
-        expect(Orange_Book_ValuePage.title_pricing_report).toHaveTextContaining("Get the new Pricing report");
-        await expect(Orange_Book_ValuePage.pricing_cal).toBeDisplayed()
+        expect(await Orange_Book_ValuePage.title_pricing_report).toHaveTextContaining("Get the new Pricing report")
+        expect(await Orange_Book_ValuePage.pricing_cal).toBeDisplayed()
         console.log("Used Vehicle Pricing Calculator Heading is Displayed")
-        expect(Orange_Book_ValuePage.pricing_cal).toHaveTextContaining("Used Vehicle Pricing Calculator");
-        await expect(Orange_Book_ValuePage.buyer_tab).toBeDisplayed()
-        console.log(await Orange_Book_ValuePage.buyer_tab.getText());
+        expect(await Orange_Book_ValuePage.pricing_cal).toHaveTextContaining("Used Vehicle Pricing Calculator")
+        expect(await Orange_Book_ValuePage.buyer_tab).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.buyer_tab).getText())
         console.log("I Want to buy Tab is displayed for Buyer")
-        await expect(Orange_Book_ValuePage.seller_tab).toBeDisplayed()
-        console.log(await Orange_Book_ValuePage.seller_tab.getText());
+        expect(await Orange_Book_ValuePage.seller_tab).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.seller_tab).getText())
         console.log("I Want to Sell Tab is displayed for Sellet")
 
     });
-
     it('TC_02 Verify the pricing report functionality for "I want to Buy from an Individual"', async () => {
-
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
-        await expect(Orange_Book_ValuePage.buyer_tab).toBeDisplayed()
-        await browser.pause(2000)
-        console.log(await Orange_Book_ValuePage.buyer_tab.getText());
+        expect(await Orange_Book_ValuePage.buyer_tab).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.buyer_tab).getText())
         console.log("I Want to buy Tab is displayed for Buyer")
-        await browser.pause(2000)
         await Orange_Book_ValuePage.toTakeInputs()
         console.log("Pricing Report displayed on check OBV page")
-        console.log(await Orange_Book_ValuePage.result.getText())
-        expect(Orange_Book_ValuePage.result).toHaveTextContaining("Audi");
-
-
+        console.log(await (await Orange_Book_ValuePage.result).getText())
+        expect(await Orange_Book_ValuePage.result).toHaveTextContaining("Audi")
     });
 
     it('TC_03 Verify the pricing report functionality for "I want to Buy from a Dealer"', async () => {
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
-        await expect(Orange_Book_ValuePage.buyer_tab).toBeDisplayed()
-        await browser.pause(2000)
-        console.log(await Orange_Book_ValuePage.buyer_tab.getText());
+        expect(Orange_Book_ValuePage.buyer_tab).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.buyer_tab).getText())
         console.log("I Want to buy Tab is displayed for Buyer")
-        await browser.pause(2000)
-        await Orange_Book_ValuePage.from_dealer.click()
+        await (await Orange_Book_ValuePage.from_dealer).click()
         await Orange_Book_ValuePage.toTakeInputs()
-
         console.log("Pricing Report displayed on check OBV page")
-        console.log(await Orange_Book_ValuePage.result.getText())
-        expect(await Orange_Book_ValuePage.result).toHaveTextContaining("Audi");
-
+        console.log(await (await Orange_Book_ValuePage.result).getText())
+        expect(await Orange_Book_ValuePage.result).toHaveTextContaining("Audi")
     });
-
-
     it('TC_04 Verify the pricing report functionality for "I want to sell to an Individual"', async () => {
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
         await expect(Orange_Book_ValuePage.seller_tab).toBeDisplayed()
-        await Orange_Book_ValuePage.seller_tab.click()
-        await browser.pause(2000)
-        console.log(await Orange_Book_ValuePage.seller_tab.getText());
+        await (await Orange_Book_ValuePage.seller_tab).click()
+        console.log(await (await Orange_Book_ValuePage.seller_tab).getText())
         console.log("I Want to Sell Tab is displayed for Seller")
-        await browser.pause(2000)
         await Orange_Book_ValuePage.toTakeInputs()
-        await browser.pause(2000)
-        await expect(Orange_Book_ValuePage.result).toBeDisplayed()
-        console.log(await Orange_Book_ValuePage.result.getText())
-        expect(await Orange_Book_ValuePage.result).toHaveTextContaining("Audi");
+        expect(await Orange_Book_ValuePage.result).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.result).getText())
+        expect(await Orange_Book_ValuePage.result).toHaveTextContaining("Audi")
     });
-
 
     it('TC_05 Verify the pricing report functionality for "I want to sell to a Dealer"', async () => {
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
-        await expect(Orange_Book_ValuePage.seller_tab).toBeDisplayed()
-        await Orange_Book_ValuePage.seller_tab.click()
-        await browser.pause(2000)
-        console.log(await Orange_Book_ValuePage.seller_tab.getText());
+        expect(Orange_Book_ValuePage.seller_tab).toBeDisplayed()
+        await (await Orange_Book_ValuePage.seller_tab).click()
+        console.log(await (await Orange_Book_ValuePage.seller_tab).getText())
         console.log("I Want to sell Tab is displayed for seller")
-        await browser.pause(2000)
-        await Orange_Book_ValuePage.to_dealer.click()
+        await (await Orange_Book_ValuePage.to_dealer).click()
         await Orange_Book_ValuePage.toTakeInputs()
-        await expect(Orange_Book_ValuePage.result).toBeDisplayed()
-        console.log(await Orange_Book_ValuePage.result.getText())
-        expect(await Orange_Book_ValuePage.result).toHaveTextContaining("Audi");
+        expect(Orange_Book_ValuePage.result).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.result).getText())
+        expect(Orange_Book_ValuePage.result).toHaveTextContaining("Audi")
     })
-
     it('TC_06 Verify the Grades on pricing report', async () => {
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
         await expect(Orange_Book_ValuePage.buyer_tab).toBeDisplayed()
-        await browser.pause(2000)
-        console.log(await Orange_Book_ValuePage.buyer_tab.getText());
+        console.log(await (await Orange_Book_ValuePage.buyer_tab).getText())
         console.log("I Want to buy Tab is displayed for Buyer")
-        await browser.pause(2000)
         await Orange_Book_ValuePage.toTakeInputs()
-        console.log(await Orange_Book_ValuePage.result.getText())
-        expect(Orange_Book_ValuePage.result).toHaveTextContaining("Audi");
+        console.log(await (await Orange_Book_ValuePage.result).getText())
+        expect(Orange_Book_ValuePage.result).toHaveTextContaining("Audi")
         console.log("Pricing Report displayed on check OBV page")
         await expect(Orange_Book_ValuePage.good).toBeDisplayed()
         console.log("Grade is displayed on OBV page after submitting required details")
-        await expect(Orange_Book_ValuePage.good).toHaveTextContaining("Good");
+        await expect(Orange_Book_ValuePage.good).toHaveTextContaining("Good")
         console.log("OBV Pricing Report suggested the Good value of vehicle.. by analysing all the inputs given by the user.")
-
     });
 
     it('TC_07 Verify used functionality on vehicle pricing calulator on OBV', async () => {
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
-        await expect(Orange_Book_ValuePage.seller_tab).toBeDisplayed()
-        await browser.pause(2000)
-        console.log(await Orange_Book_ValuePage.seller_tab.getText());
-        console.log("I Want to buy Tab is displayed for Buyer")
-        await browser.pause(2000)
+        expect(await Orange_Book_ValuePage.seller_tab).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.seller_tab).getText())
+        console.log("I Want to Sell Tab is displayed for seller")
         await Orange_Book_ValuePage.toTakeInputs()
-        await Orange_Book_ValuePage.orangeBookValue_next.click()
+        await (await Orange_Book_ValuePage.orangeBookValue_next).click()
         console.log("Towards the options like New,Used ,Exchange on Vechile Pricing Calculator")
-        await browser.pause(2000)
-        await expect(Orange_Book_ValuePage.used).toBeDisplayed()
+        expect(await Orange_Book_ValuePage.used).toBeDisplayed()
         console.log("Used Option shown on the Vehicle Pricing Calculator")
-        await Orange_Book_ValuePage.used.click()
-        await expect(Orange_Book_ValuePage.used_vehicle_info).toBeDisplayed()
-        console.log(await Orange_Book_ValuePage.used_vehicle_info.getText())
-        await Orange_Book_ValuePage.IWantToBuy2.click()
-        await Orange_Book_ValuePage.from_individual2.click()
-        await Orange_Book_ValuePage.toTakeInputsForOBV()
-        await expect(Orange_Book_ValuePage.check_OBV).toBeDisplayed()
-        await expect(Orange_Book_ValuePage.check_OBV).toHaveTextContaining("Check OBV");
-        console.log("Check OBV tab is shown after giving details for Used car on Vechile Pricing Calculator")
+        await (await Orange_Book_ValuePage.used).click()
+        expect(await Orange_Book_ValuePage.used_vehicle_info).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.used_vehicle_info).getText())
+
+        await Orange_Book_ValuePage.toinputForUsedVechile()
+        expect(await Orange_Book_ValuePage.good).toBeDisplayed()
+        expect(await Orange_Book_ValuePage.good).toHaveTextContaining("Good")
+        console.log('OBV Pricing Report suggested the fair value of vehicle basd on input given by the user')
     });
+
     it('TC_08 Verify New functionality on vehicle pricing calulator on OBV', async () => {
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
-        await expect(Orange_Book_ValuePage.seller_tab).toBeDisplayed()
-        await browser.pause(2000)
-        console.log(await Orange_Book_ValuePage.seller_tab.getText());
-        console.log("I Want to buy Tab is displayed for Buyer")
-        await browser.pause(2000)
+        expect(await Orange_Book_ValuePage.seller_tab).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.seller_tab).getText())
         await Orange_Book_ValuePage.toTakeInputs()
-        await Orange_Book_ValuePage.orangeBookValue_next.click()
+        await (await Orange_Book_ValuePage.orangeBookValue_next).click()
         console.log("Towards the options like New,Used ,Exchange on Vechile Pricing Calculator")
-        await browser.pause(2000)
-        await Orange_Book_ValuePage.inputForNewVechicle()
-       
+        expect(await Orange_Book_ValuePage.newOne).toBeDisplayed()
+        console.log("New Option shown on the Vehicle Pricing Calculator")
+        await (await Orange_Book_ValuePage.newOne).click()
+        expect(Orange_Book_ValuePage.used_vehicle_info).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.used_vehicle_info).getText())
+        await Orange_Book_ValuePage.toinputForNewVechicle()
     })
 
     it('TC_09 Verify Exchange functionality on vehicle pricing calulator on OBV', async () => {
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
-        await expect(Orange_Book_ValuePage.seller_tab).toBeDisplayed()
-        await browser.pause(2000)
-        console.log(await Orange_Book_ValuePage.seller_tab.getText());
+        expect(await Orange_Book_ValuePage.buyer_tab).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.buyer_tab).getText())
         console.log("I Want to buy Tab is displayed for Buyer")
-        await browser.pause(2000)
         await Orange_Book_ValuePage.toTakeInputs()
-        await Orange_Book_ValuePage.orangeBookValue_next.click()
+        await (await Orange_Book_ValuePage.orangeBookValue_next).click()
         console.log("Towards the options like New,Used ,Exchange on Vechile Pricing Calculator")
-        await browser.pause(2000)
-        await expect(Orange_Book_ValuePage.used).toBeDisplayed()
-        console.log("Used Option shown on the Vehicle Pricing Calculator")
-        await Orange_Book_ValuePage.used.click()
-        await expect(Orange_Book_ValuePage.used_vehicle_info).toBeDisplayed()
-        console.log(await Orange_Book_ValuePage.used_vehicle_info.getText())
-        await Orange_Book_ValuePage.IWantToBuy2.click()
-        await Orange_Book_ValuePage.from_individual2.click()
-        await Orange_Book_ValuePage.toTakeInputsForOBV()
-        await expect(Orange_Book_ValuePage.check_OBV).toBeDisplayed()
-        await expect(Orange_Book_ValuePage.check_OBV).toHaveTextContaining("Check OBV");
-        console.log("Check OBV tab is shown after giving details for Used car on Vechile Pricing Calculator")
+       await (await Orange_Book_ValuePage.exchange).waitForDisplayed({ timeout: 3000 })
+        expect(await Orange_Book_ValuePage.exchange).toBeDisplayed()
+        console.log("Exchange option shown on the Vehicle Pricing Calculator")
+        await (await Orange_Book_ValuePage.exchange).click()
+        expect(await Orange_Book_ValuePage.exchange_Info).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.exchange_Info).getText())
+        await Orange_Book_ValuePage.toinputForExchangeVehicle()
+        expect(await Orange_Book_ValuePage.check_ExchangePrice).toBeDisplayed()
+        await (await Orange_Book_ValuePage.check_ExchangePrice).click()
+        expect(await Orange_Book_ValuePage.heading_exchnagePrice).toBeDisplayed()
+        expect(await Orange_Book_ValuePage.heading_exchnagePrice).toHaveTextContaining("Amount You will need to pay for this Exchange")
+        console.log("After click on the Check Exchange  price Amount You will need to pay for this Exchange is displayed")
     });
-
-
     it('TC_10 Verify Future price functionality on vehicle pricing calulator on OBV', async () => {
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
-        await expect(Orange_Book_ValuePage.seller_tab).toBeDisplayed()
-        await browser.pause(2000)
-        console.log(await Orange_Book_ValuePage.seller_tab.getText());
-        console.log("I Want to buy Tab is displayed for Buyer")
-        await browser.pause(2000)
+        expect(await Orange_Book_ValuePage.seller_tab).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.seller_tab).getText())
+        console.log("I Want to sell Tab is displayed for seller")
         await Orange_Book_ValuePage.toTakeInputs()
-        await Orange_Book_ValuePage.orangeBookValue_next.click()
+        await (await Orange_Book_ValuePage.orangeBookValue_next).click()
         console.log("Towards the options like New,Used ,Exchange on Vechile Pricing Calculator")
-        await browser.pause(2000)
-        await expect(Orange_Book_ValuePage.futurePrice).toBeDisplayed()
-        console.log("Future Price Option shown on the Vehicle Pricing Calculator")
-        await Orange_Book_ValuePage.used.click()
-        await expect(Orange_Book_ValuePage.used_vehicle_info).toBeDisplayed()
-        console.log(await Orange_Book_ValuePage.used_vehicle_info.getText())
-        await Orange_Book_ValuePage.IWantToBuy2.click()
-        await Orange_Book_ValuePage.from_individual2.click()
-        await Orange_Book_ValuePage.toTakeInputsForOBV()
-        await expect(Orange_Book_ValuePage.check_OBV).toBeDisplayed()
-        await expect(Orange_Book_ValuePage.check_OBV).toHaveTextContaining("Check OBV");
-        console.log("Check OBV tab is shown after giving details for Used car on Vechile Pricing Calculator")
+        expect(await Orange_Book_ValuePage.futurePrice).toBeDisplayed()
+        console.log("Future Price option shown on the Vehicle Pricing Calculator")
+        await (await Orange_Book_ValuePage.futurePrice).click()
+        expect(await Orange_Book_ValuePage.futurePrice_info).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.futurePrice_info).getText())
+        await Orange_Book_ValuePage.toinputForFutureVehicle()
+        expect(await Orange_Book_ValuePage.checkFuture_Estimate).toBeDisplayed()
+        await (await Orange_Book_ValuePage.checkFuture_Estimate).click()
+        expect(await Orange_Book_ValuePage.futurePrice_Estimated).toHaveTextContaining("Future Price")
+        console.log("Future Price of BMW 3 Series 320D LUXURY LINE BS6 evolution in 2022 after 200 Kms is Displayed")
     });
 
-})
+    it('TC_11 Verify Residual functionality on vehicle pricing calulator on OBV', async () => {
+        await Orange_Book_ValuePage.toVehiclePricingCalculator()
+        expect(await Orange_Book_ValuePage.seller_tab).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.seller_tab).getText())
+        console.log("I Want to sell Tab is displayed for seller")
+        await Orange_Book_ValuePage.toTakeInputs()
+        await (await Orange_Book_ValuePage.orangeBookValue_next).click()
+        console.log("Towards the options like New,Used ,Exchange on Vechile Pricing Calculator")
+    
+        
+        expect(await Orange_Book_ValuePage.residual).toBeDisplayed()
+        console.log("Residual Option shown on the Vehicle Pricing Calculator")
+        await Orange_Book_ValuePage.residual.click()
+        expect(Orange_Book_ValuePage.residual_info).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.residual_info).getText())
+        await Orange_Book_ValuePage.toinputForResidualVehicle()
+        expect(await Orange_Book_ValuePage.checkResidual_Estimate).toBeDisplayed()
+        await (await this.checkResidual_Estimate).click()
+        expect(await Orange_Book_ValuePage.ResidualPrice_Estimated).toHaveTextContaining("Residual Price")
+        console.log("Residual Price of BMW 3 Series 320D LUXURY LINE BS6 2021 is displayed")
+    });
+    it('TC_12 Verify functionality of pricing Certificate', async () => {
+        await Orange_Book_ValuePage.toVehiclePricingCalculator()
+        expect(await Orange_Book_ValuePage.seller_tab).toBeDisplayed()
+        console.log(await (await Orange_Book_ValuePage.seller_tab).getText())
+        console.log("I Want to sell Tab is displayed for seller")
+        await Orange_Book_ValuePage.toTakeInputs()
+        await (await Orange_Book_ValuePage.orangeBookValue_next).click()
+        console.log("Towards the options like New,Used ,Exchange on Vechile Pricing Calculator")
+        expect(await Orange_Book_ValuePage.used).toBeDisplayed()
+        console.log("Used Option shown on the Vehicle Pricing Calculator")
+        await (await Orange_Book_ValuePage.used).click()
+        expect(await Orange_Book_ValuePage.used_vehicle_info).toBeDisplayed()
+        console.log(await Orange_Book_ValuePage.used_vehicle_info).getText()
+        await (await Orange_Book_ValuePage.IWantToBuy2).click()
+        await (await Orange_Book_ValuePage.from_individual2).click()
+        await Orange_Book_ValuePage.toinputForUsedVechile()
+        expect(await Orange_Book_ValuePage.check_OBV).toBeDisplayed()
+        expect(await Orange_Book_ValuePage.check_OBV).toHaveTextContaining("Check OBV")
+        console.log("Check OBV tab is shown after giving details for Used car on Vechile Pricing Calculator")
+        await (await Orange_Book_ValuePage.orangeBookValue_next).click()
+        console.log("Towards the options like New,Used ,Exchange on Vechile Pricing Calculator")
+        expect(await Orange_Book_ValuePage.viewPricingCertificate).toBeDisplayed()
+        console.log("View Pricing Certificate Button is Dsplayed")
+        await (await Orange_Book_ValuePage.viewPricingCertificate).click()
+        await (browser.switchToWindow('https://cdn1.orangebookvalue.com/photos/images/obv_sample_report.pdf'))
+        console.log("Url shows to Download Pricing Certificate")
+        console.log(await (browser.getUrl).getText())
+        expect(browser.getUrl).toHaveTextContaining("obv_sample_report.pdf")
+    });
+});
