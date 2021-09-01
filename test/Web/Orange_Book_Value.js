@@ -141,6 +141,7 @@ describe('Orange Book Value', () => {
         expect(await Orange_Book_ValuePage.heading_exchnagePrice).toHaveTextContaining("Amount You will need to pay for this Exchange")
         console.log("After click on the Check Exchange  price Amount You will need to pay for this Exchange is displayed")
     });
+
     it('TC_10 Verify Future price functionality on vehicle pricing calulator on OBV', async () => {
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
         expect(await Orange_Book_ValuePage.seller_tab).toBeDisplayed()
@@ -169,8 +170,6 @@ describe('Orange Book Value', () => {
         await Orange_Book_ValuePage.toTakeInputs()
         await (await Orange_Book_ValuePage.orangeBookValue_next).click()
         console.log("Towards the options like New,Used ,Exchange on Vechile Pricing Calculator")
-    
-        
         expect(await Orange_Book_ValuePage.residual).toBeDisplayed()
         console.log("Residual Option shown on the Vehicle Pricing Calculator")
         await Orange_Book_ValuePage.residual.click()

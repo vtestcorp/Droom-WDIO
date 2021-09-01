@@ -93,7 +93,6 @@ class OBV {
     }
 
     async toVehiclePricingCalculator() {
-
         await (await this.shop_by_category).click()
         console.log("Clicked on Shop By category")
         await (await this.services).moveTo()
@@ -133,15 +132,12 @@ class OBV {
 
         await (await this.category).selectByVisibleText('Car')
         console.log("Selected Car category")
-
         await (await (await this.make).$('//option[@id]')).waitForExist()
         await (await this.make).selectByVisibleText('Audi')
         console.log('Selected the expected Manufacuring ')
-
         await (await (await this.model).$('//option[@id]')).waitForExist()
         await (await this.model).selectByVisibleText('A5')
         console.log('Selected the expected Model of Vehicle ')
-
         await (await (await this.year).$('//option[@id]')).waitForExist()
         await (await this.year).selectByVisibleText('2020')
         console.log('Selected the expected Year of the Vehicle ')
@@ -180,11 +176,9 @@ class OBV {
         await (await (await this.exchange_category).$('//option[@id]')).waitForExist()
         await (await this.exchange_category).click()
         await (await this.exchange_category).selectByVisibleText('Scooter')
-
         await (await (await this.exchange_Make).$('//option[@id]')).waitForExist()
         await (await this.exchange_Make).click()
         await (await this.exchange_Make).selectByVisibleText('Avan')
-
         await (await (await this.exchange_Model).$('//option[@id]')).waitForExist()
         await (await this.exchange_Model).click()
         await (await this.exchange_Model).selectByVisibleText('Xero')
@@ -225,7 +219,6 @@ class OBV {
         await (await this.future_Resale_Year).selectByVisibleText('2022')
         await (await this.future_kmsDriven).click()
         await (await this.future_kmsDriven).setValue(200)
-
     }
 
     async toinputForResidualVehicle() {
@@ -252,7 +245,6 @@ class OBV {
         await (await Orange_Book_ValuePage.residual_Tenure).selectByVisibleText('11')
         await (await this.residual_kmsDriven).click()
         await (await this.residual_kmsDriven).setValue(200)
-
 
     }
 }
