@@ -1,5 +1,4 @@
 const ForgotPasswordPage = require("../../Pages/Web/ForgotPasswordPage")
-
 describe("Forgot Password", () => {
     it("TC_01 Verify The Functionality Of Log In With Old Password In Forgot Password Page", async () => {
         try {
@@ -27,6 +26,6 @@ describe("Forgot Password", () => {
         await (await ForgotPasswordPage.login).click()
         expect(await ForgotPasswordPage.sellerName).toBeDisplayed()
         console.log(await (await ForgotPasswordPage.sellerName).getText())
-        console.log('After entered old password user navigate to Home Page')
+        console.log("After entered old password user navigate to Home Page")
     });
 });

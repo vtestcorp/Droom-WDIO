@@ -36,12 +36,11 @@ describe("Check History", () => {
     it("TC_04 To Verify The List Of FAQs Is Displayed On History Page", async () => {
         await (await CheckHistory.checkHistory).click()
         await (await CheckHistory.faq).click()
+        console.log("Application shows FAQ")
         await (await CheckHistory.faq).scrollIntoView()
         expect(await CheckHistory.faq).toBeDisplayed()
-        console.log("Application shows FAQ Points")
         expect(await CheckHistory.list).toHaveChildren(5)
         console.log("Application shows FAQ Points")
-
     });
     it("TC_05 To Verify The View Sample Vehicle History Certificate Link Is Functional", async () => {
         await (await CheckHistory.checkHistory).click()
@@ -49,14 +48,16 @@ describe("Check History", () => {
         await (await CheckHistory.certificateLink).click()
         console.log("User click on sample Vehicle History Certificate Link")
         expect(await CheckHistory.sampleCertificate).toBeDisplayed()
-        console.log("Sample Certificate Displayed")
         console.log(await (await CheckHistory.sampleCertificate).getText())
+        console.log("Sample Certificate Displayed")
     });
     it("TC_06 To Verify The Home Option Is Functional On History Page", async () => {
         browser.url('/')
+        await (await CheckHistory.checkHistory).waitForDisplayed({ timeout: 2000 })
         console.log(await (await CheckHistory.checkHistory).isClickable())
         await (await CheckHistory.checkHistory).click()
         console.log("User click on Check History")
+        await (await CheckHistory.checkHistory).waitForDisplayed({ timeout: 2000 })
         console.log(await (await CheckHistory.homeTab).isClickable())
         await (await CheckHistory.homeTab).click()
         console.log(await browser.getUrl())

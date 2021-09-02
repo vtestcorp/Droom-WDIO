@@ -2,7 +2,7 @@ const Base = require('../../BaseClass/base')
 const UnlockFeePayment = require('../../Pages/Web/UnlockFeePaymentPage')
 const LoginWithPasswordPage = require('../../Pages/Web/LoginViaPasswordPage')
 describe("Unlock Fee Payment", () => {
-    it("TC_01 Verify The Tokan Amount For Car Is 999", async () => {
+   it("TC_01 Verify The Tokan Amount For Car Is 999", async () => {
         await Base.loginAsBuyer()
         await UnlockFeePayment.submitRequirements()
         await UnlockFeePayment.SelectCarCondition()
@@ -32,4 +32,4 @@ describe("Unlock Fee Payment", () => {
         console.log("Application shows Best Match Unlock Fee(499) for Bike")
         await LoginWithPasswordPage.logout()
     });
-});
+   });
