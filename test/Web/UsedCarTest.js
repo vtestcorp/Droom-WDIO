@@ -80,7 +80,7 @@ describe('Used Car', async () => {
     expect(await UsedCarPage.almostDone).toBeDisplayed()
     await UsedCarPage.clickOnSubmit()
     await UsedCarPage.clickOngetRequirements()
-    console.log(await(await UsedCarPage.fuleTypes).getText())
+    console.log(await (await UsedCarPage.fuleTypes).getText())
     expect(await UsedCarPage.newRequirements).toBeDisplayed()
 
   });
@@ -101,7 +101,7 @@ describe('Used Car', async () => {
     expect(await UsedCarPage.almostDone).toBeDisplayed()
     await UsedCarPage.clickOnSubmit()
     await UsedCarPage.clickOngetRequirements()
-    console.log(await(await UsedCarPage.extColor).getText())
+    console.log(await (await UsedCarPage.extColor).getText())
     expect(await UsedCarPage.newRequirements).toBeDisplayed()
   });
   it('Tc_09 Verify user able to select use car as per the Transmission Type', async () => {
@@ -122,7 +122,7 @@ describe('Used Car', async () => {
     expect(await UsedCarPage.almostDone).toBeDisplayed()
     await UsedCarPage.clickOnSubmit()
     await UsedCarPage.clickOngetRequirements()
-    console.log(await(await UsedCarPage.transmissionType).getText())
+    console.log(await (await UsedCarPage.transmissionType).getText())
     expect(await UsedCarPage.newRequirements).toBeDisplayed()
   });
   it('Tc_10 Verify user able to select use car as per the Do you also need option', async () => {
@@ -144,7 +144,7 @@ describe('Used Car', async () => {
     expect(await UsedCarPage.almostDone).toBeDisplayed()
     await UsedCarPage.clickOnSubmit()
     await UsedCarPage.clickOngetRequirements()
-    console.log(await(await UsedCarPage.service).getText())
+    console.log(await (await UsedCarPage.service).getText())
     expect(await UsedCarPage.newRequirements).toBeDisplayed()
   });
   it('Tc_11 Verify user is able to select use car as per the How Quickly Do You Want to Buy? option', async () => {
@@ -167,7 +167,7 @@ describe('Used Car', async () => {
     expect(await UsedCarPage.almostDone).toBeDisplayed()
     await UsedCarPage.clickOnSubmit()
     await UsedCarPage.clickOngetRequirements()
-    console.log(await(await UsedCarPage.needToBuy).getText())
+    console.log(await (await UsedCarPage.needToBuy).getText())
     expect(await UsedCarPage.newRequirements).toBeDisplayed()
   });
   it('Tc_12 Verify user is able to select use car as per the Do You Wish to Exchange Your Vehicle option', async () => {
@@ -193,7 +193,7 @@ describe('Used Car', async () => {
     expect(await UsedCarPage.almostDone).toBeDisplayed()
     await UsedCarPage.clickOnSubmit()
     await UsedCarPage.clickOngetRequirements()
-    console.log(await(await UsedCarPage.exchangeV).getText())
+    console.log(await (await UsedCarPage.exchangeV).getText())
     expect(await UsedCarPage.newRequirements).toBeDisplayed()
   });
   it('Tc_13 Validation for match count while req creation and in req page', async () => {
@@ -213,7 +213,6 @@ describe('Used Car', async () => {
     await UsedCarPage.clickOnNext()
     expect(await UsedCarPage.almostDone).toBeDisplayed()
     await UsedCarPage.clickOnSubmit()
-
   });
 
 });

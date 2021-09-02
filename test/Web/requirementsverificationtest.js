@@ -52,5 +52,4 @@ describe('Requirements page verification', async () => {
         expect(requirementsverificationpage.payment).toBeDisplayed()
         console.log(await (await requirementsverificationpage.payment).getText())
     });
-
 });

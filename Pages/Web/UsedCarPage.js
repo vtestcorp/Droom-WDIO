@@ -68,7 +68,6 @@ class Usedcar {
     get Transmission() { return $('(//span[@class="s-MuiButton-label"])[1]') }
     get seller() { return $('//p[@class="s-MuiTypography-root s-MuiTypography-body1"]') }
     get ageofV() { return $('//div[@class="s-MuiButtonBase-root s-MuiChip-root s-s270 s-MuiChip-outlined s-MuiChip-clickable"]') }
-    
 
     async submitRequirement() {
         await (await this.submit).click()

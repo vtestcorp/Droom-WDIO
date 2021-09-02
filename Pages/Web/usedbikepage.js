@@ -71,6 +71,7 @@ class UsedBike {
     get extColor() { return $('//div[@class="r-MuiBox-root r-r136"]') }
     get service() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[1]') }
     get needToBuy() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[2]') }
+
     async submitRequirement() {
         await (await this.submit).click()
     }
@@ -102,7 +103,6 @@ class UsedBike {
     async selectCar() {
         await (await this.swift).setValue("Swift")
         await (await this.selectSwift).click()
-
     }
     async selectBike() {
         await (await this.himalayan).setValue("Himalayan")
@@ -134,7 +134,6 @@ class UsedBike {
         await (await this.selectyear).click()
         await (await this.trim).click()
         await (await this.trimName).click()
-
     }
     async basicDetailsDisplay() {
         (await this.basicDetails).waitForExist({ timeout: 7000 })
@@ -159,7 +158,6 @@ class UsedBike {
         await (await this.submitAndView).click()
     }
     async clickOngetRequirements() {
-
         await (await this.requirements).waitForExist({ timeout: 7000 })
         await (await this.requirements).click()
     }
@@ -191,8 +189,5 @@ class UsedBike {
     async selectColorFromList() {
         await (await this.colorName).click()
     }
-
-
-
 }
 module.exports = new UsedBike();

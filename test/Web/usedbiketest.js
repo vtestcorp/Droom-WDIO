@@ -167,6 +167,4 @@ describe('Used Bike', async () => {
         await usedbikepage.clickOngetRequirements()
         expect(await usedbikepage.newRequirements).toBeDisplayed()
     });
-
-
 });
