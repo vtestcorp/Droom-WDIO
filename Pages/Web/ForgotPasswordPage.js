@@ -10,7 +10,7 @@ class ForgotPassword {
     get loginwitholdPassword() { return $('//a[text()="Log In With Old Password "]') }
     get passwordTB() { return $('#password') }
     get login() { return $('//input[@type="submit"]') }
-    
+
     async loginViaPassword() {
         console.log('User Launch URL')
         await (await this.profileicon).moveTo()

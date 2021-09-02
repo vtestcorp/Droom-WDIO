@@ -49,7 +49,7 @@ describe("Login Via Password", () => {
       expect(await LoginWithPasswordPage.errorMsgForInvalidPasswd).toHaveTextContaining('Please enter password')
       console.log("Error message displayed as : Please enter password")
    });
-  it("TC_01 To Verify Login With Social Login", async () => {
+   it("TC_01 To Verify Login With Social Login", async () => {
       await LoginWithPasswordPage.loginViaPassword()
       await (await LoginWithPasswordPage.facebookLoginBtn).click()
       await browser.switchWindow('facebook.com')
@@ -62,5 +62,4 @@ describe("Login Via Password", () => {
       expect(await LoginWithPasswordPage.welcomemsg).toHaveTextContaining('Welcome,')
       console.log("User sucessfully login to droom through facebook credentials")
    });
-
 });

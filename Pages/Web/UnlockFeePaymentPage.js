@@ -46,8 +46,6 @@ class unlockFeePayment
     get selectvehicle1() {return $('(//a[contains(text(),"Honda City")])[3]')}
     get selectvehicle2() {return $('(//a[contains(text(),"Honda City")])[2]')}
 
-
-
 async submitRequirements() 
 {
     await (await this.submitRequirement).waitForExist()
@@ -60,17 +58,14 @@ async SelectCarCondition()
     console.log('Select Car from option ')
     await (await this.Condition).click()
     console.log('select used car condition ')
-    
 }
- 
-async selectCurrentLocation()
+ async selectCurrentLocation()
 {
     await (await this.currentLocation).click()
     await browser.pause('2000')
     await (await this.nextButton).click()
     console.log('Click on next Button')
 }
-
 async enterYourVehicleDetails()
 {
     await (await this.vehicleDetails).waitForExist()
@@ -83,14 +78,12 @@ async selectCar() {
     await (await this.nextButton).click()
     console.log('Click on next Button')
 }
-
 async basicDetailsDisplay() {
     await (await this.basicDetails).waitForExist({ timeout: 20000 })
     console.log('Now Share Your Dream Vehicle Basic Details Display')
     await (await this.nextButton).click()
     console.log('Click on next Button')
 }
-
 async lastStepforcomplete(){
     await (await this.lastStep).waitForExist({ timeout: 20000 })
     await (await this.insurance).click()
@@ -100,15 +93,13 @@ async lastStepforcomplete(){
     await (await this.nextButton).click()
     console.log('Click on next Button')
 }
-
 async SelectBikeCondition() 
 {
     await (await this.bikeOption).click()
     console.log('Select Bike From Option')
     await (await this.Condition).click()
     console.log('select used Bike condition ')
-  
-}
+  }
 async selectBike() {
     await (await this.bikeName).setValue("pulsar")
     await (await this.bikeModel).click()
