@@ -6,7 +6,7 @@ class Usedcar {
     get used() { return $('//span[text()="Used"]') }
     get carimg() { return $('//span[text()="Car"]') }
     get scooter() { return $('//span[text()="Scooter"]') }
-    get newButton() { return $('(//span[text()="New"])[2]') }
+    get newButton() { return $('(//span[text()="New"])[3]') }
     get used() { return $('//span[text()="Used"]') }
     get usedButton() { return $('(//span[@class="s-MuiIconButton-label"])[3]') }
     get newRButton() { return $('(//*[@class="s-MuiIconButton-label"])[2]') }
@@ -34,6 +34,7 @@ class Usedcar {
     get backBtn() { return $('//button[@class="s-MuiButtonBase-root s-MuiIconButton-root"]//span[@class="s-MuiIconButton-label"]//*[local-name()="svg"]') }
     get carCancel() { return $('(//div[@role="button"]//*[local-name()="svg"])[1]') }
     get droomSugg() { return $('//button[text()="Let Droom Suggest for you"]') }
+    get droomSuggcar() { return $('(//div[@class="s-MuiAvatar-root s-s102 s-MuiAvatar-circle s-s102"])[3]') }
     get lookingFor() { return $('//h5[text()="Let us know what you are looking for"]') }
     get gudget() { return $('//p[text()="What is Your Budget?"]') }
     get body() { return $('//p[text()="Body Type"]') }
@@ -42,169 +43,130 @@ class Usedcar {
     get goBack() { return $('//*[name()="path" and contains(@d,"M20 11H7.8")]') }
     get fuelType() { return $('//p[text()="Fuel Type"]') }
     get petrol() { return $('(//span[@class="s-MuiIconButton-label"])[3]') }
+    get fuleTypes() { return $('//div[@class="r-MuiBox-root r-r133"]') }
     get almostDone() { return $('//h5[text()="You are Almost Done!"]') }
     get submitAndView() { return $('//span[text()="Submit & View All Matches "]') }
-    get requirements() { return $('//span[normalize-space()="View all Requirements"]') }
+    get requirements() { return $('//span[text()=" View all Requirements "]') }
     get newRequirements() { return $('//span[text()=" + Add New Requirement"]') }
     get submitR() { return $('//span[contains(text(),"Submit")]') }
     get redColor() { return $('//input[@value="red"]') }
+    get extColor() { return $('//div[@class="r-MuiBox-root r-r136"]') }
     get automatic() { return $('//img[@alt="Automatic"]') }
+    get transmissionType() { return $('//div[@class="r-MuiBox-root r-r130"]') }
     get lastStep() { return $('//h5[text()="Last Step to Go! "]') }
     get insurance() { return $('(//span[@class="s-MuiIconButton-label"])[2]') }
     get loan() { return $('(//span[@class="s-MuiIconButton-label"])[3]') }
     get RCTransfer() { return $('(//span[@class="s-MuiIconButton-label"])[4]') }
     get roadSideAssistance() { return $('(//span[@class="s-MuiIconButton-label"])[5]') }
+    get service() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[1]') }
+    get needToBuy() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[2]') }
+    get exchangeV() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[2]') }
     get withinFourDay() { return $('(//span[@class="s-MuiIconButton-label"])[8]') }
-    get exchange () { return $('(//span[@class="s-MuiIconButton-label"])[12]') }
-    get kms () { return $('//input[@id="exchange_kms_driven"]') }
-    get records () { return $('//h3[@class="bm-MuiTypography-root bm-bm80 bm-MuiTypography-h3 bm-MuiTypography-noWrap"]') }
-    get Transmission  () { return $('(//span[@class="s-MuiButton-label"])[1]') }
+    get exchange() { return $('(//span[@class="s-MuiIconButton-label"])[12]') }
+    get kms() { return $('//input[@id="exchange_kms_driven"]') }
+    get records() { return $('//h3[@class="bm-MuiTypography-root bm-bm80 bm-MuiTypography-h3 bm-MuiTypography-noWrap"]') }
+    get Transmission() { return $('(//span[@class="s-MuiButton-label"])[1]') }
+    get seller() { return $('//p[@class="s-MuiTypography-root s-MuiTypography-body1"]') }
+    get ageofV() { return $('//div[@class="s-MuiButtonBase-root s-MuiChip-root s-s270 s-MuiChip-outlined s-MuiChip-clickable"]') }
     
-    
+
     async submitRequirement() {
         await (await this.submit).click()
-        console.log('User click on submit requirements ')
     }
     async carCondition() {
         await (await this.car).click()
-        console.log('Select Car from option ')
         await (await this.used).click()
-        console.log('select used car condition ')
-
-
     }
     async clickOnNext() {
-        await browser.pause(2000)
         await (await this.nextButton).click()
-        console.log('Click on next Button')
     }
     async selectCity() {
-        //await (await this.errorMsg).waitForExist({ timeout: 20000 })
-        console.log('Error message Displayed')
+        await (await this.errorMsg).waitForExist({ timeout: 15000 })
     }
     async cLocation() {
         await (await this.currentLocation).click()
-        //await (await this.currentLocation).waitForExist({ timeout: 20000 })
-        await browser.pause(2000)
-
+        await (await this.currentLocation).waitForExist({ timeout: 5000 })
+        await (await this.newButton).click()
+        await (await this.used).click()
     }
     async selectNewBtn() {
         await (await this.newButton).click()
-        console.log('Click on New Button')
     }
     async selectUsedBtn() {
         await (await this.used).click()
-        console.log('Click on Used Button')
     }
     async waitForVehicleDetails() {
-        //await (await this.vehicleDetails).waitForExist({ timeout: 20000 })
-        console.log('vehicle Details Displayed')
+        await (await this.vehicleDetails).waitForExist({ timeout: 5000 })
     }
     async selectCar() {
         await (await this.swift).setValue("Swift")
         await (await this.selectSwift).click()
-        console.log('User selected vehicle as per the requirement ')
     }
     async deleteCarRecord() {
         await (await this.closeRecord).click()
-        console.log('Record cancel')
     }
     async slectFromDropDown() {
         await (await this.selectFrom).click()
-        console.log('Clicked on select from dropdown')
-        // (await this.orSearch).waitForExist({ timeout: 20000 })
-        
+        await (await this.orSearch).waitForExist({ timeout: 5000 })
     }
     async selectVehicle() {
         await (await this.make).click()
-        console.log('Clicked on make')
         await (await this.selectMake).click()
-        console.log('Make selected')
         await (await this.model).click()
-        console.log('Clicked on model')
         await (await this.selectModel).click()
-        console.log('Model selected')
         await (await this.year).click()
-        console.log('Clicked on year')
         await (await this.selectyear).click()
-        console.log('Year selected')
         await (await this.trim).click()
-        console.log('Clicked on trim')
         await (await this.selectTrim).click()
-        console.log('Trim selected')
-        await browser.pause(2000)
     }
     async basicDetailsDisplay() {
-        await (await this.basicDetails).waitForExist({ timeout: 20000 })
-        console.log('Now Share Your Dream Vehicle Basic Details Display')
+        await (await this.basicDetails).waitForExist({ timeout: 5000 })
     }
     async clickOnBack() {
         await (await this.backBtn).click()
-        console.log('Clicked on back')
         await (await this.carCancel).click()
     }
     async letDroomSuggest() {
         await (await this.droomSugg).click()
-        console.log('User clicked on Let Droom Suggest')
-        //await (await this.lookingFor).waitForExist({ timeout: 20000 })
+        await (await this.lookingFor).waitForExist({ timeout: 5000 })
     }
     async clickOnGoBack() {
         await (await this.goBack).click()
-        await (await this.vehicleDetails).waitForExist({ timeout: 20000 })
+        await (await this.vehicleDetails).waitForExist({ timeout: 5000 })
     }
     async selectPetrol() {
         await (await this.petrol).click()
-        console.log('Clicked on petrol')
-
     }
     async clickOnSubmit() {
-        await browser.pause(1000)
         await (await this.submitAndView).click()
-        console.log('Clicked on Submit')
     }
     async clickOngetRequirements() {
-        await (await this.requirements).waitForExist({ timeout: 20000 })
         await (await this.requirements).click()
     }
     async clickOnSubmitRequirements() {
         await (await this.submitR).click()
-        console.log('Clicked on Submit Requirements')
-
     }
     async selectColor() {
         await (await this.redColor).click()
-        console.log('Clicked on color')
     }
-    async selectAutomatic()
-    {
+    async selectAutomatic() {
         await (await this.Transmission).click()
-        console.log('Clicked on color')
     }
-    async selectDoYouAlsoNeed()
-    {
-        await (await this.lastStep).waitForExist({ timeout: 20000 })
+    async selectDoYouAlsoNeed() {
+        await (await this.lastStep).waitForExist({ timeout: 5000 })
         await (await this.insurance).click()
         await (await this.loan).click()
         await (await this.RCTransfer).click()
         await (await this.roadSideAssistance).click()
     }
-    async selectHowQuickly()
-    {
+    async selectHowQuickly() {
         await (await this.withinFourDay).click()
     }
-    async exchangeVehicle() 
-    {
+    async exchangeVehicle() {
         await (await this.exchange).click()
-        await browser.pause(2000)
     }
-    async Enterkms()
-    {
+    async Enterkms() {
         await (await this.kms).setValue("10000")
     }
-
-
-
 }
-
-
 module.exports = new Usedcar();

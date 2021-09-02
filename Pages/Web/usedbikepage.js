@@ -6,7 +6,7 @@ class UsedBike {
     get used() { return $('//span[text()="Used"]') }
     get carimg() { return $('//span[text()="Car"]') }
     get scooter() { return $('//span[text()="Scooter"]') }
-    get newButton() { return $('(//span[text()="New"])[2]') }
+    get newButton() { return $('(//span[text()="New"])[3]') }
     get used() { return $('//span[text()="Used"]') }
     get usedButton() { return $('(//span[@class="s-MuiIconButton-label"])[3]') }
     get newRButton() { return $('(//*[@class="s-MuiIconButton-label"])[2]') }
@@ -44,7 +44,7 @@ class UsedBike {
     get petrol() { return $('(//span[@class="s-MuiIconButton-label"])[3]') }
     get almostDone() { return $('//h5[text()="You are Almost Done!"]') }
     get submitAndView() { return $('//span[text()="Submit & View All Matches "]') }
-    get requirements() { return $('//span[normalize-space()="View all Requirements"]') }
+    get requirements() { return $('//span[text()=" View all Requirements "]') }
     get newRequirements() { return $('//span[text()=" + Add New Requirement"]') }
     get submitR() { return $('//span[contains(text(),"Submit")]') }
     get redColor() { return $('(//span[@class="s-MuiIconButton-label"])[7]') }
@@ -67,182 +67,131 @@ class UsedBike {
     get clickOnCar() { return $('//div[@class="s-MuiSelect-root s-MuiSelect-select s-MuiSelect-selectMenu s-MuiInputBase-input s-MuiInput-input"]') }
     get bikeOption() { return $('(//li[@class="s-MuiButtonBase-root s-MuiListItem-root s-MuiMenuItem-root s-MuiMenuItem-gutters s-MuiListItem-gutters s-MuiListItem-button"])[1]') }
     get scooterOption() { return $('(//li[@class="s-MuiButtonBase-root s-MuiListItem-root s-MuiMenuItem-root s-MuiMenuItem-gutters s-MuiListItem-gutters s-MuiListItem-button"])[2]') }
-   
-    
-
+    get fuleTypes() { return $('//div[@class="r-MuiBox-root r-r133"]') }
+    get extColor() { return $('//div[@class="r-MuiBox-root r-r136"]') }
+    get service() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[1]') }
+    get needToBuy() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[2]') }
     async submitRequirement() {
         await (await this.submit).click()
-        console.log('User click on submit requirements ')
     }
     async bikeCondition() {
         await (await this.Bike).click()
-        console.log('Select bike from option ')
         await (await this.used).click()
-        console.log('select used bike from condition ')
-
-
     }
     async clickOnNext() {
-        await browser.pause(2000)
         await (await this.nextButton).click()
-        console.log('Click on next Button')
     }
     async selectCity() {
-        console.log('Error message Displayed')
+        await (await this.errorMsg).waitForExist({ timeout: 15000 })
     }
     async cLocation() {
         await (await this.currentLocation).click()
-        await browser.pause(2000)
-
+        await (await this.currentLocation).waitForExist({ timeout: 5000 })
+        await (await this.newButton).click()
+        await (await this.used).click()
     }
     async selectNewBtn() {
         await (await this.newButton).click()
-        console.log('Click on New Button')
     }
     async selectUsedBtn() {
         await (await this.used).click()
-        console.log('Click on Used Button')
     }
     async waitForVehicleDetails() {
-        console.log('vehicle Details Displayed')
+        await (await this.vehicleDetails).waitForExist({ timeout: 5000 })
     }
     async selectCar() {
         await (await this.swift).setValue("Swift")
         await (await this.selectSwift).click()
-        console.log('User selected vehicle as per the requirement ')
+
     }
     async selectBike() {
         await (await this.himalayan).setValue("Himalayan")
         await (await this.selectHimalayan).click()
-        console.log('User selected vehicle as per the requirement ')
     }
     async deleteCarRecord() {
         await (await this.closeRecord).click()
-        console.log('Record cancel')
     }
     async slectFromDropDown() {
         await (await this.selectFrom).click()
-        console.log('Clicked on select from dropdown')
-        
-
+        await (await this.orSearch).waitForExist({ timeout: 5000 })
     }
     async selectVehicle() {
         await (await this.make).click()
-        console.log('Clicked on make')
         await (await this.selectMake).click()
-        console.log('Make selected')
         await (await this.model).click()
-        console.log('Clicked on model')
         await (await this.selectModel).click()
-        console.log('Model selected')
         await (await this.year).click()
-        console.log('Clicked on year')
         await (await this.selectyear).click()
-        console.log('Year selected')
         await (await this.trim).click()
-        console.log('Clicked on trim')
         await (await this.selectTrim).click()
-        console.log('Trim selected')
-        await browser.pause(2000)
     }
     async selectBikeVehicle() {
         await (await this.make).click()
-        console.log('Clicked on make')
-        await (await this.bajaj).waitForDisplayed()
         await (await this.bajaj).click()
-        console.log('Make selected')
         await (await this.model).click()
-        console.log('Clicked on model')
-        await (await this.avenger).waitForDisplayed()
         await (await this.avenger).click()
-        console.log('Model selected')
         await (await this.year).click()
-        console.log('Clicked on year')
-        await (await this.selectyear).waitForDisplayed()
         await (await this.selectyear).click()
-        console.log('Year selected')
         await (await this.trim).click()
-        console.log('Clicked on trim')
-        await browser.pause(2000)
-        await (await this.trimName).waitForDisplayed()
         await (await this.trimName).click()
-        console.log('Trim selected')
-        await browser.pause(2000)
+
     }
     async basicDetailsDisplay() {
-        (await this.basicDetails).waitForExist({ timeout: 5000 })
-        console.log('Now Share Your Dream Vehicle Basic Details Display')
+        (await this.basicDetails).waitForExist({ timeout: 7000 })
     }
     async clickOnBack() {
         await browser.pause(2000)
         await (await this.backBtn).click()
-        console.log('Clicked on back')
         await (await this.carCancel).click()
     }
     async letDroomSuggest() {
         await (await this.droomSugg).click()
-        console.log('User clicked on Let Droom Suggest')
-       
+        await (await this.lookingFor).waitForExist({ timeout: 5000 })
     }
     async clickOnGoBack() {
         await (await this.goBack).click()
-        
+        await (await this.vehicleDetails).waitForExist({ timeout: 5000 })
     }
     async selectPetrol() {
         await (await this.petrol).click()
-        console.log('Clicked on petrol')
-
     }
     async clickOnSubmit() {
         await (await this.submitAndView).click()
-        console.log('Clicked on Submit')
     }
     async clickOngetRequirements() {
-        
+
         await (await this.requirements).waitForExist({ timeout: 7000 })
         await (await this.requirements).click()
     }
     async clickOnSubmitRequirements() {
         await (await this.submitR).click()
-        console.log('Clicked on Submit Requirements')
-
     }
     async selectColor() {
         await (await this.redColor).click()
-        console.log('Clicked on color')
     }
-    async selectAutomatic()
-    {
+    async selectAutomatic() {
         await (await this.automatic).click()
-        console.log('Clicked on color')
     }
-    async selectDoYouAlsoNeed()
-    {
+    async selectDoYouAlsoNeed() {
         await (await this.lastStep).waitForExist({ timeout: 5000 })
         await (await this.insurance).click()
         await (await this.loan).click()
         await (await this.RCTransfer).click()
         await (await this.roadSideAssistance).click()
     }
-    async selectHowQuickly()
-    {
+    async selectHowQuickly() {
         await (await this.withinFourDay).click()
     }
-    async exchangeVehicle() 
-    {
+    async exchangeVehicle() {
         await (await this.exchange).click()
-        await browser.pause(2000)
     }
-    async Enterkms()
-    {
+    async Enterkms() {
         await (await this.kms).setValue("10000")
     }
-    async selectColorFromList()
-    {
+    async selectColorFromList() {
         await (await this.colorName).click()
-        console.log('color Selected')
     }
-    
+
 
 
 }
