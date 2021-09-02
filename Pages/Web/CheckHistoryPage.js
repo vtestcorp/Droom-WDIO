@@ -20,7 +20,4 @@ class CheckHistory{
     get list1(){return $$('//li[@class="d-margin-0 d-margin-top-5 d-margin-bottom-30 d-font-size-20 d-text-gray"]')}
 
 }
-
-
-
 module.exports=new CheckHistory();

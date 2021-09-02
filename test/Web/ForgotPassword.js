@@ -1,11 +1,10 @@
-const ForgotPasswordPage = require("../../Pages/Web/ForgotPasswordPage");
+const ForgotPasswordPage = require("../../Pages/Web/ForgotPasswordPage")
 
 describe("Forgot Password", ()=>{
-    it("TC_01_ Verify The Functionality Of Log In With Old Password In Forgot Password Page", async()=>{
+    it("TC_01 Verify The Functionality Of Log In With Old Password In Forgot Password Page", async()=>{
         try {
-
-            await (await ForgotPasswordPage.popup).waitForDisplayed({ timeout: 20000, timeoutMsg: "Popup not displayed" });
-            await (await ForgotPasswordPage.popupclose).click();
+            await (await ForgotPasswordPage.popup).waitForDisplayed({ timeout: 20000, timeoutMsg: "Popup not displayed" })
+            await (await ForgotPasswordPage.popupclose).click()
          }
          catch { }
          await ForgotPasswordPage.loginViaPassword()
@@ -29,7 +28,5 @@ describe("Forgot Password", ()=>{
          expect(await ForgotPasswordPage.sellerName).toBeDisplayed()
          console.log(await (await ForgotPasswordPage.sellerName).getText())
          console.log('After entered old password user navigate to Home Page')
-
-
 });
 });

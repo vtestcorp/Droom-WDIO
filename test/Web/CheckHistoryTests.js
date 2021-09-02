@@ -1,8 +1,7 @@
 const CheckHistory = require('../../Pages/Web/CheckHistoryPage')
 const Base = require('../../BaseClass/base')
-
 describe("Check History", () => {
-    it("TC_01_To Verify Functionality Of Check History", async () => {
+    it("TC_01 To Verify Functionality Of Check History", async () => {
         await Base.loginAsBuyer()
         await (await CheckHistory.checkHistory).click()
         await (await CheckHistory.registredVehicleRegNo).setValue("MH13 Y 4444")
@@ -12,8 +11,7 @@ describe("Check History", () => {
         console.log("Application show Vehicle History Certificate")
         console.log("Navigate to History Page")
     });
-
-    it("TC_02_To Verify About Menu On History Page", async () => {
+    it("TC_02 To Verify About Menu On History Page", async () => {
         await (await CheckHistory.checkHistory).click()
         await (await CheckHistory.aboutTab).click()
         console.log("User click on ABOUT Tab on check history Page")
@@ -23,12 +21,9 @@ describe("Check History", () => {
         console.log("Why History dispalyed")
         expect(await CheckHistory.keyHighlights).toBeDisplayed()
         console.log("Key Highlights Displayed")
-        console.log('All Points are displayed in About Page')
-
-
+        console.log("All Points are displayed in About Page")
     });
-
-    it("TC_03_To Verify Premium Certificate On History Page", async () => {
+    it("TC_03 To Verify Premium Certificate On History Page", async () => {
         await (await CheckHistory.checkHistory).click()
         await (await CheckHistory.premiumCertificate).click()
         await (await CheckHistory.registredVehicleRegNo).setValue("MH13 Y 4444")
@@ -37,11 +32,8 @@ describe("Check History", () => {
         console.log("Application shows gold Certificate")
         expect(await CheckHistory.platinumCertificate).toBeDisplayed()
         console.log("Application shows platinum Certificate")
-
-
     });
-
-    it("TC_04_To Verify The List Of FAQs Is Displayed On History Page", async () => {
+    it("TC_04 To Verify The List Of FAQs Is Displayed On History Page", async () => {
         await (await CheckHistory.checkHistory).click()
         await (await CheckHistory.faq).click()
         await (await CheckHistory.faq).scrollIntoView()
@@ -51,9 +43,7 @@ describe("Check History", () => {
         console.log("Application shows FAQ Points")
 
     });
-
-
-    it("TC_05_To Verify The View Sample Vehicle History Certificate Link Is Functional", async () => {
+    it("TC_05 To Verify The View Sample Vehicle History Certificate Link Is Functional", async () => {
         await (await CheckHistory.checkHistory).click()
         console.log("User click on Check History")
         await (await CheckHistory.certificateLink).click()
@@ -61,16 +51,16 @@ describe("Check History", () => {
         expect(await CheckHistory.sampleCertificate).toBeDisplayed()
         console.log("Sample Certificate Displayed")
         console.log(await (await CheckHistory.sampleCertificate).getText())
-
     });
-
-    it("TC_06_To Verify The Home Option Is Functional On History Page", async () => {
+    it("TC_06 To Verify The Home Option Is Functional On History Page", async () => {
+        browser.url('/')
+        console.log(await (await CheckHistory.checkHistory).isClickable())
         await (await CheckHistory.checkHistory).click()
-        console.log('User click on Check History')
+        console.log("User click on Check History")
+        console.log(await (await CheckHistory.homeTab).isClickable())
         await (await CheckHistory.homeTab).click()
         console.log(await browser.getUrl())
         expect(browser).toHaveTitle("India's Most Trusted Motorplace to Buy & Sell Used Cars, Bikes, Scooters Online | Droom")
-        console.log('After click on Home Tab user navigate to home page')
+        console.log("After click on Home Tab user navigate to home page")
     });
-
 });
