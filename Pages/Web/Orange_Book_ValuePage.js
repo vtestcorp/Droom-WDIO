@@ -1,3 +1,4 @@
+const { showConfig } = require('appium/build/lib/config');
 const Base = require('../../BaseClass/base');
 class OBV {
     get home() { return $('//a[text()="Home"]') }
@@ -40,129 +41,184 @@ class OBV {
     get newMake() { return $('//select[@id="newmake"]') }
     get newModel() { return $('//select[@id="newmodel"]') }
     get newTrim() { return $('//select[@id="newtrim"]') }
-
-
-
+    get checkPrice() { return $('//input[@value="Check Price"]') }
+    get exchange_Info() { return $('//p[contains(text(),"Select the Vehicle you want to Exchange Your Curre")]') }
+    get exchange_category() { return $('//select[@id="exchangecategory"]') }
+    get exchange_Make() { return $('//select[@id="exchangemake"]') }
+    get exchange_Model() { return $('//select[@id="exchangemodel"]') }
+    get exchange_year() { return $('//select[@id="exchangeyear"]') }
+    get exchange_trim() { return $('//select[@id="exchangetrim"]') }
+    get exchange_kmsDriven() { return $('//input[@id="exchangekms_driven"]') }
+    get exchange_WithNew() { return $('//input[@id="New"]') }
+    get exchange_NewMake() { return $('//select[@id="exchangenewmake"]') }
+    get exchange_NewModel() { return $('//select[@id="exchangenewmodel"]') }
+    get exchange_NewTrim() { return $('//select[@id="exchangenewtrim"]') }
+    get check_ExchangePrice() { return $('//button[text()="Check Exchange Price"]') }
+    get chegneVehicle() { return $('//a[text()="Change Vehicle"]') }
+    get heading_exchnagePrice() { return $('//label[normalize-space()="Amount You will need to pay for this Exchange"]') }
+    get futurePrice_info() { return $('//p[contains(text(),"Know the Estimated Re-Selling Price for your vehic")]') }
+    get futurePrice_new() { return $('//a[@id="new-price"]') }
+    get future_category() { return $('//select[@id="futurenewcategory"]') }
+    get future_Make() { return $('//select[@id="futurenewmake"]') }
+    get future_Model() { return $('//select[@id="futurenewmodel"]') }
+    get future_trim() { return $('//select[@id="futurenewtrim"]') }
+    get future_Resale_Year() { return $('//select[@id="futurenewexpectedresale"]') }
+    get future_kmsDriven() { return $('//input[@id="futurenewexpected_kms_driven"]') }
+    get checkFuture_Estimate() { return $('(//button[text()="Check Future Estimate"])[1]') }
+    get futurePrice_Estimated() { return $('//label[contains(text(),"Future Price of")]') }
+    get residual_info() { return $('//p[contains(text(),"Residual Value of the vehicle provides an estimate")]') }
+    get residual_forNew() { return $('//a[@id="new-price-lease"]') }
+    get residual_category() { return $('//select[@id="leasenewcategory"]') }
+    get residual_Make() { return $('//select[@id="leasenewmake"]') }
+    get residual_Model() { return $('//select[@id="leasenewmodel"]') }
+    get residual_trim() { return $('//select[@id="leasenewtrim"]') }
+    get residual_Tenure() { return $('//input[@id="leasenewtenure"]') }
+    get residual_kmsDriven() { return $('//input[@id="leasenewkms_driven_month"]') }
+    get checkResidual_Estimate() { return $('(//button[text()="Check Residual Estimate"])[1]') }
+    get ResidualPrice_Estimated() { return $('//div[@role="residual-result"]//div[@class="row"]//label[1]') }
+    get viewPricingCertificate() { return $('//a[text()="View Pricing Certificate"]') }
+    get locationOn_New() { return $('(//input[contains(@class,"select")])[1]') }
+    get search_location() { return $('(//input[contains(@class,"lp-search")])[2]') }
+    get delhi() { return $('//li[@class="d-display-block d-padding-2 clickable"]') }
+    get check_PriceOnNew() { return $('//button[text()="Check Price"]') }
+    get Price_ForNew_Vehicle() { return $('//label[text()="Price of New Vehicle is"]') }
+    get New_Price() { return $('//h2[contains(text(),"₹")]') }
     async chooseFromIndidual() {
-        await this.from_individual.click()
+        await (await this.from_individual).click()
         console.log('Selected the option Buy from Individuals')
     }
     async chooseFromDealer() {
-        await this.from_dealer.click()
+        await (await this.from_dealer).click()
         console.log('Selected the option Buy from Dealer')
     }
-
-    async toTakeInputs() {
-
-        await this.category.click()
-        await browser.pause(3000)
-        await this.category.selectByVisibleText('Car');
-        console.log("Selected Car category")
-        await browser.pause(3000)
-        await this.make.click()
-        await browser.pause(3000)
-        await this.make.selectByVisibleText('Audi');
-        await browser.pause(3000)
-        console.log('Selected the expected Manufacuring ')
-        await this.model.click()
-        await browser.pause(3000)
-        await this.model.selectByVisibleText('A5');
-        console.log('Selected the expected Model of Vehicle ')
-        await browser.pause(3000)
-        await this.year.selectByVisibleText('2020');
-        console.log('Selected the expected Model of Vehicle ')
-        await browser.pause(3000)
-        console.log('Select the trim')
-        await this.trim.click()
-        await browser.pause(3000)
-        await this.trim.selectByVisibleText('S5');
-        console.log('Selected the option trim to differentiate between models ')
-        await browser.pause(3000)
-        console.log("Setting the Kms Driven expected")
-        await this.kms_Driven.setValue("100")
-        console.log('Set the value for Kms driven')
-        await browser.pause(3000)
-        await this.submit.click()
-        console.log('Clicked on Submit button to submit the details given by Buyer')
-        await browser.pause(3000)
-        console.log('Check OBV Button shown after submitting the details by User ')
-
-
-
-    }
-    async toTakeInputsForOBV() {
-
-        await this.category.click()
-        await browser.pause(3000)
-        await this.category.selectByVisibleText('Bike/Motorcycle');
-        console.log("Selected Bike/Motorbike category")
-        await browser.pause(3000)
-        await this.make.click()
-        await browser.pause(3000)
-        await this.make.selectByVisibleText('Aprilia');
-        await browser.pause(3000)
-        console.log('Selected the expected Manufacuring ')
-        await this.model.click()
-        await browser.pause(3000)
-        await this.model.selectByVisibleText('Caponord');
-        console.log('Selected the expected Model of Vehicle ')
-        await browser.pause(3000)
-        await this.year.selectByVisibleText('2018');
-        console.log('Selected the expected Model of Vehicle ')
-        await browser.pause(3000)
-        console.log('Select the trim')
-        await this.trim.click()
-        await browser.pause(3000)
-        await this.trim.selectByVisibleText('1200');
-        console.log('Selected the option trim to differentiate between models ')
-        await browser.pause(3000)
-        console.log("Setting the Kms Driven expected")
-        await this.kms_Driven.setValue("100")
-        console.log('Set the value for Kms driven')
-        await browser.pause(3000)
-        await this.submit.click()
-        console.log('Clicked on the Check Price  button to submit the details given by Buyer')
-        await browser.pause(3000)
-        console.log('Check OBV Button shown after submitting the details by User ')
-
-    }
-
-
-    async inputForNewVechicle() {
-        await expect(Orange_Book_ValuePage.newOne).toBeDisplayed()
-        console.log("New Option shown on the Vehicle Pricing Calculator")
-        await Orange_Book_ValuePage.newOne.click()
-        await expect(Orange_Book_ValuePage.used_vehicle_info).toBeDisplayed()
-        console.log(await Orange_Book_ValuePage.used_vehicle_info.getText())
-        await this.newOne.click()
-        await this.newCategor.click()
-        await this.category.selectByVisibleText('Car');
-        await this.newMake.click()
-        await this.newMake.selectByVisibleText('Audi');
-        await this.newModel.click()
-        await this.newModel.selectByVisibleText('A4');
-        await this.newTrim.click()
-        await this.newTrim.selectByVisibleText('40 TFSI PREMIUM PLUS');
-        await browser.pause(3000)
-        await this.submit.click()
-        console.log('Clicked on the Check Price  button to submit the details given by Buyer')
-        await browser.pause(3000)
-        console.log('Check OBV Button shown after submitting the details by User ')
-        await expect(Orange_Book_ValuePage.check_OBV).toBeDisplayed()
-        await expect(Orange_Book_ValuePage.check_OBV).toHaveTextContaining("Check OBV");
-        console.log("Check OBV tab is shown after giving details for Used car on Vechile Pricing Calculator")
-    }
     async toVehiclePricingCalculator() {
-        await Base.loginAsBuyer()
-        await browser.pause(3000)
-        await this.shop_by_category.click()
+        await (await this.shop_by_category).click()
         console.log("Clicked on Shop By category")
-        await this.services.moveTo()
+        await (await this.services).moveTo()
         console.log("Moved to Certification Services")
-        await this.obv.click()
+        await (await this.obv).click()
         console.log("Clicked on OBV")
-        await expect(this.title_pricing_report).toBeDisplayed()
+        expect(await this.title_pricing_report).toBeDisplayed()
         console.log("Get the new Pricing report Title dispalyed on the page")
+    }
+    async toTakeInputs() {
+        await (await this.category).selectByVisibleText('Car')
+        console.log("Selected Car category")
+        await (await (await this.make).$('//option[@id]')).waitForExist({ timeout: 5000 })
+        await (await this.make).selectByVisibleText('Audi')
+        console.log('Selected the expected Manufacturer')
+        await (await (await this.model).$('(//option[@id])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.model).selectByVisibleText('A5')
+        console.log('Selected the expected Model of Vehicle ')
+        await (await (await this.year).$('(//option[@id])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.year).selectByVisibleText('2020')
+        console.log("Selected year")
+        await (await (await this.trim).$('(//option[@id])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.trim).selectByVisibleText('S5')
+        console.log('Selected the option trim to differentiate between models ')
+        await (await this.kms_Driven).waitForExist()
+        await (await this.kms_Driven).setValue("100")
+        console.log('Set the value for Kms driven')
+        await (await this.submit).click()
+        console.log('Clicked on Submit button to submit the details given by Buyer')
+        console.log('Check OBV Button shown after submitting the details by User ')
+    }
+    async toinputForUsedVechile() {
+        await (await this.category).selectByVisibleText('Car')
+        console.log("Selected Car category")
+        await (await (await this.make).$('(//option[@id])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.make).selectByVisibleText('Audi')
+        console.log('Selected the expected Manufacuring ')
+        await (await (await this.model).$('(//option[@id])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.model).selectByVisibleText('A5')
+        console.log('Selected the expected Model of Vehicle ')
+        await (await (await this.year).$('(//option[@id])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.year).selectByVisibleText('2020')
+        console.log('Selected the expected Year of the Vehicle ')
+        await (await (await this.trim).$('//option[@id]')).waitForExist({ timeout: 5000 })
+        await (await this.trim).selectByVisibleText('S5')
+        console.log('Selected the option trim to differentiate between models ')
+        await (await this.kms_Driven).setValue("100")
+        console.log('Set the value for Kms driven')
+        await (await this.checkPrice).click()
+        console.log('Clicked on the Check Price  button to submit the details given by Buyer')
+    }
+    async toinputForNewVechicle() {
+        await (await (await this.newCategory).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.newCategory).selectByVisibleText('Car')
+        console.log("Selected the Cars")
+        await (await (await this.newMake).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.newMake).selectByVisibleText('Audi')
+        console.log("New Manufacturer Selected")
+        await (await (await this.newModel).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.newModel).selectByVisibleText('A4')
+        console.log("Model for New Vehicle selected")
+        await (await (await this.newTrim).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.newTrim).selectByVisibleText('40 TFSI PREMIUM PLUS')
+        await (await this.locationOn_New).click()
+        await (await this.search_location).click()
+        await (await this.search_location).setValue("Delhi")
+        await (await this.delhi).click()
+        console.log("selected the Delhi location")
+        await (await this.check_PriceOnNew).click()
+        console.log('Clicked on the Check Price  button to submit the details given by Buyer')
+    }
+    async toinputForExchangeVehicle() {
+        await (await (await this.exchange_category).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.exchange_category).selectByVisibleText('Scooter')
+        await (await (await this.exchange_Make).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.exchange_Make).selectByVisibleText('Avan')
+        await (await (await this.exchange_Model).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.exchange_Model).selectByVisibleText('Xero')
+        await (await (await this.exchange_year).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.exchange_year).selectByVisibleText('2019')
+        await (await (await this.exchange_trim).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.exchange_trim).selectByVisibleText('STANDARD')
+        await (await this.exchange_kmsDriven).click()
+        await (await this.exchange_kmsDriven).setValue('100')
+        await (await this.exchange_WithNew).click()
+        await (await (await this.exchange_NewMake).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.exchange_NewMake).selectByVisibleText('Bajaj')
+        await (await (await this.exchange_NewModel).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.exchange_NewModel).selectByVisibleText('Chetak Electric')
+        await (await (await this.exchange_NewTrim).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.exchange_NewTrim).selectByVisibleText('PREMIUM')
+    }
+    async toinputForFutureVehicle() {
+        await (await (await this.future_category).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.future_category).selectByVisibleText('Car')
+        await (await (await this.future_Make).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.future_Make).selectByVisibleText('BMW')
+        await (await (await this.future_Model).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.future_Model).selectByVisibleText('3 Series')
+        await (await (await this.future_trim).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.future_trim).selectByVisibleText('320D LUXURY LINE BS6')
+        await (await (await this.future_Resale_Year).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.future_Resale_Year).selectByVisibleText('2022')
+        await (await this.future_kmsDriven).click()
+        await (await this.future_kmsDriven).setValue(200)
+    }
+    async toinputForResidualVehicle() {
+        await (await this.residual_forNew).click()
+        console.log("Clicked on Residual For New ")
+        await (await (await this.residual_category).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.residual_category).selectByVisibleText('Car')
+        console.log("Selected Car option")
+        await (await (await this.residual_Make).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.residual_Make).selectByVisibleText('BMW')
+        console.log("Selcted BMW Oprion")
+        await (await (await this.residual_Model).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.residual_Model).selectByVisibleText('3 Series')
+        console.log("Model is selected")
+        await (await (await this.residual_trim).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
+        await (await this.residual_trim).selectByIndex(1)
+        console.log("Trim option selected")
+        await (await this.residual_Tenure).setValue("11")
+        console.log("Set the Tenure Successfully")
+        await (await this.residual_kmsDriven).setValue(200)
+        console.log("Kms Driven set by the User")
+        await (await this.checkResidual_Estimate).waitForExist({ timeout: 5000 })
     }
 }
 module.exports = new OBV()
+
