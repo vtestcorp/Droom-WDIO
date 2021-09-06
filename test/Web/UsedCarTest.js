@@ -25,14 +25,14 @@ describe('Used Car', async () => {
     expect(await UsedCarPage.nextButton).toBeDisplayed()
     console.log('New button displayed')
   });
-  it('Tc_02 Verify error message without entering location', async () => {
+  it('Tc_03 Verify error message without entering location', async () => {
     await UsedCarPage.clickOnNext()
     expect(UsedCarPage.errorMsg).toBeDisplayed()
     await UsedCarPage.selectCity()
     console.log('Error message Displayed')
 
   });
-  it('Tc_03 Verify user able to select location using location option', async () => {
+  it('Tc_02 Verify user able to select location using location option', async () => {
     await UsedCarPage.cLocation()
     expect(await UsedCarPage.currentLocation).toBeDisplayed()
     console.log('Current Location displayed')
@@ -66,7 +66,7 @@ describe('Used Car', async () => {
     console.log('Age of Vehicle Display')
     expect(await UsedCarPage.more).toBeDisplayed()
   });
-  it('Tc_07 Verify user able to select use car as per the Fuel type', async () => {
+  it('Tc_08 Verify user able to select use car as per the Fuel type', async () => {
     await UsedCarPage.clickOnGoBack()
     await UsedCarPage.slectFromDropDown()
     await UsedCarPage.selectVehicle()
@@ -84,7 +84,7 @@ describe('Used Car', async () => {
     expect(await UsedCarPage.newRequirements).toBeDisplayed()
 
   });
-  it('Tc_08 Verify user able to select use car as per the Exterior Color', async () => {
+  it('Tc_10 Verify user able to select use car as per the Exterior Color', async () => {
     await UsedCarPage.clickOnSubmitRequirements()
     await UsedCarPage.carCondition()
     await UsedCarPage.cLocation()
@@ -104,7 +104,7 @@ describe('Used Car', async () => {
     console.log(await (await UsedCarPage.extColor).getText())
     expect(await UsedCarPage.newRequirements).toBeDisplayed()
   });
-  it('Tc_09 Verify user able to select use car as per the Transmission Type', async () => {
+  it('Tc_11 Verify user able to select use car as per the Transmission Type', async () => {
     await UsedCarPage.clickOnSubmitRequirements()
     await UsedCarPage.carCondition()
     await UsedCarPage.cLocation()
@@ -125,7 +125,7 @@ describe('Used Car', async () => {
     console.log(await (await UsedCarPage.transmissionType).getText())
     expect(await UsedCarPage.newRequirements).toBeDisplayed()
   });
-  it('Tc_10 Verify user able to select use car as per the Do you also need option', async () => {
+  it('Tc_12 Verify user able to select use car as per the Do you also need option', async () => {
     await UsedCarPage.clickOnSubmitRequirements()
     await UsedCarPage.carCondition()
     await UsedCarPage.cLocation()
@@ -147,7 +147,7 @@ describe('Used Car', async () => {
     console.log(await (await UsedCarPage.service).getText())
     expect(await UsedCarPage.newRequirements).toBeDisplayed()
   });
-  it('Tc_11 Verify user is able to select use car as per the How Quickly Do You Want to Buy? option', async () => {
+  it('Tc_13 Verify user is able to select use car as per the How Quickly Do You Want to Buy? option', async () => {
     await UsedCarPage.clickOnSubmitRequirements()
     await UsedCarPage.carCondition()
     await UsedCarPage.cLocation()
@@ -170,7 +170,7 @@ describe('Used Car', async () => {
     console.log(await (await UsedCarPage.needToBuy).getText())
     expect(await UsedCarPage.newRequirements).toBeDisplayed()
   });
-  it('Tc_12 Verify user is able to select use car as per the Do You Wish to Exchange Your Vehicle option', async () => {
+  it('Tc_14 Verify user is able to select use car as per the Do You Wish to Exchange Your Vehicle option', async () => {
     await UsedCarPage.clickOnSubmitRequirements()
     await UsedCarPage.carCondition()
     await UsedCarPage.cLocation()
@@ -196,7 +196,7 @@ describe('Used Car', async () => {
     console.log(await (await UsedCarPage.exchangeV).getText())
     expect(await UsedCarPage.newRequirements).toBeDisplayed()
   });
-  it('Tc_13 Validation for match count while req creation and in req page', async () => {
+  it('Tc_15 Validation for match count while req creation and in req page', async () => {
     await UsedCarPage.clickOnSubmitRequirements()
     await UsedCarPage.carCondition()
     await UsedCarPage.cLocation()

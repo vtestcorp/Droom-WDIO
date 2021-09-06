@@ -6,7 +6,7 @@ class Usedcar {
     get used() { return $('//span[text()="Used"]') }
     get carimg() { return $('//span[text()="Car"]') }
     get scooter() { return $('//span[text()="Scooter"]') }
-    get newButton() { return $('(//span[text()="New"])[3]') }
+    get newButton() { return $('(//span[text()="New"])[2]') }
     get used() { return $('//span[text()="Used"]') }
     get usedButton() { return $('(//span[@class="s-MuiIconButton-label"])[3]') }
     get newRButton() { return $('(//*[@class="s-MuiIconButton-label"])[2]') }
@@ -68,7 +68,9 @@ class Usedcar {
     get Transmission() { return $('(//span[@class="s-MuiButton-label"])[1]') }
     get seller() { return $('//p[@class="s-MuiTypography-root s-MuiTypography-body1"]') }
     get ageofV() { return $('//div[@class="s-MuiButtonBase-root s-MuiChip-root s-s270 s-MuiChip-outlined s-MuiChip-clickable"]') }
-
+    get sorce() { return $('(//div[@class="noUi-touch-area"])[2]') }
+    get target() { return $('//div[@aria-valuenow="15000000.0"]') }
+    get scle() { return $('(//div[@class="noUi-connect"])[1]') }
     async submitRequirement() {
         await (await this.submit).click()
     }
