@@ -35,7 +35,7 @@ class UsedBike {
     get carCancel() { return $('(//div[@role="button"]//*[local-name()="svg"])[1]') }
     get droomSugg() { return $('//button[text()="Let Droom Suggest for you"]') }
     get lookingFor() { return $('//h5[text()="Let us know what you are looking for"]') }
-    get gudget() { return $('//p[text()="What is Your Budget?"]') }
+    get budget() { return $('//p[text()="What is Your Budget?"]') }
     get body() { return $('//p[text()="Body Type"]') }
     get age() { return $('//p[text()="Age of Vehicle"]') }
     get more() { return $('//p[text()="Add More Detail "]') }
@@ -136,10 +136,10 @@ class UsedBike {
         await (await this.trimName).click()
     }
     async basicDetailsDisplay() {
+        (await this.budget).waitForExist({ timeout: 7000 })
         (await this.basicDetails).waitForExist({ timeout: 7000 })
     }
     async clickOnBack() {
-        await browser.pause(2000)
         await (await this.backBtn).click()
         await (await this.carCancel).click()
     }
@@ -148,6 +148,8 @@ class UsedBike {
         await (await this.lookingFor).waitForExist({ timeout: 5000 })
     }
     async clickOnGoBack() {
+        await (await this.body).waitForExist({ timeout: 5000 })
+        await (await this.goBack).moveTo()
         await (await this.goBack).click()
         await (await this.vehicleDetails).waitForExist({ timeout: 5000 })
     }
