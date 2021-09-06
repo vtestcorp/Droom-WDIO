@@ -1,7 +1,7 @@
 const video = require('wdio-video-reporter');
 exports.config = {
     specs: [
-        './test/Web/LoginWithPassword.js'
+        './test/Web/ECO_InspectionTest.js'
     ],
     // Patterns to exclude.
     exclude: [
