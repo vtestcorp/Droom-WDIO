@@ -137,7 +137,7 @@ class UsedBike {
     }
     async basicDetailsDisplay() {
         (await this.budget).waitForExist({ timeout: 7000 })
-        (await this.basicDetails).waitForExist({ timeout: 7000 })
+            (await this.basicDetails).waitForExist({ timeout: 7000 })
     }
     async clickOnBack() {
         await (await this.backBtn).click()

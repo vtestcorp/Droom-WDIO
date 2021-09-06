@@ -64,8 +64,11 @@ class EditrequiRementspage {
     get service1() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[1]') }
     get needToBuy() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[2]') }
     get exchanges() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[3]') }
-
-    
+    get selectcar() { return $('(//span[@class="s-MuiButton-label"])[1]') }
+    get enterlocation() { return $('//input[@id="react-select-2-input"]') }
+    get selectcity() { return $('//div[text()="Pune, Maharashtra, India"]') }
+    get addR() { return $('//i[@class="web-g-icon web-g-icon-my-requirement d-font-size-22 d-display-inline-block d-position-relative d-valign-middle"]') }
+    get welcome() { return $('//div[@class="bm-MuiTypography-root bm-bm43 bm-MuiTypography-body1"]') }
     async goBackTillLocation() {
         await (await this.backBtn).click()
         await (await this.lastStepToGo).waitForExist({ timeout: 7000 })
@@ -80,7 +83,6 @@ class EditrequiRementspage {
         await (await this.location).waitForExist({ timeout: 7000 })
         await (await this.entLocation).setValue("Mumbai")
         await (await this.selectLocation).click()
-
     }
     async submitRequirements() {
         await (await this.nextButton).click()
@@ -139,6 +141,21 @@ class EditrequiRementspage {
     async clickOnSubmit() {
         await (await this.submitAndView).waitForExist({ timeout: 7000 })
         await (await this.submitAndView).click()
+    }
+    async CreateRequiRement() {
+        await (await this.addR).click()
+        await (await this.selectcar).click()
+        await (await this.enterlocation).setValue("Pune")
+        await (await this.selectcity).click()
+        await (await this.nextButton).click()
+        await (await this.swift).setValue("swift")
+        await (await this.selectSwift).click()
+        await (await this.nextButton).click()
+        await (await this.nextButton).click()
+        await (await this.nextButton).click()
+        await (await this.submitAndView).click()
+        await (await this.requirement).waitForExist({ timeout: 7000 })
+        await (await this.requirement).click()
     }
 }
 module.exports = new EditrequiRementspage();

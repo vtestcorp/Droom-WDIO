@@ -83,6 +83,8 @@ describe('Requirements page verification', async () => {
         console.log(await (await editrequirementspage.carName).getText())
     });
     it('Tc_09 Verify user should be able to edit  Vehicle Details and multiple vehicles', async () => {
+        await base.loginAsBuyer()
+        await editrequirementspage.CreateRequiRement()
         await (await editrequirementspage.editBtn).click()
         await (await editrequirementspage.almostDone).waitForDisplayed()
         await editrequirementspage.goBackTillVehicle()
