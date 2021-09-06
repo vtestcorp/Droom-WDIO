@@ -10,10 +10,7 @@ class Base
  get loginFinal(){return this.getByResourceId("in.droom:id/btn_login_via_otp_email")}
  get afterLoginPopup(){return this.getByResourceId("in.droom:id/imgViewForClose")}
  get userInfo(){return this.getByResourceId("in.droom:id/user_info_flow")}
-
-
-
-      async loginAsBuyer()
+     async loginAsBuyer()
     {
       try{
       await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});

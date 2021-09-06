@@ -25,13 +25,13 @@ describe('Used Bike', async () => {
         expect(await usedbikepage.nextButton).toBeDisplayed()
         console.log('New button displayed')
     });
-    it('Tc_02 Verify error message without entering location', async () => {
+    it('Tc_03 Verify error message without entering location', async () => {
         await usedbikepage.clickOnNext()
         expect(usedbikepage.errorMsg).toBeDisplayed()
         await usedbikepage.selectCity()
         console.log('Error message Displayed')
     });
-    it('Tc_03 Verify user able to select location using location option', async () => {
+    it('Tc_02 Verify user able to select location using location option', async () => {
         await usedbikepage.cLocation()
         expect(await usedbikepage.currentLocation).toBeDisplayed()
         console.log('Current Location displayed')
@@ -57,7 +57,7 @@ describe('Used Bike', async () => {
         await usedbikepage.basicDetailsDisplay()
         await usedbikepage.clickOnBack()
         await usedbikepage.letDroomSuggest()
-        expect(await usedbikepage.gudget).toBeDisplayed()
+        expect(await usedbikepage.budget).toBeDisplayed()
         console.log('What is Your Budget? option Display')
         expect(await usedbikepage.body).toBeDisplayed()
         console.log('Body Type option Display')
@@ -65,13 +65,13 @@ describe('Used Bike', async () => {
         console.log('Age of Vehicle Display')
         expect(await usedbikepage.more).toBeDisplayed()
     });
-    it('Tc_07 Verify user able to select use bike as per the Color', async () => {
+    it('Tc_09 Verify user able to select use bike as per the Color', async () => {
         await usedbikepage.clickOnGoBack()
         await usedbikepage.slectFromDropDown()
         await usedbikepage.selectBikeVehicle()
         await usedbikepage.clickOnNext()
         await usedbikepage.basicDetailsDisplay()
-        expect(await usedbikepage.gudget).toBeDisplayed()
+        expect(await usedbikepage.budget).toBeDisplayed()
         await usedbikepage.selectColorFromList()
         await usedbikepage.clickOnNext()
         await usedbikepage.clickOnNext()
@@ -81,7 +81,7 @@ describe('Used Bike', async () => {
         console.log(await(await usedbikepage.extColor).getText())
         expect(await usedbikepage.newRequirements).toBeDisplayed()
     });
-    it('Tc_08 Verify user able to select use bike as per the Do you also need option', async () => {
+    it('Tc_10 Verify user able to select use bike as per the Do you also need option', async () => {
         await usedbikepage.clickOnSubmitRequirements()
         await usedbikepage.bikeCondition()
         await usedbikepage.cLocation()
@@ -101,7 +101,7 @@ describe('Used Bike', async () => {
         console.log(await(await usedbikepage.service).getText())
         expect(await usedbikepage.newRequirements).toBeDisplayed()
     });
-    it('Tc_09 Verify user is able to select use bike as per the How Quickly Do You Want to Buy? option', async () => {
+    it('Tc_11 Verify user is able to select use bike as per the How Quickly Do You Want to Buy? option', async () => {
         await usedbikepage.clickOnSubmitRequirements()
         await usedbikepage.bikeCondition()
         await usedbikepage.cLocation()
@@ -121,9 +121,8 @@ describe('Used Bike', async () => {
         await usedbikepage.clickOngetRequirements()
         console.log(await(await usedbikepage.needToBuy).getText())
         expect(await usedbikepage.newRequirements).toBeDisplayed()
-
-    });
-    it('Tc_10 Validation for match count while req creation and in req page', async () => {
+});
+    it('Tc_12 Validation for match count while req creation and in req page', async () => {
         await usedbikepage.clickOnSubmitRequirements()
         await usedbikepage.bikeCondition()
         await usedbikepage.cLocation()
@@ -141,7 +140,7 @@ describe('Used Bike', async () => {
         await usedbikepage.clickOngetRequirements()
         expect(await usedbikepage.newRequirements).toBeDisplayed()
     });
-    it('Tc_11 Verify user is able to select use bike as per the Do You Wish to Exchange Your Vehicle option', async () => {
+    it('Tc_13 Verify user is able to select use bike as per the Do You Wish to Exchange Your Vehicle option', async () => {
         await usedbikepage.clickOnSubmitRequirements()
         await usedbikepage.bikeCondition()
         await usedbikepage.cLocation()
