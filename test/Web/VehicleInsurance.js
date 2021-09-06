@@ -36,6 +36,4 @@ describe("Vehicle Insurance", () => {
         expect(await VehicleInsurance.insuranceInformation).toBeDisplayed()
         console.log("Insurance Information Tab Displayed")
     });
-
-
 });

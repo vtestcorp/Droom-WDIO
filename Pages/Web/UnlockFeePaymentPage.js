@@ -2,7 +2,7 @@ class unlockFeePayment {
     get submitRequirement() { return $('//i[@class="web-g-icon web-g-icon-my-requirement d-font-size-22 d-display-inline-block d-position-relative d-valign-middle"]') }
     get carOption() { return $('(//span[@class="s-MuiButton-label"])[1]') }
     get Condition() { return $('//span[text()="Used"]') }
-    get newButton() { return $('(//span[text()="New"])[2]') }
+    get newButton() {return $('(//span[text()="New"])[3]')}
     get currentLocation() { return $('//div[text()="Current Location"]') }
     get nextButton() { return $('//span[text()="Next "]') }
     get vehicleDetails() { return $('//label[text()="Enter Your Vehicle Details"]') }
@@ -38,8 +38,8 @@ class unlockFeePayment {
     get paymentPageHeading() { return $('//h2[text()="Choose How You Want to Pay  ₹ "] ') }
     get selectAnotherVehicle() { return $('//p[text()=" Add Another Vehicle"]') }
     get clickOnMatch() { return $('(//div[@class="bm-MuiPaper-root bm-MuiPaper-elevation0 bm-MuiPaper-rounded"])[1]') }
-    //get payFeeButton() { return $('//button[text()="Pay (₹1) Best Match Unlock Fee"]') }
-    get payFeeButton() {return $('//button[text()="Pay (₹999) Best Match Unlock Fee"]')}
+    get payFeeButton() { return $('//button[text()="Pay (₹1) Best Match Unlock Fee"]') }
+    //get payFeeButton() {return $('//button[text()="Pay (₹999) Best Match Unlock Fee"]')}
     get Congratulations() { return $('//h3[text()="Congratulations"]') }
     get sucessMsg() { return $('//p[text()="Item has been successfully added to the cart"]') }
     get checkoutBtn() { return $('//a[text()="Checkout Now"]') }
@@ -69,7 +69,8 @@ class unlockFeePayment {
     }
     async selectCurrentLocation() {
         await (await this.currentLocation).click()
-        await (await this.currentLocation).waitForExist({ timeout: 10000 })
+        await (await this.newButton).click()
+        await (await this.Condition).click()
         await (await this.nextButton).click()
         console.log('Click on next Button')
     }
@@ -145,7 +146,8 @@ class unlockFeePayment {
     async selectCurrentLocationForMatch() {
         await (await this.clocation).setValue("Pune")
         await (await this.punelocation).click()
-        await (await this.punelocation).waitForExist({ timeout: 10000 })
+        await (await this.newButton).click()
+        await (await this.Condition).click()
         await (await this.nextButton).click()
         console.log('Click on next Button')
     }

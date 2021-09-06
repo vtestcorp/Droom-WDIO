@@ -2,7 +2,7 @@ const Base = require('../../BaseClass/base')
 const UnlockFeePayment = require('../../Pages/Web/UnlockFeePaymentPage')
 const LoginWithPasswordPage = require('../../Pages/Web/LoginViaPasswordPage')
 describe("Unlock Fee Payment", () => {
-   it("TC_01 Verify The Tokan Amount For Car Is 999", async () => {
+    it("TC_01 Verify The Tokan Amount For Car Is 999", async () => {
         await Base.loginAsBuyer()
         await UnlockFeePayment.submitRequirements()
         await UnlockFeePayment.SelectCarCondition()
@@ -58,14 +58,13 @@ describe("Unlock Fee Payment", () => {
         console.log("Application shows Congratulations Item has been successfully added to the cart")
         expect(await UnlockFeePayment.checkoutBtn).toBeDisplayed()
         console.log("Application shows Checkout Now Button")
-        await (await UnlockFeePayment.sucessMsg).waitForDisplayed({ timeout: 3000 })
         await (await UnlockFeePayment.checkoutBtn).click()
         expect(await UnlockFeePayment.proceedTocheckout).toBeDisplayed()
         console.log("Application shows Proceed To Checkout Option is display for car")
-        
+
     });
 
-  it("TC_05 Verify The Functionality After Click On Proceed To Checkout Button For Car", async () => {
+    it("TC_05 Verify The Functionality After Click On Proceed To Checkout Button For Car", async () => {
         console.log(await (await UnlockFeePayment.proceedTocheckout).isClickable())
         await (await UnlockFeePayment.proceedTocheckout).click()
         expect(await UnlockFeePayment.accountTab).toBeDisplayed()
@@ -76,7 +75,6 @@ describe("Unlock Fee Payment", () => {
         console.log(await (await UnlockFeePayment.paymentTab).getText())
         expect(await UnlockFeePayment.thankyouTab).toBeDisplayed()
         console.log(await (await UnlockFeePayment.thankyouTab).getText())
-        
     });
 
     it("TC_07 Verify Account Tab After Click On Payment", async () => {
@@ -102,7 +100,7 @@ describe("Unlock Fee Payment", () => {
         await Base.loginAsBuyer()
         await UnlockFeePayment.submitRequirements()
         await UnlockFeePayment.SelectBikeCondition()
-        await UnlockFeePayment.selectCurrentLocationForMatch()
+        await UnlockFeePayment.selectCurrentLocation()
         await UnlockFeePayment.enterYourVehicleDetails()
         await UnlockFeePayment.selectBikeForBestMatch()
         await UnlockFeePayment.basicDetailsDisplay()
@@ -129,8 +127,6 @@ describe("Unlock Fee Payment", () => {
         await (await UnlockFeePayment.checkoutBtn).click()
         expect(await UnlockFeePayment.proceedTocheckout).toBeDisplayed()
         console.log("Application shows Proceed To Checkout Option is display for car")
-        
-
     });
     it("TC_05 Verify The Functionality After Click On Proceed To Checkout Button For Bike   ", async () => {
         console.log(await (await UnlockFeePayment.proceedTocheckout).isClickable())
@@ -145,5 +141,4 @@ describe("Unlock Fee Payment", () => {
         console.log(await (await UnlockFeePayment.thankyouTab).getText())
         await LoginWithPasswordPage.logout()
     });
-
 });
