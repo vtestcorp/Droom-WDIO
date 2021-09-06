@@ -69,9 +69,7 @@ class unlockFeePayment {
     }
     async selectCurrentLocation() {
         await (await this.currentLocation).click()
-        await (await this.newButton).click()
-        await (await this.Condition).click()
-        await (await this.nextButton).waitForExist()
+        await (await this.currentLocation).waitForExist({ timeout: 10000 })
         await (await this.nextButton).click()
         console.log('Click on next Button')
     }
@@ -147,8 +145,7 @@ class unlockFeePayment {
     async selectCurrentLocationForMatch() {
         await (await this.clocation).setValue("Pune")
         await (await this.punelocation).click()
-        await (await this.newButton).click()
-        await (await this.Condition).click()
+        await (await this.punelocation).waitForExist({ timeout: 10000 })
         await (await this.nextButton).click()
         console.log('Click on next Button')
     }

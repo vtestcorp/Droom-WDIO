@@ -96,8 +96,9 @@ describe("Unlock Fee Payment", () => {
         expect(await UnlockFeePayment.editAddress).toBeDisplayed()
         expect(await UnlockFeePayment.deleteAddress).toBeDisplayed()
         console.log("Edit And Delete Address Options Displayed")
+        await LoginWithPasswordPage.logout()
     });
-    /*it("TC_04 Verify Proceed To Checkout Option Is Display For Bike", async () => {
+    it("TC_04 Verify Proceed To Checkout Option Is Display For Bike", async () => {
         await Base.loginAsBuyer()
         await UnlockFeePayment.submitRequirements()
         await UnlockFeePayment.SelectBikeCondition()
@@ -143,6 +144,6 @@ describe("Unlock Fee Payment", () => {
         expect(await UnlockFeePayment.thankyouTab).toBeDisplayed()
         console.log(await (await UnlockFeePayment.thankyouTab).getText())
         await LoginWithPasswordPage.logout()
-    });*/
+    });
 
 });
