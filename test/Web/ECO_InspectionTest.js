@@ -18,7 +18,6 @@ describe('ECO Inspection', () => {
         expect(await ECO_InspectionPage.Repair_EstimateHeading).toBeDisplayed()
         console.log("Select Car to Check Estimated Repair Cost is displayed as a heading")
         console.log(await (await ECO_InspectionPage.Repair_EstimateHeading).getText())
-        expect(await ECO_InspectionPage.getEstimate).toBeDisplayed()
         await ECO_InspectionPage.toinputsForCheckEstimate()
         console.log("After click on Next button Get Estimate Button is shown")
         expect(await ECO_InspectionPage.break_Repair).toBeDisplayed()
@@ -68,14 +67,13 @@ describe('ECO Inspection', () => {
         console.log("Check Points for Two Wheeler displayed")
         expect(await ECO_InspectionPage.tires_Wheels).toBeDisplayed()
         console.log(await (await ECO_InspectionPage.tires_Wheels).getText())
-    })
+    });
     it('TC_06 Verify Car Inspection  Service on Eco', async () => {
         await (await ECO_InspectionPage.home).click()
         expect(await ECO_InspectionPage.ECO_Offering).toBeDisplayed()
         console.log("ECO Offering Heading displayed for Cars and the Bikes")
         expect(await ECO_InspectionPage.cars_OnECO_Offering).toBeDisplayed()
         console.log("Cars option available under ECO offering")
-        console.log(await (await ECO_InspectionPage.cars_OnECO_Offering).getText())
         expect(await ECO_InspectionPage.inspection_Services).toBeDisplayed()
         console.log("Inspection services displayed under ECO Offering")
         expect(await ECO_InspectionPage.basic_Insection).toBeDisplayed()
@@ -135,4 +133,39 @@ describe('ECO Inspection', () => {
         console.log(await (await ECO_InspectionPage.scooter_InspectionHeading).getText())
         console.log("Scooter Inspection page show")
     });
+    it('TC_09 Verify Sign up functionality on ECO', async () => {
+        await (await ECO_InspectionPage.home).click()
+        await (await ECO_InspectionPage.Seller).click()
+        expect(await ECO_InspectionPage.RegiAsVendor).toBeDisplayed()
+        console.log("Register As a Vendor is Displayed")
+        await (await ECO_InspectionPage.RegiAsVendor).waitForEnabled({ timeout: 1500 })
+        await (await ECO_InspectionPage.RegiAsVendor).click()
+        console.log("Clicked on Resister as Vendor")
+        expect(await ECO_InspectionPage.signUp).toBeDisplayed()
+        await(await ECO_InspectionPage.signUp).click()
+        expect(await ECO_InspectionPage.create_Account).toBeDisplayed()
+        console.log("After click on Sign up Create Your account form is shown");       
+    });
+    it('TC_10 Verify Watch ECO TV functionality', async () => {
+        await (await ECO_InspectionPage.home).click()
+        await (await ECO_InspectionPage.Seller).click()
+        expect(await ECO_InspectionPage.RegiAsVendor).toBeDisplayed()
+        console.log("Register As a Vendor is Displayed")
+        await (await ECO_InspectionPage.RegiAsVendor).waitForEnabled({ timeout: 1500 })
+        await (await ECO_InspectionPage.RegiAsVendor).click()
+        console.log("Clicked on Resister as Vendor")
+        expect(await ECO_InspectionPage.Watch_ECOTV).toBeDisplayed()
+        console.log("Watch ECO TV option shown on ECO page")
+        await(await ECO_InspectionPage.Watch_ECOTV).click()
+        console.log("Clicked to Watch ECO TV")
+        expect(await ECO_InspectionPage.video).toBeDisplayed()
+        console.log("Video Displayed")
+        await(await ECO_InspectionPage.video).click()
+        console.log("Clicked On Video");
+        expect(await ECO_InspectionPage.close_Video).toBeDisplayed()
+        console.log("CLose Video icon is shown to close the video")
+        await(await ECO_InspectionPage.close_Video).click()
+        expect(await ECO_InspectionPage.Watch_ECOTV).toBeDisplayed()
+        console.log("Video Closed Successfully")
+    })
 });

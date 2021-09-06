@@ -14,9 +14,9 @@ class ECO {
     get SelectCar() { return $('//label[text()="Select Car"]') }
     get SelectRepairs() { return $('//label[text()="Select Repairs"]') }
     get getEstimate() { return $('//label[text()="Get Estimate"]') }
-    get selectMake() { return $('//div[@id="select2-drop-mask"]') }
-    get selectModel() { return $('//div[@id="s2id_model"]') }
-    get selectTrim() { return $('//span[@id="select2-chosen-3"]') }
+    get selectMake() { return $('//input[@id="s2id_autogen1_search"]') }
+    get selectModel() { return $('//span[@id="select2-chosen-2"]') }
+    get selectTrim() { return $('//div[@id="s2id_trim"]') }
     get location() { return $('//input[@class="form-control select-city"]') }
     get searchMy_Location() { return $('(//input[contains(@class,"lp-search")])[2]') }
     get next() { return $('//a[text()="Next"]') }
@@ -53,6 +53,13 @@ class ECO {
     get scooter_Inspection() { return $('//a[normalize-space()="Scooter Inspection"]') }
     get scooter_InspectionHeading() { return $('//h1[normalize-space()="Get A Used Scooter Inspection With ECO"]') }
     get home() { return $('//a[normalize-space()="Home"]') }
+    get signUp(){return $('//a[normalize-space()="Sign up"]')}
+    get create_Account(){return $('(//h2[normalize-space()="Create your account"])[1]')}
+    get Watch_ECOTV(){return $('//a[normalize-space()="Watch ECO TV"]')}
+    get video(){return $('//video[@class="video-stream html5-main-video"]')}
+    get play_btn(){return $('//button[@aria-label="Play (k)"]')}
+    get speaker(){return $('//button[@aria-label="Mute (m)"]')}
+    get close_Video(){return $('//button[@aria-label="Close"]') }
     async traverseToECO() {
         await (await this.shop_by_category).waitForClickable({ timeout: 3000 })
         await (await this.shop_by_category).click()
