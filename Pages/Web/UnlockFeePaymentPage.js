@@ -54,7 +54,7 @@ class unlockFeePayment {
     get selectBike2() { return $('(//a[contains(text(),"Bajaj Pulsar")])[4]') }
     get clocation() {return $('//input[@id="react-select-2-input"]')}
     get punelocation() {return $('//div[text()="Pune, Maharashtra, India"]')}
-    //get () {return $('(//div[@class="bm-MuiCardMedia-root bm-bm103"])[1]')}
+    
 
     async submitRequirements() {
         await (await this.submitRequirement).waitForExist()
@@ -69,8 +69,8 @@ class unlockFeePayment {
     }
     async selectCurrentLocation() {
         await (await this.currentLocation).click()
-        //await (await this.newButton).click()
-        //await (await this.Condition).click()
+        await (await this.newButton).click()
+        await (await this.Condition).click()
         await (await this.nextButton).waitForExist()
         await (await this.nextButton).click()
         console.log('Click on next Button')
@@ -142,7 +142,7 @@ class unlockFeePayment {
         await (await this.selectBike2).click()
         console.log("User selected Bike as per the requirement")
         await (await this.nextButton).click()
-       // await (await this.nextButton).click()
+      
     }
     async selectCurrentLocationForMatch() {
         await (await this.clocation).setValue("Pune")
