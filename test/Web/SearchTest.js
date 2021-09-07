@@ -3,6 +3,10 @@ const Base = require('../../BaseClass/base')
 const searchPage = require('../../Pages/Web/searchPage')
 describe('Search', () => {
     it('TC_01 Verify Search functionality on Main header', async () => {
+        try{
+            await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+            await (await $('(//button[@class="close em-show-later"])[2]')).click();}
+            catch{ }
         expect(await searchPage.search_Box).toBeDisplayed()
         await (await searchPage.search_Box).click()
         await (await searchPage.search_Box).setValue("thar")
@@ -18,16 +22,20 @@ describe('Search', () => {
         console.log("Scrolling to the Vista Link")
         await (await searchPage.shop_by_category).waitForExist({ timeout: 5000 })
         await (await searchPage.buyingTools).scrollIntoView()
+        console.log("Scrolling to the Buying Tool");
         await (await searchPage.vistaLink).scrollIntoView()
+        console.log("Scrolling to the Vista link of Cars")
         expect(await searchPage.vistaLink).toBeDisplayed()
         console.log(await (await searchPage.vistaLink).getText())
         await (await searchPage.vistaLink).click()
         console.log("Clicked On Vista Link")
-        expect(await searchPage.search_Box).toBeDisplayed()
-        expect(await searchPage.insuranceHeading).toHaveTextContaining("Cars for Sale")
+        expect(await searchPage.car_Heading).toHaveTextContaining("Cars for Sale")
         console.log("User able to navigate to required page by clicking related Vista Links")
     });
-    it('TC_03 Verify the functionality of Popular Search', async () => {
+   it('TC_03 Verify the functionality of Popular Search', async () => {
+        try{
+            await (await searchPage.home2).click();}
+            catch{ }
         await (await searchPage.search_Box).click()
         console.log("Clicked on Search Box")
         expect(await searchPage.popular_search).toBeDisplayed()
@@ -38,6 +46,9 @@ describe('Search', () => {
         console.log("TATA Nexon Displayed under the Trending Searches")
     });
     it('TC_04 Verify the functionality of recent Search', async () => {
+        try{
+            await (await searchPage.home2).click();}
+            catch{ }
         await (await searchPage.search_Box).click()
         console.log("Clicked on Search Box")
         console.log("Scrolling to the Recent Searches")
@@ -57,6 +68,9 @@ describe('Search', () => {
         console.log("Items Autoselect fuctinality Works Successfully")
     });
     it('TC_06 Verify Vehicle count after seach an item', async () => {
+        try{
+            await (await searchPage.home2).click();}
+            catch{ }
         expect(searchPage.search_Box).toBeDisplayed()
         console.log("Search Box is Present On Home Page")
         await (await searchPage.search_Box).click()
@@ -69,6 +83,9 @@ describe('Search', () => {
         console.log("Using Search box user is able to search and the count of available items is shown")
     });
     it('TC 07 Verify the sorting functionality', async () => {
+        try{
+            await (await searchPage.home2).click();}
+            catch{ }
         expect(await searchPage.search_Box).toBeDisplayed()
         await (await searchPage.search_Box).click();
         await (await searchPage.search_Box).setValue("Creta")
@@ -82,6 +99,9 @@ describe('Search', () => {
         console.log("Hyundai Creta shown after sorting the Vehicle Using -> Vehicle Condition-->New")
     });
     it('TC 08 Verify the filter functionality', async () => {
+        try{
+            await (await searchPage.home2).click();}
+            catch{ }
         expect(await searchPage.search_Box).toBeDisplayed()
         await (await searchPage.search_Box).click()
         await (await searchPage.search_Box).setValue("Activa")

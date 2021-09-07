@@ -1,7 +1,6 @@
 const Base = require('../../BaseClass/base');
 
 class Search {
-
     get search_Box() { return $('//input[@id="main_search"]') }
     get mahindraThar() { return $('//span[text()="Mahindra Thar 4X4 2015"]') }
     get headingVehicle() { return $('//div[@title="Mahindra Thar 4X4 2015"]') }
@@ -27,6 +26,7 @@ class Search {
     get browseByCategory(){return $('//h2[contains(text(),"Browse")]')}
     get shop_by_category() { return $('//span[contains(text(),"Shop by Category")]') }
     get buyingTools(){return $('//h2[text()="Buying & Selling Tools"]')}
-
+    get search2(){return $('//input[@placeholder="Search..."]')}
+    get home2(){return $('//a[normalize-space()="Home"]')}
 }
 module.exports = new Search()
