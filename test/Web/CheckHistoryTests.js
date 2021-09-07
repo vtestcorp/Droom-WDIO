@@ -52,8 +52,7 @@ describe("Check History", () => {
         console.log("Sample Certificate Displayed")
     });
     it("TC_06 To Verify The Home Option Is Functional On History Page", async () => {
-        browser.url('/')
-        await (await CheckHistory.checkHistory).waitForDisplayed({ timeout: 2000 })
+        await browser.back()
         console.log(await (await CheckHistory.checkHistory).isClickable())
         await (await CheckHistory.checkHistory).click()
         console.log("User click on Check History")
