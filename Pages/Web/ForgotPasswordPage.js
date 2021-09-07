@@ -4,7 +4,7 @@ class ForgotPassword {
     get profileicon() { return $('#user_details') }
     get loginBtn() { return $('//a[text()="Log In"]') }
     get emailTB() { return $('#userLogin') }
-    get sellerName() { return $('//div[text()="Welcome, Vtest1 !"]') }
+    get sellerName() { return $('(//div[@class="seller-name"])[2]') }
     get loginViaPasswordBtn() { return $('.d-letter-spacing-1[href="#viaPassword"]') }
     get forgotPasswordLink() { return $('//a[text()="Forgot Your Password?"]') }
     get loginwitholdPassword() { return $('//a[text()="Log In With Old Password "]') }

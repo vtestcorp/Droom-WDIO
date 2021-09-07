@@ -75,7 +75,7 @@ describe("Vehicle Insurance", () => {
         expect(await VehicleInsurance.vehicleDetails).toBeDisplayed()
         console.log("Vehicle Details TextBoX displayed")
         await (await VehicleInsurance.vehicleDetails).setValue("Tata Indigo 2003")
-        await (await VehicleInsurance.nextBtn).waitForDisplayed({ timeout: 5000 })
+        await (await VehicleInsurance.selectModel).click()
         await (await VehicleInsurance.nextBtn).click()
         expect(await VehicleInsurance.personalInformation).toBeDisplayed()
         console.log("Personal Information Tab Displayed")
