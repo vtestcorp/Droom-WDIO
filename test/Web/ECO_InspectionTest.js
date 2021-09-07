@@ -1,7 +1,11 @@
 const Base = require('../../BaseClass/base')
 const ECO_InspectionPage = require('../../Pages/Web/ECO_InspectionPage')
 describe('ECO Inspection', () => {
-    it('TC_01 Verify the Functionaliy of Buyer on ECO', async () => {
+  it('TC_01 Verify the Functionaliy of Buyer on ECO', async () => {
+        try{
+            await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+            await (await $('(//button[@class="close em-show-later"])[2]')).click();}
+            catch{ }
         await ECO_InspectionPage.traverseToECO()
         expect(await ECO_InspectionPage.Seller).toBeDisplayed()
         console.log("Seller option is availbale on page")
@@ -15,10 +19,11 @@ describe('ECO Inspection', () => {
         console.log("Repair Estimate option is shown")
         await (await ECO_InspectionPage.Check_Repair_Estimate).waitForEnabled({ timeout: 1500 })
         await (await ECO_InspectionPage.Check_Repair_Estimate).click()
+        console.log("Clicked on Repair Estimate")
         expect(await ECO_InspectionPage.Repair_EstimateHeading).toBeDisplayed()
         console.log("Select Car to Check Estimated Repair Cost is displayed as a heading")
         console.log(await (await ECO_InspectionPage.Repair_EstimateHeading).getText())
-        await ECO_InspectionPage.toinputsForCheckEstimate()
+        await ECO_InspectionPage.inputsToCheckEstimate()
         console.log("After click on Next button Get Estimate Button is shown")
         expect(await ECO_InspectionPage.break_Repair).toBeDisplayed()
         console.log("Break Reparing Option is Shown")
@@ -147,7 +152,7 @@ describe('ECO Inspection', () => {
         console.log("After click on Sign up Create Your account form is shown");       
     });
     it('TC_10 Verify Watch ECO TV functionality', async () => {
-        await (await ECO_InspectionPage.home).click()
+     await (await ECO_InspectionPage.home).click()
         await (await ECO_InspectionPage.Seller).click()
         expect(await ECO_InspectionPage.RegiAsVendor).toBeDisplayed()
         console.log("Register As a Vendor is Displayed")
@@ -159,13 +164,6 @@ describe('ECO Inspection', () => {
         await(await ECO_InspectionPage.Watch_ECOTV).click()
         console.log("Clicked to Watch ECO TV")
         expect(await ECO_InspectionPage.video).toBeDisplayed()
-        console.log("Video Displayed")
-        await(await ECO_InspectionPage.video).click()
-        console.log("Clicked On Video");
-        expect(await ECO_InspectionPage.close_Video).toBeDisplayed()
-        console.log("CLose Video icon is shown to close the video")
-        await(await ECO_InspectionPage.close_Video).click()
-        expect(await ECO_InspectionPage.Watch_ECOTV).toBeDisplayed()
-        console.log("Video Closed Successfully")
+        console.log("Video Displayed on ECO page")
     })
 });

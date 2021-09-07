@@ -14,9 +14,12 @@ class ECO {
     get SelectCar() { return $('//label[text()="Select Car"]') }
     get SelectRepairs() { return $('//label[text()="Select Repairs"]') }
     get getEstimate() { return $('//label[text()="Get Estimate"]') }
-    get selectMake() { return $('//input[@id="s2id_autogen1_search"]') }
-    get selectModel() { return $('//span[@id="select2-chosen-2"]') }
-    get selectTrim() { return $('//div[@id="s2id_trim"]') }
+    get selectMake() { return $('//span[text()="Select Make"]') }
+    get selectTrim(){return $('//span[text()="Select Trim"]')}
+    get inputTrim(){return $('//input[@id="s2id_autogen162_search"]')}
+    get inputMake(){return $('//input[@id="s2id_autogen1_search"]')}
+    get selectModel() { return $('//span[@id="select2-chosen-61"]') }
+    get inputModel(){return $('//input[@id="s2id_autogen61_search"]')}
     get location() { return $('//input[@class="form-control select-city"]') }
     get searchMy_Location() { return $('(//input[contains(@class,"lp-search")])[2]') }
     get next() { return $('//a[text()="Next"]') }
@@ -56,10 +59,14 @@ class ECO {
     get signUp(){return $('//a[normalize-space()="Sign up"]')}
     get create_Account(){return $('(//h2[normalize-space()="Create your account"])[1]')}
     get Watch_ECOTV(){return $('//a[normalize-space()="Watch ECO TV"]')}
-    get video(){return $('//video[@class="video-stream html5-main-video"]')}
+    get video(){return $('//button[@aria-label="Play"]')}
     get play_btn(){return $('//button[@aria-label="Play (k)"]')}
     get speaker(){return $('//button[@aria-label="Mute (m)"]')}
     get close_Video(){return $('//button[@aria-label="Close"]') }
+    get ashok(){return $('//span[text()="Ashok Leyland"]')}
+    get stile(){return $('//span[text()="Stile"]')}
+    get Le(){return $('(//span[text()="LE"])[1]')}
+    get inspection(){return $('//a[normalize-space()="Get Inspection"]')}
     async traverseToECO() {
         await (await this.shop_by_category).waitForClickable({ timeout: 3000 })
         await (await this.shop_by_category).click()
@@ -72,13 +79,16 @@ class ECO {
         console.log(await (await this.ECOHeading).getText())
         expect(await this.ECOHeading).toHaveTextContaining("Inspect Vehicle")
     }
-    async toinputsForCheckEstimate() {
-        await (await (await this.selectMake).$('(//option[@id])[last()]')).waitForExist({ timeout: 5000 })
-        await (await this.selectMake).selectByVisibleIndex(1)
-        await (await (await this.selectModel).$('(//option[@id])[last()]')).waitForExist({ timeout: 5000 })
-        await (await this.model).selectByVisibleIndex(1)
-        await (await (await this.selectTrim).$('(//option[@id])[last()]')).waitForExist({ timeout: 5000 })
-        await (await this.selectTrim).selectByVisibleIndex(1)
+    async inputsToCheckEstimate() {
+        await (await this.selectMake).click()
+        await(await this.inputMake).setValue("Ashok Leyland")
+        await(await this.ashok).click()
+        await(await this.selectModel).click()
+        await(await this.inputModel).setValue("Stile")
+        await(await this.stile).click()
+        await(await this.selectTrim).click()
+        await(await this.inputTrim).setValue("LE")
+        await(await this.Le).click()
         await (await this.searchMy_Location).setValue("Delhi")
         expect(await this.delhi).toBeDisplayed()
         console.log("Location is displayed")
@@ -89,3 +99,4 @@ class ECO {
     }
 }
 module.exports = new ECO()
+    
