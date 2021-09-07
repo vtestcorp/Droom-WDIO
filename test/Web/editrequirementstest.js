@@ -4,9 +4,7 @@ const editrequirementspage = require("../../Pages/Web/editrequirementspage");
 describe('Requirements page verification', async () => {
     it('Tc_01 Verify user should be able to edit location', async () => {
         await base.loginAsBuyer()
-        await base.CreateRequiRementspage()
-        await (await editrequirementspage.editBtn).click()
-        await (await editrequirementspage.almostDone).waitForExist({ timeout: 20000 })
+        await editrequirementspage.CreateRequiRement()
         expect(editrequirementspage.almostDone).toBeDisplayed()
         expect(editrequirementspage.matches).toBeDisplayed()
         expect(editrequirementspage.lastStep).toBeDisplayed()
@@ -52,6 +50,7 @@ describe('Requirements page verification', async () => {
         await editrequirementspage.goBackTillDoYouAlsoNeed()
         await (await editrequirementspage.notDecided).click()
         await (await editrequirementspage.nextButton).click()
+        await (await editrequirementspage.continue).waitForExist({ timeout: 10000 })
         await (await editrequirementspage.submitAndView).click()
         await (await editrequirementspage.requirement).waitForDisplayed({ timeout: 10000 })
         await (await editrequirementspage.requirement).click()
@@ -64,6 +63,7 @@ describe('Requirements page verification', async () => {
         await (await editrequirementspage.exchange).click()
         await editrequirementspage.selectVehicle()
         await (await editrequirementspage.nextButton).click()
+        await (await editrequirementspage.continue).waitForExist({ timeout: 10000 })
         await (await editrequirementspage.submitAndView).click()
         await (await editrequirementspage.requirement).click()
         console.log(await (await editrequirementspage.exchanges).getText())
@@ -72,6 +72,7 @@ describe('Requirements page verification', async () => {
         await (await editrequirementspage.editBtn).click()
         await (await editrequirementspage.almostDone).waitForDisplayed()
         await editrequirementspage.goBackTillVehicle()
+        await (await editrequirementspage.anotherVehicle).waitForDisplayed()
         await (await editrequirementspage.deleteVehicle).click()
         await (await editrequirementspage.enterV).setValue("BMW")
         await (await editrequirementspage.selectSwift).click()
@@ -83,8 +84,6 @@ describe('Requirements page verification', async () => {
         console.log(await (await editrequirementspage.carName).getText())
     });
     it('Tc_09 Verify user should be able to edit  Vehicle Details and multiple vehicles', async () => {
-        await base.loginAsBuyer()
-        await editrequirementspage.CreateRequiRement()
         await (await editrequirementspage.editBtn).click()
         await (await editrequirementspage.almostDone).waitForDisplayed()
         await editrequirementspage.goBackTillVehicle()
@@ -98,4 +97,40 @@ describe('Requirements page verification', async () => {
         await (await editrequirementspage.requirement).click()
         console.log(await (await editrequirementspage.carName).getText())
     });
+    it('Tc_02 Verify user should be able to edit price range', async () => {
+        console.log("Old Price Range:")
+        console.log(await (await editrequirementspage.priceRange).getText())
+        await (await editrequirementspage.editBtn).click()
+        await (await editrequirementspage.almostDone).waitForDisplayed()
+        await editrequirementspage.goBackTillColor()
+        await (await editrequirementspage.budgetBar).moveTo()
+        await (await editrequirementspage.budgetBar).click()
+        await (await editrequirementspage.nextButton).click()
+        await (await this.notDecided).click()
+        await (await editrequirementspage.nextButton).click()
+        await (await editrequirementspage.continue).waitForDisplayed({ timeout: 10000 })
+        await (await editrequirementspage.submitAndView).click()
+        await (await editrequirementspage.requirement).click()
+        console.log("New Price Range:")
+        console.log(await (await editrequirementspage.priceRange).getText())
+    });
+    it('Tc_03 Verify user should be able to edit KMS Driven Range', async () => {
+        console.log("Old KMS Range:")
+        console.log(await (await editrequirementspage.kmsrange).getText())
+        await (await editrequirementspage.editBtn).click()
+        await (await editrequirementspage.almostDone).waitForDisplayed()
+        await editrequirementspage.goBackTillColor()
+        await (await editrequirementspage.selectcolor).click()
+        await (await editrequirementspage.Kmsbar).moveTo()
+        await (await editrequirementspage.Kmsbar).click()
+        await (await editrequirementspage.nextButton).click()
+        await (await this.notDecided).click()
+        await (await editrequirementspage.nextButton).click()
+        await (await editrequirementspage.continue).waitForExist({ timeout: 10000 })
+        await (await editrequirementspage.submitAndView).click()
+        await (await editrequirementspage.requirement).click()
+        console.log("New KMS Range:")
+        console.log(await (await editrequirementspage.kmsrange).getText())
+    });
+
 });

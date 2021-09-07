@@ -197,6 +197,7 @@ describe('Used Car', async () => {
     expect(await UsedCarPage.newRequirements).toBeDisplayed()
   });
   it('Tc_15 Validation for match count while req creation and in req page', async () => {
+    await Base.loginAsBuyer()
     await UsedCarPage.clickOnSubmitRequirements()
     await UsedCarPage.carCondition()
     await UsedCarPage.cLocation()

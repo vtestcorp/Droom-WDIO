@@ -9,7 +9,7 @@ class EditrequiRementspage {
     get condition() { return $('(//span[text()="Condition"])[1]') }
     get year() { return $('(//span[text()="Year"])[1]') }
     get km() { return $('(//div[@class="r-MuiTypography-root r-MuiTypography-body1"])[1]') }
-    get transmission() { return $('(//div[@class="r-MuiTypography-root r-MuiTypography-body1"])[2]') }
+    get transmission() { return $('//span[text()="Manual"]') }
     get Color() { return $('(//div[text()="Ext Color"])[1]') }
     get Body() { return $('(//div[text()="Body Type"])[1]') }
     get payment() { return $('(//span[text()="Unlock Fee Payment Pending"])[1]') }
@@ -23,7 +23,7 @@ class EditrequiRementspage {
     get dreamVehicle() { return $('//h5[text()="Now Share Your Dream Vehicle Basic Details"]') }
     get searchOrSelect() { return $('//p[text()="Search or Select "]') }
     get location() { return $('//p[text()="Location"]') }
-    get entLocation() { return $('//input[@id="react-select-2-input"]') }
+    get entLocation() { return $('//input[@id="react-select-3-input"]') }
     get selectLocation() { return $('//div[text()="Mumbai, Maharashtra, India"]') }
     get nextButton() { return $('//span[text()="Next "]') }
     get submitAndView() { return $('//span[text()="Submit & View All Matches "]') }
@@ -36,7 +36,7 @@ class EditrequiRementspage {
     get loan() { return $('(//span[@class="s-MuiIconButton-label"])[3]') }
     get RCTransfer() { return $('(//span[@class="s-MuiIconButton-label"])[4]') }
     get roadSideAssistance() { return $('(//span[@class="s-MuiIconButton-label"])[5]') }
-    get notDecided() { return $('(//span[@class="s-MuiIconButton-label"])[11]') }
+    get notDecided() { return $('//span[text()="Not Decided"]') }
     get service() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[1]') }
     get buy() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[2]') }
     get nameOfR() { return $('(//input[@class="r-MuiInputBase-input"])[1]') }
@@ -69,6 +69,13 @@ class EditrequiRementspage {
     get selectcity() { return $('//div[text()="Pune, Maharashtra, India"]') }
     get addR() { return $('//i[@class="web-g-icon web-g-icon-my-requirement d-font-size-22 d-display-inline-block d-position-relative d-valign-middle"]') }
     get welcome() { return $('//div[@class="bm-MuiTypography-root bm-bm43 bm-MuiTypography-body1"]') }
+    get budgetBar() { return $('(//div[@class="noUi-connect"])[1]') }
+    get Kmsbar() { return $('(//div[@class="noUi-connect"])[2]') }
+    get kmsrange() { return $('(//div[@class="r-MuiBox-root r-r127"])[1]') }
+    get immediately() { return $('(//span[@class="s-MuiIconButton-label"])[1]') }
+    get flexible() { return $('//p[text()="Flexible for Transmission Type"]') }
+    get yesBtn() { return $('//div[text()="Yes"]') }
+    
     async goBackTillLocation() {
         await (await this.backBtn).click()
         await (await this.lastStepToGo).waitForExist({ timeout: 7000 })
@@ -154,7 +161,6 @@ class EditrequiRementspage {
         await (await this.nextButton).click()
         await (await this.nextButton).click()
         await (await this.submitAndView).click()
-        await (await this.requirement).waitForExist({ timeout: 7000 })
         await (await this.requirement).click()
     }
 }

@@ -6,7 +6,7 @@ class Usedcar {
     get used() { return $('//span[text()="Used"]') }
     get carimg() { return $('//span[text()="Car"]') }
     get scooter() { return $('//span[text()="Scooter"]') }
-    get newButton() { return $('(//span[text()="New"])[2]') }
+    get newButton() { return $('(//span[text()="New"])[3]') }
     get used() { return $('//span[text()="Used"]') }
     get usedButton() { return $('(//span[@class="s-MuiIconButton-label"])[3]') }
     get newRButton() { return $('(//*[@class="s-MuiIconButton-label"])[2]') }
