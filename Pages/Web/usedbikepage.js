@@ -71,7 +71,10 @@ class UsedBike {
     get extColor() { return $('//div[@class="r-MuiBox-root r-r136"]') }
     get service() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[1]') }
     get needToBuy() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[2]') }
-
+    get budgetBar() { return $('(//div[@class="noUi-connect"])[1]') }
+    get Kmsbar() { return $('(//div[@class="noUi-connect"])[2]') }
+    get priceRange() { return $('(//div[@class="r-MuiGrid-root r-r51 r-MuiGrid-item r-MuiGrid-grid-xs-4 r-MuiGrid-grid-sm-3"])[1]') }
+    get kmsrange() { return $('(//div[@class="r-MuiBox-root r-r127"])[1]') }
     async submitRequirement() {
         await (await this.submit).click()
     }
@@ -137,7 +140,6 @@ class UsedBike {
     }
     async basicDetailsDisplay() {
         (await this.budget).waitForExist({ timeout: 7000 })
-            (await this.basicDetails).waitForExist({ timeout: 7000 })
     }
     async clickOnBack() {
         await (await this.backBtn).click()

@@ -75,7 +75,7 @@ class EditrequiRementspage {
     get immediately() { return $('(//span[@class="s-MuiIconButton-label"])[1]') }
     get flexible() { return $('//p[text()="Flexible for Transmission Type"]') }
     get yesBtn() { return $('//div[text()="Yes"]') }
-    
+    get closePopUP() { return $('//button[@class="close em-show-later"]') }
     async goBackTillLocation() {
         await (await this.backBtn).click()
         await (await this.lastStepToGo).waitForExist({ timeout: 7000 })

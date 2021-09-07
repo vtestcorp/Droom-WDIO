@@ -54,7 +54,6 @@ describe('Used Bike', async () => {
         console.log('successfully bike selected from dropdown')
     });
     it('Tc_06 Verify user able to select bike model through Let Droom Suggest for you as per requirement', async () => {
-        await usedbikepage.basicDetailsDisplay()
         await usedbikepage.clickOnBack()
         await usedbikepage.letDroomSuggest()
         expect(await usedbikepage.budget).toBeDisplayed()
@@ -63,7 +62,6 @@ describe('Used Bike', async () => {
         console.log('Body Type option Display')
         expect(await usedbikepage.age).toBeDisplayed()
         console.log('Age of Vehicle Display')
-        expect(await usedbikepage.more).toBeDisplayed()
     });
     it('Tc_09 Verify user able to select use bike as per the Color', async () => {
         await usedbikepage.clickOnGoBack()
@@ -164,6 +162,47 @@ describe('Used Bike', async () => {
         expect(await usedbikepage.almostDone).toBeDisplayed()
         await usedbikepage.clickOnSubmit()
         await usedbikepage.clickOngetRequirements()
+        expect(await usedbikepage.newRequirements).toBeDisplayed()
+    });
+    it('Tc_07 Verify user able to select use bike as per the budget', async () => {
+        await base.loginAsBuyer()
+        await usedbikepage.clickOnSubmitRequirements()
+        await usedbikepage.bikeCondition()
+        await usedbikepage.cLocation()
+        await usedbikepage.clickOnNext()
+        await usedbikepage.selectBike()
+        await usedbikepage.clickOnNext()
+        expect(await usedbikepage.bikeName).toBeDisplayed()
+        expect(await usedbikepage.addBtn).toBeDisplayed()
+        await (await usedbikepage.budgetBar).moveTo()
+        await (await usedbikepage.budgetBar).click()
+        await usedbikepage.clickOnNext()
+        await usedbikepage.selectDoYouAlsoNeed()
+        await usedbikepage.clickOnNext()
+        expect(await usedbikepage.almostDone).toBeDisplayed()
+        await usedbikepage.clickOnSubmit()
+        await usedbikepage.clickOngetRequirements()
+        console.log(await (await usedbikepage.priceRange).getText())
+        expect(await usedbikepage.newRequirements).toBeDisplayed()
+    });
+    it('Tc_08 Verify user able to select use bike as per the KMS Driven Range', async () => {
+        await usedbikepage.clickOnSubmitRequirements()
+        await usedbikepage.bikeCondition()
+        await usedbikepage.cLocation()
+        await usedbikepage.clickOnNext()
+        await usedbikepage.selectBike()
+        await usedbikepage.clickOnNext()
+        expect(await usedbikepage.bikeName).toBeDisplayed()
+        expect(await usedbikepage.addBtn).toBeDisplayed()
+        await (await usedbikepage.Kmsbar).moveTo()
+        await (await usedbikepage.Kmsbar).click()
+        await usedbikepage.clickOnNext()
+        await usedbikepage.selectDoYouAlsoNeed()
+        await usedbikepage.clickOnNext()
+        expect(await usedbikepage.almostDone).toBeDisplayed()
+        await usedbikepage.clickOnSubmit()
+        await usedbikepage.clickOngetRequirements()
+        console.log(await (await usedbikepage.kmsrange).getText())
         expect(await usedbikepage.newRequirements).toBeDisplayed()
     });
 });
