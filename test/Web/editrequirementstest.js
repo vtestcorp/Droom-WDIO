@@ -2,20 +2,9 @@ const base = require("../../BaseClass/base");
 const editrequirementspage = require("../../Pages/Web/editrequirementspage");
 
 describe('Requirements page verification', async () => {
-    it('Tc_01 Verify user should be able to edit location', async () => {
+   it('Tc_04 Verify user should be able to edit color', async () => {
         await base.loginAsBuyer()
         await editrequirementspage.CreateRequiRement()
-        expect(editrequirementspage.almostDone).toBeDisplayed()
-        expect(editrequirementspage.matches).toBeDisplayed()
-        expect(editrequirementspage.lastStep).toBeDisplayed()
-        expect(editrequirementspage.socreBtn).toBeDisplayed()
-        await editrequirementspage.goBackTillLocation()
-        await editrequirementspage.Enterloaction()
-        await editrequirementspage.submitRequirements()
-        expect(editrequirementspage.rLocation).toBeDisplayed()
-        console.log(await (await editrequirementspage.rLocation).getText())
-    });
-    it('Tc_04 Verify user should be able to edit color', async () => {
         await (await editrequirementspage.editBtn).click()
         expect(await editrequirementspage.almostDone).toBeDisplayed()
         expect(await editrequirementspage.matches).toBeDisplayed()
@@ -131,6 +120,17 @@ describe('Requirements page verification', async () => {
         await (await editrequirementspage.requirement).click()
         console.log("New KMS Range:")
         console.log(await (await editrequirementspage.kmsrange).getText())
+    });
+    it('Tc_01 Verify user should be able to edit location', async () => {
+        expect(editrequirementspage.almostDone).toBeDisplayed()
+        expect(editrequirementspage.matches).toBeDisplayed()
+        expect(editrequirementspage.lastStep).toBeDisplayed()
+        expect(editrequirementspage.socreBtn).toBeDisplayed()
+        await editrequirementspage.goBackTillLocation()
+        await editrequirementspage.Enterloaction()
+        await editrequirementspage.submitRequirements()
+        expect(editrequirementspage.rLocation).toBeDisplayed()
+        console.log(await (await editrequirementspage.rLocation).getText())
     });
 
 });

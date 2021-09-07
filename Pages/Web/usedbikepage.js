@@ -75,6 +75,8 @@ class UsedBike {
     get Kmsbar() { return $('(//div[@class="noUi-connect"])[2]') }
     get priceRange() { return $('(//div[@class="r-MuiGrid-root r-r51 r-MuiGrid-item r-MuiGrid-grid-xs-4 r-MuiGrid-grid-sm-3"])[1]') }
     get kmsrange() { return $('(//div[@class="r-MuiBox-root r-r127"])[1]') }
+    get closeBtn() { return $('//button[@class="close em-show-later"]') }
+    get home() { return $('//a[normalize-space()="Home"]') }
     async submitRequirement() {
         await (await this.submit).click()
     }
@@ -192,6 +194,10 @@ class UsedBike {
     }
     async selectColorFromList() {
         await (await this.colorName).click()
+    }
+    async closePopUp()
+    {
+        await (await this.closeBtn).click()
     }
 }
 module.exports = new UsedBike();

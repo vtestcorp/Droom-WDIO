@@ -53,10 +53,11 @@ describe('Used Car', async () => {
     expect(await UsedCarPage.carName).toBeDisplayed()
     expect(await UsedCarPage.addBtn).toBeDisplayed()
     console.log('successfully car selected from dropdown')
+    await UsedCarPage.closePopUp()
   });
   it('Tc_06 Verify user able to select car model through Let Droom Suggest for you as per requirement', async () => {
-    await UsedCarPage.basicDetailsDisplay()
-    await UsedCarPage.clickOnBack()
+    await UsedCarPage.clickOnSubmitRequirements()
+    await (await UsedCarPage.carCancel).click()
     await UsedCarPage.letDroomSuggest()
     expect(await UsedCarPage.gudget).toBeDisplayed()
     console.log('What is Your Budget? option Display')
@@ -64,14 +65,19 @@ describe('Used Car', async () => {
     console.log('Body Type option Display')
     expect(await UsedCarPage.age).toBeDisplayed()
     console.log('Age of Vehicle Display')
-    expect(await UsedCarPage.more).toBeDisplayed()
+    await UsedCarPage.closePopUp()
+
   });
   it('Tc_08 Verify user able to select use car as per the Fuel type', async () => {
-    await UsedCarPage.clickOnGoBack()
+    await (await UsedCarPage.home).click()
+    await UsedCarPage.clickOnSubmitRequirements()
+    await UsedCarPage.carCondition()
+    await (await UsedCarPage.currentLocation).click()
+    await (await UsedCarPage.used).click()
+    await UsedCarPage.clickOnNext()
     await UsedCarPage.slectFromDropDown()
     await UsedCarPage.selectVehicle()
     await UsedCarPage.clickOnNext()
-    await UsedCarPage.basicDetailsDisplay()
     expect(await UsedCarPage.gudget).toBeDisplayed()
     expect(await UsedCarPage.fuelType).toBeDisplayed()
     await UsedCarPage.selectPetrol()
@@ -197,7 +203,6 @@ describe('Used Car', async () => {
     expect(await UsedCarPage.newRequirements).toBeDisplayed()
   });
   it('Tc_15 Validation for match count while req creation and in req page', async () => {
-    await Base.loginAsBuyer()
     await UsedCarPage.clickOnSubmitRequirements()
     await UsedCarPage.carCondition()
     await UsedCarPage.cLocation()

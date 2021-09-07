@@ -71,6 +71,10 @@ class Usedcar {
     get sorce() { return $('(//div[@class="noUi-touch-area"])[2]') }
     get target() { return $('//div[@aria-valuenow="15000000.0"]') }
     get scle() { return $('(//div[@class="noUi-connect"])[1]') }
+    get closeBtn() { return $('//button[@class="close em-show-later"]') }
+    get home() { return $('//a[normalize-space()="Home"]') }
+    
+    
     async submitRequirement() {
         await (await this.submit).click()
     }
@@ -168,6 +172,10 @@ class Usedcar {
     }
     async Enterkms() {
         await (await this.kms).setValue("10000")
+    }
+    async closePopUp()
+    {
+        await (await this.closeBtn).click()
     }
 }
 module.exports = new Usedcar();
