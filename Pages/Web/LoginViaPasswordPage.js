@@ -38,7 +38,7 @@ class Login {
     async logout() {
         await (await this.profileicon).waitForDisplayed({ timeout: 1000 })
         await (await this.profileicon).moveTo()
-        await (await this.logoutBtn).waitForDisplayed({ timeout: 2000 })
+        await (await this.logoutBtn).waitForDisplayed({ timeout: 4000 })
         await (await this.logoutBtn).click()
         console.log('User logout application')
     }
