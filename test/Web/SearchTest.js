@@ -8,6 +8,7 @@ describe('Search', () => {
             await (await $('(//button[@class="close em-show-later"])[2]')).click();}
             catch{ }
         expect(await searchPage.search_Box).toBeDisplayed()
+        console.log(await (await searchPage.search_Box ).isClickable())
         await (await searchPage.search_Box).click()
         await (await searchPage.search_Box).setValue("thar")
         console.log("Sending text to search an Item")
@@ -23,18 +24,22 @@ describe('Search', () => {
         await (await searchPage.shop_by_category).waitForExist({ timeout: 5000 })
         await (await searchPage.buyingTools).scrollIntoView()
         console.log("Scrolling to the Buying Tool");
-        await (await searchPage.vistaLink).scrollIntoView()
+        await (await searchPage.car).scrollIntoView()
         console.log("Scrolling to the Vista link of Cars")
         expect(await searchPage.vistaLink).toBeDisplayed()
         console.log(await (await searchPage.vistaLink).getText())
-        await (await searchPage.vistaLink).click()
-        console.log("Clicked On Vista Link")
+        await (await searchPage.car).click()
+        console.log("Clicked On Vista Link of New and Used Cars for Sale")
         expect(await searchPage.car_Heading).toHaveTextContaining("Cars for Sale")
         console.log("User able to navigate to required page by clicking related Vista Links")
     });
    it('TC_03 Verify the functionality of Popular Search', async () => {
         try{
             await (await searchPage.home2).click();}
+            catch{ }
+             try{
+            await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+            await (await $('(//button[@class="close em-show-later"])[2]')).click();}
             catch{ }
         await (await searchPage.search_Box).click()
         console.log("Clicked on Search Box")
@@ -48,6 +53,10 @@ describe('Search', () => {
     it('TC_04 Verify the functionality of recent Search', async () => {
         try{
             await (await searchPage.home2).click();}
+            catch{ }
+             try{
+            await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+            await (await $('(//button[@class="close em-show-later"])[2]')).click();}
             catch{ }
         await (await searchPage.search_Box).click()
         console.log("Clicked on Search Box")
@@ -71,6 +80,10 @@ describe('Search', () => {
         try{
             await (await searchPage.home2).click();}
             catch{ }
+             try{
+            await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+            await (await $('(//button[@class="close em-show-later"])[2]')).click();}
+            catch{ }
         expect(searchPage.search_Box).toBeDisplayed()
         console.log("Search Box is Present On Home Page")
         await (await searchPage.search_Box).click()
@@ -82,26 +95,37 @@ describe('Search', () => {
         console.log(await (await searchPage.count).getText())
         console.log("Using Search box user is able to search and the count of available items is shown")
     });
-    it('TC 07 Verify the sorting functionality', async () => {
+    it('TC 07 Verify the Filter functionality', async () => {
         try{
             await (await searchPage.home2).click();}
             catch{ }
+            try{
+                await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+                await (await $('(//button[@class="close em-show-later"])[2]')).click();}
+                catch{ }
         expect(await searchPage.search_Box).toBeDisplayed()
         await (await searchPage.search_Box).click();
         await (await searchPage.search_Box).setValue("Creta")
         console.log("Sending text to search an Item")
         await (await searchPage.creta).click()
         expect(await searchPage.headingAfterFilter).toBeDisplayed()
-        expect(await searchPage.Filte_conditionNew).toBeDisplayed()
-        console.log("Filter for Vehicle Condition is Displayed")
-        await (await searchPage.Filte_conditionNew).click()
-        expect(await searchPage.headingAfterFilter).toHaveTextContaining("Hyundai Creta")
-        console.log("Hyundai Creta shown after sorting the Vehicle Using -> Vehicle Condition-->New")
+        expect(await searchPage.condition).toBeDisplayed()
+        console.log("Condition filter is displayed")
+        await(await searchPage.condition).click()
+        expect(await searchPage.newCondition).toBeDisplayed()
+        console.log("New Filter is Displayed")
+        await(await searchPage.newCondition).click()
+        expect(await searchPage.used_vehicle).toHaveTextContaining("Used")
+        console.log("Used Hyundai Creta shown after applying Filter the Vehicle Using -> Vehicle Condition-->New")
     });
-    it('TC 08 Verify the filter functionality', async () => {
+    it('TC 08 Verify the Sorting functionality', async () => {
         try{
             await (await searchPage.home2).click();}
             catch{ }
+            try{
+                await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+                await (await $('(//button[@class="close em-show-later"])[2]')).click();}
+                catch{ }
         expect(await searchPage.search_Box).toBeDisplayed()
         await (await searchPage.search_Box).click()
         await (await searchPage.search_Box).setValue("Activa")
@@ -113,8 +137,8 @@ describe('Search', () => {
         expect(await searchPage.SortByPrice).toBeDisplayed()
         await (await searchPage.SortByPrice).moveTo()
         await (await searchPage.SortByPrice).click()
-        expect(await searchPage.headingAfterFilter).toBeDisplayed()
-        expect(await searchPage.headingAfterFilter).toHaveTextContaining("Honda Activa")
-        console.log("After applying filter functinality according to Prices result shown ")
+        expect(await searchPage.used_vehicle).toBeDisplayed()
+        expect(await searchPage.used_vehicle).toHaveTextContaining("used")
+        console.log("After sorting  functinality according to Prices result shown ")
     });
 });
