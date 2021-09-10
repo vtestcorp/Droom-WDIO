@@ -18,7 +18,7 @@ class Base
       catch{ }
       await(await $('#user_details')).click();
       await(await $("a[class='btn btn-primary']")).click();
-      await(await $("#userLogin")).setValue("vikasy898@gmail.com");
+      await(await $("#userLogin")).setValue("vtest1@gmail.com");
       await(await $(".d-letter-spacing-1[href='#viaPassword']")).click();
       await(await $("#password")).setValue("Vtest@123");
       await(await $("input[value='Login']")).click();
@@ -31,7 +31,7 @@ class Base
       const a=await $(`android=${selector}`)
       return a
     }
-    async getByText(text)
+    async getByText(text
     {
       const selector = 'new UiSelector().text("'+text+'")'
       const a=await $(`android=${selector}`)
@@ -52,17 +52,17 @@ class Base
     async scrollToExactText(text)
     {
       const bottomElementSelector = `new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text("${text}"))`
-      const bottomEl =await $(`android=${bottomElementSelector}`)
+      await $(`android=${bottomElementSelector}`)
     }
     async scrollToTextContain(text)
     {
       const bottomElementSelector = `new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains("${text}"))`
-      const bottomEl =await $(`android=${bottomElementSelector}`)
+      await $(`android=${bottomElementSelector}`)
     }
     async scrollToResourceID(id)
     {
       const bottomElementSelector = `new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().resourceId("${id}"))`
-      const bottomEl =await $(`android=${bottomElementSelector}`)
+      await $(`android=${bottomElementSelector}`)
     }
     async androidLoginAsBuyer()
     {
