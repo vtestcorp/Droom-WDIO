@@ -22,6 +22,4 @@ describe("Check History", () => {
         expect(await CheckHistoryPage.vehicleCertificate).toBeDisplayed()
         console.log("Vehicle History Certificate Displayed")
     });
-   
-
-});
+   });
