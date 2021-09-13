@@ -15,6 +15,11 @@ describe("Login Via Password", () => {
       await LoginWithPasswordPage.logout()
    });
    it("TC_02 Login with Valid UserName and Invalid Password", async () => {
+      try {
+         await (await LoginWithPasswordPage.popup).waitForDisplayed({ timeout: 20000, timeoutMsg: "Popup not displayed" })
+         await (await LoginWithPasswordPage.popupclose).click()
+      }
+      catch { }
       await LoginWithPasswordPage.loginViaPassword()
       await LoginWithPasswordPage.loginWithValidUsernameInvalidPassword()
       expect(await LoginWithPasswordPage.errorMsgForInvalidPasswd).toBeDisplayed()
@@ -22,6 +27,11 @@ describe("Login Via Password", () => {
       console.log("Error message displayed as : Your username or password is incorrect")
    });
    it("TC_03 Login with InValid UserName and Valid Password", async () => {
+      try {
+         await (await LoginWithPasswordPage.popup).waitForDisplayed({ timeout: 20000, timeoutMsg: "Popup not displayed" })
+         await (await LoginWithPasswordPage.popupclose).click()
+      }
+      catch { }
       await LoginWithPasswordPage.loginViaPassword()
       await LoginWithPasswordPage.loginWithInvalidUserValidPassword()
       expect(await LoginWithPasswordPage.errorMsgForInvalidPasswd).toBeDisplayed()
@@ -29,6 +39,11 @@ describe("Login Via Password", () => {
       console.log("Error message displayed as : User does not exist")
    });
    it("TC_04 Login With InValid Username and InValid Password", async () => {
+      try {
+         await (await LoginWithPasswordPage.popup).waitForDisplayed({ timeout: 20000, timeoutMsg: "Popup not displayed" })
+         await (await LoginWithPasswordPage.popupclose).click()
+      }
+      catch { }
       await LoginWithPasswordPage.loginViaPassword()
       await LoginWithPasswordPage.loginwithInValidCredentials()
       expect(await LoginWithPasswordPage.errorMsgForInvalidPasswd).toBeDisplayed()
@@ -36,6 +51,11 @@ describe("Login Via Password", () => {
       console.log("Error message displayed as : User does not exist")
    });
    it("TC_05 To Verify Login Functionality With Blank Username", async () => {
+      try {
+         await (await LoginWithPasswordPage.popup).waitForDisplayed({ timeout: 20000, timeoutMsg: "Popup not displayed" })
+         await (await LoginWithPasswordPage.popupclose).click()
+      }
+      catch { }
       await LoginWithPasswordPage.loginViaPassword()
       await LoginWithPasswordPage.verifyBlankUserName()
       expect(await LoginWithPasswordPage.errorMsg).toBeDisplayed()
@@ -43,6 +63,11 @@ describe("Login Via Password", () => {
       console.log("Error message displayed as : Please Enter A Valid Mobile Number")
    });
    it("TC_06 To Verify Login Functionality With Valid Username Blank Password", async () => {
+      try {
+         await (await LoginWithPasswordPage.popup).waitForDisplayed({ timeout: 20000, timeoutMsg: "Popup not displayed" })
+         await (await LoginWithPasswordPage.popupclose).click()
+      }
+      catch { }
       await LoginWithPasswordPage.loginViaPassword()
       await LoginWithPasswordPage.verifyBlankPassword()
       expect(await LoginWithPasswordPage.errorMsgForInvalidPasswd).toBeDisplayed()

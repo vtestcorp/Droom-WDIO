@@ -16,7 +16,7 @@ describe("Login Via Password", ()=>{
          await (await page.passText).setValue("Vtest@123")
          await (await page.showPassword).click()
          await (await page.loginFinal).click()
-         expect(await page.userInfo).toBeDisplayed()
+         await expect(await page.userInfo).toBeDisplayed()
          console.log("User is able to Login using valid credentials")
       });
 
@@ -80,17 +80,5 @@ describe("Login Via Password", ()=>{
             expect(await page.blanckPasswordMsg).toHaveTextContaining('Please enter password')
             console.log("Error message displayed as : Please enter password")
          });
- 
-     
-      // it("TC01 To Verify Login With Social Login", async()=>{
-      //    await (await page.mainPopup).click()
-      //    await (await page.myAccount).click()
-      //    await (await page.fbLoginBtn).click()
-      //    await (await page.fbEmailTxt).setValue("matade10@rediffmail.com")
-      //    await (await page.fbPasswordTxt).setValue("punuganu123")
-      //    await (await page.fbFinalLoginBtn).click()
-      //    expect(await page.blanckPasswordMsg).toHaveTextContaining('Please enter password')
-      //    console.log("Error message displayed as : Please enter password")          
-      // });
 
    });
