@@ -76,38 +76,49 @@ class EditrequiRementspage {
     get flexible() { return $('//p[text()="Flexible for Transmission Type"]') }
     get yesBtn() { return $('//div[text()="Yes"]') }
     get closePopUP() { return $('//button[@class="close em-show-later"]') }
-    async goBackTillLocation() {
+    get matchesFount() { return $('//button[@class="close em-show-later"]') }
+    get profile() { return $('//i[@class="web-g-icon web-g-icon-my-droom d-font-size-30"]') }
+    get myAccount() { return $('//a[text()="My Account"]') }
+    get myAccount() { return $('//a[text()="My Account"]') }
+    get Myrequirements() { return $('//a[text()="My Requirements"]') }
+    
+async goBackTillLocation() {
+    await browser.pause(2000)
         await (await this.backBtn).click()
-        await (await this.lastStepToGo).waitForExist({ timeout: 7000 })
+        await (await this.lastStepToGo).waitForExist({ timeout: 10000 })
         await (await this.backBtn).click()
-        await (await this.dreamVehicle).waitForExist({ timeout: 7000 })
+        await (await this.dreamVehicle).waitForExist({ timeout: 10000 })
         await (await this.backBtn).click()
-        await (await this.searchOrSelect).waitForExist({ timeout: 7000 })
+        await (await this.searchOrSelect).waitForExist({ timeout: 10000 })
         await (await this.backBtn).click()
-        await (await this.location).waitForExist({ timeout: 7000 })
+        await (await this.location).waitForExist({ timeout: 10000 })
     }
     async Enterloaction() {
-        await (await this.location).waitForExist({ timeout: 7000 })
+        await (await this.location).waitForExist({ timeout: 10000 })
         await (await this.entLocation).setValue("Mumbai")
         await (await this.selectLocation).click()
     }
     async submitRequirements() {
         await (await this.nextButton).click()
         await (await this.nextButton).click()
+        await (await this.flexible).waitForExist({ timeout: 10000 })
         await (await this.nextButton).click()
+        await (await this.yesBtn).waitForExist({ timeout: 10000 })
         await (await this.nextButton).click()
+        await (await this.submitAndView).waitForExist({ timeout: 10000 })
         await (await this.submitAndView).click()
         await (await this.requirement).click()
     }
     async goBackTillColor() {
         await (await this.backBtn).click()
-        await (await this.lastStepToGo).waitForExist({ timeout: 7000 })
+        await (await this.lastStepToGo).waitForDisplayed({ timeout: 10000 })
         await (await this.backBtn).click()
-        await (await this.dreamVehicle).waitForExist({ timeout: 7000 })
+        await (await this.dreamVehicle).waitForExist({ timeout: 10000 })
     }
     async goBackTillDoYouAlsoNeed() {
+        await browser.pause(2000)
         await (await this.backBtn).click()
-        await (await this.lastStepToGo).waitForExist({ timeout: 7000 })
+        await (await this.lastStepToGo).waitForExist({ timeout: 10000 })
     }
     async selectVehicle() {
         await (await this.make).click()
@@ -121,39 +132,38 @@ class EditrequiRementspage {
     }
     async goBackTillVehicle() {
         await (await this.backBtn).click()
-        await (await this.lastStepToGo).waitForExist({ timeout: 7000 })
+        await (await this.lastStepToGo).waitForDisplayed({ timeout: 10000 })
         await (await this.backBtn).click()
-        await (await this.dreamVehicle).waitForExist({ timeout: 7000 })
+        await (await this.dreamVehicle).waitForDisplayed({ timeout: 10000 })
         await (await this.backBtn).click()
-        await (await this.searchOrSelect).waitForExist({ timeout: 7000 })
+        await (await this.searchOrSelect).waitForDisplayed({ timeout: 10000 })
     }
     async selectVehicle2() {
         await (await this.swift).setValue("Swift")
-        await (await this.selectSwift).waitForExist({ timeout: 5000 })
+        await (await this.selectSwift).waitForDisplayed({ timeout: 10000 })
         await (await this.selectSwift).click()
     }
     async submitRequirements1() {
         await (await this.nextButton).click()
-        await (await this.dreamVehicle).waitForExist({ timeout: 7000 })
+        await (await this.dreamVehicle).waitForDisplayed({ timeout: 10000 })
         await (await this.nextButton).click()
         await (await this.nextButton).click()
         await (await this.submitAndView).click()
-        await (await this.requirement).waitForExist({ timeout: 7000 })
         await (await this.requirement).click()
-        await (await this.editBtn).waitForExist({ timeout: 7000 })
+        await (await this.editBtn).waitForDisplayed({ timeout: 10000 })
     }
     async clickOnExchange() {
         await (await this.exchange).click()
     }
     async clickOnSubmit() {
-        await (await this.submitAndView).waitForExist({ timeout: 7000 })
+        await browser.pause(2000)
         await (await this.submitAndView).click()
     }
     async CreateRequiRement() {
         await (await this.addR).click()
-        await (await this.selectcar).click()
         await (await this.enterlocation).setValue("Pune")
         await (await this.selectcity).click()
+        await (await this.selectcar).click()
         await (await this.nextButton).click()
         await (await this.swift).setValue("swift")
         await (await this.selectSwift).click()
@@ -162,6 +172,11 @@ class EditrequiRementspage {
         await (await this.nextButton).click()
         await (await this.submitAndView).click()
         await (await this.requirement).click()
+    }
+    async clickOnNext()
+    {
+        await browser.pause(2000)
+        await (await this.nextButton).click()
     }
 }
 module.exports = new EditrequiRementspage();

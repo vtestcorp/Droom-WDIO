@@ -73,6 +73,12 @@ class Usedcar {
     get scle() { return $('(//div[@class="noUi-connect"])[1]') }
     get closeBtn() { return $('//button[@class="close em-show-later"]') }
     get home() { return $('//a[normalize-space()="Home"]') }
+    get budgetBar() { return $('(//div[@class="noUi-connect"])[1]') }
+    get Kmsbar() { return $('(//div[@class="noUi-connect"])[2]') }
+    get priceRange() { return $('(//div[@class="r-MuiGrid-root r-r51 r-MuiGrid-item r-MuiGrid-grid-xs-4 r-MuiGrid-grid-sm-3"])[1]') }
+    get kmsrange() { return $('(//div[@class="r-MuiBox-root r-r127"])[1]') }
+    get exchangeVehicle() { return $('//p[text()="Do You Wish to Exchange Your Vehicle"]') }
+    
     
     
     async submitRequirement() {

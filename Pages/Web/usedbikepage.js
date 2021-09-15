@@ -164,7 +164,7 @@ class UsedBike {
         await (await this.submitAndView).click()
     }
     async clickOngetRequirements() {
-        await (await this.requirements).waitForExist({ timeout: 7000 })
+        await (await this.requirements).waitForExist({ timeout: 15000 })
         await (await this.requirements).click()
     }
     async clickOnSubmitRequirements() {
