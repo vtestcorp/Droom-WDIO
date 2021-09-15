@@ -19,7 +19,7 @@ describe('Search', () => {
         console.log("Using Seacth box user is able to search required items")
     });
     it('TC_02 Verify Search functionality on Vista Link', async () => {
-        await (await (searchPage.home)).click()
+        await (await (searchPage.home2)).click()
         console.log("Scrolling to the Vista Link")
         await (await searchPage.shop_by_category).waitForExist({ timeout: 5000 })
         await (await searchPage.buyingTools).scrollIntoView()
