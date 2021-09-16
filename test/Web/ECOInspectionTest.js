@@ -39,6 +39,7 @@ describe('ECO Inspection', () => {
         console.log("Brakes Repair and Service shown")
         await (await ECO_InspectionPage.Brakes_ReapairService).click()
         await (await ECO_InspectionPage.front_Brake).click()
+        await (await $("//a[@href='#electrical-repairs-services']//div[@class='icon-detail']")).scrollIntoView()
         expect(await ECO_InspectionPage.getEstimate).toBeDisplayed()
         console.log("Get Estimate Button shown after filling all the required Details")
         await (await ECO_InspectionPage.getEstimate).click()

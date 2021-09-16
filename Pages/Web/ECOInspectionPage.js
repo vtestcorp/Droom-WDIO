@@ -13,7 +13,7 @@ class ECO {
     get Repair_EstimateHeading() { return $('//h1[text()="Check Estimated Repair Cost for Free"]') }
     get SelectCar() { return $('//label[text()="Select Car"]') }
     get SelectRepairs() { return $('//label[text()="Select Repairs"]') }
-    get getEstimate() { return $('//label[text()="Get Estimate"]') }
+    get getEstimate() { return $(".btn.btn-info.btn-next.repair_service_next")}
     get selectMake() { return $('//span[text()="Select Make"]') }
     get selectTrim(){return $('//span[text()="Select Trim"]')}
     get inputTrim(){return $('//input[@id="s2id_autogen162_search"]')}
@@ -23,7 +23,7 @@ class ECO {
     get location() { return $('//input[@class="form-control select-city"]') }
     get searchMy_Location() { return $('(//input[contains(@class,"lp-search")])[2]') }
     get next() { return $('//a[text()="Next"]') }
-    get location() { return $('//p[text()="Location"]') }
+    get location2() { return $('//p[text()="Location"]') }
     get delhi() { return $('//li[@class="d-display-block d-padding-2 clickable"]') }
     get break_Repair() { return $('//a[@href="#brakes-repair-service"]') }
     get electrical_Repair() { return $('//a[@href="#electrical-repairs-services"]') }
@@ -64,8 +64,8 @@ class ECO {
     get speaker(){return $('//button[@aria-label="Mute (m)"]')}
     get close_Video(){return $('//button[@aria-label="Close"]') }
     get ashok(){return $('//span[text()="Ashok Leyland"]')}
-    get stile(){return $('//span[text()="Stile"]')}
-    get Le(){return $('(//span[text()="LE"])[1]')}
+    get stile(){return $('//div[@class="select2-result-label"]')}
+    get Le(){return $('.select2-result-label')}
     get inspection(){return $('//a[normalize-space()="Get Inspection"]')}
     async traverseToECO() {
         await (await this.shop_by_category).waitForClickable({ timeout: 3000 })
@@ -83,12 +83,13 @@ class ECO {
         await (await this.selectMake).click()
         await(await this.inputMake).setValue("Ashok Leyland")
         await(await this.ashok).click()
-        await(await this.selectModel).click()
-        await(await this.inputModel).setValue("Stile")
+        //await(await this.selectModel).click()
+        //await(await this.inputModel).setValue("Stile")
         await(await this.stile).click()
-        await(await this.selectTrim).click()
-        await(await this.inputTrim).setValue("LE")
+        //await(await this.selectTrim).click()
+        //await(await this.inputTrim).setValue("LE")
         await(await this.Le).click()
+        await (await this.location).click()
         await (await this.searchMy_Location).setValue("Delhi")
         expect(await this.delhi).toBeDisplayed()
         console.log("Location is displayed")
