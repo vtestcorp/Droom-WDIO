@@ -2,7 +2,7 @@ const base = require("../../BaseClass/base");
 const editrequirementspage = require("../../Pages/Web/editrequirementspage");
 
 describe('Requirements page verification', async () => {
-    it('TC_02 Verify user should be able to edit price range', async () => {
+    it('Tc_02 Verify user should be able to edit price range', async () => {
         await base.loginAsBuyer()
         await editrequirementspage.CreateRequiRement()
         console.log("Old Price Range:")
@@ -14,20 +14,17 @@ describe('Requirements page verification', async () => {
         await editrequirementspage.goBackTillColor()
         await (await editrequirementspage.budgetBar).moveTo()
         await (await editrequirementspage.budgetBar).click()
-        await (await editrequirementspage.nextButton).click()
+        await editrequirementspage.clickOnNext()
         await (await editrequirementspage.yesBtn).waitForDisplayed({ timeout: 10000 })
-        await (await editrequirementspage.nextButton).click()
+        await editrequirementspage.clickOnNext()
         await (await editrequirementspage.continue).waitForDisplayed({ timeout: 10000 })
-        await (await editrequirementspage.submitAndView).waitForDisplayed({ timeout: 10000 })
-        await (await editrequirementspage.submitAndView).click()
+        await editrequirementspage.clickOnSubmit()
         await (await editrequirementspage.requirement).click()
         console.log("New Price Range:")
         expect(await editrequirementspage.priceRange).toBeDisplayed()
         console.log(await (await editrequirementspage.priceRange).getText())
     });
-    it('TC_03 Verify user should be able to edit KMS Driven Range', async () => {
-        browser.url('/')
-        await editrequirementspage.CreateRequiRement()
+    it('Tc_03 Verify user should be able to edit KMS Driven Range', async () => {
         console.log("Old KMS Range:")
         expect(await editrequirementspage.kmsrange).toBeDisplayed()
         console.log(await (await editrequirementspage.kmsrange).getText())
@@ -38,36 +35,31 @@ describe('Requirements page verification', async () => {
         await (await editrequirementspage.selectcolor).click()
         await (await editrequirementspage.Kmsbar).moveTo()
         await (await editrequirementspage.Kmsbar).click()
-        await (await editrequirementspage.nextButton).click()
+        await editrequirementspage.clickOnNext()
         await (await editrequirementspage.yesBtn).waitForDisplayed({ timeout: 10000 })
-        await (await editrequirementspage.nextButton).click()
-        await (await editrequirementspage.submitAndView).waitForDisplayed({ timeout: 10000 })
-        await (await editrequirementspage.submitAndView).click()
+        await editrequirementspage.clickOnNext()
+        await editrequirementspage.clickOnSubmit()
         await (await editrequirementspage.requirement).click()
         console.log("New KMS Range:")
         expect(await editrequirementspage.kmsrange).toBeDisplayed()
         console.log(await (await editrequirementspage.kmsrange).getText())
     });
-    it('TC_04 Verify user should be able to edit color', async () => {
-        browser.url('/')
-        await editrequirementspage.CreateRequiRement()
+    it('Tc_04 Verify user should be able to edit color', async () => {
         console.log("Before Edit color:")
         expect(await editrequirementspage.newExtColor).toBeDisplayed()
         console.log(await (await editrequirementspage.newExtColor).getText())
         await (await editrequirementspage.editBtn).click()
         await editrequirementspage.goBackTillColor()
         await (await editrequirementspage.newColor).click()
-        await (await editrequirementspage.nextButton).click()
-        await (await editrequirementspage.yesBtn).waitForDisplayed({ timeout: 10000 })
-        await (await editrequirementspage.nextButton).click()
-        await (await editrequirementspage.submitAndView).waitForDisplayed({ timeout: 10000 })
-        await (await editrequirementspage.submitAndView).click()
+        await editrequirementspage.clickOnNext()
+        await editrequirementspage.clickOnNext()
+        await editrequirementspage.clickOnSubmit()
         await (await editrequirementspage.requirement).click()
         console.log("After Edit color:")
         expect(await editrequirementspage.newExtColor).toBeDisplayed()
         console.log(await (await editrequirementspage.newExtColor).getText())
     });
-    it('TC_05 Verify user should be able to edit Do you also need option', async () => {
+    it('Tc_05 Verify user should be able to edit Do you also need option', async () => {
         browser.url('/')
         await editrequirementspage.CreateRequiRement()
         console.log("Before Edit Do You Need Option:")
@@ -82,17 +74,14 @@ describe('Requirements page verification', async () => {
         await (await editrequirementspage.RCTransfer).click()
         await (await editrequirementspage.roadSideAssistance).click()
         await (await editrequirementspage.notDecided).click()
-        await (await editrequirementspage.nextButton).click()
-        await (await editrequirementspage.submitAndView).waitForDisplayed({ timeout: 10000 })
-        await (await editrequirementspage.submitAndView).click()
+        await editrequirementspage.clickOnNext()
+        await editrequirementspage.clickOnSubmit()
         await (await editrequirementspage.requirement).click()
         console.log("After Edit Do You Need Option:")
         expect(await editrequirementspage.newExtColor).toBeDisplayed()
         console.log(await (await editrequirementspage.service1).getText())
     });
-    it('TC_07 Verify user should be able to edit How Quickly Do You Want to Buy option', async () => {
-        browser.url('/')
-        await editrequirementspage.CreateRequiRement()
+    it('Tc_07 Verify user should be able to edit How Quickly Do You Want to Buy option', async () => {
         console.log("Before Edit How Quickly Do You Want to Buy option:")
         expect(await editrequirementspage.needToBuy).toBeDisplayed()
         console.log(await (await editrequirementspage.needToBuy).getText())
@@ -100,17 +89,14 @@ describe('Requirements page verification', async () => {
         await (await editrequirementspage.matches).waitForDisplayed({ timeout: 10000 })
         await editrequirementspage.goBackTillDoYouAlsoNeed()
         await (await editrequirementspage.notDecided).click()
-        await (await editrequirementspage.nextButton).click()
-        await (await editrequirementspage.submitAndView).waitForDisplayed({ timeout: 10000 })
-        await (await editrequirementspage.submitAndView).click()
+        await editrequirementspage.clickOnNext()
+        await editrequirementspage.clickOnSubmit()
         await (await editrequirementspage.requirement).click()
         console.log("After Edit How Quickly Do You Want to Buy option:")
         expect(await editrequirementspage.needToBuy).toBeDisplayed()
         console.log(await (await editrequirementspage.needToBuy).getText())
     });
-    it('TC_08 Verify user should be able to edit Do You Wish to Exchange Your Vehicle option', async () => {
-        browser.url('/')
-        await editrequirementspage.CreateRequiRement()
+    it('Tc_08 Verify user should be able to edit Do You Wish to Exchange Your Vehicle option', async () => {
         console.log("Before Edit You Wish to Exchange Your Vehicle option:")
         expect(await editrequirementspage.exchanges).toBeDisplayed()
         console.log(await (await editrequirementspage.exchanges).getText())
@@ -118,15 +104,14 @@ describe('Requirements page verification', async () => {
         await editrequirementspage.goBackTillDoYouAlsoNeed()
         await (await editrequirementspage.exchange).click()
         await editrequirementspage.selectVehicle()
-        await (await editrequirementspage.nextButton).click()
-        await (await editrequirementspage.submitAndView).waitForDisplayed({ timeout: 10000 })
-        await (await editrequirementspage.submitAndView).click()
+        await editrequirementspage.clickOnNext()
+        await editrequirementspage.clickOnSubmit()
         await (await editrequirementspage.requirement).click()
         console.log("After Edit You Wish to Exchange Your Vehicle option:")
         expect(await editrequirementspage.exchanges).toBeDisplayed()
         console.log(await (await editrequirementspage.exchanges).getText())
     });
-    it('TC_06 Verify user should be able to edit  Vehicle Details', async () => {
+    it('Tc_06 Verify user should be able to edit  Vehicle Details', async () => {
         browser.url('/')
         await editrequirementspage.CreateRequiRement()
         console.log("Before Edit Vehicle Details:")
@@ -135,22 +120,20 @@ describe('Requirements page verification', async () => {
         await (await editrequirementspage.editBtn).click()
         await (await editrequirementspage.almostDone).waitForDisplayed({ timeout: 10000 })
         await editrequirementspage.goBackTillVehicle()
-        await (await editrequirementspage.anotherVehicle).waitForDisplayed({ timeout: 10000 })
+        await browser.pause(5000)
         await (await editrequirementspage.deleteVehicle).click()
         await (await editrequirementspage.enterV).setValue("BMW")
         await (await editrequirementspage.selectSwift).click()
-        await (await editrequirementspage.nextButton).click()
-        await (await editrequirementspage.nextButton).click()
-        await (await editrequirementspage.yesBtn).waitForDisplayed({ timeout: 10000 })
-        await (await editrequirementspage.nextButton).click()
-        await (await editrequirementspage.submitAndView).waitForDisplayed({ timeout: 10000 })
-        await (await editrequirementspage.submitAndView).click()
+        await editrequirementspage.clickOnNext()
+        await editrequirementspage.clickOnNext()
+        await editrequirementspage.clickOnNext()
+        await editrequirementspage.clickOnSubmit()
         await (await editrequirementspage.requirement).click()
         console.log("After Edit Vehicle Details:")
         expect(await editrequirementspage.carName).toBeDisplayed()
         console.log(await (await editrequirementspage.carName).getText())
     });
-    it('TC_09 Verify user should be able to edit  Vehicle Details and multiple vehicles', async () => {
+    it('Tc_09 Verify user should be able to edit  Vehicle Details and multiple vehicles', async () => {
         browser.url('/')
         await editrequirementspage.CreateRequiRement()
         console.log("Before Edit Vehicle Details:")
@@ -164,8 +147,7 @@ describe('Requirements page verification', async () => {
         await (await editrequirementspage.selectSwift).click()
         await (await editrequirementspage.nextButton).click()
         await (await editrequirementspage.nextButton).click()
-        await (await editrequirementspage.yesBtn).waitForDisplayed({ timeout: 10000 })
-        await (await editrequirementspage.nextButton).click()
+        await editrequirementspage.clickOnNext()
         await (await editrequirementspage.continue).waitForDisplayed({ timeout: 10000 })
         await (await editrequirementspage.submitAndView).waitForDisplayed({ timeout: 10000 })
         await (await editrequirementspage.submitAndView).click()
@@ -174,7 +156,7 @@ describe('Requirements page verification', async () => {
         expect(await editrequirementspage.carName).toBeDisplayed()
         console.log(await (await editrequirementspage.carName).getText())
     });
-    it('TC_01 Verify user should be able to edit location', async () => {
+    it('Tc_01 Verify user should be able to edit location', async () => {
         browser.url('/')
         await editrequirementspage.CreateRequiRement()
         console.log("Before Edit Location:")

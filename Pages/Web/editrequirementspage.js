@@ -83,6 +83,7 @@ class EditrequiRementspage {
     get Myrequirements() { return $('//a[text()="My Requirements"]') }
     
 async goBackTillLocation() {
+    await browser.pause(2000)
         await (await this.backBtn).click()
         await (await this.lastStepToGo).waitForExist({ timeout: 10000 })
         await (await this.backBtn).click()
@@ -115,6 +116,7 @@ async goBackTillLocation() {
         await (await this.dreamVehicle).waitForExist({ timeout: 10000 })
     }
     async goBackTillDoYouAlsoNeed() {
+        await browser.pause(2000)
         await (await this.backBtn).click()
         await (await this.lastStepToGo).waitForExist({ timeout: 10000 })
     }
@@ -147,7 +149,6 @@ async goBackTillLocation() {
         await (await this.nextButton).click()
         await (await this.nextButton).click()
         await (await this.submitAndView).click()
-        await (await this.requirement).waitForDisplayed({ timeout: 10000 })
         await (await this.requirement).click()
         await (await this.editBtn).waitForDisplayed({ timeout: 10000 })
     }
@@ -155,7 +156,7 @@ async goBackTillLocation() {
         await (await this.exchange).click()
     }
     async clickOnSubmit() {
-        await (await this.submitAndView).waitForDisplayed({ timeout: 10000 })
+        await browser.pause(2000)
         await (await this.submitAndView).click()
     }
     async CreateRequiRement() {
@@ -171,6 +172,11 @@ async goBackTillLocation() {
         await (await this.nextButton).click()
         await (await this.submitAndView).click()
         await (await this.requirement).click()
+    }
+    async clickOnNext()
+    {
+        await browser.pause(2000)
+        await (await this.nextButton).click()
     }
 }
 module.exports = new EditrequiRementspage();
