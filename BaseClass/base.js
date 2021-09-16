@@ -31,7 +31,13 @@ class Base
       const a=await $(`android=${selector}`)
       return a
     }
-    async getByText(text
+    async getByContDesc(desc)
+    {
+      const selector = 'new UiSelector().description("'+desc+'")'
+      const a=await $(`android=${selector}`)
+      return a
+    }
+    async getByText(text)
     {
       const selector = 'new UiSelector().text("'+text+'")'
       const a=await $(`android=${selector}`)
@@ -49,6 +55,12 @@ class Base
       const a=await $(`android=${selector}`)
       return a
     }
+    async getByResourceIdNIndex(id,index)
+    {
+      const selector = 'new UiSelector().resourceId("'+id+'").index("'+index+'")'
+      const a=await $(`android=${selector}`)
+      return a
+    }
     async scrollToExactText(text)
     {
       const bottomElementSelector = `new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text("${text}"))`
@@ -63,6 +75,16 @@ class Base
     {
       const bottomElementSelector = `new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().resourceId("${id}"))`
       await $(`android=${bottomElementSelector}`)
+    }
+    async swipeUp()
+    {
+      const {width,height} = await driver.getWindowRect()
+      await browser.touchPerform([
+        { action: 'press', options: { x: (width/2), y: ((height/3)*2) }},
+        { action: 'wait', options: { ms: 1000}},
+        { action: 'moveTo', options: { x: (width/2), y:  (height/3)}},
+        { action: 'release' }
+      ]);
     }
     async androidLoginAsBuyer()
     {
