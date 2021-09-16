@@ -1,5 +1,6 @@
 const video = require('wdio-video-reporter');
 const allure = require('@wdio/allure-reporter')
+const { addFeature } = require('@wdio/allure-reporter').default
 
 exports.config = {
     runner : 'local',
@@ -12,10 +13,10 @@ exports.config = {
         ui: 'bdd',
         timeout: 80000,
     },
-    maxInstances : 2,
+    maxInstances : 1,
     services: ['appium'],
     specs: [
-        './test/Android/**/LoginWithPassword.js'
+        './test/Android/EditRequirements.js'
     ],
     capabilities: [{
         "platformName":"Android",
@@ -23,6 +24,7 @@ exports.config = {
         "appPackage":"in.droom",
         "appActivity":"in.droom.activity.MainActivity",
         "autoGrantPermissions":"true",
+        "app":"./Droom.apk"
     }],
     waitforTimeout: 60000,
     //
@@ -47,6 +49,7 @@ exports.config = {
           addConsoleLogs: true,
 
     }],'dot',
+    
     ['allure', {
         outputDir: 'allure-results',
         addConsoleLogs: true,

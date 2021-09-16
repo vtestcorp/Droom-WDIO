@@ -9,7 +9,7 @@ class LoginWithPassword
  get showPassword(){return base.getByResourceId("in.droom:id/text_input_end_icon")}
  get loginFinal(){return base.getByResourceId("in.droom:id/btn_login_via_otp_email")}
  get afterLoginPopup(){return base.getByResourceId("in.droom:id/imgViewForClose")}
- get userInfo(){return base.getByResourceId("in.droom:id/user_info_flow")}
+ get userInfo(){return base.getByResourceId("in.droom:id/textview_userId")}
  
  get incorrectCredPopup(){return base.getByResourceId("android:id/parentPanel")}
  get incorrectCredMsg(){return base.getByResourceId("android:id/message")}
@@ -18,6 +18,9 @@ class LoginWithPassword
  get blanckPasswordMsg(){return base.getByResourceId("in.droom:id/textinput_error")}
 
  get fbLoginBtn(){return base.getByResourceId("in.droom:id/btn_fb_login")}
+ get fbEmailTxt(){return base.getByResourceId("m_login_email")}
+ get fbPasswordTxt(){return base.getByResourceId("m_login_password")}
+ get fbFinalLoginBtn(){return base.getByResourceId("login_password_step_element")}
  
 
 }
