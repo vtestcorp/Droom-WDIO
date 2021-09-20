@@ -44,6 +44,18 @@ class UnlockFeePayments {
     get txtViewForEdit() { return base.getByResourceId('in.droom:id/txtViewForEdit') }
     get my_requirement() { return base.getByResourceId('in.droom:id/textview_my_requirement') }
     get cart_menu_item() { return base.getByResourceId('in.droom:id/cart_menu_item') }
+    get txtViewForName() { return base.getByResourceId('in.droom:id/txtViewForName') }
+    get txtViewForAddress() { return base.getByResourceId('in.droom:id/txtViewForAddress') }
+    get txtViewForPhone() { return base.getByResourceId('in.droom:id/txtViewForPhone') }
+    get btnChangeAddAddress() { return base.getByResourceId('in.droom:id/btnChangeAddAddress') }
+    get continue_To_Payment() { return base.getByText('Continue To Payment') }
+    get payment_Option() { return base.getByText('Choose Payment Option') }
+    get UPI() { return base.getByText('Paytm UPI Droom Recommended - Fast & Secured') }
+    get debit_Card() { return base.getByText('Debit Card') }
+    get credit_Card() { return base.getByText('Pay Via Credit Card') }
+    get net_Banking() { return base.getByText('Net Banking') }
+    get Paytm() { return base.getByText('Paytm') }
+    get cash_Card() { return base.getByText('Cash Card') }
     async createReqiremenForCar() {
         await (await this.my_requirement).click()
         await (await this.addNewRequirement).click()
@@ -72,7 +84,7 @@ class UnlockFeePayments {
         await (await this.my_requirement).click()
         await (await this.addNewRequirement).click()
         await (await this.detectLocation).click()
-        await browser.pause(5000)
+        await browser.pause(3000)
         await (await this.bike).click()
         await (await this.usedRadioButton).click()
         await (await this.nextBtn).click()

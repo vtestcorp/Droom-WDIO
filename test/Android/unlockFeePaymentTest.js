@@ -6,7 +6,7 @@ describe('Requirements Verification', async () => {
         await driver.closeApp()
         await driver.launchApp()
     });
-    it('Tc_01 verify the tokan amount for car is 999', async () => {
+    it('TC_01 verify the tokan amount for car is 999', async () => {
         await base.androidLoginAsBuyer()
         await unlockFeePaymentPage.createReqiremenForCar()
         await (await unlockFeePaymentPage.BestMatche).click()
@@ -15,7 +15,7 @@ describe('Requirements Verification', async () => {
         expect(await unlockFeePaymentPage.token_amount_for_car).toBeDisplayed()
         console.log('Token amount for car is displayed ')
     });
-    it('Tc_03 Verify proceed to checkout option is display for car', async () => {
+    it('TC_03 Verify proceed to checkout option is display for car', async () => {
         await base.androidLoginAsBuyer()
         await (await unlockFeePaymentPage.my_requirement).click()
         await (await unlockFeePaymentPage.cart_menu_item).click()
@@ -93,5 +93,45 @@ describe('Requirements Verification', async () => {
         console.log('page title displayed')
         expect(await unlockFeePaymentPage.txtViewForEdit).toBeDisplayed()
         console.log('edit Button displayed')
+    });
+    it('TC_08 Verify Address Tab After click on payment', async () => {
+        await base.androidLoginAsBuyer()
+        await unlockFeePaymentPage.createReqiremenForCar()
+        await (await unlockFeePaymentPage.BestMatche).click()
+        await (await unlockFeePaymentPage.btn_pay_token_amount).click()
+        await (await unlockFeePaymentPage.proceed_to_checkout).click()
+        expect(await unlockFeePaymentPage.proceed_to_checkout).toBeClickable()
+        await (await unlockFeePaymentPage.Address).click()
+        expect(await unlockFeePaymentPage.txtViewForName).toBeDisplayed()
+        console.log('User name displayed')
+        expect(await unlockFeePaymentPage.txtViewForAddress).toBeDisplayed()
+        console.log(' User Address displayed')
+        expect(await unlockFeePaymentPage.txtViewForPhone).toBeDisplayed()
+        console.log('User phone number displayed')
+        expect(await unlockFeePaymentPage.btnChangeAddAddress).toBeDisplayed()
+        console.log('Edit Address Button  displayed')
+        expect(await unlockFeePaymentPage.continue_To_Payment).toBeDisplayed()
+        console.log('continue to payment Button  displayed')
+    });
+    it('TC_07 Verify Account Tab after clicking on Payment', async () => {
+        await base.androidLoginAsBuyer()
+        await unlockFeePaymentPage.createReqiremenForCar()
+        await (await unlockFeePaymentPage.BestMatche).click()
+        await (await unlockFeePaymentPage.btn_pay_token_amount).click()
+        await (await unlockFeePaymentPage.proceed_to_checkout).click()
+        await (await unlockFeePaymentPage.Address).click()
+        await (await unlockFeePaymentPage.continue_To_Payment).click()
+        expect(await unlockFeePaymentPage.UPI).toBeDisplayed()
+        console.log('Paytm UPI Droom Recommended - Fast & Secured option displayed')
+        expect(await unlockFeePaymentPage.debit_Card).toBeDisplayed()
+        console.log('Debit Card option displayed')
+        expect(await unlockFeePaymentPage.credit_Card).toBeDisplayed()
+        console.log('Debit Card option displayed')
+        expect(await unlockFeePaymentPage.net_Banking).toBeDisplayed()
+        console.log('Net Banking option displayed')
+        expect(await unlockFeePaymentPage.Paytm).toBeDisplayed()
+        console.log('Paytm option displayed')
+        expect(await unlockFeePaymentPage.cash_Card).toBeDisplayed()
+        console.log('Cash Card option displayed')
     });
 });
