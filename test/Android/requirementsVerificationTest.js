@@ -6,19 +6,19 @@ describe('Requirements Verification', async () => {
         await driver.closeApp()
         await driver.launchApp()
     });
-    it('Tc_01 Validate all requirements created are displayed', async () => {
+    it('TC_01 Validate all requirements created are displayed', async () => {
         await base.androidLoginAsBuyer()
         await (await requirementsVerificationPage.my_requirement).click()
         expect(await requirementsVerificationPage.txt_total_req).toBeDisplayed()
         console.log(await (await requirementsVerificationPage.txt_total_req).getText())
     });
-    it('Tc_02 Verify requirements score is a display', async () => {
+    it('TC_02 Verify requirements score is a display', async () => {
         await base.androidLoginAsBuyer()
         await (await requirementsVerificationPage.my_requirement).click()
         expect(await requirementsVerificationPage.tsmb_score).toBeDisplayed()
         console.log(await (await requirementsVerificationPage.tsmb_score).getText())
     });
-    it('Tc_03 Verify requirements name is editable', async () => {
+    it('TC_03 Verify requirements name is editable', async () => {
         await base.androidLoginAsBuyer()
         await (await requirementsVerificationPage.my_requirement).click()
         await (await requirementsVerificationPage.txt_more).click()
@@ -26,13 +26,13 @@ describe('Requirements Verification', async () => {
         expect(await requirementsVerificationPage.renameRequirement).toBeDisplayed()
         console.log(await (await requirementsVerificationPage.renameRequirement).getText())
     });
-    it('Tc_04 Verify Add New Requirements link is available', async () => {
+    it('TC_04 Verify Add New Requirements link is available', async () => {
         await base.androidLoginAsBuyer()
         await (await requirementsVerificationPage.my_requirement).click()
         expect(await requirementsVerificationPage.addNewRequirement).toBeDisplayed()
         console.log(await (await requirementsVerificationPage.addNewRequirement).getText())
     });
-    it('Tc_05 Verify user should be able to edit Do You Wish to Exchange Your Vehicle option ', async () => {
+    it('TC_05 Verify user should be able to edit Do You Wish to Exchange Your Vehicle option ', async () => {
         await base.androidLoginAsBuyer()
         await (await requirementsVerificationPage.my_requirement).click()
         await (await requirementsVerificationPage.txt_more).click()
@@ -63,7 +63,7 @@ describe('Requirements Verification', async () => {
         expect(await requirementsVerificationPage.hatchback_view).toBeDisplayed()
         console.log(await (await requirementsVerificationPage.hatchback_view).getText())
     });
-    it('Tc_06  Verify payments status of requirements are display ', async () => {
+    it('TC_06  Verify payments status of requirements are display ', async () => {
         await base.androidLoginAsBuyer()
         await (await requirementsVerificationPage.my_requirement).click()
         await (await requirementsVerificationPage.txt_more).click()
