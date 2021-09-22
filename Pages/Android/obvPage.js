@@ -33,6 +33,8 @@ class obv {
     get TdiPPlus(){return base.getByResourceIdNText("android:id/text1","35 TDI PREMIUM PLUS")}
     get checkObvBtn(){return base.getByResourceIdNText("mmt_submit","Check OBV")}
     get rs(){return base.getByText("₹")}
+
+
     async traverseToObv() {
         console.log("Traversing to Obv")  
         await (await this.hamburgerMenu).click()
