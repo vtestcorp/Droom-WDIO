@@ -1,7 +1,7 @@
 const base = require("../../BaseClass/base");
 const unlockFeePaymentPage = require("../../Pages/Android/unlockFeePaymentPage");
 
-describe('Requirements Verification', async () => {
+describe('Unlock Fee Payment', async () => {
     beforeEach(async () => {
         await driver.closeApp()
         await driver.launchApp()
