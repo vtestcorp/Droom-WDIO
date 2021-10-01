@@ -55,8 +55,7 @@ describe('Unlock Fee Payment', async () => {
         await (await unlockFeePaymentPage.btn_pay_token_amount).click()
         expect(await unlockFeePaymentPage.token_amount_for_bike).toBeDisplayed()
         console.log('Token amount for bike is displayed ')
-        await (await unlockFeePaymentPage.remove_from_cart).click()
-        await (await unlockFeePaymentPage.okBtn).click()
+
     });
     it('TC_04 Verify proceed to checkout option is display for bike', async () => {
         await base.androidLoginAsBuyer()
@@ -66,8 +65,7 @@ describe('Unlock Fee Payment', async () => {
         console.log('Token amount for bike is displayed ')
         expect(await unlockFeePaymentPage.proceed_to_checkout).toBeDisplayed()
         console.log('Process to checkount button displayed')
-        await (await unlockFeePaymentPage.remove_from_cart).click()
-        await (await unlockFeePaymentPage.okBtn).click()
+
     });
     it('TC_06 Verify the functionality after click on proceed to checkout button for bike', async () => {
         await base.androidLoginAsBuyer()
@@ -93,6 +91,8 @@ describe('Unlock Fee Payment', async () => {
         console.log('page title displayed')
         expect(await unlockFeePaymentPage.txtViewForEdit).toBeDisplayed()
         console.log('edit Button displayed')
+        await (await unlockFeePaymentPage.txtViewForEdit).click()
+        await unlockFeePaymentPage.removeFromCart()
     });
     it('TC_08 Verify Address Tab After click on payment', async () => {
         await base.androidLoginAsBuyer()
@@ -126,11 +126,9 @@ describe('Unlock Fee Payment', async () => {
         expect(await unlockFeePaymentPage.debit_Card).toBeDisplayed()
         console.log('Debit Card option displayed')
         expect(await unlockFeePaymentPage.credit_Card).toBeDisplayed()
-        console.log('Debit Card option displayed')
+        console.log('Pay Via Credit Card option displayed')
         expect(await unlockFeePaymentPage.net_Banking).toBeDisplayed()
         console.log('Net Banking option displayed')
-        expect(await unlockFeePaymentPage.Paytm).toBeDisplayed()
-        console.log('Paytm option displayed')
         expect(await unlockFeePaymentPage.cash_Card).toBeDisplayed()
         console.log('Cash Card option displayed')
     });
