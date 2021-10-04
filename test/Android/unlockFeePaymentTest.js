@@ -8,16 +8,21 @@ describe('Unlock Fee Payment', async () => {
     });
     it('TC_01 verify the tokan amount for car is 999', async () => {
         await base.androidLoginAsBuyer()
+        console.log("Buyer login successfully")
         await unlockFeePaymentPage.createReqiremenForCar()
         await (await unlockFeePaymentPage.BestMatche).click()
+        console.log("Clicked on Best Matches")
         expect(await unlockFeePaymentPage.btn_pay_token_amount).toBeDisplayed()
         await (await unlockFeePaymentPage.btn_pay_token_amount).click()
+        console.log("Clicked on Pay token amount")
         expect(await unlockFeePaymentPage.token_amount_for_car).toBeDisplayed()
         console.log('Token amount for car is displayed ')
     });
     it('TC_03 Verify proceed to checkout option is display for car', async () => {
         await base.androidLoginAsBuyer()
+        console.log("Buyer login successfully")
         await (await unlockFeePaymentPage.my_requirement).click()
+        console.log("Clicked on my requirement")
         await (await unlockFeePaymentPage.cart_menu_item).click()
         expect(await unlockFeePaymentPage.token_amount_for_car).toBeDisplayed()
         console.log('Token amount for car is displayed ')
@@ -26,7 +31,9 @@ describe('Unlock Fee Payment', async () => {
     });
     it('TC_05 Verify the functionality after click on proceed to checkout button for car', async () => {
         await base.androidLoginAsBuyer()
+        console.log("Buyer login successfully")
         await (await unlockFeePaymentPage.my_requirement).click()
+        console.log("Clicked on my requirement")
         await (await unlockFeePaymentPage.cart_menu_item).click()
         await (await unlockFeePaymentPage.proceed_to_checkout).click()
         expect(await unlockFeePaymentPage.proceed_to_checkout).toBeClickable()
@@ -49,17 +56,22 @@ describe('Unlock Fee Payment', async () => {
     });
     it('TC_02 verify the tokan amount for bike is 499', async () => {
         await base.androidLoginAsBuyer()
+        console.log("Buyer login successfully")
         await unlockFeePaymentPage.createReqiremenForBike()
         await (await unlockFeePaymentPage.BestMatche).click()
+        console.log("Clicked on Best Matches")
         expect(await unlockFeePaymentPage.btn_pay_token_amount).toBeDisplayed()
         await (await unlockFeePaymentPage.btn_pay_token_amount).click()
+        console.log("Clicked on Pay token amount")
         expect(await unlockFeePaymentPage.token_amount_for_bike).toBeDisplayed()
         console.log('Token amount for bike is displayed ')
 
     });
     it('TC_04 Verify proceed to checkout option is display for bike', async () => {
         await base.androidLoginAsBuyer()
+        console.log("Buyer login successfully")
         await (await unlockFeePaymentPage.my_requirement).click()
+        console.log("Clicked on my requirement")
         await (await unlockFeePaymentPage.cart_menu_item).click()
         expect(await unlockFeePaymentPage.token_amount_for_bike).toBeDisplayed()
         console.log('Token amount for bike is displayed ')
@@ -69,7 +81,9 @@ describe('Unlock Fee Payment', async () => {
     });
     it('TC_06 Verify the functionality after click on proceed to checkout button for bike', async () => {
         await base.androidLoginAsBuyer()
+        console.log("Buyer login successfully")
         await (await unlockFeePaymentPage.my_requirement).click()
+        console.log("Clicked on my requirement")
         await (await unlockFeePaymentPage.cart_menu_item).click()
         expect(await unlockFeePaymentPage.proceed_to_checkout).toBeDisplayed()
         console.log('Process to checkount button displayed')
@@ -96,12 +110,16 @@ describe('Unlock Fee Payment', async () => {
     });
     it('TC_08 Verify Address Tab After click on payment', async () => {
         await base.androidLoginAsBuyer()
+        console.log("Buyer login successfully")
         await unlockFeePaymentPage.createReqiremenForCar()
         await (await unlockFeePaymentPage.BestMatche).click()
+        console.log("Clicked on Best Matches")
         await (await unlockFeePaymentPage.btn_pay_token_amount).click()
         await (await unlockFeePaymentPage.proceed_to_checkout).click()
+        console.log("Clicked on proceed to checkout")
         expect(await unlockFeePaymentPage.proceed_to_checkout).toBeClickable()
         await (await unlockFeePaymentPage.Address).click()
+        console.log("Clicked on Address")
         expect(await unlockFeePaymentPage.txtViewForName).toBeDisplayed()
         console.log('User name displayed')
         expect(await unlockFeePaymentPage.txtViewForAddress).toBeDisplayed()
@@ -115,12 +133,18 @@ describe('Unlock Fee Payment', async () => {
     });
     it('TC_07 Verify Account Tab after clicking on Payment', async () => {
         await base.androidLoginAsBuyer()
+        console.log("Buyer login successfully")
         await unlockFeePaymentPage.createReqiremenForCar()
         await (await unlockFeePaymentPage.BestMatche).click()
+        console.log("Clicked on Best Matches")
         await (await unlockFeePaymentPage.btn_pay_token_amount).click()
+        console.log("Clicked on pay token amount")
         await (await unlockFeePaymentPage.proceed_to_checkout).click()
+        console.log("Clicked on proceed to checkout")
         await (await unlockFeePaymentPage.Address).click()
+        console.log("Clicked on Address")
         await (await unlockFeePaymentPage.continue_To_Payment).click()
+        console.log("Clicked on continue to payment")
         expect(await unlockFeePaymentPage.UPI).toBeDisplayed()
         console.log('Paytm UPI Droom Recommended - Fast & Secured option displayed')
         expect(await unlockFeePaymentPage.debit_Card).toBeDisplayed()
