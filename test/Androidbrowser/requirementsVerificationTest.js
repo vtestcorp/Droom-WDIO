@@ -32,7 +32,6 @@ describe('Requirements Verification', async () => {
         console.log(" score displayed")
         console.log(await (await requirementsVerificationPage.Score).getText())
         console.log(await (await requirementsVerificationPage.Score_Count).getText())
-
     });
     it('TC_03 Verify requirements name is editable', async () => {
         await requirementsVerificationPage.chromeConditions()
@@ -44,7 +43,6 @@ describe('Requirements Verification', async () => {
         await (await requirementsVerificationPage.Add_New_Requirement).waitForDisplayed({ timeout: 20000 })
         await (await requirementsVerificationPage.search).click()
         console.log("requirements name is editable")
-
     });
     it('TC_04 Verify Add New Requirements link is available', async () => {
         await requirementsVerificationPage.chromeConditions()
