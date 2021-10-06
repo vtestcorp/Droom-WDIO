@@ -1,6 +1,5 @@
 const base = require("../../BaseClass/base");
 const requirementsVerificationPage = require("../../Pages/Androidbrowser/requirementsVerificationPage");
-
 describe('Requirements Verification', async () => {
     beforeEach(async () => {
         await driver.closeApp()
@@ -77,7 +76,7 @@ describe('Requirements Verification', async () => {
         expect(await requirementsVerificationPage.Used).toBeDisplayed()
         expect(await requirementsVerificationPage.any).toBeDisplayed()
     });
-    it('TC_06  Verify payments status of requirements are display ', async () => {
+    it('TC_06 Verify payments status of requirements are display ', async () => {
         await requirementsVerificationPage.chromeConditions()
         browser.url('/')
         await requirementsVerificationPage.loginAsBuyer()

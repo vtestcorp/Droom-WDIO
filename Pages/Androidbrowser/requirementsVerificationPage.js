@@ -27,6 +27,7 @@ class RequirementsVerification {
     get any() { return base.getByText('Any') }
     get Below_Lakh() { return base.getByText('Below 5 Lakh') }
     get manual() { return base.getByText('manual') }
+    get manual() { return base.getByText('Ext Color') }
     async chromeConditions() {
         await (await this.acceptcontinue).click()
         await (await this.next).click()
