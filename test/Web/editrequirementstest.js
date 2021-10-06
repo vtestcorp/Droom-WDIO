@@ -1,7 +1,7 @@
 const base = require("../../BaseClass/base");
 const editrequirementspage = require("../../Pages/Web/editrequirementspage");
 
-describe('Requirements page verification', async () => {
+describe('Edit Requirements', async () => {
     it('Tc_02 Verify user should be able to edit price range', async () => {
         await base.loginAsBuyer()
         await editrequirementspage.CreateRequiRement()
