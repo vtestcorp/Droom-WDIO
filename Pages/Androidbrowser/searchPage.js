@@ -1,15 +1,18 @@
 const base = require("../../BaseClass/base");
 class Search {
     get acceptcontinue() { return base.getByText('Accept & continue') }
-    get searchBox (){return base.getByResourceId('main_search')}
-    get searchBox2(){return base.getByClass("android.widget.EditText")}
+    get searchBox(){return base.getByResourceId('main_search')}
     get searchBoxHeader (){return base.getByResourceId('header_search_box')}
     get helpPopUp(){return base.getByText("x")}
     get trendingSearch() { return base.getByResourceId("as_trendings") }
+    get recentSearch() { return base.getByResourceId("as_recent") }
     get submitMyReq(){return base.getByText("Submit My Requirement")}
     get mainSearchResult(){return base.getByResourceId("main_search_results")}
+    get cretaResult(){return base.getByText("Hyundai Creta 1.6 SX AT Diesel 2019")}
     get tharResult(){return base.getByText("Mahindra Thar AX Optional 4 STR Convertible Diesel MT BS6 2020")}
     get activaResult(){return base.getByText("Honda Activa 3G 110cc 2017")}
+    get bikeVistaLink(){return base.getByText("Bike")}
+    get vistaLinkResult(){return base.getByText("Bikes For Sale - Bike Dekho Droom Par")}
     get sort(){return base.getByText("Sort")}
     get sortingLable(){return base.getByResourceId("sortingModalLabel")}
     get mostRelevent(){return base.getByText("Most Relevant")}
@@ -21,10 +24,25 @@ class Search {
     get fullCircle(){return base.getByText("Full Circle Trust Score (High to Low)")}
     get mostViewed(){return base.getByText("Most Viewed")}
     get mostRecent(){return base.getByText("Most Recent")}
-    get sortResultNew(){return base,getByText("New")}
+    get sortResultNew(){return base.getByText("New")}
     get sortResult1(){return base.getByText("Honda Activa 3G 110cc 2016")}
     get sortResult2(){return base.getByText("Honda Activa 110cc 2017")}
-
+    get hondaResult(){return base.getByText("Honda City 1.5 V MT 2019")}
+    get filter(){return base.getByText("Filters")}
+    get locationFilter(){return base.getByText("Location")}
+    get PriceFilter(){return base.getByText("Price Range")}
+    get modelFilter(){return base.getByText("Model")}
+    get yearFilter(){return base.getByText("Year")}
+    get certificationFilter(){return base.getByText("Certification Tools")}
+    get makeFilter(){return base.getByText("Make")}
+    get BodyTypeFilter(){return base.getByText("Body Type")}
+    get colorFilter(){return base.getByText("Exterior Color")}
+    get warrantyFilter(){return base.getByText("Warranty And Inspection")}
+    get HistoryFilter(){return base.getByText("History Available")}
+    get videoFilter(){return base.getByText("Video Available")}
+    get sellerRatingFilter(){return base.getByText("Seller Ratings")}
+    get resetBtn(){return base.getByText("Reset")}
+    get applyFilter(){return base.getByText("Apply")}
     async loginAsBuyer() {
         await (await this.allow).waitForDisplayed({ timeout: 60000 })
         await (await this.allow).click()
