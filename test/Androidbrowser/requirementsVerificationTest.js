@@ -5,7 +5,7 @@ describe('Requirements Verification', async () => {
         await driver.closeApp()
         await driver.launchApp()
     });
-    /*it('TC_01 Validate all requirements created userLogin are displayed', async () => {
+    it('TC_01 Validate all requirements created userLogin are displayed', async () => {
         await requirementsVerificationPage.chromeConditions()
         browser.url('/user/login')
         await requirementsVerificationPage.loginAsBuyer()
@@ -78,7 +78,7 @@ describe('Requirements Verification', async () => {
         expect(await requirementsVerificationPage.best_Matches).toBeDisplayed()
         expect(await requirementsVerificationPage.my_Matches).toBeDisplayed()
     });
-    /*it('TC_06 Verify payments status of requirements are display ', async () => {
+    it('TC_06 Verify payments status of requirements are display ', async () => {
         await requirementsVerificationPage.chromeConditions()
         browser.url('/user/login')
         await requirementsVerificationPage.loginAsBuyer()
@@ -89,5 +89,5 @@ describe('Requirements Verification', async () => {
         expect(await requirementsVerificationPage.Unlock_Fee_Payment).toBeDisplayed()
         console.log("Payments status of requirements are displayed")
         console.log(await (await requirementsVerificationPage.Unlock_Fee_Payment).getText())
-    });*/
+    });
 });

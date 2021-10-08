@@ -21,17 +21,4 @@ describe('Unlock fee payments', async () => {
         console.log("Token amount for car:")
         console.log(await (await unlockFeePaymentPage.tokenForCar).getText())
     });
-    /*it('TC_02 Verify the token amount for car is 499', async () => {
-        await unlockFeePaymentPage.chromeConditions()
-        browser.url('/user/login')
-        await unlockFeePaymentPage.loginAsBuyer()
-        await base.swipeUp()
-        await (await unlockFeePaymentPage.my_Requirements).click()
-        await (await unlockFeePaymentPage.new_Requirement).click()
-        await unlockFeePaymentPage.createRForCar()
-        await (await unlockFeePaymentPage.best_Matches).click()
-        expect(await unlockFeePaymentPage.tokenForCar).toBeDisplayed()
-        console.log("Token amount for car:")
-        console.log(await (await unlockFeePaymentPage.tokenForCar).getText())
-    });*/
 });
