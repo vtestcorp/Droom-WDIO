@@ -23,6 +23,9 @@ class obv {
     get yr2020(){return base.getByResourceIdNText("android:id/text1","2020")}
     get TdiPPlus(){return base.getByResourceIdNText("android:id/text1","35 TDI PREMIUM PLUS")}
     get smallpopUp(){return base.getByText("x")}
+    get toIndividual(){return base.getByText("To an Individual")}
+    get toDealer(){return base.getByText("To a Dealer")}
+   get IwanttoSell(){return base.getByText("I Want to Sell")}
 
 async traverseToValuation() {
     console.log("Traversing to Valuation")  

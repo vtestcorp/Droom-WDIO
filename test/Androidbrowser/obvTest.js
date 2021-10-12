@@ -6,7 +6,7 @@ describe('Orange Book Value', () => {
         await driver.closeApp()
         await driver.launchApp()
 });
-/*it('TC_01 Verify the fields on OBV page', async () => {
+it('TC_01 Verify the fields on OBV page', async () => {
     await browser.url('/user/login') 
     await obvPage.traverseToValuation()
     await (await  obvPage.pricingCalculator).waitForDisplayed({timeout:30000})    
@@ -21,7 +21,7 @@ describe('Orange Book Value', () => {
     console.log("I want To Buy From Individual is shown on Page")
     expect(await obvPage.fromDealer).toBeDisplayed()
     console.log("I want To Buy From Dealer is shown on Page")
-});*/
+});
 it('TC_02 Verify the functionality of "I want to Buy" From an Individual', async () => {
     await browser.url('/user/login') 
     await obvPage.traverseToValuation()
@@ -68,4 +68,68 @@ it('TC_02 Verify the functionality of "I want to Buy" From an Individual', async
     expect(await obvPage.valueAt).toBeDisplayed()
     console.log("After click Value get displayed")
 });
+it('TC_04 Verify the functionality of I want to sell to an Individual', async () => {
+    await browser.url('/user/login') 
+    await obvPage.traverseToValuation()
+    expect(await  obvPage.pricingCalculator).toBeDisplayed()
+    console.log("Pricing Calculator displayed as :"+await(await obvPage.pricingCalculator).getText())
+    expect(await obvPage.IwanttoSell).toBeDisplayed()
+    console.log("Buyer Tab displayed as:"+await(await obvPage.IwanttoSell).getText())
+    await(await obvPage.IwanttoSell).click()
+    console.log("Clicked on I want to Sell")
+    await(await obvPage.toIndividual).click()
+    console.log("Clicked on I want to Sell an individual")
+    await obvPage.inputForSubmit()
+    expect(await obvPage.submit).toBeDisplayed()
+    console.log("Sumbit Button is availbale")
+    await(await obvPage.submit).click()
+    console.log("Clicked on Submit")
+    expect(await obvPage.checkObvBtn).toBeDisplayed()
+    console.log("Check OBV button is displayed")
+    expect(await obvPage.valueAt).toBeDisplayed()
+    console.log("After click Value get displayed")
+});
+    it('TC_05 Verify the functionality of I want to sell to dealer', async () => {
+    await browser.url('/user/login') 
+    await obvPage.traverseToValuation()
+    expect(await  obvPage.pricingCalculator).toBeDisplayed()
+    console.log("Pricing Calculator displayed as :"+await(await obvPage.pricingCalculator).getText())
+    expect(await obvPage.IwanttoSell).toBeDisplayed()
+    console.log("Buyer Tab displayed as:"+await(await obvPage.IwanttoSell).getText())
+    await(await obvPage.IwanttoSell).click()
+    console.log("Clicked on I want to Sell")
+    await(await obvPage.toDealer).click()
+    console.log("Clicked on I want to Sell to Dealer")
+    await obvPage.inputForSubmit()
+    expect(await obvPage.submit).toBeDisplayed()
+    console.log("Submit Button is availbale")
+    await(await obvPage.submit).click()
+    console.log("Clicked on Submit Button")
+    expect(await obvPage.checkObvBtn).toBeDisplayed()
+    console.log("Check OBV button is displayed")
+    expect(await obvPage.valueAt).toBeDisplayed()
+    console.log("After click Value get displayed")
+});
+   it('TC_06 Verify the Grades on pricing report', async () => {
+    await browser.url('/user/login') 
+    await obvPage.traverseToValuation()
+    expect(await  obvPage.pricingCalculator).toBeDisplayed()
+    console.log("Pricing Calculator displayed as :"+await(await obvPage.pricingCalculator).getText())
+    expect(await obvPage.IwanttoBuy).toBeDisplayed()
+    console.log("Buyer Tab displayed as :"+await(await obvPage.IwanttoBuy).getText())
+    await(await obvPage.IwanttoBuy).click()
+    console.log("Clicked on I want to Buy")
+    await(await obvPage.fromIndividual).click()
+    console.log("Clicked on I want to Buy From an Individual")
+    await obvPage.inputForSubmit()
+    expect(await obvPage.submit).toBeDisplayed()
+    console.log("Submit Button is availbale")
+    await(await obvPage.submit).click()
+    console.log("Clicked on Submit Button")
+    expect(await obvPage.checkObvBtn).toBeDisplayed()
+    console.log("Check OBV Button is availbale")
+    expect(await obvPage.good).toBeDisplayed
+    console.log("Grade is displayed on OBV page after submitting required details")
+    console.log("OBV Pricing Report suggested the Good value of vehicle.. by analysing all the inputs given by the user.")
+  });
 });
