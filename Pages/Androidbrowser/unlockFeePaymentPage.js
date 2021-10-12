@@ -33,7 +33,16 @@ class UnlockFeePayments {
     get best_Matches() { return base.getByTextContains('Best Matches') }
     get tokenForCar() { return base.getByText('Rs. 999 only') }
     get bike() { return base.getByTextContains('Bike Bike') }
-    get bike() { return base.getByTextContains('Bike Bike') }
+    get pay_Best() { return base.getByText('Pay Best Match Unlock Fee') }
+    get Droom_Pay() { return base.getByText('Droom Pay') }
+    get cart() { return base.getByText('') }
+    get Proceed_To_Checkout() { return base.getByText('Proceed To Checkout') }
+
+    async chromeConditions() {
+        await (await this.acceptcontinue).click()
+        await (await this.next).click()
+        await (await this.yes).click()
+    }
     async createRForCar() {
         await (await this.current_Location).click()
         await (await this.car).click()
@@ -68,21 +77,6 @@ class UnlockFeePayments {
             { action: 'release' }
         ]);
     }
-    async chromeConditions() {
-        await (await this.acceptcontinue).click()
-        await (await this.next).click()
-        await (await this.yes).click()
-    }
-    async loginAsBuyer() {
-        await (await this.userLogin).setValue("vtest1@gmail.com")
-        await browser.pause(2000)
-        await (await this.Login_Password).click()
-        await (await this.password).setValue("Vtest@123")
-        await (await this.login).click()
-        await (await this.allow).waitForDisplayed({ timeout: 60000 })
-        await (await this.allow).click()
-        await (await this.allow).click()
-        await (await this.manage_buying).waitForDisplayed({ timeout: 7000 })
-    }
+
 };
 module.exports = new UnlockFeePayments();

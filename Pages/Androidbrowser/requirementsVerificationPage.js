@@ -35,16 +35,5 @@ class RequirementsVerification {
         await (await this.next).click()
         await (await this.yes).click()
     }
-    async loginAsBuyer() {
-        await (await this.userLogin).setValue("vtest1@gmail.com")
-        await browser.pause(2000)
-        await (await this.loginPassword).click()
-        await (await this.password).setValue("Vtest@123")
-        await (await this.login).click()
-        await (await this.allow).waitForDisplayed({ timeout: 60000 })
-        await (await this.allow).click()
-        await (await this.allow).click()
-        await (await this.manage_buying).waitForDisplayed({ timeout: 20000 })
-    }
 }
 module.exports = new RequirementsVerification();
