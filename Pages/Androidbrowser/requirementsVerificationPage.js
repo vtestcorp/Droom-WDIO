@@ -3,7 +3,7 @@ const base = require("../../BaseClass/base");
 class RequirementsVerification {
     get acceptcontinue() { return base.getByText('Accept & continue') }
     get next() { return base.getByText('Next') }
-    get yes() { return base.getByResourceId('com.android.chrome:id/positive_button') }
+    get yes() { return base.getByText('No, thanks') }
     get allow() { return base.getByText('Allow') }
     get menu() { return base.getByText('Menu') }
     get cancel() { return base.getByText('×') }
@@ -22,29 +22,18 @@ class RequirementsVerification {
     get requirements() { return base.getByTextContains('Requirements') }
     get Score_Count() { return base.getByTextContains('%') }
     get more() { return base.getByText('More') }
-    get below() { return base.getByText('Below 20 Cr') }
+    get Price_Range() { return base.getByText('Price Range') }
     get Used() { return base.getByText('Used') }
     get any() { return base.getByText('Any') }
     get Below_Lakh() { return base.getByText('Below 5 Lakh') }
     get manual() { return base.getByText('manual') }
     get manual() { return base.getByText('Ext Color') }
+    get best_Matches() { return base.getByTextContains('Best Matches') }
+    get my_Matches() { return base.getByTextContains('My Matches') }
     async chromeConditions() {
         await (await this.acceptcontinue).click()
         await (await this.next).click()
         await (await this.yes).click()
-    }
-    async loginAsBuyer() {
-        await (await this.allow).waitForDisplayed({ timeout: 60000 })
-        await (await this.allow).click()
-        await (await this.allow).click()
-        await (await this.menu).click()
-        await (await this.cancel).click()
-        await (await this.login).click()
-        await (await this.userLogin).setValue("Vikasy898@gmail.com")
-        await (await this.loginPassword).click()
-        await (await this.password).setValue("Vtest@123")
-        await (await this.login).click()
-        await (await this.manage_buying).waitForDisplayed({ timeout: 60000 })
     }
 }
 module.exports = new RequirementsVerification();

@@ -7,8 +7,8 @@ describe('Requirements Verification', async () => {
     });
     it('TC_01 Validate all requirements created userLogin are displayed', async () => {
         await requirementsVerificationPage.chromeConditions()
-        browser.url('/')
-        await requirementsVerificationPage.loginAsBuyer()
+        browser.url('/user/login')
+        await base.androidBrowserLoginAsBuyer()
         console.log("Buyer login successfully")
         await base.swipeUp()
         await (await requirementsVerificationPage.my_Requirements).click()
@@ -20,8 +20,8 @@ describe('Requirements Verification', async () => {
     });
     it('TC_02 Verify requirements score is a display', async () => {
         await requirementsVerificationPage.chromeConditions()
-        browser.url('/')
-        await requirementsVerificationPage.loginAsBuyer()
+        browser.url('/user/login')
+        await base.androidBrowserLoginAsBuyer()
         console.log("Buyer login successfully")
         await base.swipeUp()
         await (await requirementsVerificationPage.my_Requirements).click()
@@ -34,8 +34,8 @@ describe('Requirements Verification', async () => {
     });
     it('TC_03 Verify requirements name is editable', async () => {
         await requirementsVerificationPage.chromeConditions()
-        browser.url('/')
-        await requirementsVerificationPage.loginAsBuyer()
+        browser.url('/user/login')
+        await base.androidBrowserLoginAsBuyer()
         await base.swipeUp()
         await (await requirementsVerificationPage.my_Requirements).click()
         console.log("Clicked on my Requirement ")
@@ -45,8 +45,8 @@ describe('Requirements Verification', async () => {
     });
     it('TC_04 Verify Add New Requirements link is available', async () => {
         await requirementsVerificationPage.chromeConditions()
-        browser.url('/')
-        await requirementsVerificationPage.loginAsBuyer()
+        browser.url('/user/login')
+        await base.androidBrowserLoginAsBuyer()
         console.log("Buyer login successfully")
         await base.swipeUp()
         await (await requirementsVerificationPage.my_Requirements).click()
@@ -58,8 +58,8 @@ describe('Requirements Verification', async () => {
     });
     it('TC_05 Verify user should be able to edit Do You Wish to Exchange Your Vehicle option', async () => {
         await requirementsVerificationPage.chromeConditions()
-        browser.url('/')
-        await requirementsVerificationPage.loginAsBuyer()
+        browser.url('/user/login')
+        await base.androidBrowserLoginAsBuyer()
         console.log("Buyer login successfully")
         await base.swipeUp()
         await (await requirementsVerificationPage.my_Requirements).click()
@@ -71,15 +71,17 @@ describe('Requirements Verification', async () => {
         console.log(await (await requirementsVerificationPage.Score_Count).getText())
         expect(await requirementsVerificationPage.requirements).toBeDisplayed()
         console.log(await (await requirementsVerificationPage.requirements).getText())
-        expect(await requirementsVerificationPage.below).toBeDisplayed()
-        console.log(await (await requirementsVerificationPage.below).getText())
+        expect(await requirementsVerificationPage.Price_Range).toBeDisplayed()
+        console.log(await (await requirementsVerificationPage.Price_Range).getText())
         expect(await requirementsVerificationPage.Used).toBeDisplayed()
         expect(await requirementsVerificationPage.any).toBeDisplayed()
+        expect(await requirementsVerificationPage.best_Matches).toBeDisplayed()
+        expect(await requirementsVerificationPage.my_Matches).toBeDisplayed()
     });
     it('TC_06 Verify payments status of requirements are display ', async () => {
         await requirementsVerificationPage.chromeConditions()
-        browser.url('/')
-        await requirementsVerificationPage.loginAsBuyer()
+        browser.url('/user/login')
+        await base.androidBrowserLoginAsBuyer()
         console.log("Buyer login successfully")
         await base.swipeUp()
         await (await requirementsVerificationPage.my_Requirements).click()
