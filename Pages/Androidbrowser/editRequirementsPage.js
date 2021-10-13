@@ -55,6 +55,17 @@ class editRequirements {
     get new_Km_driven() { return base.getByTextContains('90 K-5 Lakh') }
     get vehicles_name() { return base.getByTextContains('Hyundai Verna, Honda City') }
     get Color() { return $('//input[@value="red"]') }
+    get rc() { return $('(//div[@class="s-MuiGrid-root s-MuiGrid-item"])[5]') }
+    get red() { return base.getByText('red') }
+    get no_services() { return base.getByText('No Services') }
+    get rc_tranfer() { return base.getByText('RC Transfer') }
+    get price_range() { return $('//div[@class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"]') }
+    get Toyota_Camry() { return base.getByText('Toyota Camry') }
+    get new_price_range() { return base.getByText('20 Lakh-20 Cr') }
+    get entLocation() { return $('//div[@class=" css-1hwfws3"]') }
+    get selectLocation() { return $('//div[text()="Goa, India"]') }
+    
+    
     async editColor() {
         await browser.pause(5000)
         await (await this.car).click()
@@ -69,11 +80,71 @@ class editRequirements {
         await base.swipeUp()
         await (await this.next_btn).click()
     }
+    async priceRange() {
+        await browser.pause(5000)
+        await (await this.car).click()
+        await (await this.next_btn).click()
+        await (await this.let_Droom_Suggest_for_you).click()
+        await this.switchToWebview()
+        await (await this.price_range).moveTo()
+        await (await this.price_range).click()
+        await this.switchToNativeApp()
+        await (await this.Sedan).click()
+        await base.swipeUp()
+        await base.swipeUp()
+        await (await this.next_btn).click()
+        await (await this.select_vehicles).waitForDisplayed({ timeout: 8000 })
+        await (await this.Toyota_Camry).click()
+        await base.swipeUp()
+        await (await this.next_btn).click()
+    }
+    async editLocation() {
+        await browser.pause(5000)
+        await (await this.car).click()
+        await this.switchToWebview()
+        await (await this.entLocation).setValue("Goa")
+        await (await this.selectLocation).click()
+        await this.switchToNativeApp()
+        await (await this.next_btn).click()
+        await (await this.let_Droom_Suggest_for_you).click()
+        await this.switchToWebview()
+        await (await this.price_range).moveTo()
+        await (await this.price_range).click()
+        await this.switchToNativeApp()
+        await (await this.Sedan).click()
+        await base.swipeUp()
+        await base.swipeUp()
+        await (await this.next_btn).click()
+        await (await this.select_vehicles).waitForDisplayed({ timeout: 8000 })
+        await (await this.Toyota_Camry).click()
+        await base.swipeUp()
+        await (await this.next_btn).click()
+    }
     async editColor1() {
         await (await this.manual).click()
         await base.swipeUp()
         await this.swipeUp1()
         await (await this.next_btn).click()
+        await (await this.not_Decided).click()
+        await browser.pause(2000)
+        await base.swipeUp()
+        await (await this.next_btn).click()
+        await browser.pause(2000)
+        await base.swipeUp()
+        await (await this.next_btn).click()
+        await browser.pause(2000)
+        await base.swipeUp()
+        await (await this.submit).click()
+        await (await this.View_All_Matches).click()
+    }
+    async serviceYouNeed() {
+        await (await this.manual).click()
+        await base.swipeUp()
+        await this.swipeUp1()
+        await (await this.next_btn).click()
+        await this.switchToWebview()
+        await (await this.rc).click()
+        await this.switchToNativeApp()
         await (await this.not_Decided).click()
         await browser.pause(2000)
         await base.swipeUp()
