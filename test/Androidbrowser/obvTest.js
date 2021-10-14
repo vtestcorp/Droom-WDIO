@@ -132,4 +132,32 @@ it('TC_04 Verify the functionality of I want to sell to an Individual', async ()
     console.log("Grade is displayed on OBV page after submitting required details")
     console.log("OBV Pricing Report suggested the Good value of vehicle.. by analysing all the inputs given by the user.")
   });
+  it('TC_07 Verify used functionality on vehicle pricing calulator on OBV', async () => {
+    await browser.url('/user/login') 
+    await obvPage.traverseToValuation()
+    await obvPage.traverseToOptions()
+    expect(await obvPage.used).toBeDisplayed()
+    console.log("Used option is Displayed On Pricing Calculator")
+    await(await obvPage.used).click()
+    console.log("Clicked On Used Option")
+    expect(await obvPage.IwanttoBuy).toBeDisplayed()
+    console.log("Buyer Tab displayed as :"+await(await obvPage.IwanttoBuy).getText())
+    await(await obvPage.IwanttoBuy).click()
+    console.log("Clicked on I want to Buy")
+    await obvPage.inputToUsed()
+    expect(await obvPage.usedcar2).toBeDisplayed()
+    console.log("Orange Book Valued Shown for Used Car")
+});
+it('TC_08 Verify new functionality on vehicle pricing calulator on OBV', async () => {
+    await browser.url('/user/login') 
+    await obvPage.traverseToValuation()
+    await obvPage.traverseToOptions()
+    expect(await obvPage.newTab).toBeDisplayed()
+    console.log("Used option is Displayed On Pricing Calculator")
+    await(await obvPage.newTab).click()
+    console.log("Clicked On New Option")
+    await obvPage.inputToNew()
+    expect(await obvPage.usedcar2).toBeDisplayed()
+    console.log("Orange Book Valued Shown for Used Car")
+});
 });
