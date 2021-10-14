@@ -1,6 +1,6 @@
 const base = require("../../BaseClass/base")
 
-class UnlockFeePayments {
+class checkHistory {
     get acceptcontinue() { return base.getByText('Accept & continue') }
     get next() { return base.getByText('Next') }
     get yes() { return base.getByText('No, thanks') }
@@ -10,7 +10,7 @@ class UnlockFeePayments {
     get login() { return base.getByText('Login') }
     get allow() { return base.getByText('Allow') }
     get manage_buying() { return base.getByText('Manage Your Buying and Selling, and Get Help on Your Vehicles') }
-    get menu() { return base.getByTextContains('Menu') }
+    get menu() { return base.getByText('Menu') }
     get my_Requirements() { return base.getByTextContains('My Requirements') }
     get new_Requirement() { return base.getByText('+ Add New Requirement') }
     get car() { return base.getByTextContains('Car Car') }
@@ -42,36 +42,17 @@ class UnlockFeePayments {
     get Address() { return base.getByText('xyz, pune, 411014, maharashtra') }
     get Edit() { return base.getByText('Edit') }
     get Remove() { return base.getByContDesc('Remove') }
+    get His() { return base.getByContDesc('Add Miles') }
+    get per() { return base.getByTextContains('Premium Certificate') }
+    get Check_any_Vehicle() { return base.getByTextContains('Check any Vehicle') }
+    get vehicle_reg_no() { return base.getByContDesc('vehicle_reg_no') }
+    get gold() { return base.getByContDesc('gold') }
+    get platinum() { return base.getByContDesc('platinum') }
 
     async chromeConditions() {
         await (await this.acceptcontinue).click()
         await (await this.next).click()
         await (await this.yes).click()
-    }
-    async createRForCar() {
-        await (await this.current_Location).click()
-        await (await this.car).click()
-        await (await this.cancel).click()
-        await (await this.next_btn).click()
-        await (await this.let_Droom_Suggest_for_you).click()
-        await (await this.Sedan).click()
-        await base.swipeUp()
-        await base.swipeUp()
-        await (await this.next_btn).click()
-        await base.swipeUp()
-        await (await this.next_btn).click()
-        await (await this.manual).click()
-        await this.swipeUp1()
-        await (await this.next_btn).click()
-        await (await this.not_Decided).click()
-        await base.swipeUp()
-        await (await this.next_btn).click()
-        await base.swipeUp()
-        await (await this.next_btn).click()
-        await browser.pause(2000)
-        await base.swipeUp()
-        await (await this.submit).click()
-        await (await this.View_All_Matches).click()
     }
     async swipeUp1() {
         const { width, height } = await driver.getWindowRect()
@@ -89,4 +70,4 @@ class UnlockFeePayments {
     }
 
 };
-module.exports = new UnlockFeePayments();
+module.exports = new checkHistory();

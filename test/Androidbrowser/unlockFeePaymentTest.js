@@ -18,6 +18,7 @@ describe('Unlock fee payments', async () => {
         expect(await unlockFeePaymentPage.tokenForCar).toBeDisplayed()
         console.log("Token amount for car:")
         console.log(await (await unlockFeePaymentPage.tokenForCar).getText())
+        await unlockFeePaymentPage.addToCart()
     });
     it('TC_03 Verify proceed to checkout option is display for car', async () => {
         await unlockFeePaymentPage.chromeConditions()
@@ -25,6 +26,15 @@ describe('Unlock fee payments', async () => {
         await base.androidBrowserLoginAsBuyer()
         await (await unlockFeePaymentPage.cart).click()
         expect(await unlockFeePaymentPage.Proceed_To_Checkout).toBeDisplayed()
+        
+    });
+    it('TC_03 Verify proceed to checkout option is display for car', async () => {
+        await unlockFeePaymentPage.chromeConditions()
+        browser.url('/user/login')
+        await base.androidBrowserLoginAsBuyer()
+        await (await unlockFeePaymentPage.cart).click()
+        expect(await unlockFeePaymentPage.Proceed_To_Checkout).toBeDisplayed()
+        await (await unlockFeePaymentPage.Proceed_To_Checkout).click()
         
     });
     
