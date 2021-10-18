@@ -208,7 +208,7 @@ describe('Edit Requirements', async () => {
         await (await editRequirementsPage.my_Requirements).click()
         await (await editRequirementsPage.new_Requirement).waitForDisplayed({ timeout: 7000 })
         expect(await editRequirementsPage.vehicle_name).toBeDisplayed()
-        console.log("Before edit Service You Need option is:")
+        console.log("Before edit location is:")
         await editRequirementsPage.swipeUp1()
         await (await editRequirementsPage.more).click()
         await editRequirementsPage.swipeUp1()
