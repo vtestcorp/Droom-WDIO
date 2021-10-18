@@ -59,6 +59,45 @@ get pricingCalculator2(){return base.getByText("Vehicle Pricing Calculator")}
 get locationOn_New() { return $('(//input[contains(@class,"select")])[1]') }
 get search_location() { return $('(//input[contains(@class,"lp-search")])[2]') }
 get delhi() { return $('//li[@class="d-display-block d-padding-2 clickable"]') }
+//Exchange
+get exchangeInfo(){return base.getText("Select the Vehicle you want to Exchange Your Current Vehicle With and Know The Price Difference.")}
+get IwanttoExchange(){return base.getByText("I want to Exchange:")}
+get exchangeCategory(){return base.getByResourceId("exchangecategory")}
+get exchangeMake(){return base.getByResourceId("exchangemake")}
+get exchangeModel(){return base.getByResourceId("exchangemodel")}
+get exchangeYear(){return base.getByResourceId("exchangeyear")}
+get exchangeTrim(){return base.getByResourceId("exchangetrim")}
+get exchangeKms(){return base.getByResourceId("exchangekms_driven")}
+get lableWith(){return base.getByText("With:")}
+get lableNew(){return base.getByText("New")}
+get lableUsed(){return base.getByText("Used")}
+get withMake(){return base.getByResourceId("exchangenewmake")}
+get makeNameWith(){return base.getByText("BMW")}
+get withModel(){return base.getByResourceId("exchangenewmodel")}
+get modelNameWith(){return base.getByText("3 Series")}
+get withTrim(){return base.getByResourceId("exchangenewtrim")}
+get trimNameWith(){return base.getByText("M340I")}
+get checkExchangePrice(){return base.getByText("Check Exchange Price")}
+get headingExchnagePrice() { return base.getByText("")}
+//Future Price
+get futurePriceInfo(){return base.getByText("Select the Vehicle you want to Exchange Your Current Vehicle With and Know The Price Difference.")}
+get checkPrice(){return base.getByText("Check Price")}
+//Residual
+get residualInfo(){return base.getByText("Residual Value of the vehicle provides an estimate of the worth of the vehicle at the end of the lease.")}
+get lableForNew(){return base.getByText("For New")}
+get lableForUsed(){return base.getByText("For Used")}
+get chkResidualEstimate(){return base.getByText("Check Residual Estimate")}
+get resiCategory(){return base.getByText("Select Category")}
+get resiMake(){return base.getByText("Select Make")}
+get resiModel(){return base.getByText("Select Model")}
+get resiTrim(){return base.getByText("Select Trim")}
+get resiTenure(){return base.getByResourceId("leasenewtenure")}
+get resiKmsDriven(){return base.getByResourceId("leasenewkms_driven_month")}
+get sampleReport(){return base.getByText("Sample Report (Page 2 Of 4)")}
+get BtnPrevious(){return base.getByText("Previous")}
+get BtnNext(){return base.getByText("Next")}
+get headingReport(){return base.getByText("OBV Value For All Conditions")}
+get page2(){return base.getByText("Sample Report (Page 2 Of 4)")}
 async traverseToValuation() {
     console.log("Traversing to Valuation")  
     await (await this.menu).click()
@@ -69,7 +108,7 @@ async traverseToValuation() {
 }
 async inputForSubmit()
 {
-    console.log("Taking Inputes for Expected Vechile")
+    console.log("Taking Inputs for Expected Vechile")
     //await (await this.smallpopUp).waitForExist()
     //console.log("Help pop Up is Displayed")
    // await (await this.smallpopUp).click()
@@ -189,6 +228,88 @@ async inputToNew(){
     await (await this.delhi).click()
     await base.switchToNativeApp()
     await(await this.CheckPriceOnNew).click()
+}
+async inputToExchange(){
+    console.log("Taking Inputs For Exchage Vechile")
+    //await (await this.smallpopUp).waitForExist()
+    //console.log("Help pop Up is Displayed")
+   // await (await this.smallpopUp).click()
+    base.swipeUp()
+    await(await this.exchangeCategory).click()
+    console.log("Clicked On select Category")
+    await(await this.car).click()
+    await base.swipeUp()
+    console.log("Clicked On Car Category")
+    await(await this.exchangeMake).click()
+    await(await this.audi).click()
+    console.log("Clicked On Make")
+    await(await this.exchangeModel).click()
+    await(await this.a3).waitForExist({ timeout: 5000 })
+    await(await this.a3).click()
+    await base.swipeUp()
+    console.log("Selected the required Model")
+    await(await this.exchangeYear).click()
+    console.log("Clicked on the year")
+    await(await this.yr2020).click()
+    console.log("Clicked On expected Year")
+    await(await this.exchangeTrim).click()
+    console.log("Clicked on Trim")
+    await(await this.TdiPPlus).click()
+    console.log("Clicked On expected Trim")
+    await(await this.exchangeKms).click()
+    console.log("Clicked on KmsDriven")
+    await driver.hideKeyboard()
+    await driver.pressKeyCode(9, undefined, undefined);
+    await driver.pressKeyCode(7, undefined, undefined);
+    await driver.pressKeyCode(7, undefined, undefined);
+    console.log("Set the value for KMS driven")
+    await(await this.withMake).click()
+    console.log("Clicked On Make name with which user wants to Exchange Vehicle ")
+    await(await this.makeNameWith).click()
+    await(await this.withModel).click()
+    console.log("Clicked On Model name with which user wants to Exchange Vehicle ")
+    await(await this.modelNameWithNameWith).click()
+    await(await this.withTrim).click()
+    console.log("Clicked On Trim with which user wants to Exchange Vehicle ")
+    await(await this.trimNameWithNameWith).click()
+
+}
+async inputToResidaul(){
+    console.log("Taking Inputs For Exchage Vechile")
+    //await (await this.smallpopUp).waitForExist()
+    //console.log("Help pop Up is Displayed")
+   // await (await this.smallpopUp).click()
+    base.swipeUp()
+    await(await this.resiCategory).click()
+    console.log("Clicked On select Category")
+    await(await this.car).click()
+    await base.swipeUp()
+    console.log("Clicked On Car Category")
+    await(await this.resiMake).click()
+    console.log("Clicked on Make")
+    await(await this.audi).click()
+    console.log("Selected the Make")
+    await(await this.resiModel).click()
+    console.log("Selecting the Model")
+    await(await this.ModelNamenew).waitForExist({ timeout: 5000 })
+    await(await this.ModelNamenew).click()
+    await(await this.resiTrim).click()
+    console.log("Clicked On Select Trim")
+    await(await this.newTrimName).click()
+    await driver.hideKeyboard()
+    await driver.pressKeyCode(9, undefined, undefined);
+    await driver.pressKeyCode(7, undefined, undefined);
+    await base.swipeUp()
+    await(await this.resiKmsDriven).click()
+    console.log("Clicked on KmsDriven")
+    await driver.hideKeyboard()
+    await driver.pressKeyCode(9, undefined, undefined);
+    await driver.pressKeyCode(7, undefined, undefined);
+    await driver.pressKeyCode(7, undefined, undefined);
+    console.log("Set the value for KMS driven")
+    await(await this.chkResidualEstimate).click()
+    console.log("Clicked on Check Residual Estimate")
+//result page is not there
 }
 }
 module.exports = new obv()
