@@ -59,7 +59,7 @@ describe('Edit Requirements', async () => {
         console.log("Before Edit edit Vehicle Details")
         console.log(await (await editRequirementsPage.Hyundai_Verna).getText())
     });
-    it('TC_06 Verify user should be able to edit KMS Driven Range', async () => {
+    it('TC_03 Verify user should be able to edit KMS Driven Range', async () => {
         await editRequirementsPage.chromeConditions()
         browser.url('/user/login')
         await base.androidBrowserLoginAsBuyer()
@@ -171,7 +171,7 @@ describe('Edit Requirements', async () => {
         console.log("After edit Service You Need option is:")
         console.log(await (await editRequirementsPage.rc_tranfer).getText())
     });
-    it('TC_05 Verify user should be able to edit price range', async () => {
+    it('TC_02 Verify user should be able to edit price range', async () => {
         await editRequirementsPage.chromeConditions()
         browser.url('/user/login')
         await base.androidBrowserLoginAsBuyer()
@@ -195,7 +195,7 @@ describe('Edit Requirements', async () => {
         console.log("After edit Service You Need option is:")
         console.log(await (await editRequirementsPage.new_price_range).getText())
     });
-    it('TC_01 Verify user should be able to edit location', async () => {
+    /*it('TC_01 Verify user should be able to edit location', async () => {
         await editRequirementsPage.chromeConditions()
         browser.url('/user/login')
         await base.androidBrowserLoginAsBuyer()
@@ -223,5 +223,5 @@ describe('Edit Requirements', async () => {
         expect(await editRequirementsPage.rc_tranfer).toBeDisplayed()
         console.log("After edit Service You Need option is:")
         console.log(await (await editRequirementsPage.rc_tranfer).getText())
-    });
+    });*/
 });

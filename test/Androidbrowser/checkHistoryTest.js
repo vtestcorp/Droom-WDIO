@@ -33,4 +33,25 @@ describe('Check History', async () => {
         expect(await checkHistoryPage.platinum).toBeDisplayed()
         console.log("Get History Certificate - Platinum @ Rs.149")
     });
+    /*it('TC_05 Verify the "View Sample Vehicle History Certificate" link is functional', async () => {
+        await checkHistoryPage.chromeConditions()
+        browser.url('/history/premium-reports')
+        await (await checkHistoryPage.per).waitForDisplayed({ timeout: 10000 })
+        console.log("Premium Certificate Displayed")
+        await base.swipeUp()
+        expect(await checkHistoryPage.Sample_Report).toBeDisplayed()
+        console.log("view Smaple report link displayed")
+    });
+    it('TC_06 Verify the Home Option is functional on History page', async () => {
+        await checkHistoryPage.chromeConditions()
+        browser.url('/history/premium-reports')
+        await (await checkHistoryPage.per).waitForDisplayed({ timeout: 10000 })
+        console.log("Premium Certificate Displayed")
+        await (await checkHistoryPage.home).click()
+        console.log("clicked on Home")
+        await (await checkHistoryPage.allow).waitForDisplayed({ timeout: 10000 })
+        await (await checkHistoryPage.allow).click()
+        await (await checkHistoryPage.allow).click()
+        console.log("Home page displayed ")
+    });*/
 });
