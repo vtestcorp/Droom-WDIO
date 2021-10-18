@@ -64,7 +64,6 @@ describe('Requirements Verification', async () => {
         await base.swipeUp()
         await (await requirementsVerificationPage.my_Requirements).click()
         console.log("Clicked on my Requirement ")
-        //await (await requirementsVerificationPage.Add_New_Requirement).waitForDisplayed({ timeout: 20000 })
         expect(await requirementsVerificationPage.Add_New_Requirement).toBeDisplayed()
         console.log(await (await requirementsVerificationPage.Add_New_Requirement).getText())
         console.log(await (await requirementsVerificationPage.Score).getText())

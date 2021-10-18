@@ -33,7 +33,7 @@ describe('Check History', async () => {
         expect(await checkHistoryPage.platinum).toBeDisplayed()
         console.log("Get History Certificate - Platinum @ Rs.149")
     });
-    /*it('TC_05 Verify the "View Sample Vehicle History Certificate" link is functional', async () => {
+    it('TC_05 Verify the "View Sample Vehicle History Certificate" link is functional', async () => {
         await checkHistoryPage.chromeConditions()
         browser.url('/history/premium-reports')
         await (await checkHistoryPage.per).waitForDisplayed({ timeout: 10000 })
@@ -53,5 +53,5 @@ describe('Check History', async () => {
         await (await checkHistoryPage.allow).click()
         await (await checkHistoryPage.allow).click()
         console.log("Home page displayed ")
-    });*/
+    });
 });

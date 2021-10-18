@@ -195,7 +195,7 @@ describe('Edit Requirements', async () => {
         console.log("After edit Service You Need option is:")
         console.log(await (await editRequirementsPage.new_price_range).getText())
     });
-    /*it('TC_01 Verify user should be able to edit location', async () => {
+    it('TC_01 Verify user should be able to edit location', async () => {
         await editRequirementsPage.chromeConditions()
         browser.url('/user/login')
         await base.androidBrowserLoginAsBuyer()
@@ -223,5 +223,5 @@ describe('Edit Requirements', async () => {
         expect(await editRequirementsPage.rc_tranfer).toBeDisplayed()
         console.log("After edit Service You Need option is:")
         console.log(await (await editRequirementsPage.rc_tranfer).getText())
-    });*/
+    });
 });

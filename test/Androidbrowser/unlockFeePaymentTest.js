@@ -47,7 +47,7 @@ describe('Unlock fee payments', async () => {
         console.log("Remove button displayed")
         
     })
-    /*it('TC_07 Verify Account Tab after click on Payment', async () => {
+    it('TC_07 Verify Account Tab after click on Payment', async () => {
         await unlockFeePaymentPage.chromeConditions()
         browser.url('/user/login')
         await base.androidBrowserLoginAsBuyer()
@@ -81,6 +81,6 @@ describe('Unlock fee payments', async () => {
         expect(await unlockFeePaymentPage.Cash_Card).toBeDisplayed()
         console.log("PaytmCash Card option displayed")
         
-    });;*/
+    });;
     
 });
