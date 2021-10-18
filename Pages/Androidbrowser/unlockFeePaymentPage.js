@@ -42,6 +42,13 @@ class UnlockFeePayments {
     get Address() { return base.getByText('xyz, pune, 411014, maharashtra') }
     get Edit() { return base.getByText('Edit') }
     get Remove() { return base.getByContDesc('Remove') }
+    get deliver_Address() { return base.getByText('Deliver To This Address') }
+    get UPI() { return base.getByText('Paytm UPI Droom Recommended - Fast & Secured') }
+    get Debit_Card() { return base.getByText('Debit Card') }
+    get net_Banking() { return base.getByText('Net Banking') }
+    get credit_card() { return base.getByText('Pay Via Credit Card') }
+    get Paytm() { return base.getByText('PaytmCash Card') }
+    get Cash_Card() { return base.getByText('') }
 
     async chromeConditions() {
         await (await this.acceptcontinue).click()
@@ -51,7 +58,7 @@ class UnlockFeePayments {
     async createRForCar() {
         await (await this.current_Location).click()
         await (await this.car).click()
-        await (await this.cancel).click()
+        //await (await this.cancel).click()
         await (await this.next_btn).click()
         await (await this.let_Droom_Suggest_for_you).click()
         await (await this.Sedan).click()

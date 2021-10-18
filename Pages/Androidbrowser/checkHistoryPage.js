@@ -48,6 +48,9 @@ class checkHistory {
     get vehicle_reg_no() { return base.getByContDesc('vehicle_reg_no') }
     get gold() { return base.getByContDesc('gold') }
     get platinum() { return base.getByContDesc('platinum') }
+    get Sample_Report() { return base.getByText('View Sample Report') }
+    get home() { return base.getByText('Home') }
+    
 
     async chromeConditions() {
         await (await this.acceptcontinue).click()

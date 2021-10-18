@@ -239,7 +239,7 @@ class editRequirements {
     async createReqForCar() {
         await (await this.current_Location).click()
         await (await this.car).click()
-        await (await this.cancel).click()
+        //await (await this.cancel).click()
         await (await this.next_btn).click()
         await (await this.let_Droom_Suggest_for_you).click()
         await (await this.Sedan).click()
@@ -264,13 +264,13 @@ class editRequirements {
     async createRForCar1() {
         await (await this.current_Location).click()
         await (await this.car).click()
-        await (await this.cancel).click()
+        //await (await this.cancel).click()
         await (await this.next_btn).click()
     }
     async createRForCar() {
         await (await this.current_Location).click()
         await (await this.car).click()
-        await (await this.cancel).click()
+        //await (await this.cancel).click()
         await (await this.next_btn).click()
         await (await this.let_Droom_Suggest_for_you).click()
         await (await this.Sedan).click()
