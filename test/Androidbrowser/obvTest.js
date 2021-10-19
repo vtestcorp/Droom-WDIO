@@ -5,7 +5,7 @@ describe('Orange Book Value', () => {
     beforeEach(async () => {
         await driver.closeApp()
         await driver.launchApp()
-});
+});/*
 it('TC_01 Verify the fields on OBV page', async () => {
     await browser.url('/user/login') 
     await obvPage.traverseToValuation()
@@ -21,7 +21,7 @@ it('TC_01 Verify the fields on OBV page', async () => {
     console.log("I want To Buy From Individual is shown on Page")
     expect(await obvPage.fromDealer).toBeDisplayed()
     console.log("I want To Buy From Dealer is shown on Page")
-});
+});/*
 it('TC_02 Verify the functionality of "I want to Buy" From an Individual', async () => {
     await browser.url('/user/login') 
     await obvPage.traverseToValuation()
@@ -147,17 +147,88 @@ it('TC_04 Verify the functionality of I want to sell to an Individual', async ()
     await obvPage.inputToUsed()
     expect(await obvPage.usedcar2).toBeDisplayed()
     console.log("Orange Book Valued Shown for Used Car")
-});
+});/*
 it('TC_08 Verify new functionality on vehicle pricing calulator on OBV', async () => {
     await browser.url('/user/login') 
     await obvPage.traverseToValuation()
     await obvPage.traverseToOptions()
     expect(await obvPage.newTab).toBeDisplayed()
-    console.log("Used option is Displayed On Pricing Calculator")
+    console.log("New option is Displayed On Pricing Calculator")
     await(await obvPage.newTab).click()
     console.log("Clicked On New Option")
     await obvPage.inputToNew()
     expect(await obvPage.usedcar2).toBeDisplayed()
     console.log("Orange Book Valued Shown for Used Car")
 });
+it('TC_09 Verify exchange functionality on vehicle pricing calulator of OBV', async () => {
+    await browser.url('/user/login') 
+    await obvPage.traverseToValuation()
+    await obvPage.traverseToOptions()
+    expect(await obvPage.exchange).toBeDisplayed()
+    console.log("Exchange option is Displayed On Pricing Calculator")
+    await(await obvPage.exchange).click()
+    console.log("Clicked On Exchange Option")
+    expect(await obvPage.exchangeInfo).toBeDisplayed()
+    console.log("Exchange Information is Displayed On Pricing Calculator as---")
+    console.log(await(await obvPage.exchangeInfo).getText())
+    expect(await obvPage.IwanttoExchange).toBeDisplayed()
+    console.log(await("Sub Heading Shown as-- :"+await obvPage.IwanttoExchange).getText())
+    expect(await obvPage.lableWith).toBeDisplayed()
+    console.log("With Lable shown on Vehicle Pricing Calculator")
+    expect(await obvPage.lableNew).toBeDisplayed()
+    console.log("New Lable shown on Vehicle Pricing Calculator")
+    expect(await obvPage.lableUsed).toBeDisplayed()
+    console.log("Used Lable shown on Vehicle Pricing Calculator")
+    console.log("Takinhg inputs for Exchabge valuation of Vechicle")
+    await obvPage.inputToExchange()
+    expect(await obvPage.checkExchangePrice).toBeDisplayed()
+    console.log("CHeck Exchange Price Button os Shown")
+    await(await obvPage.checkExchangePrice).click()
+    console.log("CLicked on Check Exchange Price Button")
+    //page not displayed to tk locator 
+    expect(await Orange_Book_ValuePage.headingExchnagePrice).toBeDisplayed()
+    expect(await Orange_Book_ValuePage.headingExchnagePrice).toHaveTextContaining("Amount You will need to pay for this Exchange")
+    console.log("After click on the Check Exchange  price Amount You will need to pay for this Exchange is displayed")
+ });*/
+it('TC_10 Verify Residual functionality on vehicle pricing calulator of OBV', async () => {
+    await browser.url('/user/login') 
+    await obvPage.traverseToValuation()
+    await obvPage.traverseToOptions()
+    expect(await obvPage.residual).toBeDisplayed()
+    console.log("Residual option is Displayed On Pricing Calculator")
+    await(await obvPage.residual).click()
+    console.log("Clicked On Residual Option")
+    expect(await obvPage.residual).toBeDisplayed()
+    console.log("Residual Information is Displayed On Pricing Calculator as---")
+    console.log(await(await obvPage.residualInfo).getText())
+    expect(await obvPage.lableNew).toBeDisplayed()
+    console.log("For New  Residual Lable shown on Vehicle Pricing Calculator")
+    expect(await obvPage.lableUsed).toBeDisplayed()
+    console.log("For Used Residaul Lable shown on Vehicle Pricing Calculator")
+    console.log("Takinhg inputs for Exchabge valuation of Vechicle")
+    await obvPage.inputToResidaul()
+    //expect(await obvPage.checkExchangePrice).toBeDisplayed()
+    //console.log("CHeck Exchange Price Button os Shown")
+   // await(await obvPage.checkExchangePrice).click()
+   // console.log("CLicked on Check Exchange Price Button")
+});/*
+it('TC_11 Verify the functionality of Pricing Certificate', async () => {
+    await browser.url('/user/login') 
+    await obvPage.traverseToValuation()
+    await Base.swipeUp()
+    expect(await obvPage.sampleReport).toBeDisplayed()
+    console.log("Sample Report is Displayed")
+    expect(await obvPage.BtnPrevious).toBeDisplayed()
+    console.log("Previous Button is Displayed")
+    expect(await obvPage.BtnNext).toBeDisplayed()
+    console.log("Next Button is Displayed")
+    expect(await obvPage.headingReport)
+    console.log(await(await obvPage.headingReport).getText())
+   await(await obvPage.BtnNext).click() 
+   expect(await obvPage.page2).toBeDisplayed()
+   console.log("After click on Next Button User able to see next page of report")
+   await(await obvPage.BtnPrevious).click() 
+    expect(await obvPage.sampleReport).toBeDisplayed()
+    console.log("After click on Previous Button User able to see Previous page of report")
+});*/
 });
