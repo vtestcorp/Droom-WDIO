@@ -24,19 +24,25 @@ class Eco {
     get location() { return getByText("Location") }
     get myLocation(){return getByText("Search My Location")}
     get next() { return base.getByContDesc("Next") }
+    get hamburgerMenu(){return base.getByContDesc("Toggle navigation") }
+    get features(){return base.getByText("Features") }   
+    get features_FourWheelers() { return base.getByResourceId("four-wheelers-tab") }
+    get featurs_TwoWheelers() { return base.getByResourceId("two-wheelers-tab") }
+    get chechPoint_FourWheeler() { return base.getByText("Inspection Checkpoints for Four Wheeler") }
+    get chechPoint_TwoWheeler() { return base.getByText("Inspection Checkpoints for Two Wheeler") }
+    get assessment() { return base.getByText("Visual and Functional Assessment") }
+    get tires_Wheels() { return base.getByText("Tires & Wheels (Front & Rear)") }
     async traverseToECO() {
         console.log("Traversing to ECO")  
         await (await this.menu).click()
         console.log("Clicked on Menu")
-       await base.scrollToExactText("Inspection")
+        await base.scrollToExactText("Inspection")
         await (await this.inspection).click()
         console.log("Clicked on ECO Inspection serive")
-        expect(await this.ECOHeading).toBeDisplayed()
+        expect(await th`is.ECOHeading).toBeDisplayed()
         console.log(await (await this.ECOHeading).getText())
         expect(await this.ECOHeading).toHaveTextContaining("Inspect Vehicle")
         console.log("Inspect Vehicle within Few Minutes Shown")
     }
-
-    
 }
 module.exports = new Eco();

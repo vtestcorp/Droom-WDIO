@@ -55,4 +55,37 @@ describe('ECOInspection', () => {
         expect(await ecoPage.Estimated_RepairCost).isDisplayed()
         console.log(await(await ecoPage.Estimated_RepairCost).getText())
     }); 
+    it('TC_04 Verify Features on ECO for Four Wheelers', async () => {
+        await browser.url('/user/login')
+        await  ecoPage.traverseToECO()
+        await (await ecoPage.Seller).isDisplayed()
+        console.log("Seller is availbale on ECO page")
+        await (await ecoPage.Seller).click()
+        expect(ecoPage.RegiAsVendor).toBeDisplayed()
+        console.log("Register As a Vendor is Displayed")
+        await (await ecoPage.RegiAsVendor).click()
+        console.log("Clicked on Resister as Vendor")
+        await(await ecoPage.hamburgurOnEco).click()
+        console.log("Traversing to the Features , SIgn Up, Services")
+        await (await ecoPage.features).click()
+        console.log("Clicked on Features")
+        expect(await ecoPage.features_FourWheelers).toBeDisplayed()
+        console.log("ECO inspection Page is Displayed for Four wheelers")
+        expect(await ecoPage.chechPoint_FourWheeler).toBeDisplayed()
+        console.log("checkpoint for four wheelers are displayed")
+        expect(await ecoPage.assessment).toBeDisplayed()
+        console.log(await (ecoPage.assessment).getText())
+        console.log("Inspection Checkpoints for Four Wheeler Displayed");
+    });
+    it('TC_05 Verify Features on ECO for Two Wheelers', async () => {
+       await browser.url('/user/login')
+        expect(await ecoPage.featurs_TwoWheelers).toBeDisplayed()
+        await(await ecoPage.featurs_TwoWheelers).click()
+        console.log("Clicked on Two Wheelers");
+        expect(await ecoPage.chechPoint_TwoWheeler).toBeDisplayed()
+        console.log(await (await ecoPage.chechPoint_TwoWheeler).getText())
+        console.log("Check Points for Two Wheeler displayed")
+        expect(await ecoPage.tires_Wheels).toBeDisplayed()
+        console.log(await (await ecoPage.tires_Wheels).getText())
+    });
 });
