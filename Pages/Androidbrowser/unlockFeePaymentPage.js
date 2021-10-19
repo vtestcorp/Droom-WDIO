@@ -49,6 +49,18 @@ class UnlockFeePayments {
     get credit_card() { return base.getByText('Pay Via Credit Card') }
     get Paytm() { return base.getByText('PaytmCash Card') }
     get Cash_Card() { return base.getByText('') }
+    get make() { return $('//select[@class="form-control floating-control pmmyt-make-f"]') }
+    get selectMake() { return $('//option[text()="BMW"]') }
+    get model() { return $('//select[@name="model"]') }
+    get selectModel() { return $('//option[text()="F 650 GS"]') }
+    get year() { return $('//select[@class="form-control floating-control pmmyt-year-f"]') }
+    get selectyear() { return $('//option[text()="2015"]') }
+    get trim() { return $('//select[@class="form-control floating-control pmmyt-trim-f"]') }
+    get selectTrim() { return $('//option[text()="798CC"]') }
+    get Color() { return $('//input[@value="red"]') }
+    get tokenForBike() { return base.getByText('Rs. 499 only') }
+    
+
 
     async chromeConditions() {
         await (await this.acceptcontinue).click()
@@ -80,6 +92,42 @@ class UnlockFeePayments {
         await (await this.submit).click()
         await (await this.View_All_Matches).click()
     }
+    async createRForBike() {
+        await (await this.current_Location).click()
+        await browser.pause(3000)
+        await (await this.bike).click()
+        //await (await this.cancel).click()
+        await (await this.next_btn).click()
+        await (await this.select_From).click()
+        await this.switchToWebview()
+        await (await this.make).click()
+        await (await this.selectMake).click()
+        await (await this.model).click()
+        await (await this.selectModel).click()
+        await (await this.year).click()
+        await (await this.selectyear).click()
+        await (await this.trim).click()
+        await (await this.selectTrim).click()
+        await this.switchToNativeApp()
+        await base.swipeUp()
+        await this.swipeUp1()
+        await (await this.next_btn).click()
+        await this.switchToWebview()
+        await (await this.Color).click()
+        await this.switchToNativeApp()
+        await (await this.next_btn).click()
+        await (await this.not_Decided).click()
+        await this.swipeUp1()
+        await (await this.next_btn).click()
+        await base.swipeUp()
+        await (await this.next_btn).click()
+        await browser.pause(2000)
+        await base.swipeUp()
+        await (await this.submit).click()
+        await (await this.View_All_Matches).click()
+        await (await this.best_Matches).click()
+        
+    }
     async swipeUp1() {
         const { width, height } = await driver.getWindowRect()
         await browser.touchPerform([
@@ -93,6 +141,25 @@ class UnlockFeePayments {
         await (await this.pay_Best).click()
         await browser.pause(2000)
         await (await this.Droom_Pay).waitForDisplayed({ timeout: 10000 })
+    }
+    async switchToWebview() {
+        let x = driver.getContexts()
+            ; (await x).forEach(myFunction)
+        function myFunction(elem) {
+            if (elem.search("WEBVIEW") >= 0) {
+                driver.switchContext(elem)
+            }
+        }
+
+    }
+    async switchToNativeApp() {
+        let x = driver.getContexts()
+            ; (await x).forEach(myFunction)
+        function myFunction(elem) {
+            if (elem.search("NATIVE_APP") >= 0) {
+                driver.switchContext(elem)
+            }
+        }
     }
 
 };

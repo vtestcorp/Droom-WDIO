@@ -52,6 +52,6 @@ describe('Check History', async () => {
         await (await checkHistoryPage.allow).waitForDisplayed({ timeout: 10000 })
         await (await checkHistoryPage.allow).click()
         await (await checkHistoryPage.allow).click()
-        console.log("Home page displayed ")
+        console.log("Home page displayed")
     });
 });

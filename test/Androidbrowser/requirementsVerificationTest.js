@@ -41,6 +41,7 @@ describe('Requirements Verification', async () => {
         console.log("Clicked on my Requirement ")
         await (await requirementsVerificationPage.Add_New_Requirement).waitForDisplayed({ timeout: 20000 })
         await (await requirementsVerificationPage.search).click()
+        expect(await requirementsVerificationPage.search).toBeDisplayed()
         console.log("requirements name is editable")
     });
     it('TC_04 Verify Add New Requirements link is available', async () => {
