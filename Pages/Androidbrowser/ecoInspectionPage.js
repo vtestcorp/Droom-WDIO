@@ -32,6 +32,18 @@ class Eco {
     get chechPoint_TwoWheeler() { return base.getByText("Inspection Checkpoints for Two Wheeler") }
     get assessment() { return base.getByText("Visual and Functional Assessment") }
     get tires_Wheels() { return base.getByText("Tires & Wheels (Front & Rear)") }
+    get cars(){return base.getByContDesc('Cars')}
+    get Bikes(){return base.getByContDesc('Bikes')}
+    get inspectionServices(){return base.getByText('Inspection Services')}
+    get basicInspection(){return base.getByText('Basic Inspection')}
+    get basicAmt(){return base.getByResourceTextNIndex('₹299','1')}
+    get premiumAmt(){return base.getByResourceTextNIndex('₹549','2')}
+    get premiumPlusAmt(){return base.getByResourceTextNIndex('₹599','1')}
+    get viewSampleReport(){return base.getByText('View Sample Report')}
+    get basicAmtBike(){return base.getByResourceTextNIndex('₹149','1')}
+    get premiumAmtBike(){return base.getByResourceTextNIndex('249','2')}
+    get titleAmt(){return base.getByResourceTextNIndex('₹99','1')}
+    get titleCertificate(){return base.getByText('Title Certificate')}
     async traverseToECO() {
         console.log("Traversing to ECO")  
         await (await this.menu).click()
@@ -39,7 +51,7 @@ class Eco {
         await base.scrollToExactText("Inspection")
         await (await this.inspection).click()
         console.log("Clicked on ECO Inspection serive")
-        expect(await th`is.ECOHeading).toBeDisplayed()
+        expect(await this.ECOHeading).toBeDisplayed()
         console.log(await (await this.ECOHeading).getText())
         expect(await this.ECOHeading).toHaveTextContaining("Inspect Vehicle")
         console.log("Inspect Vehicle within Few Minutes Shown")
