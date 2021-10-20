@@ -14,8 +14,11 @@ class vehicleInsurance {
     get Easy_Steps() { return base.getByText('Apply for Vehicle Insurance in 3 Easy Steps') }
     get next() { return base.getByText('Next') }
     get used_condition() { return $('//input[@id="used-condition"]') }
-    
-
+    get new_condition() { return $('//input[@id="new-condition"]') }
+    get make() { return $('//div[@class="form-group floating-group select-form-group d-margin-bottom-30 pmmyt-make"]') }
+    get model() { return $('//div[@class="form-group floating-group select-form-group d-margin-bottom-30 pmmyt-model"]') }
+    get yaer() { return $('//div[@class="form-group floating-group select-form-group d-margin-bottom-30 pmmyt-year"]') }
+    get trim() { return $('//div[@class="form-group floating-group select-form-group d-margin-bottom-30 pmmyt-trim"]') }
     async chromeConditions() {
         await (await this.acceptcontinue).click()
         await (await this.next).click()
