@@ -24,11 +24,42 @@ class Eco {
     get location() { return getByText("Location") }
     get myLocation(){return getByText("Search My Location")}
     get next() { return base.getByContDesc("Next") }
+    get hamburgerMenu(){return base.getByContDesc("Toggle navigation") }
+    get features(){return base.getByText("Features") }   
+    get features_FourWheelers() { return base.getByResourceId("four-wheelers-tab") }
+    get featurs_TwoWheelers() { return base.getByResourceId("two-wheelers-tab") }
+    get chechPoint_FourWheeler() { return base.getByText("Inspection Checkpoints for Four Wheeler") }
+    get chechPoint_TwoWheeler() { return base.getByText("Inspection Checkpoints for Two Wheeler") }
+    get assessment() { return base.getByText("Visual and Functional Assessment") }
+    get tires_Wheels() { return base.getByText("Tires & Wheels (Front & Rear)") }
+    get cars(){return base.getByContDesc('Cars')}
+    get Bikes(){return base.getByContDesc('Bikes')}
+    get inspectionServices(){return base.getByText('Inspection Services')}
+    get basicInspection(){return base.getByText('Basic Inspection')}
+    get basicAmt(){return base.getByResourceTextNIndex('₹299','1')}
+    get premiumAmt(){return base.getByResourceTextNIndex('₹549','2')}
+    get premiumPlusAmt(){return base.getByResourceTextNIndex('₹599','1')}
+    get viewSampleReport(){return base.getByText('View Sample Report')}
+    get basicAmtBike(){return base.getByResourceTextNIndex('₹149','1')}
+    get premiumAmtBike(){return base.getByResourceTextNIndex('249','2')}
+    get titleAmt(){return base.getByResourceTextNIndex('₹99','1')}
+    get titleCertificate(){return base.getByText('Title Certificate')}
+    get hamburgurOnEco(){return base.getByResourceTextNIndex('Toggle navigation','1')}
+    get service(){return base.getByResourceIdNText('navbarDropdown','Services')}
+    get scooterInspection(){return base.getByText('Scooter Inspection')}
+    get scooterInspectionHeading(){return base.getByText('Get A Used Scooter Inspection With ECO')}
+    get bookInspection(){return base.getByText('Book Inspection')}
+    get signUp(){return base.getByText('Sign up')}
+    get signUpHeading(){return base.getByText('Sign Up With ECO')}
+    get watchEcoTv(){return base.getByText("Watch ECO TV")}
+    get videoHeading(){return base.getByText("Droom ECO TVC - Gaadi ki asli condition (30s)")}
+    get closeVideo(){return base.getByText("Close")}
+    get helpPopUp(){return base.getByText("x")}
     async traverseToECO() {
         console.log("Traversing to ECO")  
         await (await this.menu).click()
         console.log("Clicked on Menu")
-       await base.scrollToExactText("Inspection")
+        await base.scrollToExactText("Inspection")
         await (await this.inspection).click()
         console.log("Clicked on ECO Inspection serive")
         expect(await this.ECOHeading).toBeDisplayed()
@@ -36,7 +67,5 @@ class Eco {
         expect(await this.ECOHeading).toHaveTextContaining("Inspect Vehicle")
         console.log("Inspect Vehicle within Few Minutes Shown")
     }
-
-    
 }
 module.exports = new Eco();
