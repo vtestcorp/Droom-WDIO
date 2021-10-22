@@ -44,6 +44,17 @@ class Eco {
     get premiumAmtBike(){return base.getByResourceTextNIndex('249','2')}
     get titleAmt(){return base.getByResourceTextNIndex('₹99','1')}
     get titleCertificate(){return base.getByText('Title Certificate')}
+    get hamburgurOnEco(){return base.getByResourceTextNIndex('Toggle navigation','1')}
+    get service(){return base.getByResourceIdNText('navbarDropdown','Services')}
+    get scooterInspection(){return base.getByText('Scooter Inspection')}
+    get scooterInspectionHeading(){return base.getByText('Get A Used Scooter Inspection With ECO')}
+    get bookInspection(){return base.getByText('Book Inspection')}
+    get signUp(){return base.getByText('Sign up')}
+    get signUpHeading(){return base.getByText('Sign Up With ECO')}
+    get watchEcoTv(){return base.getByText("Watch ECO TV")}
+    get videoHeading(){return base.getByText("Droom ECO TVC - Gaadi ki asli condition (30s)")}
+    get closeVideo(){return base.getByText("Close")}
+    get helpPopUp(){return base.getByText("x")}
     async traverseToECO() {
         console.log("Traversing to ECO")  
         await (await this.menu).click()
