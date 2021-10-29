@@ -1,8 +1,8 @@
 const Base = require('../../BaseClass/base')
 class ECO {
-    get shop_by_category() { return $('//span[contains(text(),"Shop by Category")]') }
+    get shop_by_category() { return $('//span[text()="Categories"]') }
     get Certification_Services() { return $('//span[contains(text(),"Certification Services")]') }
-    get ECO() { return $('(//a[@href ="https://droom.in/eco"] )') }
+    get ECO() { return $('(//div[contains(text(),"Inspection")])[2]') }
     get ECOHeading() { return $('//h1[normalize-space()="Inspect vehicle within few minutes"]') }
     get Buyer() { return $('//span[text()="Buyer"]') }
     get Seller() { return $('//span[text()="Seller"]') }
@@ -20,8 +20,8 @@ class ECO {
     get inputMake(){return $('//input[@id="s2id_autogen1_search"]')}
     get selectModel() { return $('//span[@id="select2-chosen-61"]') }
     get inputModel(){return $('//input[@id="s2id_autogen61_search"]')}
-    get location() { return $('//input[@class="form-control select-city"]') }
-    get searchMy_Location() { return $('(//input[contains(@class,"lp-search")])[2]') }
+    get location() { return $('//*[@id="repair_estimate_location"]')}
+    get searchMy_Location() { return $('(//input[contains(@class,"form-control floating-control lp-search")])') }
     get next() { return $('//a[text()="Next"]') }
     get location2() { return $('//p[text()="Location"]') }
     get delhi() { return $('//li[@class="d-display-block d-padding-2 clickable"]') }
@@ -71,23 +71,19 @@ class ECO {
         await (await this.shop_by_category).waitForClickable({ timeout: 3000 })
         await (await this.shop_by_category).click()
         console.log("Clicked on Shop By category")
-        await (await this.Certification_Services).moveTo()
-        console.log("Moved to Certification Services")
         await (await this.ECO).click()
         console.log("Clicked on ECO serive")
+        await(await this.ECOHeading).waitForDisplayed()
         expect(await this.ECOHeading).toBeDisplayed()
         console.log(await (await this.ECOHeading).getText())
         expect(await this.ECOHeading).toHaveTextContaining("Inspect Vehicle")
     }
     async inputsToCheckEstimate() {
         await (await this.selectMake).click()
+        console.log("Make selected")
         await(await this.inputMake).setValue("Ashok Leyland")
         await(await this.ashok).click()
-        //await(await this.selectModel).click()
-        //await(await this.inputModel).setValue("Stile")
         await(await this.stile).click()
-        //await(await this.selectTrim).click()
-        //await(await this.inputTrim).setValue("LE")
         await(await this.Le).click()
         await (await this.location).click()
         await (await this.searchMy_Location).setValue("Delhi")

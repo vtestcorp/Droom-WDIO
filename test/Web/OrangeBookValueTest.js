@@ -2,13 +2,8 @@ const Base = require('../../BaseClass/base')
 const Orange_Book_ValuePage = require('../../Pages/Web/OrangeBookValuePage')
 describe('Orange Book Value', () => {
     it('TC_01 Verify the fields on OBV page', async () => {
-        await (await Orange_Book_ValuePage.shop_by_category).waitForClickable({ timeout: 3000 })
-        await (await Orange_Book_ValuePage.shop_by_category).click()
-        console.log("Clicked on Shop By category")
-        await (await Orange_Book_ValuePage.services).moveTo()
-        console.log("Moved to Certification Services")
-        await (await Orange_Book_ValuePage.obv).click()
-        console.log("Clicked on OBV")
+        browser.url('/')
+         await Orange_Book_ValuePage.toVehiclePricingCalculator()
         expect(await Orange_Book_ValuePage.title_pricing_report).toBeDisplayed()
         console.log("Get the new Pricing report Title dispalyed on the page")
         expect(await Orange_Book_ValuePage.title_pricing_report).toHaveTextContaining("Get the new Pricing report")
@@ -21,8 +16,9 @@ describe('Orange Book Value', () => {
         expect(await Orange_Book_ValuePage.seller_tab).toBeDisplayed()
         console.log(await (await Orange_Book_ValuePage.seller_tab).getText())
         console.log("I Want to Sell Tab is displayed for Sellet")
-    });
+    }); 
     it('TC_02 Verify the pricing report functionality for "I want to Buy from an Individual"', async () => {
+        browser.url('/')
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
         expect(await Orange_Book_ValuePage.buyer_tab).toBeDisplayed()
         console.log(await (await Orange_Book_ValuePage.buyer_tab).getText())
@@ -33,6 +29,7 @@ describe('Orange Book Value', () => {
         expect(await Orange_Book_ValuePage.result).toHaveTextContaining("Audi")
     });
     it('TC_03 Verify the pricing report functionality for "I want to Buy from a Dealer"', async () => {
+        browser.url('/')
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
         expect(Orange_Book_ValuePage.buyer_tab).toBeDisplayed()
         console.log(await (await Orange_Book_ValuePage.buyer_tab).getText())
@@ -44,6 +41,7 @@ describe('Orange Book Value', () => {
         expect(await Orange_Book_ValuePage.result).toHaveTextContaining("Audi")
     });
     it('TC_04 Verify the pricing report functionality for "I want to sell to an Individual"', async () => {
+       browser.url('/')
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
         expect(await Orange_Book_ValuePage.seller_tab).toBeDisplayed()
         await (await Orange_Book_ValuePage.seller_tab).click()
@@ -55,6 +53,7 @@ describe('Orange Book Value', () => {
         expect(await Orange_Book_ValuePage.result).toHaveTextContaining("Audi")
     });
     it('TC_05 Verify the pricing report functionality for "I want to sell to a Dealer"', async () => {
+        browser.url('/')
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
         expect(Orange_Book_ValuePage.seller_tab).toBeDisplayed()
         await (await Orange_Book_ValuePage.seller_tab).click()
@@ -67,6 +66,7 @@ describe('Orange Book Value', () => {
         expect(Orange_Book_ValuePage.result).toHaveTextContaining("Audi")
     })
     it('TC_06 Verify the Grades on pricing report', async () => {
+        browser.url('/')
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
         expect(await Orange_Book_ValuePage.buyer_tab).toBeDisplayed()
         console.log(await (await Orange_Book_ValuePage.buyer_tab).getText())
@@ -81,6 +81,7 @@ describe('Orange Book Value', () => {
         console.log("OBV Pricing Report suggested the Good value of vehicle.. by analysing all the inputs given by the user.")
     });
     it('TC_07 Verify used functionality on vehicle pricing calulator on OBV', async () => {
+        browser.url('/')
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
         expect(await Orange_Book_ValuePage.seller_tab).toBeDisplayed()
         console.log(await (await Orange_Book_ValuePage.seller_tab).getText())
@@ -99,6 +100,7 @@ describe('Orange Book Value', () => {
         console.log('OBV Pricing Report suggested the fair value of vehicle basd on input given by the user')
     });
     it('TC_08 Verify New functionality on vehicle pricing calulator on OBV', async () => {
+        browser.url('/')
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
         expect(await Orange_Book_ValuePage.seller_tab).toBeDisplayed()
         console.log(await (await Orange_Book_ValuePage.seller_tab).getText())
@@ -116,6 +118,7 @@ describe('Orange Book Value', () => {
         console.log(await (await Orange_Book_ValuePage.New_Price).getText())
     })
     it('TC_09 Verify Exchange functionality on vehicle pricing calulator on OBV', async () => {
+        browser.url('/')
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
         expect(await Orange_Book_ValuePage.buyer_tab).toBeDisplayed()
         console.log(await (await Orange_Book_ValuePage.buyer_tab).getText())
@@ -137,6 +140,7 @@ describe('Orange Book Value', () => {
         console.log("After click on the Check Exchange  price Amount You will need to pay for this Exchange is displayed")
     });
     it('TC_10 Verify Future price functionality on vehicle pricing calulator on OBV', async () => {
+        browser.url('/')
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
         expect(await Orange_Book_ValuePage.seller_tab).toBeDisplayed()
         console.log(await (await Orange_Book_ValuePage.seller_tab).getText())
@@ -156,6 +160,7 @@ describe('Orange Book Value', () => {
         console.log("Future Price of BMW 3 Series 320D LUXURY LINE BS6 evolution in 2022 after 200 Kms is Displayed")
     });
     it('TC_11 Verify Residual functionality on vehicle pricing calulator on OBV', async () => {
+        browser.url('/')
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
         expect(await Orange_Book_ValuePage.seller_tab).toBeDisplayed()
         console.log(await (await Orange_Book_ValuePage.seller_tab).getText())
@@ -175,6 +180,7 @@ describe('Orange Book Value', () => {
         console.log("Residual Price of BMW 3 Series 320D LUXURY LINE BS6 2021 is displayed")
     });
     it('TC_12 Verify functionality of pricing Certificate', async () => {
+        browser.url('/')
         await Orange_Book_ValuePage.toVehiclePricingCalculator()
         expect(await Orange_Book_ValuePage.seller_tab).toBeDisplayed()
         console.log(await (await Orange_Book_ValuePage.seller_tab).getText())
