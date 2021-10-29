@@ -2,8 +2,8 @@ const Base = require('../../BaseClass/base');
 class OBV {
     get home() { return $('//a[text()="Home"]') }
     get services() { return $('//span[contains(text(),"Certification Services")]') }
-    get shop_by_category() { return $('//span[contains(text(),"Shop by Category")]') }
-    get obv() { return $('(//a[@href ="https://droom.in/obv/premium-report"] )[1]') }
+     get shop_by_category() { return $('//span[text()="Categories"]') }
+    get obv() { return $('//div[contains(text(),"Valuation")]') }
     get pricing_cal() { return $('//h2[normalize-space()="Used Vehicle Pricing Calculator"]') }
     get buyer_tab() { return $('//a[normalize-space()="I Want to Buy"]') }
     get seller_tab() { return $('//a[normalize-space()="I Want to Sell"]') }
@@ -20,7 +20,7 @@ class OBV {
     get kms_Driven() { return $('//input[@id="kms_driven"]') }
     get submit() { return $('//input[@type="submit"]') }
     get check_OBV() { return $('//input[@id="mmt_submit"]') }
-    get result() { return $('(//label[text()="Audi A5"])[1]') }
+    get result() { return $('(//label[text()="Ashok Leyland Stile"][1])') }
     get good() { return $('//a[text()="Good"]') }
     get orangeBookValue_next() { return $('//a[text()="Orange Book Value"]') }
     get used() { return $('//a[text()="Used"]') }
@@ -76,8 +76,8 @@ class OBV {
     get checkResidual_Estimate() { return $('(//button[text()="Check Residual Estimate"])[1]') }
     get ResidualPrice_Estimated() { return $('//div[@role="residual-result"]//div[@class="row"]//label[1]') }
     get viewPricingCertificate() { return $('//a[text()="View Pricing Certificate"]') }
-    get locationOn_New() { return $('(//input[contains(@class,"select")])[1]') }
-    get search_location() { return $('(//input[contains(@class,"lp-search")])[2]') }
+    get locationOn_New() { return $('//*[@id="obv_location_plugin_1"]') }
+    get search_location() { return $('//input[contains(@class,"form-control floating-control lp-search")]') }
     get delhi() { return $('//li[@class="d-display-block d-padding-2 clickable"]') }
     get check_PriceOnNew() { return $('//button[text()="Check Price"]') }
     get Price_ForNew_Vehicle() { return $('//label[text()="Price of New Vehicle is"]') }
@@ -93,27 +93,30 @@ class OBV {
     async toVehiclePricingCalculator() {
         await (await this.shop_by_category).click()
         console.log("Clicked on Shop By category")
-        await (await this.services).moveTo()
-        console.log("Moved to Certification Services")
         await (await this.obv).click()
         console.log("Clicked on OBV")
         expect(await this.title_pricing_report).toBeDisplayed()
         console.log("Get the new Pricing report Title dispalyed on the page")
     }
     async toTakeInputs() {
-        await (await this.category).selectByVisibleText('Car')
+        await (await this.category).selectByIndex(1)
         console.log("Selected Car category")
         await (await (await this.make).$('//option[@id]')).waitForExist({ timeout: 5000 })
-        await (await this.make).selectByVisibleText('Audi')
+        await (await this.make).selectByIndex(1)
         console.log('Selected the expected Manufacturer')
-        await (await (await this.model).$('(//option[@id])[last()]')).waitForExist({ timeout: 5000 })
-        await (await this.model).selectByVisibleText('A5')
+        await (await (await this.model).$('(//option[@id])[last()]')).waitForExist({ timeout: 7000 })
+        console.log("Selecting the Model")
+        await browser.pause(3000)
+        await (await this.model).selectByIndex(1)
+        await browser.pause(3000)
         console.log('Selected the expected Model of Vehicle ')
         await (await (await this.year).$('(//option[@id])[last()]')).waitForExist({ timeout: 5000 })
-        await (await this.year).selectByVisibleText('2020')
+        await (await this.year).selectByIndex(1)
         console.log("Selected year")
         await (await (await this.trim).$('(//option[@id])[last()]')).waitForExist({ timeout: 5000 })
-        await (await this.trim).selectByVisibleText('S5')
+         await browser.pause(3000)
+        await (await this.trim).selectByIndex(1)
+         await browser.pause(3000)
         console.log('Selected the option trim to differentiate between models ')
         await (await this.kms_Driven).waitForExist()
         await (await this.kms_Driven).setValue("100")
@@ -144,20 +147,26 @@ class OBV {
     }
     async toinputForNewVechicle() {
         await (await (await this.newCategory).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
-        await (await this.newCategory).selectByVisibleText('Car')
+        await (await this.newCategory).selectByIndex(1)
         console.log("Selected the Cars")
         await (await (await this.newMake).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
-        await (await this.newMake).selectByVisibleText('Audi')
+        await (await this.newMake).selectByIndex(1)
         console.log("New Manufacturer Selected")
         await (await (await this.newModel).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
-        await (await this.newModel).selectByVisibleText('A4')
+        await (await this.newModel).selectByIndex(1) 
         console.log("Model for New Vehicle selected")
+        await browser.pause(3000)
         await (await (await this.newTrim).$('(//option[@value])[last()]')).waitForExist({ timeout: 5000 })
-        await (await this.newTrim).selectByVisibleText('40 TFSI PREMIUM PLUS')
+        await browser.pause(3000)
+        await (await this.newTrim).selectByIndex(1)
+        console.log("Selected the Trim")
         await (await this.locationOn_New).click()
+        console.log("Clicked on Location")
         await (await this.search_location).click()
+        console.log("Clicked on Search Location")
         await (await this.search_location).setValue("Delhi")
-        await (await this.delhi).click()
+        console.log("User selected the location")
+        await (await this.delhi).click()    
         console.log("selected the Delhi location")
         await (await this.check_PriceOnNew).click()
         console.log('Clicked on the Check Price  button to submit the details given by Buyer')
