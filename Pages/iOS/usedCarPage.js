@@ -11,7 +11,7 @@ class Usedcar {
     get usedButton() { return base.getByClassChain('**/XCUIElementTypeButton[`label == "Used"`]') }
     get bike() { return base.getByAccessibilityID('Bike') }
     get scooter() { return base.getByAccessibilityID('Scooter') }
-
+    get back(){return base.getByAccessibilityID('arrow left')}
     get carimg() { return base.getByAccessibilityID('transportation') }
 
     get newButton() { return base.getByClassChain('**/XCUIElementTypeButton[`label == "New"`]') }
@@ -61,23 +61,31 @@ get fortEcoSport(){return base.getByClassChain('**/XCUIElementTypeStaticText[`la
     get fuelType() { return base.getByAccessibilityID('Fuel Type') }
     get fuleTypes() { return base.getByAccessibilityID('Fuel Type') }
     get petrol() { return base.getByAccessibilityID('Petrol') }
+    get diesel(){return base.getByAccessibilityID('Diesel')}
     get kmsDrivenRange(){return base.getByAccessibilityID('Km Driven Range')}
     get selectExtColor(){return base.getByAccessibilityID('Select Exterior Color')}
-    get lastStep() { return base.getByResourceIdNIndex("in.droom:id/headingTextView","2") }
-    get insurance() { return base.getByResourceId("in.droom:id/insurance_toggle") }
-    get loan() { return base.getByResourceId("in.droom:id/loan_toggle") }
-    get RCTransfer() { return base.getByResourceId("in.droom:id/rc_transfer_toggle")}
-    get roadSideAssistance() { return base.getByResourceId("in.droom:id/road_side_assitance_toggle")}
+    get transmissionType(){return base.getByAccessibilityID('Transmission Type')}
+    get lastStep() { return base.getByAccessibilityID('Last Step & Explore the Vehicles') }
+    get insurance() { return base.getByAccessibilityID('Insurance') }
+    get loan() { return base.getByAccessibilityID('Loan') }
+    get RCTransfer() { return base.getByAccessibilityID('RC Transfer')}
+    get roadSideAssistance() { return base.getByAccessibilityID('Road Side Assistance')}
     get almostDone() { return base.getByText("You are Almost Done!") }
-    get submitAndView() { return base.getByText("Submit & View all Matches")}
+    get submitAndView() { return base.getByClassChain('**/XCUIElementTypeStaticText[`label == "Submit & View all Matches"`]')}
+    get continueWithMblNo(){return base.getByAccessibilityID("Continue with Mobile No.")}
+    get phnNumber(){return base.getByClassChain('**/XCUIElementTypeTextField[`value == "Phone Number"`]')}
+    get continue(){return base.getByClassChain('**/XCUIElementTypeStaticText[`label == "Continue"`]')}
     get requirements() { return base.getByResourceId("in.droom:id/viewRequirements") }
     get moreBtn() {return base.getByResourceId("in.droom:id/txt_more")}
     get redColor() { return base.getByClassChain('**/XCUIElementTypeButton[`value == "red"`]') }
     get balckColor(){return base.getByClassChain('**/XCUIElementTypeButton[`value == "black"`]')}
+    get laststepExploreVehicle(){return base.getByAccessibilityID('Last Step & Explore the Vehicles')}
+    get oneLastStepBeforeMatch(){return base.getByAccessibilityID('One Last Step before we Get Matches')}
     get kmsSlider(){return base.getByClassChain('**/XCUIElementTypeOther[`label == "kms_driven, Maximum value in slider, Minimum value in slider, Right Handle, Left Handle"`]')}
     get extColor() { return base.getByResourceIdNText("in.droom:id/txt_km_driven","Red") }
-    get transmissionType() { return base.getByResourceIdNText("in.droom:id/txt_km_driven","Automatic") }
-    get automatic() { return base.getByResourceIdNIndex("in.droom:id/icon_card_view","0") }
+    get transmissionType() { return base.getByResourceIdNText('Transmission Type') }
+    get manualTransmission(){return base.getByAccessibilityID('Manual')}
+    get automaticTransmission() { return base.getByAccessibilityID('Automatic') }
     get flexibleTransmission() { return base.getByResourceId("in.droom:id/radio_flexible_for_transmission_RV") }
     get submit() { return $('//span[text()="Submit "]') }
     get basicDetails() { return $('//h5[text()="Now Share Your Dream Vehicle Basic Details"]') }
@@ -89,8 +97,9 @@ get fortEcoSport(){return base.getByClassChain('**/XCUIElementTypeStaticText[`la
     get service() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[1]') }
     get needToBuy() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[2]') }
     get exchangeV() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[2]') }
-    get withinFourDay() { return $('(//span[@class="s-MuiIconButton-label"])[8]') }
-    get exchange() { return $('(//span[@class="s-MuiIconButton-label"])[12]') }
+    get howQuicklyUwantBuy(){return base.getByAccessibilityID('How Quickly Do You Want to Buy?')}
+    get withinFourDay() { return $('**/XCUIElementTypeStaticText[`label == "Within 4 Days"`]') }
+    get exchange() { return base.getByClassChain('(//span[@class="s-MuiIconButton-label"])[12]') }
     get kms() { return $('//input[@id="exchange_kms_driven"]') }
     get records() { return $('//h3[@class="bm-MuiTypography-root bm-bm80 bm-MuiTypography-h3 bm-MuiTypography-noWrap"]') }
     get seller() { return $('//p[@class="s-MuiTypography-root s-MuiTypography-body1"]') }
