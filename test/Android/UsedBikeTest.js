@@ -6,7 +6,7 @@ describe('Used Bike', () => {
         await driver.closeApp()
         await driver.launchApp()
     });
-    it('Tc_01 Verify Bike option is the display with used Condition to the buyer', async () => {
+   it('TC_01 Verify Bike option is the display with used Condition to the buyer', async () => {
         await base.androidLoginAsBuyer()
         console.log("login As Buyer")
         await browser.pause("1000")
@@ -29,7 +29,7 @@ describe('Used Bike', () => {
         console.log('Next Button displayed')
     });
 
-    it('Tc_03 Verify error message without entering location', async () => {
+    it('TC_03 Verify error message without entering location', async () => {
         await base.androidLoginAsBuyer()
         await (await UsedBikePage.buy).click()
         await (await UsedBikePage.bikeimg).click()
@@ -40,7 +40,7 @@ describe('Used Bike', () => {
         console.log('error message displayed')
     });
 
-    it('Tc_02 Verify user able to select location using location option', async () => {
+    it('TC_02 Verify user able to select location using location option', async () => {
         await base.androidLoginAsBuyer()
         await (await UsedBikePage.buy).click()
         await (await UsedBikePage.bikeimg).click()
@@ -55,7 +55,7 @@ describe('Used Bike', () => {
         expect(await UsedBikePage.heading1).toBeDisplayed()
         console.log("User able to select location and navigate to next window")
     });
-    it('Tc_04 Verify user able to select Bike model from Entering your vehicle details as per requirement', async () => {
+    it('TC_04 Verify user able to select Bike model from Entering your vehicle details as per requirement', async () => {
         await base.androidLoginAsBuyer()
         await (await UsedBikePage.buy).click()
         await (await UsedBikePage.bikeimg).click()
@@ -72,7 +72,7 @@ describe('Used Bike', () => {
         console.log("User can select Bike using Search Field")
     });
 
-    it('Tc_05 Verify user able to select bike model through select from the dropdown as per requirement', async () => {
+    it('TC_05 Verify user able to select bike model through select from the dropdown as per requirement', async () => {
         await base.androidLoginAsBuyer()
         await (await UsedBikePage.buy).click()
         await (await UsedBikePage.bikeimg).click()
@@ -94,7 +94,7 @@ describe('Used Bike', () => {
         console.log('successfully bike selected from dropdown')
     });
 
-   it('Tc_06 Verify user able to select bike model through Let Droom Suggest for you as per requirement', async () => {
+ it('TC_06 Verify user able to select bike model through Let Droom Suggest for you as per requirement', async () => {
         await base.androidLoginAsBuyer()
         await (await UsedBikePage.buy).click()
         await (await UsedBikePage.bikeimg).click()
@@ -116,10 +116,15 @@ describe('Used Bike', () => {
         expect(await UsedBikePage.bodyType).toBeDisplayed()
         console.log('body type displayed')
         await UsedBikePage.droomSuggestBike()
+        expect(await UsedBikePage.heading6).toBeDisplayed()
+        await (await UsedBikePage.vehicle1).click()
+        await (await UsedBikePage.nextBtn).click()
+        expect(await  UsedBikePage.budget).toBeDisplayed()
+        console.log('What is Your Budget? option Display')
         console.log('user able to select bike from droom suggest')
      });
 
-    it('Tc_07 Verify user able to select use bike as per the budget', async () => {
+    it('TC_07 Verify user able to select use bike as per the budget', async () => {
     await base.androidLoginAsBuyer()
     await (await UsedBikePage.buy).click()
     await (await UsedBikePage.bikeimg).click()
@@ -138,7 +143,13 @@ describe('Used Bike', () => {
     expect(await UsedBikePage.bikeName).toBeDisplayed()
     await (await UsedBikePage.nextBtn).click()
     expect(await UsedBikePage.budget).toBeDisplayed()
+   await browser.touchAction([
+    { action: 'press', x: 200, y: 200 },
+    { action: 'moveTo', x: 200, y: 300 },
+    'release'
+])
     console.log("price slider displayed")
+    await (await UsedBikePage.nextBtn).click()
     await (await UsedBikePage.nextBtn).click()
     await (await UsedBikePage.nextBtn).click()
     await (await UsedBikePage.nextBtn).click()
@@ -149,7 +160,7 @@ describe('Used Bike', () => {
     console.log("price Range displayed")
    });
 
-  it('Tc_08 Verify user able to select use bike as per the KMS Driven Range', async () => {
+  it('TC_08 Verify user able to select use bike as per the KMS Driven Range', async () => {
     await base.androidLoginAsBuyer()
     await (await UsedBikePage.buy).click()
     await (await UsedBikePage.bikeimg).click()
@@ -168,16 +179,18 @@ describe('Used Bike', () => {
     await (await UsedBikePage.nextBtn).click()
     expect(await UsedBikePage.kmDriven).toBeDisplayed()
     console.log("KM Driven Range Displayed")
+    await browser.pause('2000')
     await (await UsedBikePage.nextBtn).click()
+    await browser.pause('2000')
     await (await UsedBikePage.nextBtn).click()
-    await (await UsedBikePage.nextBtn).click()
+    //await (await UsedBikePage.nextBtn).click()
     await (await UsedBikePage.submitBtn).click()
     await (await UsedBikePage.submitViewMatch).click()
     await (await UsedBikePage.allrequirement).click()
     expect(await UsedBikePage.kmDriven).toBeDisplayed()
     console.log("KM Driven Range displayed")
     });
-     it('Tc_09 Verify user able to select use bike as per the Color', async () => {
+     it('TC_09 Verify user able to select use bike as per the Color', async () => {
         await base.androidLoginAsBuyer()
         await (await UsedBikePage.buy).click()
         await (await UsedBikePage.bikeimg).click()
@@ -205,7 +218,7 @@ describe('Used Bike', () => {
         console.log("navigate to last step")
     });
 
-    it('Tc_10 Verify user able to select use bike as per the Do you also need option', async () => {
+  it('TC_10 Verify user able to select use bike as per the Do you also need option', async () => {
         await base.androidLoginAsBuyer()
         await (await UsedBikePage.buy).click()
         await (await UsedBikePage.bikeimg).click()
@@ -240,7 +253,7 @@ describe('Used Bike', () => {
         await (await UsedBikePage.submitBtn).click()
         console.log("clicked on submit")
     });
-      it('Tc_11 Verify user is able to select use bike as per the How Quickly Do You Want to Buy? option', async () => {
+      it('TC_11 Verify user is able to select use bike as per the How Quickly Do You Want to Buy? option', async () => {
         await base.androidLoginAsBuyer()
         await (await UsedBikePage.buy).click()
         await (await UsedBikePage.bikeimg).click()
@@ -275,11 +288,66 @@ describe('Used Bike', () => {
        });
     
 
-  /*  it('Tc_12 Validation for match count while req creation and in req page', async () => {
+   it('TC_12 Validation for match count while req creation and in req page', async () => {
+    await base.androidLoginAsBuyer()
+    await (await UsedBikePage.buy).click()
+    await (await UsedBikePage.bikeimg).click()
+    await (await UsedBikePage.bikeoption).click()
+    await (await UsedBikePage.searchLocation).click()
+    console.log("clicked on search my location")
+    await (await UsedBikePage.cityName).click()
+    console.log("selected city")
+    await (await UsedBikePage.nextBtn).click()
+    console.log("clicked on Next button")
+    await browser.pause('2000')
+    expect(await UsedBikePage.selectVehicle).toBeDisplayed()
+    await (await UsedBikePage.selectVehicle).click()
+    await UsedBikePage.selectBikeVehicle()
+    await (await UsedBikePage.nextBtn).click()
+    expect(await UsedBikePage.bikeName).toBeDisplayed()
+    await (await UsedBikePage.nextBtn).click()
+    await (await UsedBikePage.nextBtn).click()
+    await (await UsedBikePage.nextBtn).click()
+    await (await UsedBikePage.nextBtn).click()
+    await (await UsedBikePage.submitBtn).click()
+    console.log(await (await VehicleInsurance.msg).getText())
+    await (await UsedBikePage.submitViewMatch).click()
+    await (await UsedBikePage.allrequirement).click()
+    expect(await UsedBikePage.addnewRequirement).toBeDisplayed()
+
 
     });
 
-    it('Tc_13 Verify user is able to select use bike as per the Do You Wish to Exchange Your Vehicle option', async () => {
-    });*/
+    it('TC_13 Verify user is able to select use bike as per the Do You Wish to Exchange Your Vehicle option', async () => {
+    await base.androidLoginAsBuyer()
+    await (await UsedBikePage.buy).click()
+    await (await UsedBikePage.bikeimg).click()
+    await (await UsedBikePage.bikeoption).click()
+    await (await UsedBikePage.searchLocation).click()
+    console.log("clicked on search my location")
+    await (await UsedBikePage.cityName).click()
+    console.log("selected city")
+    await (await UsedBikePage.nextBtn).click()
+    console.log("clicked on Next button")
+    await browser.pause('2000')
+    expect(await UsedBikePage.selectVehicle).toBeDisplayed()
+    await (await UsedBikePage.selectVehicle).click()
+    await UsedBikePage.selectBikeVehicle()
+    await (await UsedBikePage.nextBtn).click()
+    expect(await usedbikepage.bikeName).toBeDisplayed()
+    await (await UsedBikePage.nextBtn).click()
+     await (await UsedBikePage.nextBtn).click()
+    expect(await usedbikepage.exchange).toBeDisplayed()
+    console.log("Do You Wish To Exchange Your Vehicle displayed")
+     await (await UsedBikePage.exchangetoggle).click()
+     await usedbikepage.exchangeBike()
+      await (await UsedBikePage.nextBtn).click()
+     await (await UsedBikePage.nextBtn).click()
+     await (await UsedBikePage.submitBtn).click()
+    await (await UsedBikePage.submitViewMatch).click()
+    await (await UsedBikePage.allrequirement).click()
+     expect(await UsedBikePage.addnewRequirement).toBeDisplayed()
+
+    });
 
 });

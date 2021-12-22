@@ -1,41 +1,70 @@
 const base = require('../../BaseClass/base');
-const Base = require('../../BaseClass/base');
-const usedCarPage = require('../../Pages/Android/usedCarPage');
 const UsedCarPage = require('../../Pages/Android/usedCarPage');
 
-describe('Used Car', async () => {
-  // it('TC01 Verify car option is the display with used Condition to the buyer', async () => {
-  //   await Base.androidLoginAsBuyer()
-  //   await UsedCarPage.submitRequirement()
-  //   expect(await UsedCarPage.carimg).toBeDisplayed()
-  //   console.log('Car option displayed')
-  //   expect(await UsedCarPage.scooter).toBeDisplayed()
-  //   console.log('scooter option displayed')
-  //   expect(UsedCarPage.newButton).toBeDisplayed()
-  //   console.log('New option displayed under condition')
-  //   expect(await UsedCarPage.usedButton).toBeDisplayed()
-  //   console.log('Used redio button displayed')
-  //   expect(await UsedCarPage.newButton).toBeDisplayed()
-  //   console.log('New redio button displayed')
-  //   expect(await UsedCarPage.location).toBeDisplayed()
-  //   console.log('Location input box displayed')
-  //   expect(await UsedCarPage.currentLocation).toBeDisplayed()
-  //   console.log('Detect Current Location option displayed')
-  //   expect(await UsedCarPage.nextButton).toBeDisplayed()
-  //   console.log('Next button displayed')
-  // });
-  // it('TC03 Verify error message without entering location', async () => {
-  //   await UsedCarPage.carCondition()  
-  //   await UsedCarPage.clickOnNext()
-  //   expect(UsedCarPage.errorMsg).toBeDisplayed()
-  //   console.log('Error message Displayed')
-  // });
-  // it('TC02 Verify user able to select location using location option', async () => {
-  //   await UsedCarPage.cLocation()
-  //   expect(await UsedCarPage.currentLocation).toBeDisplayed()
-  //   console.log('Current Location displayed')
-  // });
-  // it('TC04 Verify user able to select car model from Entering your vehicle details as per requirement', async () => {
+  describe('Used Car', () => {
+    beforeEach(async () => {
+        await driver.closeApp()
+        await driver.launchApp()
+    });
+  it('TC_01 Verify car option is the display with used Condition to the buyer', async () => {
+    await base.androidLoginAsBuyer()
+    console.log("login As Buyer")
+    await browser.pause("1000")
+    await (await UsedCarPage.buy).click()
+    await (await UsedCarPage.carimg).click()
+    console.log("selected Car category")
+    expect(await UsedCarPage.caroption).toBeDisplayed()
+    console.log('Car option displayed')
+    expect(await UsedCarPage.scooteroption).toBeDisplayed()
+    console.log('scooter option displayed')
+    expect(await UsedCarPage.newRadio).toBeDisplayed()
+    console.log('New Condition option displayed')
+    expect(await UsedCarPage.usedRadio).toBeDisplayed()
+    console.log('Used Condition option displayed')
+    expect(await UsedCarPage.location).toBeDisplayed()
+    console.log('Location displayed')
+    expect(await UsedCarPage.searchLocation).toBeDisplayed()
+    console.log('search my location displayed')
+    expect(await UsedCarPage.nextBtn).toBeDisplayed()
+    console.log('Next Button displayed')
+    });
+
+
+ it('TC_03 Verify error message without entering location', async () => {
+       await base.androidLoginAsBuyer()
+       console.log("login As Buyer")
+       await browser.pause("1000")
+       await (await UsedCarPage.buy).click()
+       await (await UsedCarPage.carimg).click()
+       console.log("selected Car category")
+       await (await UsedCarPage.caroption).click()
+       await (await UsedCarPage.nextBtn).click()
+       expect(await UsedCarPage.errormsg).toBeDisplayed()
+       console.log('error message displayed')
+    
+   });
+
+    it('TC_02 Verify user able to select location using location option', async () => {
+      await base.androidLoginAsBuyer()
+      await (await UsedCarPage.buy).click()
+      await (await UsedCarPage.carimg).click()
+      expect(await UsedCarPage.heading1).toBeDisplayed()
+      console.log(await (await UsedCarPage.heading1).getText())
+      await (await UsedCarPage.caroption).click()
+      expect(await UsedCarPage.searchLocation).toBeDisplayed()
+      console.log('search my location displayed')
+      await (await UsedCarPage.searchLocation).click()
+      console.log("clicked on search my location")
+      await (await UsedCarPage.cityName).click()
+      console.log("selected city")
+      await (await UsedCarPage.nextBtn).click()
+      expect(await UsedCarPage.heading2).toBeDisplayed()
+      console.log(await (await UsedCarPage.heading2).getText())
+      console.log("User able to select location and navigate to next window")
+     
+   });
+  // 
+ //it('TC04 Verify user able to select car model from Entering your vehicle details as per requirement', async () => {
   //   await UsedCarPage.clickOnNext()
   //   await (await UsedCarPage.proSellerCount).waitForEnabled({timeout: 10000 })
   //   await UsedCarPage.waitForVehicleDetails()
@@ -79,7 +108,7 @@ describe('Used Car', async () => {
   //   expect(await UsedCarPage.age).toBeDisplayed()
   //   console.log('Options for Vehicle Age is Display')
   // });
-  it('TC08 Verify user able to select use car as per the Fuel type', async () => {
+ /* it('TC08 Verify user able to select use car as per the Fuel type', async () => {
     await driver.closeApp()
     await driver.launchApp()
     await Base.androidLoginAsBuyer()
@@ -312,6 +341,6 @@ describe('Used Car', async () => {
 //     await UsedCarPage.clickOnNext()
 //     expect(await UsedCarPage.almostDone).toBeDisplayed()
 //     await UsedCarPage.clickOnSubmit()
-//   });
+//   });*/
 
 });

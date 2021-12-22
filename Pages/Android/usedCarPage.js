@@ -1,15 +1,28 @@
-const { textChangeRangeIsUnchanged } = require("typescript")
+
 const base = require("../../BaseClass/base")
 
 class Usedcar {
-    
-    get myReq() { return base.getByResourceId("in.droom:id/textview_my_requirement") }
-    get newRequirements() { return base.getByResourceId("in.droom:id/addNewRequirement") }
-    get car() { return base.getByResourceId("in.droom:id/carLayout") }
+    get menu() {return base.getByText("Menu")}
+    get buy() {return base.getByText("Buy")}
+    get carimg() {return base.getByResourceIdNText("in.droom:id/category_name","Car")}
+    get caroption() {return base.getByText("Car")}
+    get scooteroption() {return base.getByText("Scooter")}
+    get newRadio() {return base.getByResourceId("in.droom:id/newRadioButton")}
+    get usedRadio() {return base.getByResourceId("in.droom:id/usedRadioButton")}
+    get location() {return base.getByResourceId("in.droom:id/autoCompleteEditText")}
+    get searchLocation() {return base.getByText("Search My Location")}
+    get cityName() {return base.getByText("Pune")}
+    get nextBtn() {return base.getByText("Next")}
+    get errormsg() {return base.getByText("Please select location")}
+     get heading1() {return base.getByText("Select, What You Want To Buy !")}
+     get heading2() {return base.getByText("Let's Find Your Dream Car")}
+   // get myReq() { return base.getByResourceId("in.droom:id/textview_my_requirement") }
+  //  get newRequirements() { return base.getByResourceId("in.droom:id/addNewRequirement") }
+   // get car() { return base.getByResourceId("in.droom:id/carLayout") }
     get usedButton() { return base.getByResourceId("in.droom:id/usedRadioButton") }
     get bike() { return base.getByResourceId("in.droom:id/bikeLayout") }
     get scooter() { return base.getByResourceId("in.droom:id/scooterLayout") }
-    get carimg() { return base.getByResourceId("in.droom:id/carLayout") }
+   // get carimg() { return base.getByResourceId("in.droom:id/carLayout") }
     get newButton() { return base.getByResourceId("in.droom:id/newRadioButton") }
     get location() { return base.getByResourceIdNText("in.droom:id/autoCompleteEditText","Select Location") }
     get nextButton() { return base.getByText("Next") }

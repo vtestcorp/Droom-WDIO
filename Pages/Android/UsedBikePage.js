@@ -31,7 +31,7 @@ class usedbikepage{
     get heading2() {return base.getByText("Get Personalised Suggestion")}
     get priceRange() {return base.getByText("Price Range")}
     get bodyType() {return base.getByResourceId("in.droom:id/bodyTypeHeadingTV")}
-    get selecttype() {return base.getByText("Sports")}
+    get selecttype() {return base.getByText("Commuter")}
     get yearRange() {return base.getByText("Year Range")}
     get selectyear() {return base.getByText("2018 & Above")}
     get heading3() {return base.getByText("Now Share Your Dream Vehicle Basic Details")}
@@ -52,6 +52,24 @@ class usedbikepage{
     get priceRange() {return base.getByText("Below 1 Cr")}
     get kmDriven() {return base.getByText("KM Driven Range")}
     get kmSlider() {return base.getByResourceId("in.droom:id/kmDrivenSlider")}
+    get exchange() {return base.getByResourceId("in.droom:id/txt_do_you_wish_to_exchange_your_vehicle")}
+    get exchangetoggle() {return base.getByResourceId("in.droom:id/yes_toggle")}
+    get category() {return base.getByResourceId("in.droom:id/sp_buy_category")}
+    get exchngeMake() {return base.getByResourceId("in.droom:id/sp_buy_make")}
+    get exchangeModel() {return base.getByResourceId("in.droom:id/sp_buy_model")}
+    get exchngeYear() {return base.getByResourceId("in.droom:id/sp_buy_year")}
+    get exchngeTrim() {return base.getByResourceId("in.droom:id/sp_buy_trim")}
+    get kms() {return base.getByText("KM Driven")}
+    get bikeCategory() {return base.getByText("Bike")}
+    get make() {return base.getByText("Aftek")}
+    get model(){return base.getByText("Royal Plus")}
+    get year() {return base.getByText("2020")}
+    get trim() {return base.getByText("110CC")}
+    get addnewRequirement() {return base.getByResourceId("in.droom:id/addNewRequirement")}
+    get heading6() {return base.getByText("Select vehicles as per Your Budget, Purpose of buying & Family Size")}
+    get vehicle1() {return base.getByText("Bajaj Pulsar")}
+
+
 
 
     async selectBikeVehicle() {
@@ -76,6 +94,28 @@ class usedbikepage{
         console.log("Year selected")
         await (await this.nextBtn).click()
         console.log("clicked on Next button")
+       }
+
+       async exchangeBike(){
+        await (await this.category).click()
+        await (await this.bikeCategory).click()
+        console.log("Bike category selected")
+        await (await this.exchngeMake).click()
+        await (await this.make).click()
+        await (await this.exchangeModel).click()
+        await (await this.model).click()
+        await (await this.exchngeYear).click()
+        await (await this.year).click()
+        await (await this.exchngeTrim).click()
+        await (await this.trim).click()
+        await (await this.kms).click()
+        console.log("Clicked on KmsDriven")
+        await driver.hideKeyboard()
+        driver.pressKeyCode(9, undefined, undefined);
+        await driver.pressKeyCode(7, undefined, undefined);
+        await driver.pressKeyCode(7, undefined, undefined);
+        console.log("Set the value for KMS driven")
+        console.log("selected Bike as per requirement")
        }
 
 }
