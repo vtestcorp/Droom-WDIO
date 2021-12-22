@@ -1,42 +1,57 @@
 const base = require("../../BaseClass/base")
 
 class UsedBike {
- 
     get myReq() { return base.getByResourceId("in.droom:id/textview_my_requirement") }
     get createReq(){return base.getByClassChain('**/XCUIElementTypeStaticText[`label == "Create Requirement"`]')}
     get headingSelectPage(){return base.getByAccessibilityID('Select, What You Want To Buy!')}
     get newRequirements() { return base.getByResourceId("in.droom:id/addNewRequirement") }
     get carimg() { return base.getByAccessibilityID('transportation') }
+    get bikeimg(){return base.getByAccessibilityID('motorbike (3)')}
+    get scotterimg(){return base.getByAccessibilityID('scooterBuy')}
     get newButton() { return base.getByClassChain('**/XCUIElementTypeButton[`label == "New"`]') }
     get location() { return base.getByAccessibilityID('Select Your Location') }
+    //get mylocation(){return base.getByAccessibilityID('**/XCUIElementTypeStaticText[`label == "pune"`]')}
     get searchMagnifier(){return base.getByAccessibilityID('buySearch')}
     get nextButton() { return base.getByClassChain('**/XCUIElementTypeStaticText[`label == "Next"`]') }
-   // get nextBtn2(){return base.getByAccessibilityID('**/XCUIElementTypeStaticText[`label == "Next"`]')}
     get selectCarHeading(){return base.getByAccessibilityID("Let's Find Your Dream Car")}
     get currentLocation() { return base.getByClassChain('**/XCUIElementTypeButton[`label == "pune"`]')}
+    get page2heading(){return base.getByAccessibilityID("Let's Find Your Dream Bike")}
+    get searchTitle(){return base.getByAccessibilityID('Search or Select Bike You are Looking for')}
+     get enterVehicleDetails(){return base.getByAccessibilityID('Enter Your Vehicle Details')}
+     get selectVehicle(){return base.getByAccessibilityID('**/XCUIElementTypeStaticText[`label == "Select Vehicle"`]')}
+     get bikeSearchTextField(){return base.getByClassChain('**/XCUIElementTypeTextField[`value == "E.g Bajaj Pulsar 2018 150cc"`]')}
+     get DroomSuggest(){return base.getByClassChain('**/XCUIElementTypeStaticText[`label == "Let Droom Suggest for you"`]')}
+     get page3Heading(){return base.getByAccessibilityID('Get Personalised Suggestion')}
+     get priceRange(){return base.getByAccessibilityID('Price Range')}
+     get bodyType(){return base.getByAccessibilityID('Body Type')}
+     get pricingSlider(){return base.getByAccessibilityID('selling_price_suggest, Maximum value in slider, Minimum value in slider, Right Handle, Left Handle')}
+
+    get page4Heading(){return base.getByAccessibilityID('')}
+
     get errorMsg() { return base.getByClassChain('**/XCUIElementTypeStaticText[`label == "Please Select Condition"`][1]')}
     get vehicleDetails() { return base.getByResourceId('Enter Your Vehicle Details') }
     get selectVehicle(){return base.getByAccessibilityID('**/XCUIElementTypeStaticText[`label == "Select Vehicle"`]')}
     get newButton() { return base.getByClassChain('**/XCUIElementTypeButton[`label == "New"`]') }
-    
-    
-    get submit() { return $('//span[text()="Submit "]') }
-
-    get Bike() { return base.getByAccessibilityID('Bike') }
+    get car() { return base.getByAccessibilityID('Car') }
+    get usedButton() { return base.getByClassChain('**/XCUIElementTypeButton[`label == "Used"`]') }
+    get bike() { return base.getByAccessibilityID('Bike') }
+    get scooter() { return base.getByAccessibilityID('Scooter') }
+    get back(){return base.getByAccessibilityID('arrow left')}
+    get location() { return base.getByAccessibilityID('Select Your Location') }
+    get searchMagnifier(){return base.getByAccessibilityID('buySearch')}
+    get nextButton() { return base.getByClassChain('**/XCUIElementTypeStaticText[`label == "Next"`]') }
+    get sportsBike(){return base.getByAccessibilityID('**/XCUIElementTypeStaticText[`label == "Sports"`]') }
+//get submit() { return $('//span[text()="Submit "]') }
     get used() { return base.getByClassChain('**/XCUIElementTypeButton[`label == "Used"`]') }
     get searchField(){return base.getByAccessibilityID('**/XCUIElementTypeTextField[`value == "E.g Bajaj Pulsar 2018 150cc"`]')}
-    get carimg() { return $('//span[text()="Car"]') }
-    get scooter() { return $('//span[text()="Scooter"]') }
-    get newButton() { return $('(//span[text()="New"])[3]') }
-    get used() { return $('//span[text()="Used"]') }
-    get usedButton() { return $('(//span[@class="s-MuiIconButton-label"])[3]') }
-    get newRButton() { return $('(//*[@class="s-MuiIconButton-label"])[2]') }
-    get sportsBike(){return base.getByAccessibilityID('**/XCUIElementTypeStaticText[`label == "Sports"`]') }
+    
     get findBike(){return base.getByAccessibilityID("Let's Find Your Dream Bike")}
     get selectWhatuWant(){return base.getByAccessibilityID('Select, What You Want To Buy!')}
     get bodyTypeOnsugg(){return base.getByAccessibilityID('Body Type')}
+    get bySearch(){return base.getByAccessibilityID('buySearch')}
     get location() { return $('//p[text()="Location"]') }
-    get currentLocation() { return $('//div[text()="Current Location"]') }
+    get resetLocation(){return base.getByAccessibilityID('**/XCUIElementTypeStaticText[`label == "Reset"`]')}
+    //get currentLocation() { return $('//div[text()="Current Location"]') }
     get nextButton() { return $('//span[text()="Next "]') }
     get errorMsg() { return $('//p[text()="Please Select The City"]') }
     get vehicleDetails() { return base.getByAccessibilityID('Enter Your Vehicle Details') }
