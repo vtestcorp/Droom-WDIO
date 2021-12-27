@@ -7,10 +7,7 @@ describe('Orange Book Value', () => {
     });
 it('TC_01 Verify the fields on OBV page', async () => {
     await obvPage.traverseToObv()
-    await (await obvPage.smallpopUp).waitForExist()
-    console.log("Help pop Up is Displayed")
-   await (await obvPage.smallpopUp).click()
-   expect(await obvPage.subtitle).toBeDisplayed()
+  expect(await obvPage.subtitle).toBeDisplayed()
    console.log("SubTitle displayed as :"+await(await obvPage.subtitle).getText())
     expect(await obvPage.IwanttoBuy).toBeDisplayed()
     console.log("Buyer Tab displayed as :"+await(await obvPage.IwanttoBuy).getText())
@@ -18,7 +15,7 @@ it('TC_01 Verify the fields on OBV page', async () => {
     console.log("Seller Tab is displayed as :"+await(await obvPage.IwanttoSell).getText())
     console.log("I Want to Sell Tab is displayed for Seller")
  });
-/*it('TC_02 Verify the functionality of "I want to Buy" From an Individual', async () => {
+it('TC_02 Verify the functionality of "I want to Buy" From an Individual', async () => {
     await obvPage.traverseToObv()
    expect(await obvPage.IwanttoBuy).toBeDisplayed()
     console.log("Buyer Tab displayed as :"+await(await obvPage.IwanttoBuy).getText())
@@ -231,5 +228,5 @@ it('TC_12 Verify functionality of pricing Certificate', async () => {
     console.log("Clicked on View Pricing Certificate")
     expect(await obvPage.pdfmsg).toBeDisplayed()
     console.log("PDf option shown with Message")
-});*/
+});
 });
