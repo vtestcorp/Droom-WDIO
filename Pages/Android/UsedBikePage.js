@@ -68,6 +68,9 @@ class usedbikepage{
     get addnewRequirement() {return base.getByResourceId("in.droom:id/addNewRequirement")}
     get heading6() {return base.getByText("Select vehicles as per Your Budget, Purpose of buying & Family Size")}
     get vehicle1() {return base.getByText("Bajaj Pulsar")}
+    get bike1() {return base.getByText("Bajaj Pulsar 180cc 2016")}
+    get reqCount() {return base.getByText("We found 0 matches as per your requirement")}
+
 
 
 
@@ -100,6 +103,7 @@ class usedbikepage{
         await (await this.category).click()
         await (await this.bikeCategory).click()
         console.log("Bike category selected")
+        base.swipeUp()
         await (await this.exchngeMake).click()
         await (await this.make).click()
         await (await this.exchangeModel).click()
