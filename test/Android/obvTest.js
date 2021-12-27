@@ -1,27 +1,26 @@
-const Base = require('../../BaseClass/base')
+const base = require('../../BaseClass/base')
 const obvPage = require('../../Pages/Android/obvPage')
 describe('Orange Book Value', () => {
     beforeEach(async () => {
         await driver.closeApp()
         await driver.launchApp()
     });
- it('TC_01 Verify the Functionaliy of Buyer on ECO', async () => {
+it('TC_01 Verify the fields on OBV page', async () => {
     await obvPage.traverseToObv()
-    expect(await obvPage.subtitle).toBeDisplayed()
-    console.log("SubTitle displayed as :"+await(await obvPage.subtitle).getText())
-    expect(await  obvPage.pricingCalculator).toBeDisplayed()
-    console.log("Pricing Calculator displayed as :"+await(await obvPage.pricingCalculator).getText())
+    await (await obvPage.smallpopUp).waitForExist()
+    console.log("Help pop Up is Displayed")
+   await (await obvPage.smallpopUp).click()
+   expect(await obvPage.subtitle).toBeDisplayed()
+   console.log("SubTitle displayed as :"+await(await obvPage.subtitle).getText())
     expect(await obvPage.IwanttoBuy).toBeDisplayed()
     console.log("Buyer Tab displayed as :"+await(await obvPage.IwanttoBuy).getText())
     expect(await obvPage.IwanttoSell).toBeDisplayed()
     console.log("Seller Tab is displayed as :"+await(await obvPage.IwanttoSell).getText())
     console.log("I Want to Sell Tab is displayed for Seller")
  });
- it('TC_02 Verify the functionality of "I want to Buy" From an Individual', async () => {
+/*it('TC_02 Verify the functionality of "I want to Buy" From an Individual', async () => {
     await obvPage.traverseToObv()
-    expect(await  obvPage.pricingCalculator).toBeDisplayed()
-    console.log("Pricing Calculator displayed as :"+await(await obvPage.pricingCalculator).getText())
-    expect(await obvPage.IwanttoBuy).toBeDisplayed()
+   expect(await obvPage.IwanttoBuy).toBeDisplayed()
     console.log("Buyer Tab displayed as :"+await(await obvPage.IwanttoBuy).getText())
     await(await obvPage.IwanttoBuy).click()
     console.log("Clicked on I want to Buy")
@@ -37,10 +36,8 @@ describe('Orange Book Value', () => {
     expect(await obvPage.valueAt).toBeDisplayed()
     console.log("After click Value get displayed")
  });
- it('TC_03 Verify the functionality of I want to Buy From Dealer', async () => {
+it('TC_03 Verify the functionality of I want to Buy From Dealer', async () => {
    await obvPage.traverseToObv()
-   expect(await  obvPage.pricingCalculator).toBeDisplayed()
-   console.log("Pricing Calculator displayed as :"+await(await obvPage.pricingCalculator).getText())
    expect(await obvPage.IwanttoBuy).toBeDisplayed()
    console.log("Buyer Tab displayed as :"+await(await obvPage.IwanttoBuy).getText())
    await(await obvPage.IwanttoBuy).click()
@@ -57,11 +54,9 @@ describe('Orange Book Value', () => {
    expect(await obvPage.valueAt).toBeDisplayed()
    console.log("After click Value get displayed")
   });
-  it('TC_04 Verify the functionality of I want to sell to an Individual', async () => {
+ it('TC_04 Verify the functionality of I want to sell to an Individual', async () => {
      await obvPage.traverseToObv()
-     expect(await  obvPage.pricingCalculator).toBeDisplayed()
-     console.log("Pricing Calculator displayed as :"+await(await obvPage.pricingCalculator).getText())
-     expect(await obvPage.IwanttoSell).toBeDisplayed()
+    expect(await obvPage.IwanttoSell).toBeDisplayed()
      console.log("Buyer Tab displayed as:"+await(await obvPage.IwanttoSell).getText())
      await(await obvPage.IwanttoSell).click()
      console.log("Clicked on I want to Sell")
@@ -79,8 +74,6 @@ describe('Orange Book Value', () => {
     });
     it('TC_05 Verify the functionality of I want to sell to dealer', async () => {
       await obvPage.traverseToObv()
-      expect(await  obvPage.pricingCalculator).toBeDisplayed()
-      console.log("Pricing Calculator displayed as :"+await(await obvPage.pricingCalculator).getText())
       expect(await obvPage.IwanttoSell).toBeDisplayed()
       console.log("Buyer Tab displayed as:"+await(await obvPage.IwanttoSell).getText())
       await(await obvPage.IwanttoSell).click()
@@ -97,10 +90,8 @@ describe('Orange Book Value', () => {
       expect(await obvPage.valueAt).toBeDisplayed()
       console.log("After click Value get displayed")
      });
-   it('TC_06 Verify the Grades on pricing report', async () => {
+ it('TC_06 Verify the Grades on pricing report', async () => {
     await obvPage.traverseToObv()
-    expect(await  obvPage.pricingCalculator).toBeDisplayed()
-    console.log("Pricing Calculator displayed as :"+await(await obvPage.pricingCalculator).getText())
     expect(await obvPage.IwanttoBuy).toBeDisplayed()
     console.log("Buyer Tab displayed as :"+await(await obvPage.IwanttoBuy).getText())
     await(await obvPage.IwanttoBuy).click()
@@ -120,8 +111,6 @@ describe('Orange Book Value', () => {
   });
  it('TC_07 Verify used functionality on vehicle pricing calulator on OBV', async () => {
     await obvPage.traverseToObv()
-    expect(await  obvPage.pricingCalculator).toBeDisplayed()
-    console.log("Pricing Calculator displayed as :"+await(await obvPage.pricingCalculator).getText())
     expect(await obvPage.used).toBeDisplayed()
     console.log("Used option is Displayed On Pricing Calculator")
     await(await obvPage.used).click()
@@ -142,8 +131,6 @@ describe('Orange Book Value', () => {
 });
 it('TC_08 Verify new functionality on vehicle pricing calulator on OBV', async () => {
     await obvPage.traverseToObv()
-    expect(await  obvPage.pricingCalculator).toBeDisplayed()
-    console.log("Pricing Calculator displayed as :"+await(await obvPage.pricingCalculator).getText())
     expect(await obvPage.newTab).toBeDisplayed()
     console.log("New option is Displayed On Pricing Calculator")
     await(await obvPage.newTab).click()
@@ -160,8 +147,6 @@ it('TC_08 Verify new functionality on vehicle pricing calulator on OBV', async (
 });
 it('TC_09 Verify exchange functionality on vehicle pricing calulator on OBV', async () => {
     await obvPage.traverseToObv()
-    expect(await  obvPage.pricingCalculator).toBeDisplayed()
-    console.log("Pricing Calculator displayed as :"+await(await obvPage.pricingCalculator).getText())
     expect(await obvPage.exchange).toBeDisplayed()
     console.log("Exchange option is Displayed On Pricing Calculator")
     await(await obvPage.exchange).click()
@@ -171,7 +156,6 @@ it('TC_09 Verify exchange functionality on vehicle pricing calulator on OBV', as
     expect(await obvPage.IwanttoExchange).toBeDisplayed()
     console.log("Exchange Title displayed as :"+await(await obvPage.IwanttoExchange).getText())
     await obvPage.inputToExchange()
-    await Base.scrollToExactText("Check Exchange Price")
     console.log("Exchange With Displayed with New & Old As=>:")
     console.log(await(await obvPage.withNew).getText())
     console.log(await(await obvPage.withOld).getText())
@@ -187,19 +171,17 @@ it('TC_09 Verify exchange functionality on vehicle pricing calulator on OBV', as
     console.log("Clicked on Select Trim")
     await(await obvPage.bmwTrim).click()
     console.log("Selected the Trim option for Exchange with New")
-    expect(await obvPage.chkExchangePrice).toBeDisplayed()
+   expect(await obvPage.chkExchangePrice).toBeDisplayed()
     console.log("Check Exchange Button is Displayed") 
    await(await obvPage.chkExchangePrice).click()
    console.log("Clicked on Check Exchange Price Button")
-   expect(await obvLogo.result).toBeDisplayed()
+   expect(await obvPage.result).toBeDisplayed()
    console.log("Result shown After click on Check Exchange Price Btn")
-   expect(await obvLogo.resultExchange).toBeDisplayed()
+   expect(await obvPage.resultExchange).toBeDisplayed()
    console.log("Exchange with shown After click on Check Exchange Price Btn")
  });
 it('TC_10 Verify future Price functionality on vehicle pricing calulator on OBV', async () => {
     await obvPage.traverseToObv()
-    expect(await  obvPage.pricingCalculator).toBeDisplayed()
-    console.log("Pricing Calculator displayed as :"+await(await obvPage.pricingCalculator).getText())
     expect(await obvPage.futurePrice).toBeDisplayed()
     console.log("Future Price option is Displayed On Pricing Calculator")
     await(await obvPage.futurePrice).click()
@@ -212,12 +194,11 @@ it('TC_10 Verify future Price functionality on vehicle pricing calulator on OBV'
     console.log("Future Tab displayed=> :"+await(await obvPage.forUsed).getText())
     await obvPage.inputToFutureEstimate()
     console.log("Orange Book Valued Shown for Future Price")
-    console.log("Future Price OBV value Shown As=> :"+await(await obvPage.futurePriceResult).getText())
+    expect(await obvPage.futurePriceResult).toBeDisplayed()
+    
 });
 it('TC_11 Verify Residual functionality on vehicle pricing calulator on OBV', async () => {
     await obvPage.traverseToObv()
-    expect(await  obvPage.pricingCalculator).toBeDisplayed()
-    console.log("Pricing Calculator displayed as :"+await(await obvPage.pricingCalculator).getText())
     expect(await obvPage.residual).toBeDisplayed()
     console.log("Residual option is Displayed On Pricing Calculator")
     await(await obvPage.residual).click()
@@ -230,12 +211,11 @@ it('TC_11 Verify Residual functionality on vehicle pricing calulator on OBV', as
     console.log("Residial Tab displayed=> :"+await(await obvPage.forUsed).getText())
     await obvPage.inputToResidual()
     console.log("Orange Book Valued Shown for Residual")
-    console.log("Residual OBV value Shown As=> :"+await(await obvPage.residualResult).getText())
+    expect(await obvPage.residualResult).toBeDisplayed()
+
 });
-it('TC_11 Verify functionality of pricing Certificate, async () => {
+it('TC_12 Verify functionality of pricing Certificate', async () => {
     await obvPage.traverseToObv()
-    expect(await  obvPage.pricingCalculator).toBeDisplayed()
-    console.log("Pricing Calculator displayed as :"+await(await obvPage.pricingCalculator).getText())
     expect(await obvPage.IwanttoBuy).toBeDisplayed()
     console.log("Buyer Tab displayed as :"+await(await obvPage.IwanttoBuy).getText())
     await(await obvPage.IwanttoBuy).click()
@@ -245,13 +225,11 @@ it('TC_11 Verify functionality of pricing Certificate, async () => {
     await obvPage.inputToCheckPrice()
     expect(await obvPage.checkPrice).toBeDisplayed()
     console.log("Check Price Button is availbale")
-    expect(await obvPage.headingPricingCtr).toBeDisplayed()
-    console.log("Pricing Calculator displayed as :"+await(await obvPage.headingPricingCtr).getText())
+    await base.scrollToExactText("Pricing Certificate")
     expect(await obvPage.viewPricingCertificate).toBeDisplayed()
-    console.log("Pricing Calculator displayed as :"+await(await obvPage.viewPricingCertificate).getText())
     await(await obvPage.viewPricingCertificate).click()
     console.log("Clicked on View Pricing Certificate")
     expect(await obvPage.pdfmsg).toBeDisplayed()
     console.log("PDf option shown with Message")
-});
+});*/
 });
