@@ -1,7 +1,5 @@
 const base = require("../../BaseClass/base");
 const checkHistoryPage = require("../../Pages/Androidbrowser/checkHistoryPage");
-
-
 describe('Check History', async () => {
     beforeEach(async () => {
         await driver.closeApp()
@@ -32,10 +30,11 @@ describe('Check History', async () => {
         console.log("Get History Certificate - Gold @ Rs.49 displayed")
         expect(await checkHistoryPage.platinum).toBeDisplayed()
         console.log("Get History Certificate - Platinum @ Rs.149")
+
     });
     it('TC_05 Verify the "View Sample Vehicle History Certificate" link is functional', async () => {
         await checkHistoryPage.chromeConditions()
-        browser.url('/history/premium-reports')
+        browser.url('/history/premium-reports')r
         await (await checkHistoryPage.per).waitForDisplayed({ timeout: 10000 })
         console.log("Premium Certificate Displayed")
         await base.swipeUp()
@@ -43,6 +42,7 @@ describe('Check History', async () => {
         console.log("view Smaple report link displayed")
     });
     it('TC_06 Verify the Home Option is functional on History page', async () => {
+
         await checkHistoryPage.chromeConditions()
         browser.url('/history/premium-reports')
         await (await checkHistoryPage.per).waitForDisplayed({ timeout: 10000 })
@@ -55,3 +55,4 @@ describe('Check History', async () => {
         console.log("Home page displayed")
     });
 });
+

@@ -13,9 +13,9 @@ exports.config = {
     
     services: ['selenium-standalone','appium'],
     specs: [
-        './test/iOS/**/LoginWithPassword.js'
+        './test/iOS/**/LoginWithPasswordTest.js',
     ],
-    appium: {
+    /*appium: {
         args: {
             defaultCapabilities: JSON.stringify({
                 platformVersion: '14',
@@ -25,14 +25,17 @@ exports.config = {
                 nativeInstrumentsLib: true,
             })
         }
-    },
+    },*/
     capabilities: [{
     maxInstances: 1,
-    //"appium:browserName": 'safari',
-    "appium:appiumVersion" : '1.21.0',
-    "appium:deviceName" : 'iPhone 6s',
-    "appium:platformVersion" : '14',
-    "appium:platformName" : 'iOS'    
+    "platformName": "iOS",
+  "deviceName": "iPhone 6s",
+  "platformVersion": "14.5.1",
+  "app": "/Users/apple/Downloads/DroomApp.ipa",
+  "udid": "d179cb05cdb31945cc0ec2e6ba0d3044ff2fd41a",
+  "appActivity": "in.droom.activity.MainActivity",
+  "automationName": "XCUITest",
+  "noReset": true   
     }],
     waitforTimeout: 15000,
     //

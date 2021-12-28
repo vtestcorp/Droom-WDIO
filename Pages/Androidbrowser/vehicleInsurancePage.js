@@ -3,6 +3,8 @@ class vehicleInsurance {
     get acceptcontinue() { return base.getByText('Accept & continue') }
     get next() { return base.getByText('Next') }
     get yes() { return base.getByText('No, thanks') }
+
+    get heading(){return base.getByText("Get the Best Insurance Cover for your Vehicle")}
     get vehicle_Information() { return base.getByText('Vehicle Information') }
     get personal_Information() { return base.getByText('Personal Information') }
     get insurance_Information() { return base.getByText('Insurance Information') }
@@ -16,11 +18,13 @@ class vehicleInsurance {
     get used_condition() { return $('//input[@id="used-condition"]') }
     
 
+
     async chromeConditions() {
         await (await this.acceptcontinue).click()
         await (await this.next).click()
         await (await this.yes).click()
     }
+
     async switchToWebview() {
         let x = driver.getContexts()
             ; (await x).forEach(myFunction)

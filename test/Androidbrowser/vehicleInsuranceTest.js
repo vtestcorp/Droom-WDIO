@@ -8,6 +8,7 @@ describe('Check History', async () => {
     });
     it('TC_01 Verify the Functionality of Get Insurance', async () => {
         await vehicleInsurancePage.chromeConditions()
+
         browser.url('/insurance')
         console.log("insurance page displayed")
         expect(await vehicleInsurancePage.vehicle_Information).toBeDisplayed()
