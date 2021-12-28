@@ -342,7 +342,7 @@ it("TC_06 Verify Select Make functionality of Select From Dropdown option.", asy
     });
     
     it("TC_10 Verify the Back Button Functionality on Personal Information page of Insurance", async () => {
-        await base.androidLoginAsBuyer()
+        //await base.androidLoginAsBuyer()
         console.log("buyer login successfully")
         await browser.pause("1000")
         await (await vehicleInsurancePage.buy).click()
@@ -378,7 +378,7 @@ it("TC_06 Verify Select Make functionality of Select From Dropdown option.", asy
         expect(await vehicleInsurancePage.contact_number_field).toBeDisplayed()
     });
     it("TC_11 Verify the Next Button Functionality on Personal Information page of Insurance", async () => {
-        await base.androidLoginAsBuyer()
+        //await base.androidLoginAsBuyer()
         console.log("buyer login successfully")
         await browser.pause("1000")
         await (await vehicleInsurancePage.buy).click()
@@ -438,8 +438,8 @@ it("TC_06 Verify Select Make functionality of Select From Dropdown option.", asy
         console.log("Submit button Display")
     });
     it("TC_12 Verify the fields on Personal Information", async () => {
-        await base.skipStartup()
-        await base.iosLoginAsBuyer()
+        //await base.skipStartup()
+        //await base.iosLoginAsBuyer()
         console.log("buyer login successfully")
         await browser.pause("1000")
         await (await vehicleInsurancePage.buy).click()
@@ -470,7 +470,7 @@ it("TC_06 Verify Select Make functionality of Select From Dropdown option.", asy
         expect(await vehicleInsurancePage.btn_previous_step2).toBeDisplayed()
     });
     it("TC_13 Verify the functionality of Select a vehicle Type", async () => {
-        await base.androidLoginAsBuyer()
+        //await base.androidLoginAsBuyer()
         console.log("buyer login successfully")
         await browser.pause("1000")
         await (await vehicleInsurancePage.buy).click()

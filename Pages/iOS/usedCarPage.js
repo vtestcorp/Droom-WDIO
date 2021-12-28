@@ -13,10 +13,12 @@ class Usedcar {
     get scooter() { return base.getByAccessibilityID('Scooter') }
     get back(){return base.getByAccessibilityID('arrow left')}
     get carimg() { return base.getByAccessibilityID('transportation') }
+
     get newButton() { return base.getByClassChain('**/XCUIElementTypeButton[`label == "New"`]') }
     get location() { return base.getByAccessibilityID('Select Your Location') }
     get searchMagnifier(){return base.getByAccessibilityID('buySearch')}
     get nextButton() { return base.getByClassChain('**/XCUIElementTypeStaticText[`label == "Next"`]') }
+   // get nextBtn2(){return base.getByAccessibilityID('**/XCUIElementTypeStaticText[`label == "Next"`]')}
     get selectCarHeading(){return base.getByAccessibilityID("Let's Find Your Dream Car")}
     get currentLocation() { return base.getByClassChain('**/XCUIElementTypeButton[`label == "pune"`]')}
     get errorMsg() { return base.getByClassChain('**/XCUIElementTypeStaticText[`label == "Please Select Condition"`][1]')}
@@ -115,5 +117,137 @@ get fortEcoSport(){return base.getByClassChain('**/XCUIElementTypeStaticText[`la
     get kmsrange() { return base.getByAccessibilityID('Km Driven Range') }
     get exchangeVehicle() { return $('//p[text()="Do You Wish to Exchange Your Vehicle"]') }
 
+    async traverseToCreateRequirement() {
+        await base.skipStartup()
+        await base.iosLoginAsBuyer()
+        await this.m
+    }
+
+    async submitRequirement() {
+        await base.scrollToTextContain("My Requirements")
+        await (await this.myReq).click()    
+        await (await this.newRequirements).click()
+    }
+    async carCondition() {
+        
+        await (await this.car).touchAction('tap') 
+        await (await this.usedButton).touchAction('tap') 
+    }
+    async clickOnNext() {
+        await (await this.nextButton).click()
+    }
+    async selectCity() {
+        await (await this.errorMsg).waitForExist({ timeout: 15000 })
+    }
+    async cLocation() {
+        await (await this.currentLocation).click()
+        await (await this.currentLocation).waitForExist({ timeout: 5000 })
+        await (await this.newButton).touchAction('tap')
+        await (await this.usedButton).touchAction('tap')
+    }
+    async selectNewBtn() {
+        await (await this.newButton).click()
+    }
+    async selectUsedBtn() {
+        await (await this.used).click()
+    }
+    async waitForVehicleDetails() {
+        await (await this.vehicleDetails).waitForExist({ timeout: 5000 })
+    }
+    async selectCar() {
+        await (await this.swift).click()
+        await (await this.swift).addValue("Maruti Suzuki swift")
+        await driver.pause(5000)
+        await driver.pressKeyCode(20)//down arrow
+        await driver.pressKeyCode(20)//down arrow
+        await driver.pressKeyCode(20)//down arrow
+        await driver.pause(2000)
+        await driver.pressKeyCode(66)//Enter
+        await driver.pause(2000)
+        await driver.hideKeyboard()
+    }
+    async deleteCarRecord() {
+        await (await this.closeRecord).click()
+    }
+    async slectFromDropDown() {
+        try {
+            //await (await this.addBtn).click()  
+        } catch (error) {       
+        } 
+        await (await this.selectFrom).touchAction('tap')
+        await (await this.make).waitForExist({ timeout: 5000 })
+    }
+    async selectVehicle() {
+        await (await this.make).touchAction('tap')
+        await (await this.selectMake).touchAction('tap')
+        //await driver.pause(2000)
+        await (await this.model).touchAction('tap')
+        await (await this.selectModel).waitForExist()
+        await (await this.selectModel).touchAction('tap')
+        //await driver.pause(2000)
+        await (await this.year).touchAction('tap')
+        await (await this.selectyear).waitForExist()
+        await (await this.selectyear).touchAction('tap')
+        //await driver.pause(2000)
+        await (await this.trim).touchAction('tap')
+        await (await this.selectTrim).waitForExist()
+        await (await this.selectTrim).touchAction('tap')
+        await driver.pause(2000)
+    }
+    async basicDetailsDisplay() {
+        await (await this.basicDetails).waitForExist({ timeout: 5000 })
+    }
+    async clickOnBack() {
+        await (await this.backBtn).click()
+        await (await this.carCancel).click()
+    }
+    async letDroomSuggest() {
+        await (await this.droomSugg).click()
+        await (await this.lookingFor).waitForDisplayed({ timeout: 5000 })
+    }
+    async clickOnGoBack() {
+        await (await this.goBack).click()
+        await (await this.vehicleDetails).waitForExist({ timeout: 5000 })
+    }
+    async selectPetrol() {
+        await (await this.petrol).click()
+    }
+    async clickOnSubmit() {
+        await (await this.submitAndView).click()
+    }
+    async clickOngetRequirements() {
+        await (await this.requirements).click()
+    }
+    async clickOnSubmitRequirements() {
+        await (await this.newRequirements).click()
+    }
+    async selectColor() {
+        await (await this.redColor).touchAction('tap')
+    }
+    async selectAutomatic() {
+        await(await this.flexibleTransmission).scrollIntoView()
+        await(await this.flexibleTransmission).touchAction('tap')
+        await (await this.automatic).touchAction('tap')
+    }
+    async selectDoYouAlsoNeed() {
+        await (await this.lastStep).waitForExist({ timeout: 5000 })
+        await (await this.insurance).touchAction('tap')
+        await (await this.loan).touchAction('tap')
+        await (await this.RCTransfer).touchAction('tap')
+        await (await this.roadSideAssistance).touchAction('tap')
+    }
+    async selectHowQuickly() {
+        await (await this.withinFourDay).click()
+    }
+    async exchangeVehicle() {
+        await (await this.exchange).click()
+    }
+    async Enterkms() {
+        await (await this.kms).setValue("10000")
+    }
+    async closePopUp()
+    {
+        await (await this.closeBtn).click()
+    }
 }
 module.exports = new Usedcar();

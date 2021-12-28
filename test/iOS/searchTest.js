@@ -6,8 +6,7 @@ describe('Search', () => {
         await driver.launchApp()
     });
     it('TC_01 Verify Search functionality on Main header', async () => {
-        await Base.skipStartup()
-        await browser.pause(3000)  
+       // await Base.skipStartup()  
         var searchItem="KTM Bikes"
           expect(searchPage.search_Box).toBeDisplayed()
           console.log("Search Box is displayed")
@@ -15,29 +14,28 @@ describe('Search', () => {
           console.log("Clicked on search Box")
           await browser.pause(2000)
           await (await searchPage.searchBoxTxt).setValue(searchItem)
-         // console.log("Searching for "+searchItem)
-          //await driver.longPressKeyCode(66, undefined, undefined)
+          console.log("Searching for "+searchItem)
           await (await searchPage.KTM).click()
           console.log("Clicked On KTM Bikes")
           expect(await searchPage.headingVehicle).toBeDisplayed()
-          expect(await searchPage.headingVehicle).toHaveTextContaining(searchItem)
+          console.log("After click on required Item Expected page displayed")
+          expect(await searchPage.KTM).toHaveTextContaining(searchItem)
           console.log("Using Seacth box User is able to search required items")
-          console.log("First element displayed as : "+await(await searchPage.headingVehicle).getText())
+          console.log("First element displayed as : "+await(await searchPage.KTM).getText())
       });
     it('TC_02 Verify Search functionality on Vista Link', async () => {
-        await (await searchPage.mainPopup).isDisplayed()
-        await (await searchPage.mainPopup).click()
+        //await Base.skipStartup()
         console.log('Application Launched')
-        await Base.scrollToExactText("Super Cars")
         console.log("Scrolling to the Vista Link")
         expect(await searchPage.vistaLink).toBeDisplayed()
         console.log("Vista link of zcheck Vehicle Price is Displayed")
         await (await searchPage.vistaLink).click()
         console.log("Clicked On Vista Link of Check Price")
-        expect(await searchPage.vistaLinkResult).toHaveTextContaining("Check Vehicle Price")
-        console.log("User able to navigate to required page by clicking related Vista Links")
+        expect(await searchPage.sort).toBeDisplayed()
+        console.log("User able to navigate to required page of Sort anf Filter  by clicking related Vista Links")
     });
      it('TC_03 Verify the functionality of Popular Search', async () => {  
+        //await Base.skipStartup()
         expect(searchPage.search_Box).toBeDisplayed()
         console.log("Search Box is Displayed")
         await (await searchPage.search_Box).click()
@@ -48,28 +46,32 @@ describe('Search', () => {
      });
 
      it('TC_04 Verify Auto_Select functionality', async () => {
-        var searchItem="KTM Bikes"
-          expect(searchPage.search_Box).toBeDisplayed()
-          console.log("Search Box is displayed")
-          await (await searchPage.search_Box).click()
-          console.log("CLicked on search Box")
-          await (await searchPage.searchBoxTxt).setValue(searchItem)
-          console.log("Searching for "+searchItem)
-          await driver.longPressKeyCode(66, undefined, undefined)
-          expect(await searchPage.headingVehicle).toBeDisplayed()
-          expect(await searchPage.headingVehicle).toHaveTextContaining(searchItem)
-          console.log("Using Seacth box User is able to search required items")
-          console.log("First element displayed as : "+await(await searchPage.headingVehicle).getText())
+       // await Base.skipStartup()  
+       var searchItem="KTM Bikes"
+       expect(searchPage.search_Box).toBeDisplayed()
+       console.log("Search Box is displayed")
+       await (await searchPage.search_Box).click()
+       console.log("Clicked on search Box")
+       await browser.pause(2000)
+       await (await searchPage.searchBoxTxt).setValue(searchItem)
+       console.log("Searching for "+searchItem)
+       await (await searchPage.KTM).click()
+       console.log("Clicked On KTM Bikes")
+       expect(await searchPage.headingVehicle).toBeDisplayed()
+       console.log("After click on required Item Expected page displayed")
+       expect(await searchPage.KTM).toHaveTextContaining(searchItem)
+       console.log("Using Seacth box User is able to search required items")
+       console.log("First element displayed as : "+await(await searchPage.KTM).getText())
+       console.log("Autoselect Functionality Works for Search")
     });
+
     it('TC 05 Verify the Sorting functionality', async () => {
+        //await Base.skipStartup()
         var searchItem="KTM Bikes"
         expect(searchPage.search_Box).toBeDisplayed()
         await (await searchPage.search_Box).click()
-        await (await searchPage.searchBoxTxt).setValue(searchItem)
-        console.log("Searching for "+searchItem)
-        await driver.longPressKeyCode(66, undefined, undefined)
-        expect(await searchPage.headingVehicle).toBeDisplayed()
-        expect(await searchPage.headingVehicle).toHaveTextContaining(searchItem)
+        console.log("Searching for item")
+        await (await searchPage.KTM).click()
         console.log("Using Seacth box User is able to search required items")
         expect(await searchPage.sort).toBeDisplayed()
         console.log("Sort opton is availbale on Page")
@@ -85,17 +87,15 @@ describe('Search', () => {
         console.log("Selected Most relevent option for Filter")
         expect(await searchPage.headingVehicle).toBeDisplayed()
         console.log(await (await searchPage.headingVehicle).getText())
-        console.log("KTM bikes list is displayed according to applied Filter")
+        console.log("Expected list is displayed according to applied Sorting Option")
         });
     it('TC 06 Verify the Filter for Used and New vehicle', async () => {
+       // await Base.skipStartup()
         var searchItem="KTM Bikes"
         expect(searchPage.search_Box).toBeDisplayed()
         await (await searchPage.search_Box).click()
-        await (await searchPage.searchBoxTxt).setValue(searchItem)
-        console.log("Searching for "+searchItem)
-        await driver.longPressKeyCode(66, undefined, undefined)
-        expect(await searchPage.headingVehicle).toBeDisplayed()
-        expect(await searchPage.headingVehicle).toHaveTextContaining(searchItem)
+        console.log("Searching for item")
+        await (await searchPage.KTM).click()
         console.log("Using Seacth box User is able to search required items")
         expect(await searchPage.filter).toBeDisplayed()
         console.log("Filter opton is availbale on Page")
@@ -118,8 +118,8 @@ describe('Search', () => {
         console.log(await(await searchPage.BodyTypeFilter).getText())
         expect(await searchPage.colorFilter).toBeDisplayed()
         console.log(await(await searchPage.colorFilter).getText())
-        expect(await searchPage.buyerProtectionFilter).toBeDisplayed()
-        console.log(await(await searchPage.buyerProtectionFilter).getText())
+      //  expect(await searchPage.buyerProtectionFilter).toBeDisplayed()
+       // console.log(await(await searchPage.buyerProtectionFilter).getText())
         await(await searchPage.makeFilter).click()
         console.log("Clicked on Make filter")
         await(await searchPage.KTM).click()
@@ -130,31 +130,37 @@ describe('Search', () => {
         console.log(await(await searchPage.headingVehicle).getText())
         console.log("Expected result shown using applied Filter")
     });
-
 it('TC_07 Verify Vehicle count after seach an item', async () => {
-        expect(searchPage.search_Box).toBeDisplayed()
-        console.log("Search Box is displayed")
-        await (await searchPage.search_Box).click()
-        console.log("Text box to search and Item get displayed")
-        await (await searchPage.searchBoxTxt).click()
-        console.log("Clicked on serach Text Box")
-        await (await searchPage.KTM).click()
-        console.log("Clicked On KTM Bikes")
-        expect(searchPage.countInfo).toBeDisplayed()
-        console.log("Information and count of searched item get displayed")
+    //await Base.skipStartup()
+    var searchItem="KTM Bikes"
+    expect(searchPage.search_Box).toBeDisplayed()
+    console.log("Search Box is displayed")
+    await (await searchPage.search_Box).click()
+    console.log("Clicked on search Box")
+    await browser.pause(2000)
+    await (await searchPage.searchBoxTxt).setValue(searchItem)
+    console.log("Searching for "+searchItem)
+    await (await searchPage.KTM).click()
+    console.log("Clicked On KTM Bikes")
+    expect(await searchPage.headingVehicle).toBeDisplayed()
+    console.log("After click on required Item Expected page displayed")
+    expect(searchPage.countInfo).toBeDisplayed()
+    console.log("Information and count of searched item get displayed")
 });
     it('TC_08 Verify the functionality of recent Search', async () => {
+        //await Base.skipStartup()
         expect(searchPage.search_Box).toBeDisplayed()
         console.log("Search Box is displayed")
         await (await searchPage.search_Box).click()
         console.log("Text box to search and Item get displayed")
         await (await searchPage.searchBoxTxt).click()
         console.log("Clicked on serach Text Box")
-        expect (await searchPage.trendingSearch).isDisplayed()
+        expect (await searchPage.trendingSearch).toBeDisplayed()
         console.log("Trending searches displayed")
-        expect (await searchPage.recent_search).isDisplayed()
+        expect (await searchPage.recent_search).toBeDisplayed()
         console.log("Recent Rearches Displayed")
     });
+    
     });
    
 

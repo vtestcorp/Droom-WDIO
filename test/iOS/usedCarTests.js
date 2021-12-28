@@ -1,5 +1,6 @@
 const base = require('../../BaseClass/base');
 const Base = require('../../BaseClass/base');
+const usedCarPage = require('../../Pages/iOS/usedCarPage');
 const UsedCarPage = require("../../Pages/iOS/usedCarPage")
 describe('Used Car', async () => {
   beforeEach(async  ()=>{
@@ -8,8 +9,8 @@ describe('Used Car', async () => {
     await driver.launchApp()
   });  
    it('TC01 Verify car option is the display with used Condition to the buyer', async () => {
-    //await base.skipStartup()
-    //await Base.iosLoginAsBuyer()
+     //await Base.iosLoginAsBuyer()
+     //await base.skipStartup()
      console.log("Create Requirement")
      await (await UsedCarPage.createReq).waitForDisplayed()
      expect (await UsedCarPage.createReq).toBeDisabled()
@@ -59,7 +60,7 @@ describe('Used Car', async () => {
     console.log('Current Location displayed')
     expect(await UsedCarPage.currentLocation).toBeClickable()
     console.log('Current Location is Clickable')
-    await UsedCarPage.clickOnNext()
+    await (await UsedCarPage.newButton).click()
     expect(UsedCarPage.errorMsg).toBeDisplayed()
     console.log('Error message Displayed')
    });
@@ -113,19 +114,19 @@ describe('Used Car', async () => {
     await (await UsedCarPage.droomSugg).waitForEnabled({timeout: 30000 })
     expect(await UsedCarPage.vehicleDetails).toBeDisplayed()
     console.log("Enter Details Lable Displayed As:"+await(await UsedCarPage.vehicleDetails).getText()) 
-    await(await usedCarPage.selectVehicle).click()
-    console.log("Clicked on Select Vehicle")
+    //await(await usedCarPage.selectVehicle).click()
+    //console.log("Clicked on Select Vehicle")
    //Select Make, Model, Year and trim has no locatotrs there..partially DOne
    });
 
    it('TC_06 Verify user able to select car model through Let Droom Suggest for you as per requirement', async () => {
-   // await base.skipStartup()
+    //await base.skipStartup()
     await (await UsedCarPage.createReq).waitForDisplayed()
     await (await UsedCarPage.createReq).click()
     console.log("Clicked On Create Requirement")
     expect (await UsedCarPage.createReq).toBeDisabled()
     console.log("Select Heading Displayed As:"+await(await UsedCarPage.headingSelectPage).getText())
-    await UsedCarPage.clickOnNext()
+    await (await UsedCarPage.newButton).click()
     console.log("Clicked On Next Button")
     await (await UsedCarPage.selectCarHeading).waitForEnabled({timeout: 10000 })
     expect (await UsedCarPage.selectCarHeading).toBeDisabled()
@@ -390,7 +391,7 @@ it('TC_11 Verify user able to select use car as per the Transmission Type', asyn
   console.log("user able to select use car as per the Do you also need option")
 });
    it('TC_13 Verify user is able to select use car as per the How Quickly Do You Want to Buy? option', async () => {
-    //await base.skipStartup()
+   // await base.skipStartup()
     await (await UsedCarPage.createReq).click()
     console.log("Clicked On Create Requirement")
     expect (await UsedCarPage.createReq).toBeDisabled()
@@ -426,8 +427,8 @@ it('TC_11 Verify user able to select use car as per the Transmission Type', asyn
     console.log("Last step page Displayed With:"+await(await UsedCarPage.lastStep).getText())
     expect (await usedCarPage.insurance).toBeDisplayed()
     console.log("Do you also need Insurance Option is displayed")
-    expect(await usedCarPage.howQuicklyUwantBuy).toBeDisplayed()
-    console.log("How Quickly Displayed With:"+await(await UsedCarPage.howQuicklyUwantBuy).getText())
+    //expect(await usedCarPage.howQuicklyUwantBuy).toBeDisplayed()
+    //console.log("How Quickly Displayed With:"+await(await UsedCarPage.howQuicklyUwantBuy).getText())
     expect (await usedCarPage.withinFourDay).toBeDisplayed()
     console.log("Buy within four Days option displayed")
     await (await usedCarPage.withinFourDay).click()
@@ -438,7 +439,7 @@ it('TC_11 Verify user able to select use car as per the Transmission Type', asyn
     console.log("user is able to select use car as per the How Quickly Do You Want to Buy? option")  
   });
   it('TC_14 Verify user is able to select used car as per the Do You Wish to Exchange Your Vehicle option', async () => {
-  //await base.skipStartup()
+   //await base.skipStartup()
     await (await UsedCarPage.createReq).click()
     console.log("Clicked On Create Requirement")
     expect (await UsedCarPage.headingSelectPage).toBeDisabled()
@@ -523,4 +524,5 @@ it('TC_11 Verify user able to select use car as per the Transmission Type', asyn
     console.log("Clicked on Next Button")
     expect(await usedCarPage.oneLastStepBeforeMatch).toBeDisplayed()
   });
+  
 });
