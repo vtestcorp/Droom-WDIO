@@ -1,30 +1,35 @@
 const { default: waitForDisplayed } = require("webdriverio/build/commands/element/waitForDisplayed");
 class Base
 {
- get mainPopup(){return this.getByResourceId("in.droom:id/btn_close") }
- get myAccount(){return this.getByText("My Account")}
+  get menu() {return this.getByText("Menu")}
+ get login() {return this.getByText("Login")}
+ get loginwithemailBtn() {return this.getByText("Login with Email")}
  get emailText(){return this.getByResourceId("in.droom:id/email_field")}
- get loginViaPassBtn(){return this.getByResourceId("in.droom:id/btn_login_via_password")}
+ get continueBtn() {return this.getByText("Continue")}
+ //get loginViaPassBtn(){return this.getByResourceId("in.droom:id/btn_login_via_password")}
  get passText(){return this.getByResourceId("in.droom:id/password_field")}
  get showPassword(){return this.getByResourceId("in.droom:id/text_input_end_icon")}
- get loginFinal(){return this.getByResourceId("in.droom:id/btn_login_via_otp_email")}
+// get loginFinal(){return this.getByResourceId("in.droom:id/btn_login_via_otp_email")}
  get afterLoginPopup(){return this.getByResourceId("in.droom:id/imgViewForClose")}
- get userInfo(){return this.getByResourceId("in.droom:id/user_info_flow")}
-     async loginAsBuyer()
-    {
-      try{
-      await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
-      await (await $('(//button[@class="close em-show-later"])[2]')).click();}
-      catch{ }
-      await(await $('#user_details')).click();
-      await(await $("a[class='btn btn-primary']")).click();
-      await(await $("#userLogin")).setValue("vtest1@gmail.com");
-      await(await $(".d-letter-spacing-1[href='#viaPassword']")).click();
-      await(await $("#password")).setValue("Vtest@123");
-      await(await $("input[value='Login']")).click();
-      await(await $("div[class='profile'] img[alt='Seller image']")).waitForDisplayed({timeout:10000});
-      await browser.pause(2000);      
-    }
+ //get userInfo(){return this.getByResourceId("in.droom:id/user_info_flow")}
+ get userInfo() {return this.getByResourceId("in.droom:id/textview_useremail")}
+ async loginAsBuyer() {
+  try {
+    await (await $('.jss1')).waitForDisplayed({ timeout: 20000, timeoutMsg: "Popup not displayed" });
+    await (await $('(//button[@class="close em-show-later"])[2]')).click();
+  }
+  catch { }
+    await(await $('[class="ico global-web global-web-user"]')).click();
+    await (await $('//a[@href="https://qa2.droom.in/user/login"]')).click();
+    await(await $("#loginWithEmail")).click();
+    await(await $("#email")).setValue("vtest1@gmail.com");
+    await(await $("#password")).click();
+    await(await $("#password")).setValue("Vtest@123");
+    //await (await $("#continueBtn")).waitForExist({ timeout: 10000 })
+    await(await $("#continueEmail")).click();
+    await(await $("div[class='profile'] img[alt='Seller image']")).waitForDisplayed({timeout:10000});
+    await browser.pause(2000);      
+  }
     async getByResourceId(id)
     {
       const selector = 'new UiSelector().resourceId("'+id+'")'
@@ -88,15 +93,20 @@ class Base
     }
     async androidLoginAsBuyer()
     {
-         await (await this.mainPopup).isDisplayed()
-         await (await this.mainPopup).click()
-         await (await this.myAccount).click()
-         await (await this.emailText).setValue("vtest1@gmail.com")
-         await (await this.loginViaPassBtn).click()
+        //await (await this.mainPopup).isDisplayed()
+        // await (await this.mainPopup).click()
+         //await (await this.myAccount).click()
+         await (await this.menu).click()
+         await (await this.login).click()
+         await (await this.loginwithemailBtn).click()
+        await (await this.emailText).setValue("vtest1@gmail.com")
+        // await (await this.loginViaPassBtn).click()
          await (await this.passText).setValue("Vtest@123")
-         await (await this.showPassword).click()
-         await (await this.loginFinal).click()
-         expect(await this.userInfo).toBeDisplayed()
+        // await (await this.showPassword).click()
+         //await (await this.loginFinal).click()
+        // expect(await this.userInfo).toBeDisplayed()
+        await(await this.continueBtn).click()
+        expect(await this.userInfo).toBeDisplayed()
          console.log("User is able to Login using valid credentials")
     }
 
