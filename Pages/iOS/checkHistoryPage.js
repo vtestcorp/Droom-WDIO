@@ -1,22 +1,22 @@
 const base = require("../../BaseClass/base")
 
 class CheckHistory{
-
-    get mainPopup(){return base.getByResourceId("in.droom:id/btn_close") }
-    get menu(){return base.getByAccessibilityID("Menu")}
-    get pageheading(){return base.getByResourceId("vehicleHistory")}
-    get vehicleHistory() {return base.getByResourceId("History")}
-    get checkhistoryBtn() {return base.getByResourceId("Check History")}
+    get menu(){return base.getByClassChain('**/XCUIElementTypeStaticText[`label == "Menu"`]')}
+    get pageheading(){return base.getByAccessibilityID('vehicleHistory')}
+    get obv() { return base.getByAccessibilityID('Valuation')}
+    get vehicleHistory() {return base.getByAccessibilityID('History')}
+    get createReq(){return base.getByClassChain('**/XCUIElementTypeStaticText[`label == "Create Requirement"`]')}
+    get checkhistoryBtn() {return base.getByAccessibilityID("Check History")}
     get headingCheckHistory() {return base.getByClassChain('**/XCUIElementTypeStaticText[`label =="CHECK ANY VEHICLE’S HISTORY ONLINE!"`]')}
     get vehicleCertificate() {return base.getByClassChain('**/XCUIElementTypeStaticText[`label == "Vehicle History Certificate"`]')}
-    get aboutHistory(){return base.getByResourceId("historical data")}
+    get aboutHistory(){return base.getByAccessibilityID("historical data")}
     get certificateLink(){return base.getByClassChain('**/XCUIElementTypeStaticText[`label == "View Sample Vehicle History Certificate"`]')}
     get FAQs(){return base.getByClassChain('**/XCUIElementTypeStaticText[`label == "FAQS"`]')}
-    get faq1(){return base.getByResourceId("Can I sell Vehicle History certificate?")}
+    get faq1(){return base.getByAccessibilityID("Can I sell Vehicle History certificate?")}
     get faq2(){return base.getByAccessibilityID("How is a Droom Vehicle certificate helpful?")}
     get certificateHeading(){return base.getByClassChain('**/XCUIElementTypeStaticText[`label == "Sample Vehicle History Certificate"`]')}
     get toggleBtn() {return base.getByText("Toggle navigation")}
-    get Home() {return base.getByResourceId("Home")}
+    get Home() {return base.getByAccessibilityID("Home")}
     get mainPopup(){return base.getByAccessibilityID("Allow While Using App") }
     get locationPopup(){return base.getByAccessibilityID("Allow") }
     get skipBtn(){return base.getByClassChain('**/XCUIElementTypeButton[`label == "Skip"`]') }
