@@ -2,7 +2,7 @@ class unlockFeePayment {
     get submitRequirement() { return $('//i[@class="web-g-icon web-g-icon-my-requirement d-font-size-22 d-display-inline-block d-position-relative d-valign-middle"]') }
     get carOption() { return $('(//span[@class="s-MuiButton-label"])[1]') }
     get Condition() { return $('//span[text()="Used"]') }
-    get newButton() { return $('(//span[text()="New"])[3]') }
+    get newButton() {return $('(//span[text()="New"])[3]')}
     get currentLocation() { return $('//div[text()="Current Location"]') }
     get nextButton() { return $('//span[text()="Next "]') }
     get vehicleDetails() { return $('//label[text()="Enter Your Vehicle Details"]') }
@@ -39,16 +39,22 @@ class unlockFeePayment {
     get selectAnotherVehicle() { return $('//p[text()=" Add Another Vehicle"]') }
     get clickOnMatch() { return $('(//div[@class="bm-MuiPaper-root bm-MuiPaper-elevation0 bm-MuiPaper-rounded"])[1]') }
     get payFeeButton() { return $('//button[text()="Pay (₹1) Best Match Unlock Fee"]') }
-    get Congratulations() { return $('Congratulations') }
+    //get payFeeButton() {return $('//button[text()="Pay (₹999) Best Match Unlock Fee"]')}
+    get Congratulations() { return $('//h3[text()="Congratulations"]') }
     get sucessMsg() { return $('//p[text()="Item has been successfully added to the cart"]') }
     get checkoutBtn() { return $('//a[text()="Checkout Now"]') }
     get proceedTocheckout() { return $('//a[text()="Proceed to Checkout"]') }
     get selectvehicle1() { return $('(//a[contains(text(),"Honda City")])[3]') }
-    get selectvehicle2() { return $('(//a[contains(text(),"Honda City")])[2]') }
+    get selectvehicle2() { return $('(//a[contains(text(),"Honda City")])[5]') }
     get payBestMatchFee() { return $('//span[text()="Pay Best Match Unlock Fee"]') }
     get addressTab() { return $('//a[text()=" Address"]') }
     get editAddress() { return $('(//a[text()="Edit"])[1]') }
     get deleteAddress() { return $('//a[text()="Delete"]') }
+    get selectBike1() { return $('(//a[contains(text(),"Bajaj Pulsar")])[3]') }
+    get selectBike2() { return $('(//a[contains(text(),"Bajaj Pulsar")])[4]') }
+    get clocation() {return $('//input[@id="react-select-2-input"]')}
+    get punelocation() {return $('//div[text()="Pune, Maharashtra, India"]')}
+    
 
     async submitRequirements() {
         await (await this.submitRequirement).waitForExist()
@@ -126,5 +132,25 @@ class unlockFeePayment {
         console.log("User selected vehicle as per the requirement")
         await (await this.nextButton).click()
     }
+    async selectBikeForBestMatch() {
+        await (await this.bikeName).setValue("Pulsar")
+        await (await this.selectBike1).click()
+        await (await this.selectAnotherVehicle).waitForExist()
+        await (await this.selectAnotherVehicle).click()
+        await (await this.bikeName).setValue("pulsar")
+        await (await this.selectBike2).click()
+        console.log("User selected Bike as per the requirement")
+        await (await this.nextButton).click()
+      
+    }
+    async selectCurrentLocationForMatch() {
+        await (await this.clocation).setValue("Pune")
+        await (await this.punelocation).click()
+        await (await this.newButton).click()
+        await (await this.Condition).click()
+        await (await this.nextButton).click()
+        console.log('Click on next Button')
+    }
+    
 }
 module.exports = new unlockFeePayment();

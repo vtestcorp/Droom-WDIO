@@ -72,6 +72,7 @@ async traverseToHistory() {
         await browser.pause(3000)
 }
         async chromeConditions() {
+
         await (await this.acceptcontinue).click()
         await (await this.next).click()
         await (await this.yes).click()

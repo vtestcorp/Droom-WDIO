@@ -16,7 +16,7 @@ exports.config = {
     maxInstances : 1,
     services: ['appium'],
     specs: [
-        './test/Android/EditRequirements.js'
+        './test/Android/*.js'
     ],
     capabilities: [{
         "platformName":"Android",

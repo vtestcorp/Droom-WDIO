@@ -17,8 +17,11 @@ class Base
  get byeOnDroom(){return this.getByAccessibilityID("Buy On Droom") }
  get services(){return this.getByAccessibilityID("homepopup-buy-service")}
  get backBtn(){return this.getByAccessibilityID("Back Icon Long")}
+ get menu() {return this.getByText("Menu")}
+ get login() {return this.getByText("Login")}
+ get loginwithemailBtn() {return this.getByText("Login with Email")}
+ get continueBtn() {return this.getByText("Continue")}
 
- get menu(){return this.getByClassChain('Menu')}
 
      async loginAsBuyer()
     {
@@ -36,8 +39,6 @@ class Base
       await(await $("div[class='profile'] img[alt='Seller image']")).waitForDisplayed({timeout:10000});
       await browser.pause(2000);      
     }
-
-    
     async getByResourceId(id)
     {
       const selector = 'new UiSelector().resourceId("'+id+'")'
@@ -74,6 +75,7 @@ class Base
       const a=await $(`android=${selector}`)
       return a
     }
+
     async getByPredicateString(string)
     {
       const a=await $(`-ios predicate string:${string}`)
@@ -84,13 +86,7 @@ class Base
       const a=await $(`-ios class chain:${string}`)
       return a
     }
-   /* async getByName(string)
-    {
-      const selector = 'type == '+string+''
-     // const a=await $(`-ios predicate string:${selector}`)
-      return a
-      
-    }*/
+  
     async getByAccessibilityID(id)
     {
       const a=await $(`~${id}`)
@@ -133,15 +129,20 @@ class Base
     }
     async androidLoginAsBuyer()
     {
-         await (await this.mainPopup).isDisplayed()
-         await (await this.mainPopup).click()
-         await (await this.myAccount).click()
-         await (await this.emailText).setValue("vtest1@gmail.com")
-         await (await this.loginViaPassBtn).click()
+   //await (await this.mainPopup).isDisplayed()
+        // await (await this.mainPopup).click()
+         //await (await this.myAccount).click()
+         await (await this.menu).click()
+         await (await this.login).click()
+         await (await this.loginwithemailBtn).click()
+        await (await this.emailText).setValue("vtest1@gmail.com")
+        // await (await this.loginViaPassBtn).click()
          await (await this.passText).setValue("Vtest@123")
-         await (await this.showPassword).click()
-         await (await this.loginFinal).click()
-         expect(await this.userInfo).toBeDisplayed()
+        // await (await this.showPassword).click()
+         //await (await this.loginFinal).click()
+        // expect(await this.userInfo).toBeDisplayed()
+        await(await this.continueBtn).click()
+        expect(await this.userInfo).toBeDisplayed()
          console.log("User is able to Login using valid credentials")
     }
 

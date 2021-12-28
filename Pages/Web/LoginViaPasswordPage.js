@@ -7,7 +7,7 @@ class Login {
     get loginViaPasswordBtn() { return $('.d-letter-spacing-1[href="#viaPassword"]') }
     get passwordTB() { return $('#password') }
     get login() { return $('//input[@type="submit"]') }
-    get sellerName() { return $('//div[text()="Welcome, Vtest1 !"]') }
+    get sellerName() {return $('(//div[@class="seller-name"])[2]')}
     get logo() { return $('//i[@class="ico web-g-icon-logo-desc d-display-inline-block d-valign-top d-font-size-32"]') }
     get logoutBtn() { return $('//a[text()="Log Out"]') }
     get errorMsgForInvalidPasswd() { return $('//small[@class="text-error text-left d-display-block"]') }
@@ -38,7 +38,7 @@ class Login {
     async logout() {
         await (await this.profileicon).waitForDisplayed({ timeout: 1000 })
         await (await this.profileicon).moveTo()
-        await (await this.logoutBtn).waitForDisplayed({ timeout: 2000 })
+        await (await this.logoutBtn).waitForDisplayed({ timeout: 4000 })
         await (await this.logoutBtn).click()
         console.log('User logout application')
     }
