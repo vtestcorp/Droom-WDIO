@@ -35,7 +35,7 @@ class UsedBike {
     get carCancel() { return $('(//div[@role="button"]//*[local-name()="svg"])[1]') }
     get droomSugg() { return $('//button[text()="Let Droom Suggest for you"]') }
     get lookingFor() { return $('//h5[text()="Let us know what you are looking for"]') }
-    get gudget() { return $('//p[text()="What is Your Budget?"]') }
+    get budget() { return $('//p[text()="What is Your Budget?"]') }
     get body() { return $('//p[text()="Body Type"]') }
     get age() { return $('//p[text()="Age of Vehicle"]') }
     get more() { return $('//p[text()="Add More Detail "]') }
@@ -71,7 +71,12 @@ class UsedBike {
     get extColor() { return $('//div[@class="r-MuiBox-root r-r136"]') }
     get service() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[1]') }
     get needToBuy() { return $('(//div[@class="r-MuiGrid-root r-r25 r-MuiGrid-item r-MuiGrid-grid-xs-12 r-MuiGrid-grid-sm-6 r-MuiGrid-grid-md-3"])[2]') }
-
+    get budgetBar() { return $('(//div[@class="noUi-connect"])[1]') }
+    get Kmsbar() { return $('(//div[@class="noUi-connect"])[2]') }
+    get priceRange() { return $('(//div[@class="r-MuiGrid-root r-r51 r-MuiGrid-item r-MuiGrid-grid-xs-4 r-MuiGrid-grid-sm-3"])[1]') }
+    get kmsrange() { return $('(//div[@class="r-MuiBox-root r-r127"])[1]') }
+    get closeBtn() { return $('//button[@class="close em-show-later"]') }
+    get home() { return $('//a[normalize-space()="Home"]') }
     async submitRequirement() {
         await (await this.submit).click()
     }
@@ -136,10 +141,9 @@ class UsedBike {
         await (await this.trimName).click()
     }
     async basicDetailsDisplay() {
-        (await this.basicDetails).waitForExist({ timeout: 7000 })
+        (await this.budget).waitForExist({ timeout: 7000 })
     }
     async clickOnBack() {
-        await browser.pause(2000)
         await (await this.backBtn).click()
         await (await this.carCancel).click()
     }
@@ -148,6 +152,8 @@ class UsedBike {
         await (await this.lookingFor).waitForExist({ timeout: 5000 })
     }
     async clickOnGoBack() {
+        await (await this.body).waitForExist({ timeout: 5000 })
+        await (await this.goBack).moveTo()
         await (await this.goBack).click()
         await (await this.vehicleDetails).waitForExist({ timeout: 5000 })
     }
@@ -158,7 +164,7 @@ class UsedBike {
         await (await this.submitAndView).click()
     }
     async clickOngetRequirements() {
-        await (await this.requirements).waitForExist({ timeout: 7000 })
+        await (await this.requirements).waitForExist({ timeout: 15000 })
         await (await this.requirements).click()
     }
     async clickOnSubmitRequirements() {
@@ -188,6 +194,10 @@ class UsedBike {
     }
     async selectColorFromList() {
         await (await this.colorName).click()
+    }
+    async closePopUp()
+    {
+        await (await this.closeBtn).click()
     }
 }
 module.exports = new UsedBike();

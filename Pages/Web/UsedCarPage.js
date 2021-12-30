@@ -68,7 +68,19 @@ class Usedcar {
     get Transmission() { return $('(//span[@class="s-MuiButton-label"])[1]') }
     get seller() { return $('//p[@class="s-MuiTypography-root s-MuiTypography-body1"]') }
     get ageofV() { return $('//div[@class="s-MuiButtonBase-root s-MuiChip-root s-s270 s-MuiChip-outlined s-MuiChip-clickable"]') }
-
+    get sorce() { return $('(//div[@class="noUi-touch-area"])[2]') }
+    get target() { return $('//div[@aria-valuenow="15000000.0"]') }
+    get scle() { return $('(//div[@class="noUi-connect"])[1]') }
+    get closeBtn() { return $('//button[@class="close em-show-later"]') }
+    get home() { return $('//a[normalize-space()="Home"]') }
+    get budgetBar() { return $('(//div[@class="noUi-connect"])[1]') }
+    get Kmsbar() { return $('(//div[@class="noUi-connect"])[2]') }
+    get priceRange() { return $('(//div[@class="r-MuiGrid-root r-r51 r-MuiGrid-item r-MuiGrid-grid-xs-4 r-MuiGrid-grid-sm-3"])[1]') }
+    get kmsrange() { return $('(//div[@class="r-MuiBox-root r-r127"])[1]') }
+    get exchangeVehicle() { return $('//p[text()="Do You Wish to Exchange Your Vehicle"]') }
+    
+    
+    
     async submitRequirement() {
         await (await this.submit).click()
     }
@@ -166,6 +178,10 @@ class Usedcar {
     }
     async Enterkms() {
         await (await this.kms).setValue("10000")
+    }
+    async closePopUp()
+    {
+        await (await this.closeBtn).click()
     }
 }
 module.exports = new Usedcar();

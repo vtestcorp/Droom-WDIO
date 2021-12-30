@@ -48,4 +48,4 @@ describe('Search', () => {
          console.log("Submit My requirement Displayed under the Trending Searches")
      });
     });
-   
+

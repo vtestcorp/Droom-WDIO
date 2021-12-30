@@ -1,48 +1,40 @@
 const base = require("../../BaseClass/base");
 const checkHistoryPage = require("../../Pages/Androidbrowser/checkHistoryPage");
-
 describe('Check History', async () => {
     beforeEach(async () => {
         await driver.closeApp()
         await driver.launchApp()
     });
     it('TC_01 Verify the Check History Functionality', async () => {
-         browser.url('/')
-        await checkHistoryPage.traverseToHistory()
-        expect (await checkHistoryPage.heading).toBeDisplayed()
-        console.log("Check History page is Displayed")
-        console.log(await (await checkHistoryPage.heading).getText())
+        await checkHistoryPage.chromeConditions()
+        browser.url('/history/premium-reports')
+        await (await checkHistoryPage.per).waitForDisplayed({ timeout: 10000 })
+        console.log("Premium Certificate Displayed")
+        expect(await checkHistoryPage.Check_any_Vehicle).toBeDisplayed()
         console.log("Check any Vehicle's History Online! option displayed")
         expect(await checkHistoryPage.vehicle_reg_no).toBeDisplayed()
         console.log("vehicle_reg_no displayed")
         expect(await checkHistoryPage.gold).toBeDisplayed()
         console.log("Get History Certificate - Gold @ Rs.49 displayed")
-        expect(await checkHistoryPage.platinum).toBeDisplayed()
-        console.log(await (await checkHistoryPage.platinum).getText())
-
     });
     it('TC_03 Verify the Premium Certificate on History', async () => {
-        browser.url('/')
-        await checkHistoryPage.traverseToHistory()
-        expect (await checkHistoryPage.heading).toBeDisplayed()
-        console.log("Check History page is Displayed")
+        await checkHistoryPage.chromeConditions()
+        browser.url('/history/premium-reports')
+        await (await checkHistoryPage.per).waitForDisplayed({ timeout: 10000 })
+        console.log("Premium Certificate Displayed")
+        expect(await checkHistoryPage.Check_any_Vehicle).toBeDisplayed()
+        console.log("Check any Vehicle's History Online! option display")
         expect(await checkHistoryPage.vehicle_reg_no).toBeDisplayed()
         console.log("vehicle_reg_no displayed")
         expect(await checkHistoryPage.gold).toBeDisplayed()
         console.log("Get History Certificate - Gold @ Rs.49 displayed")
         expect(await checkHistoryPage.platinum).toBeDisplayed()
         console.log("Get History Certificate - Platinum @ Rs.149")
-        await base.swipeUp()
-        await (await checkHistoryPage.goldCertificate).waitForDisplayed({ timeout: 10000 })
-        console.log("Gold Certificate Displayed")
-        expect(await checkHistoryPage.platinumCertificate).toBeDisplayed()
-        console.log("Platinum certificate id displayed")
+
     });
     it('TC_05 Verify the "View Sample Vehicle History Certificate" link is functional', async () => {
-       browser.url('/')
-        await checkHistoryPage.traverseToHistory()
-        expect (await checkHistoryPage.heading).toBeDisplayed()
-        console.log("Check History page is Displayed")
+        await checkHistoryPage.chromeConditions()
+        browser.url('/history/premium-reports')r
         await (await checkHistoryPage.per).waitForDisplayed({ timeout: 10000 })
         console.log("Premium Certificate Displayed")
         await base.swipeUp()
@@ -50,14 +42,17 @@ describe('Check History', async () => {
         console.log("view Smaple report link displayed")
     });
     it('TC_06 Verify the Home Option is functional on History page', async () => {
-        browser.url('/')
-        await checkHistoryPage.traverseToHistory()
-        expect (await checkHistoryPage.heading).toBeDisplayed()
-        console.log("Check History page is Displayed")
+
+        await checkHistoryPage.chromeConditions()
+        browser.url('/history/premium-reports')
+        await (await checkHistoryPage.per).waitForDisplayed({ timeout: 10000 })
+        console.log("Premium Certificate Displayed")
         await (await checkHistoryPage.home).click()
-        console.log("clicked on Home link on History page")
-        await (await checkHistoryPage.createReq).waitForDisplayed({ timeout: 10000 })
-        expect (await checkHistoryPage.createReq).toBeDisplayed()
-        console.log("Create Requirement on Home page is displayed")
+        console.log("clicked on Home")
+        await (await checkHistoryPage.allow).waitForDisplayed({ timeout: 10000 })
+        await (await checkHistoryPage.allow).click()
+        await (await checkHistoryPage.allow).click()
+        console.log("Home page displayed")
     });
 });
+
