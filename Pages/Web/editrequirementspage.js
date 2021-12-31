@@ -1,4 +1,5 @@
 class EditrequiRementspage {
+    get buy() { return $('//a[text()="Buy"]') }
     get requirements() { return $('(//a[text()="My Requirements"])[1]') }
     get count() { return $('//p[@class="r-MuiTypography-root r-r6 r-MuiTypography-body1 r-MuiTypography-gutterBottom"]') }
     get score() { return $('(//div[@class="r-MuiTypography-root r-MuiTypography-caption r-MuiTypography-colorTextSecondary"])[1]') }
@@ -26,12 +27,12 @@ class EditrequiRementspage {
     get entLocation() { return $('//input[@id="react-select-3-input"]') }
     get selectLocation() { return $('//div[text()="Mumbai, Maharashtra, India"]') }
     get nextButton() { return $('//span[text()="Next "]') }
-    get submitAndView() { return $('//span[text()="Submit & View All Matches "]') }
+    get submitAndView() { return $('//span[text()="Submit"]') }
     get requirement() { return $('//span[text()=" View all Requirements "]') }
     get rLocation() { return $('(//div[@class="r-MuiTypography-root r-MuiTypography-body1"])[6]') }
-    get newColor() { return $('//input[@value="red"]') }
+    get newColor() { return $('(//input[@class="s-s103"])[3]') }
     get exVehicle() { return $('//p[text()="Do You Wish to Exchange Your Vehicle"]') }
-    get newExtColor() { return $('//div[@class="r-MuiBox-root r-r136"]') }
+    get newExtColor() { return $('(//div[@class="r-MuiTypography-root r-MuiTypography-body1"])[4]') }
     get insurance() { return $('(//span[@class="s-MuiIconButton-label"])[2]') }
     get loan() { return $('(//span[@class="s-MuiIconButton-label"])[3]') }
     get RCTransfer() { return $('(//span[@class="s-MuiIconButton-label"])[4]') }
@@ -82,8 +83,22 @@ class EditrequiRementspage {
     get myAccount() { return $('//a[text()="My Account"]') }
     get Myrequirements() { return $('//a[text()="My Requirements"]') }
     
-async goBackTillLocation() {
-    await browser.pause(2000)
+    async loginAsBuyer(){
+    //   try{
+    //   await (await $('(//div[@class="modal-body"])[23]')).waitForDisplayed({timeout:15000,timeoutMsg:"Popup not displayed"});
+    //   await (await $('#detectMyLocation')).click();}
+    //   catch{ }
+      await(await $('.user-login-global')).click();
+      await(await $("//a[@class='btn btn-primary btn-block']")).click();
+      await(await $("#loginWithEmail")).click();
+      await(await $("#email")).setValue("mahajanhemant.hym@gmail.com");
+      await(await $("#password")).setValue("Hemant@123");
+      await(await $("#continueEmail")).click();
+      // await(await $("//div[text()='Welcome, Vtest1 !']")).waitForDisplayed({timeout:10000});
+      console.log('User Successfully login to application with valid credentials')    
+    }
+    async goBackTillLocation() {
+        await browser.pause(2000)
         await (await this.backBtn).click()
         await (await this.lastStepToGo).waitForExist({ timeout: 10000 })
         await (await this.backBtn).click()
@@ -110,10 +125,11 @@ async goBackTillLocation() {
         await (await this.requirement).click()
     }
     async goBackTillColor() {
+        await (await this.backBtn).waitForExist({ timeout: 5000 })
         await (await this.backBtn).click()
-        await (await this.lastStepToGo).waitForDisplayed({ timeout: 10000 })
         await (await this.backBtn).click()
-        await (await this.dreamVehicle).waitForExist({ timeout: 10000 })
+        await (await this.backBtn).click()
+        await (await this.backBtn).click()
     }
     async goBackTillDoYouAlsoNeed() {
         await browser.pause(2000)
@@ -160,7 +176,10 @@ async goBackTillLocation() {
         await (await this.submitAndView).click()
     }
     async CreateRequiRement() {
-        await (await this.addR).click()
+        await(await $('//a[text()="Buy"]')).click();
+        await(await $('(//figure[@class="d-cursor-pointer d-position-relative"])[1]')).click();
+        await(await $('//span[text()=" + Add New Requirement"]')).click();
+        // await (await this.addR).click()
         await (await this.enterlocation).setValue("Pune")
         await (await this.selectcity).click()
         await (await this.selectcar).click()
