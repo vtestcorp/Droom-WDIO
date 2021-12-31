@@ -263,9 +263,9 @@ it("TC_10 Verify the Back Button Functionality on Personal Information page of I
     });
 
 
-   /* it("TC_11 Verify the Next Button Functionality on Personal Information page of Insurance", async () => {
-        //await browser.back()
-        await Base.loginAsBuyer()
+    it("TC_11 Verify the Next Button Functionality on Personal Information page of Insurance", async () => {
+        await browser.back()
+       // await Base.loginAsBuyer()
         browser.url('/insurance')
         console.log("User Navigate to Insurance Page")
         console.log(await browser.getUrl())
@@ -297,7 +297,8 @@ it("TC_10 Verify the Back Button Functionality on Personal Information page of I
 
    it("TC_12 Verify the fields on Personal Information", async () => {
         await browser.back()
-     //   browser.url('/insurance')
+        //await Base.loginAsBuyer()
+        browser.url('/insurance')
         console.log("After click on Get Insurance Tab User Navigate to Insurance Page")
         console.log(await browser.getUrl())
         expect(browser).toHaveTitle("Car Insurance Online – Buy Bike & Scooter Insurance at Best Price | Droom")
@@ -324,11 +325,8 @@ it("TC_10 Verify the Back Button Functionality on Personal Information page of I
     });
     it("TC_13 Verify the functionality of Select a vehicle Type", async () => {
         await browser.back()
-        expect(await VehicleInsurance.insurance).toBeDisplayed()
-        console.log(await (await VehicleInsurance.insurance).isClickable())
-        console.log("Get Insurance is Clickable")
-       await (await VehicleInsurance.insurance).click()
-      // browser.url('/insurance')
+         //  await Base.loginAsBuyer()
+        browser.url('/insurance')
         await (await VehicleInsurance.NewCondition).waitForDisplayed({ timeout: 5000 })
         expect(await VehicleInsurance.NewCondition).toBeDisplayed()
         console.log("Condition of Vehicle New Displayed")
@@ -349,5 +347,5 @@ it("TC_10 Verify the Back Button Functionality on Personal Information page of I
         console.log(await (await VehicleInsurance.Scooter).isClickable())
         await(await VehicleInsurance.Scooter).click()
         console.log("User able to Click on Scooter")
-    });*/
+    });
 });
