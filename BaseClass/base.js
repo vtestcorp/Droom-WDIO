@@ -13,23 +13,25 @@ class Base
  get afterLoginPopup(){return this.getByResourceId("in.droom:id/imgViewForClose")}
  //get userInfo(){return this.getByResourceId("in.droom:id/user_info_flow")}
  get userInfo() {return this.getByResourceId("in.droom:id/textview_useremail")}
- async loginAsBuyer() {
-  try {
-    await (await $('.jss1')).waitForDisplayed({ timeout: 20000, timeoutMsg: "Popup not displayed" });
-    await (await $('(//button[@class="close em-show-later"])[2]')).click();
-  }
-  catch { }
-    await(await $('[class="ico global-web global-web-user"]')).click();
-    await (await $('//a[@href="https://qa2.droom.in/user/login"]')).click();
-    await(await $("#loginWithEmail")).click();
-    await(await $("#email")).setValue("vtest1@gmail.com");
-    await(await $("#password")).click();
-    await(await $("#password")).setValue("Vtest@123");
-    //await (await $("#continueBtn")).waitForExist({ timeout: 10000 })
-    await(await $("#continueEmail")).click();
-    await(await $("div[class='profile'] img[alt='Seller image']")).waitForDisplayed({timeout:10000});
-    await browser.pause(2000);      
-  }
+ async loginAsBuyer()
+ {
+   try{
+   await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+   await (await $('(//button[@class="close em-show-later"])[2]')).click();}
+   catch{ }
+   await(await $('#user_details')).click();
+   await(await $("a[class='btn btn-primary btn-block']")).click();
+   await(await $('(//button[@id="loginWithEmail"])')).click();
+   //await(await $("#email")).setValue("vtest1@gmail.com");
+  await(await $("#email")).setValue("mahajanhemant.hym@gmail.com");
+   //await(await $(".d-letter-spacing-1[href='#viaPassword']")).click();
+   //await(await $("#password")).setValue("Vtest@123");
+   await(await $("#password")).setValue("Hemant@123");
+   await(await $('(//button[@id="continueEmail"])')).click();
+   //await(await $("input[value='Login']")).click();
+   await(await $("div[class='profile'] img[alt='Seller image']")).waitForDisplayed({timeout:10000});
+   await browser.pause(2000);      
+ }
     async getByResourceId(id)
     {
       const selector = 'new UiSelector().resourceId("'+id+'")'
