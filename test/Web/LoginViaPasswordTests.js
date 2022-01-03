@@ -1,4 +1,5 @@
 const LoginWithPasswordPage = require('../../Pages/Web/LoginViaPasswordPage')
+
 describe("Login Via Password", () => {
    it("TC_01 Login With Valid Username and Valid Password", async () => {
       try {
@@ -43,6 +44,7 @@ describe("Login Via Password", () => {
          await (await LoginWithPasswordPage.popup).waitForDisplayed({ timeout: 20000, timeoutMsg: "Popup not displayed" })
          await (await LoginWithPasswordPage.popupclose).click()
       }
+      
       catch { }
       await LoginWithPasswordPage.loginViaPassword()
       await LoginWithPasswordPage.loginwithInValidCredentials()

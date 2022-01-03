@@ -5,7 +5,8 @@ describe('ECO Inspection', () => {
         try{
             await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
             await (await $('(//button[@class="close em-show-later"])[2]')).click();}
-            catch{ }
+        catch{ }
+        
         await ECO_InspectionPage.traverseToECO()
         expect(await ECO_InspectionPage.Seller).toBeDisplayed()
         console.log("Seller option is availbale on page")

@@ -1,4 +1,5 @@
 const Base = require('../../BaseClass/base')
+
 class ECO {
     get shop_by_category() { return $('//span[text()="Categories"]') }
     get Certification_Services() { return $('//span[contains(text(),"Certification Services")]') }

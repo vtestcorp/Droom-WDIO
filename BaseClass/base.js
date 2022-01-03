@@ -18,6 +18,7 @@ class Base
     await (await $('.jss1')).waitForDisplayed({ timeout: 20000, timeoutMsg: "Popup not displayed" });
     await (await $('(//button[@class="close em-show-later"])[2]')).click();
   }
+  
   catch { }
     await(await $('[class="ico global-web global-web-user"]')).click();
     await (await $('//a[@href="https://qa2.droom.in/user/login"]')).click();

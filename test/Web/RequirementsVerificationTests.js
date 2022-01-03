@@ -1,6 +1,5 @@
 const base = require("../../BaseClass/base");
 const requirementsverificationpage = require("../../Pages/Web/RequirementsVerificationPage");
-
 describe('Requirements page verification', async () => {
     it('Tc_01 Validate all requirements created are displayed', async () => {
         await base.loginAsBuyer()

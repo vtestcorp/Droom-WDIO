@@ -15,4 +15,5 @@ class RequirementsPageVerification
     get Body() { return $('(//div[text()="Body Type"])[1]') }
     get payment() { return $('(//span[text()="Unlock Fee Payment Pending"])[1]') }
 }
+
 module.exports = new RequirementsPageVerification();
