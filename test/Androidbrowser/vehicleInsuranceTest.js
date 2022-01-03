@@ -7,7 +7,7 @@ describe('Check History', async () => {
         await driver.launchApp()
     });
     it('TC_01 Verify the Functionality of Get Insurance', async () => {
-        await vehicleInsurancePage.chromeConditions()
+        //await vehicleInsurancePage.chromeConditions()
 
         browser.url('/insurance')
         console.log("insurance page displayed")
@@ -26,7 +26,7 @@ describe('Check History', async () => {
         console.log("Scooter option displayed")
     });
     it('TC_02 Verify the process to Apply for Vehicle Insurance in 3 Easy Steps', async () => {
-        await vehicleInsurancePage.chromeConditions()
+        //await vehicleInsurancePage.chromeConditions()
         browser.url('/insurance')
         console.log("insurance page displayed")
         expect(await vehicleInsurancePage.vehicle_Information).toBeDisplayed()
@@ -37,7 +37,7 @@ describe('Check History', async () => {
         console.log("Insurance Information displayed")
     });
     it('TC_03 Verify Select vehicle Condition -Used functionality', async () => {
-        await vehicleInsurancePage.chromeConditions()
+        //await vehicleInsurancePage.chromeConditions()
         browser.url('/insurance')
         console.log("insurance page displayed")
         expect(await vehicleInsurancePage.vehicle_Information).toBeDisplayed()
@@ -50,6 +50,19 @@ describe('Check History', async () => {
         expect(await vehicleInsurancePage.used_condition).toBeDisplayed()
         console.log("used button isSelected")
         await vehicleInsurancePage.switchToNativeApp()
-    });
+    });/*
+     it('TC_04 Verify "Select vehicle Condition -New " functionality', async () => {
+        browser.url('/insurance')
+        console.log("insurance page displayed")
+        expect(await vehicleInsurancePage.vehicle_Information).toBeDisplayed()
+        console.log("Vehicle Information displayed")
+        expect(await vehicleInsurancePage.personal_Information).toBeDisplayed()
+        console.log("Personal Information displayed")
+        expect(await vehicleInsurancePage.insurance_Information).toBeDisplayed()
+        console.log("Insurance Information displayed")
+        expect(await vehicleInsurancePage.new_condition).toBeDisplayed()
+        console.log("Vehicle condition button New is displayed")
 
+});
+*/
 });
