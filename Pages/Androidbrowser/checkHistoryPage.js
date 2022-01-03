@@ -45,14 +45,34 @@ class checkHistory {
     get His() { return base.getByContDesc('Add Miles') }
     get per() { return base.getByTextContains('Premium Certificate') }
     get Check_any_Vehicle() { return base.getByTextContains('Check any Vehicle') }
-    get vehicle_reg_no() { return base.getByContDesc('vehicle_reg_no') }
-    get gold() { return base.getByContDesc('gold') }
-    get platinum() { return base.getByContDesc('platinum') }
+    get vehicle_reg_no() { return base.getByResourceId('vehicle_reg_no')}
+    get gold() { return base.getByResourceId('gold') }
+    get platinum() { return base.getByResourceId('platinum') }
     get Sample_Report() { return base.getByText('View Sample Report') }
     get home() { return base.getByText('Home') }
+    get moreOptions(){return base.getByText("More actions")}
+    get menu (){return base.getByText("Menu")}
+    get history(){return base.getByText("History")}
+    get heading(){return base.getByText("Check any Vehicle's History Online!")}
+    get goldCertificate(){return base.getByText("Gold Certificate")}
+    get platinumCertificate(){return base.getByText("Platinum Certificate")}
+    get createReq(){return base. getByContDesc("Create Requirement")}
     
+async traverseToHistory() {
+        console.log("Traversing to Check Hstory")  
+        await (await this.menu).waitForExist({ timeout: 50000 })
+        await browser.pause(9000)
+        await (await this.menu).click()
+        console.log("Clicked on Menu")
+        await browser.pause(3000)
+        console.log("Clicked on Menu")
+        await base.swipeUp()
+        await (await this.history).click()
+        console.log("Clicked on History")
+        await browser.pause(3000)
+}
+        async chromeConditions() {
 
-    async chromeConditions() {
         await (await this.acceptcontinue).click()
         await (await this.next).click()
         await (await this.yes).click()

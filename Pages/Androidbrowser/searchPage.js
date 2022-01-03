@@ -1,6 +1,5 @@
 const base = require("../../BaseClass/base");
 class Search {
-    get acceptcontinue() { return base.getByText('Accept & continue') }
     get searchBox(){return base.getByResourceId('main_search')}
     get searchBoxHeader (){return base.getByResourceId('header_search_box')}
     get helpPopUp(){return base.getByText("x")}
@@ -12,8 +11,9 @@ class Search {
     get tharResult(){return base.getByText("Mahindra Thar AX Optional 4 STR Convertible Diesel MT BS6 2020")}
     get activaResult(){return base.getByText("Honda Activa 3G 110cc 2017")}
     get bikeVistaLink(){return base.getByText("Bike")}
-    get vistaLinkResult(){return base.getByText("Bikes For Sale - Bike Dekho Droom Par")}
-    get sort(){return base.getByText("Sort")}
+    get countInfo(){return base.getByText("Read More")}
+    get vistaLinkResult(){return base.getByText("breadcrumb")}
+    get sort(){return base.getByText(" Sort")}
     get sortingLable(){return base.getByResourceId("sortingModalLabel")}
     get mostRelevent(){return base.getByText("Most Relevant")}
     get nearMe(){return base.getByText("Near Me")}
@@ -28,7 +28,7 @@ class Search {
     get sortResult1(){return base.getByText("Honda Activa 3G 110cc 2016")}
     get sortResult2(){return base.getByText("Honda Activa 110cc 2017")}
     get hondaResult(){return base.getByText("Honda City 1.5 V MT 2019")}
-    get filter(){return base.getByText("Filters")}
+    get filter(){return base.getByText(" Filters")}
     get locationFilter(){return base.getByText("Location")}
     get PriceFilter(){return base.getByText("Price Range")}
     get modelFilter(){return base.getByText("Model")}
@@ -43,6 +43,8 @@ class Search {
     get sellerRatingFilter(){return base.getByText("Seller Ratings")}
     get resetBtn(){return base.getByText("Reset")}
     get applyFilter(){return base.getByText("Apply")}
+    get filterResult(){return base.getByText("Honda City E i-DTEC 2015")}
+    get droomLogo(){return base.getByText("Droom Logo")}
     async loginAsBuyer() {
         await (await this.allow).waitForDisplayed({ timeout: 60000 })
         await (await this.allow).click()
@@ -54,7 +56,7 @@ class Search {
         await (await this.loginPassword).click()
         await (await this.password).setValue("Vtest@123")
         await (await this.login).click()
-        await (await this.manage_buying).waitForDisplayed({ timeout: 60000 })
+       await (await this.manage_buying).waitForDisplayed({ timeout: 60000 })
     }
 }
 module.exports = new Search();
