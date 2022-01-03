@@ -13,9 +13,9 @@ class VehicleInsurance {
    get nextBtn() { return $('(//button[text()="Next"])[1]') }
    get selectModel() { return $('(//a[@class="d-text-black"])[1]') }
    get heading() { return $('//h1[text()="Get the Best Insurance Cover for your Vehicle"]') }
-   get name() { return $('(//input[@class="form-control floating-control"])[1]') }
-   get email() { return $('//input[@name="email"]') }
-   get phone() { return $('//input[@name="phone"]') }
+   get name() { return $('//input[@name="first_name"]') }
+   get email() { return $('(//input[@name="email"])[2]') }
+   get phone() { return $('(//input[@name="phone"])[2]') }
    get nextButton() { return $('(//button[text()="Next"])[2]') }
    get dropDown() { return $('//span[@class="d-text-blue text-left d-display-inline-block"]') }
    get makedropDown() { return $('//select[@name="make"]') }
@@ -26,16 +26,13 @@ class VehicleInsurance {
    get yearValue() { return $('//option[text()="2003"]') }
    get trimDropDown() { return $('//select[@name="trim"]') }
    get trimValue() { return $('//option[text()="LS"]') }
-   get Bike() { return $('//label[normalize-space()="Bike"]') }
-   get Scooter() { return $('//label[normalize-space()="Scooter"]') }
+   get Bike() { return $('(//label[normalize-space()="Bike"])[2]') }
+   get Scooter() { return $('(//label[normalize-space()="Scooter"])[2]') }
    get registrationNo() { return $('//input[@id="rcNumber"]') }
    get vehicleDetails() { return $('//input[@name="product_title"]') }
    get nextBtn() { return $('(//button[text()="Next"])[1]') }
    get selectModel() { return $('(//a[@class="d-text-black"])[1]') }
    get heading() { return $('//h1[text()="Get the Best Insurance Cover for your Vehicle"]') }
-   get name() { return $('//input[@name="first_name"]') }
-   get email() { return $('//input[@name="email"]') }
-   get phone() { return $('//input[@name="phone"]') }
    get nextButton() { return $('(//button[text()="Next"])[2]') }
    get nextButton() { return $('(//button[text()="Next"])[2]') }
    get PhoneVerification() { return $('//h2[normalize-space()="Phone Number Verification"]') }
@@ -56,13 +53,20 @@ class VehicleInsurance {
       await (await this.nextBtn).click()
       console.log("User Click On next Button")
       expect(await this.personalInformation).toBeDisplayed()
-      console.log("Personal Information Tab Dispalyed")
+      console.log("Personal Information Tab Displayed")
+      //
+      //await (await this.name).waitForDisplayed({ timeout: 5000 })
+     //await (await this.name).scrollIntoView()
+     await browser.pause(2000)
       await (await this.name).clearValue()
       await (await this.name).setValue("Xyz")
+     // await browser.pause(2000)
       await (await this.email).clearValue()
       await (await this.email).setValue("xyz@gmail.com")
+      await browser.pause(2000)
       await (await this.phone).clearValue()
       await (await this.phone).setValue("1234567890")
+    //  console.log(await (await this.name).getText())
       await (await this.nextButton).waitForDisplayed({ timeout: 5000 })
    }
 }
