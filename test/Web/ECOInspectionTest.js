@@ -6,7 +6,7 @@ describe('ECO Inspection', () => {
             await (await $('(//div[@class="modal-body"])[23]')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
             await (await ECO_InspectionPage.detectLocation).click()
             }
-            
+   
         catch{ }
         await ECO_InspectionPage.traverseToECO()
         expect(await ECO_InspectionPage.Seller).toBeDisplayed()
