@@ -3,7 +3,6 @@ const editrequirementspage = require("../../Pages/Web/editrequirementspage");
 
 describe('Edit Requirements', async () => {
     it('Tc_04 Verify user should be able to edit color', async () => {
-        await browser.url('https://droom.in/')
         await editrequirementspage.loginAsBuyer()
         await(await $('(//a[text()="My Requirements"])[2]')).click();
         console.log("Before Edit color:")

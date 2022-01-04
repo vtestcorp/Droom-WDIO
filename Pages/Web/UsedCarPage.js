@@ -90,7 +90,20 @@ class Usedcar {
     get exchangeVehicle() { return $('//p[text()="Do You Wish to Exchange Your Vehicle"]') }
     get goToBack() { return $('//button[@class="s-MuiButtonBase-root s-MuiIconButton-root"]')}
     
-    
+    async loginAsBuyer(){
+        //   try{
+        //   await (await $('(//div[@class="modal-body"])[23]')).waitForDisplayed({timeout:15000,timeoutMsg:"Popup not displayed"});
+        //   await (await $('#detectMyLocation')).click();}
+        //   catch{ }
+          await(await $('.user-login-global')).click();
+          await(await $("//a[@class='btn btn-primary btn-block']")).click();
+          await(await $("#loginWithEmail")).click();
+          await(await $("#email")).setValue("mahajanhemant.hym@gmail.com");
+          await(await $("#password")).setValue("Hemant@123");
+          await(await $("#continueEmail")).click();
+          // await(await $("//div[text()='Welcome, Vtest1 !']")).waitForDisplayed({timeout:10000});
+          console.log('User Successfully login to application with valid credentials')    
+        }
     
     async submitRequirement() {
         await (await this.buy).click()
@@ -129,8 +142,8 @@ class Usedcar {
     }
     async selectCar() {
         await (await this.searchCar).setValue("Swift")
-        await (await this.selectSwift).click()
-        // await (await this.selectSwiftN).click()
+        // await (await this.selectSwift).click()
+        await (await this.selectSwiftN).click()
     }
     async deleteCarRecord() {
         await (await this.closeRecord).click()
