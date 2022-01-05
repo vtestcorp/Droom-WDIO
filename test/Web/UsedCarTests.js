@@ -24,12 +24,12 @@ describe('Used Car', async () => {
     expect(await UsedCarPage.nextButton).toBeDisplayed()
     console.log('New button displayed')
   });
-  it('Tc_03 Verify error message without entering location', async () => {
-    await UsedCarPage.clickOnNext()
-    expect(UsedCarPage.errorMsg).toBeDisplayed()
-    await UsedCarPage.selectCity()
-    console.log('Error message Displayed')
-  });
+  // it('Tc_03 Verify error message without entering location', async () => {
+  //   await UsedCarPage.clickOnNext()
+  //   expect(UsedCarPage.errorMsg).toBeDisplayed()
+  //   await UsedCarPage.selectCity()
+  //   console.log('Error message Displayed')
+  // });
   it('Tc_02 Verify user able to select location using location option', async () => {
     await UsedCarPage.cLocation()
     expect(await UsedCarPage.currentLocation).toBeDisplayed()

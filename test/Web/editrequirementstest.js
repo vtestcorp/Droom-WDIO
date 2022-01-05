@@ -10,7 +10,7 @@ describe('Edit Requirements', async () => {
         console.log(await (await editrequirementspage.newExtColor).getText())
         await (await editrequirementspage.editBtn).waitForExist({timeout : 2000})
         await (await editrequirementspage.editBtn).click()
-        // await browser.pause({timeout : 2000})
+        await browser.pause('2000')
         await editrequirementspage.goBackTillColor()
         await (await editrequirementspage.newColor).click()
         await editrequirementspage.clickOnNext()

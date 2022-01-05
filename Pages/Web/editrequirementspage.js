@@ -30,7 +30,7 @@ class EditrequiRementspage {
     get submitAndView() { return $('//span[text()="Submit"]') }
     get requirement() { return $('//span[text()=" View all Requirements "]') }
     get rLocation() { return $('(//div[@class="r-MuiTypography-root r-MuiTypography-body1"])[6]') }
-    get newColor() { return $('(//input[@class="s-s103"])[3]') }
+    get newColor() { return $('(//input[@class="s-s103"])[2]') }
     get exVehicle() { return $('//p[text()="Do You Wish to Exchange Your Vehicle"]') }
     get newExtColor() { return $('(//div[@class="r-MuiTypography-root r-MuiTypography-body1"])[4]') }
     get insurance() { return $('(//span[@class="s-MuiIconButton-label"])[2]') }
@@ -126,6 +126,7 @@ class EditrequiRementspage {
     }
     async goBackTillColor() {
         await (await this.backBtn).waitForExist({ timeout: 5000 })
+        await (await this.backBtn).click()
         await (await this.backBtn).click()
         await (await this.backBtn).click()
         await (await this.backBtn).click()
