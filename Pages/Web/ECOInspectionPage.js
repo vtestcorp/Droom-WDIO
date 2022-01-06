@@ -1,4 +1,5 @@
 const Base = require('../../BaseClass/base')
+
 class ECO {
     get detectLocation() { return $('#detectMyLocation')}
     get shop_by_category() { return $('#nav_category_button') }
