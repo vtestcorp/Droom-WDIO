@@ -1,6 +1,7 @@
 const Base = require('../../BaseClass/base')
 const ECO_InspectionPage = require('../../Pages/Web/ECOInspectionPage')
 describe('ECO Inspection', () => {
+
   it('TC_01 Verify the Functionaliy of Buyer on ECO', async () => {
         try{
             await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
@@ -8,13 +9,13 @@ describe('ECO Inspection', () => {
             catch{ }
         await ECO_InspectionPage.traverseToECO()
         expect(await ECO_InspectionPage.Seller).toBeDisplayed()
-        console.log("Seller option is availbale on page")
+        console.log("Seller option is available on page")
         expect(await ECO_InspectionPage.Buyer).toBeDisplayed()
-        console.log("Buyer option is availbale on page")
+        console.log("Buyer option is available on page")
         expect(await ECO_InspectionPage.Technician).toBeDisplayed()
         console.log("Technician option is shown on the page")
         await (await ECO_InspectionPage.Buyer).click()
-        console.log("Clicked on Buyer")
+        console.log("Clicked on Buyer option")
         expect(await ECO_InspectionPage.Check_Repair_Estimate).toBeDisplayed()
         console.log("Repair Estimate option is shown")
         await (await ECO_InspectionPage.Check_Repair_Estimate).waitForEnabled({ timeout: 1500 })
@@ -50,6 +51,7 @@ describe('ECO Inspection', () => {
         await browser.back()
         await ECO_InspectionPage.traverseToECO()
         await (await ECO_InspectionPage.Seller).click()
+        console.log("CLicked on Seller")
         expect(ECO_InspectionPage.RegiAsVendor).toBeDisplayed()
         console.log("Register As a Vendor is Displayed")
         await (await ECO_InspectionPage.RegiAsVendor).waitForEnabled({ timeout: 1500 })
@@ -58,6 +60,7 @@ describe('ECO Inspection', () => {
         expect(await ECO_InspectionPage.features).toBeDisplayed()
         console.log("After click on Check Repair Estimate Feature tab is shown")
         await (await ECO_InspectionPage.features).click()
+        console.log("Clicked on Features")
         expect(await ECO_InspectionPage.features_FourWheelers).toBeDisplayed()
         console.log("ECO inspection Page is Displayed for Four wheelers")
         expect(await ECO_InspectionPage.chechPoint_FourWheeler).toBeDisplayed()
