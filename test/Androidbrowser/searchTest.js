@@ -5,7 +5,7 @@ describe('Search', async () => {
     await driver.closeApp()
     await driver.launchApp()
     });
-   it('TC_01 Verify Search functionality on Main header', async () => {
+  it('TC_01 Verify Search functionality on Main header', async () => {
     await browser.url('/')
     var searchItem="creta"  
     expect(searchPage.searchBox).toBeDisplayed()
@@ -24,14 +24,14 @@ describe('Search', async () => {
     it('TC_02 Verify Search functionality on Vista Link', async () => {
     await browser.url('/')
     await base.swipeUp()
-    await base.scrollToExactText("Shop By Category")
     console.log("Scrolling to the Vista Link")
     expect(await searchPage.bikeVistaLink).toBeDisplayed()
     console.log("Vista link of Bikes is Displayed")
+     await(await searchPage.bikeVistaLink).waitForDisplayed({timeout:30000})
     await (await searchPage.bikeVistaLink).click()
     console.log("Clicked On Vista Link of Super Cars")
+    await browser.pause(3000)
     expect(await searchPage.vistaLinkResult).toBeDisplayed()
-    console.log("After Ckick on Vista Link of Bike Result displayed as : "+await(await searchPage.vistaLinkResult).getText())
     console.log("User able to navigate to required page by clicking related Vista Links")
     });
     it('TC_03 Verify the Popular Search Functionality from the Home Page', async () => {  
@@ -42,25 +42,30 @@ describe('Search', async () => {
     console.log("Search Box is Displayed")
     await (await searchPage.searchBox).click()
     console.log("Clicked On Search Box")
-    await(await searchPage.trendingSearch).waitForDisplayed({timeout:10000})
+    await browser.pause(10000)
+    expect(await searchPage.trendingSearch).toBeDisplayed()
     console.log("Trending Searches is Displayed")
-    await expect(searchPage.mainSearchResult).toBeDisplayed()
+    expect(searchPage.mainSearchResult).toBeDisplayed()
     console.log("List of Vehicles Displayed under the Trending Searches")
     });
     it('TC_04 Verify the Auto-select Functionality of search on Home Page', async () => {
     await browser.url('/')
     var searchItem="Thar"  
     expect(searchPage.searchBox).toBeDisplayed()
+    console.log("Search Box is displayed")
     await (await searchPage.searchBox).click()
+    console.log("CLicked on Search Box")
     await (await searchPage.searchBox).setValue(searchItem)
     console.log("Searching for "+searchItem)
     await driver.longPressKeyCode(66, undefined, undefined)
     expect(await searchPage.tharResult).toBeDisplayed()
+    console.log("Result get displayed")
     expect(await searchPage.tharResult).toHaveTextContaining(searchItem)
     console.log("Using Seacth box User is able to search required items")
     console.log("First element displayed as : "+await(await searchPage.tharResult).getText())
     });
-    it('TC_05 Verify the Sorting  Functinality of Search', async () => {
+    
+    it('TC_05 Verify the Sorting Functinality of Search', async () => {
     await browser.url('/')
     var searchItem="Activa"
     expect(searchPage.searchBox).toBeDisplayed()
@@ -73,6 +78,7 @@ describe('Search', async () => {
     console.log("Using Seacth box User is able to search required items")
     expect(await searchPage.sort).toBeDisplayed()
     console.log("Sort opton is availbale on Page")
+    //await(await searchPage.Sort).waitForClickable({ timeout: 3000 })
     await(await searchPage.sort).click()
     console.log("Clicked On Sort Option")
     expect(await searchPage.sortingLable).toBeDisplayed()
@@ -96,6 +102,7 @@ describe('Search', async () => {
     console.log(await (await searchPage.sortResultNew).getText())
     console.log("Activa list is displayed according to applied Filter")
     });
+    
     it('TC 06 Verify the Filter Functionality', async () => {
     await browser.url('/')
     var searchItem="Honda City"
@@ -109,13 +116,14 @@ describe('Search', async () => {
     console.log("Using Seacth box User is able to search required items")
     expect(await searchPage.filter).toBeDisplayed()
     console.log("Filter opton is availbale on Page")
+    //await(await searchPage.filter).waitForClickable({ timeout: 3000 })
     await(await searchPage.filter).click()
     console.log("Clicked On Filter Option")
     console.log("Available Filter Options are-->")
     expect(await searchPage.locationFilter).toBeDisplayed()
     console.log(await(await searchPage.locationFilter).getText())
-    expect(await searchPage.PriceFilter).toBeDisplayed()
-    console.log(await(await searchPage.PriceFilter).getText())
+    //expect(await searchPage.PriceFilter).toBeDisplayed()
+    //console.log(await(await searchPage.PriceFilter).getText())
     expect(await searchPage.modelFilter).toBeDisplayed()
     console.log(await(await searchPage.modelFilter).getText())
     expect(await searchPage.yearFilter).toBeDisplayed()
@@ -132,16 +140,12 @@ describe('Search', async () => {
     console.log(await(await searchPage.warrantyFilter).getText())
     expect(await searchPage.HistoryFilter).toBeDisplayed()
     console.log(await(await searchPage.HistoryFilter).getText())
-    expect(await searchPage.videoFilter).toBeDisplayed()
-    console.log(await(await searchPage.videoFilter).getText())
-    expect(await searchPage.sellerRatingFilter).toBeDisplayed()
-    console.log(await(await searchPage.sellerRatingFilter).getText())
     await(await searchPage.makeFilter).click()
     console.log("Clicked on Make filter")
     await(await searchPage.applyFilter).click()
     console.log("Clicked on Apply Filter Button")
-    expect(await searchPage.hondaResult).toBeDisplayed()
-    console.log(await(await searchPage.hondaResult).getText())
+    expect(await searchPage.filterResult).toBeDisplayed()
+    console.log(await(await searchPage.filterResult).getText())
     console.log("Expected result shown using applied Filter")
     });
     it('TC_08 Verify the functionality of recent Search', async () => {

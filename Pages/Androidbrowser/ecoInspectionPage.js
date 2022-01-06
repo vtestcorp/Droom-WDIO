@@ -1,7 +1,7 @@
 const base = require("../../BaseClass/base");
 class Eco {
     get moreOptions(){return base.getByText("More actions")}
-    get menu (){return base.getByContDesc("Menu")}
+    get menu (){return base.getByText("Menu")}
     get inspection(){return base.getByText("Inspection")}
     get ECOHeading() { return base.getByText("Inspect Vehicle Within Few Minutes")}
     get Buyer() { return base.getByText('Buyer') }
@@ -55,11 +55,39 @@ class Eco {
     get videoHeading(){return base.getByText("Droom ECO TVC - Gaadi ki asli condition (30s)")}
     get closeVideo(){return base.getByText("Close")}
     get helpPopUp(){return base.getByText("x")}
+    get seller_RegiAsTechnician(){return base.getByResourceId("register-tech-tab")}
+    get seller_RegiAsVendor(){return base.getByResourceId("register-vender-tab")}
+    get createUrAccount(){return base.getByText("CREATE YOUR ACCOUNT")}
+    get mandatoryNote(){return base.getByText("All Fields are Mandatory")}
+    get fName(){return base.getByText("Full Name")}
+    get emailId(){return base.getByText("Email ID")}
+    get PhoneNo(){return base.getByText("Phone Number")}
+    get pinCode(){return base.getByText("Pin Code")}
+    get cityName(){return base.getByText("Enter City Name")}
+    get state(){return base.getByText("State")}
+    get Building(){return base.getByText("Building/Area/Locality")}
+    get contactName(){return base.getByText("Contact Name")}
+    get contactEmail(){return base.getByText("Contact Email")}
+    get contactPhone(){return base.getByText("Contact Phone")}
+    get password(){return base.getByText("Password")}
+    get submitBtn(){return base.getByText("Submit")}
+    get flowForVendor(){return base.getByText("INSPECTION FLOW FOR VENDOR")}
+    get firstName(){return base.getByText("First Name")}
+    get lastName(){return base.getByText("Last Name")}
+    get emailId(){return base.getByText("Email ID")}
+    get stateTechnician(){return base.getByText("State")}
+    get area(){return base.getByText("Building/Area/Locality")}
+    get passwordTechnician(){return base.getByText("")}
+    get flowForTechnician(){return base,getByText("INSPECTION FLOW FOR TECHNICIAN")}
+
     async traverseToECO() {
         console.log("Traversing to ECO")  
+         await (await this.menu).waitForExist({ timeout: 50000 })
+         await browser.pause(3000)
         await (await this.menu).click()
+        await browser.pause(3000)
         console.log("Clicked on Menu")
-        await base.scrollToExactText("Inspection")
+        await base.swipeUp()
         await (await this.inspection).click()
         console.log("Clicked on ECO Inspection serive")
         expect(await this.ECOHeading).toBeDisplayed()
