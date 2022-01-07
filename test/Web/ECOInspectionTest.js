@@ -2,7 +2,7 @@ const Base = require('../../BaseClass/base')
 const ECO_InspectionPage = require('../../Pages/Web/ECOInspectionPage')
 describe('ECO Inspection', () => {
 
-    it('TC_01 Verify the Functionality of Buyer on ECO', async () =>) 
+    it('TC_01 Verify the Functionality of Buyer on ECO', async () =>{
         try{
             await (await $('(//div[@class="modal-body"])[23]')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
             await (await ECO_InspectionPage.detectLocation).click()
