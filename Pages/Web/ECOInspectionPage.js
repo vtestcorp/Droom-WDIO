@@ -68,6 +68,7 @@ class ECO {
     get stile(){return $('//div[@class="select2-result-label"]')}
     get Le(){return $('.select2-result-label')}
     get inspection(){return $('//a[normalize-space()="Get Inspection"]')}
+    
     async traverseToECO() {
         browser.url('https://qa2.droom.in/eco')
         await(await this.ECOHeading).waitForDisplayed()
@@ -75,6 +76,7 @@ class ECO {
         console.log(await (await this.ECOHeading).getText())
         expect(await this.ECOHeading).toHaveTextContaining("Inspect Vehicle")
     }
+
     async inputsToCheckEstimate() {
         await (await this.selectMake).click()
         console.log("Make selected")
