@@ -5,8 +5,8 @@ describe('ECOInspection', () => {
         await driver.closeApp()
         await driver.launchApp()
     });
- /*it('TC_01 Verify the Functionaliy of Buyer on ECO', async () => {
-        await browser.url('/user/login')   
+ it('TC_01 Verify the Functionaliy of Buyer on ECO', async () => {
+        await browser.url('/')   
         console.log("Traversing towards ECO Inspection")   
         await  ecoPage.traverseToECO()
         await (await ecoPage.Buyer).isDisplayed()
@@ -24,7 +24,7 @@ describe('ECOInspection', () => {
         await(await ecoPage.checkRepairEstiHeading).waitForDisplayed({timeout:15000})
         expect(await ecoPage.checkRepairEstiHeading).toBeDisplayed()
         console.log("Heading is displayed as : "+await(await ecoPage.checkRepairEstiHeading).getText())
-        await base.scrollToExactText("Select Make")
+        await Base.scrollToExactText("Select Make")
         expect(await ecoPage.make1).toBeDisplayed()
         console.log("Select Make is Displayed")
         await(await ecoPage.make1).click()
@@ -54,9 +54,83 @@ describe('ECOInspection', () => {
         await(await ecoPage.getEstimate).click()
         expect(await ecoPage.Estimated_RepairCost).isDisplayed()
         console.log(await(await ecoPage.Estimated_RepairCost).getText())
-    }); 
+    });  
+     it('TC_02 Verify the Functionality of Seller on ECO with Register as Vendor', async () => {
+        await browser.url('/')   
+        await  ecoPage.traverseToECO()
+        await (await ecoPage.Seller).click()
+        expect(ecoPage.RegiAsVendor).toBeDisplayed()
+        console.log("Register As a Vendor is Displayed")
+        await (await ecoPage.RegiAsVendor).click()
+        console.log("Clicked on Resister as Vendor")
+        expect(ecoPage.createUrAccount).toBeDisplayed()
+        console.log("Create Your Account heading is displayed")
+        expect(ecoPage.mandatoryNote).toBeDisplayed()
+        console.log("All fields are mandatory note is displayed")
+        expect(ecoPage.fName).toBeDisplayed()
+        console.log("Full Name fields shown")
+        expect(ecoPage.emailId).toBeDisplayed()
+        console.log("Email Id  fields shown")
+        expect(ecoPage.PhoneNo).toBeDisplayed()
+        console.log("Phone Number fields shown")
+        expect(ecoPage.pinCode).toBeDisplayed()
+        console.log(" Pin Code fields shown")
+        Base.swipeUp()
+        expect(ecoPage.cityName).toBeDisplayed()
+        console.log("City Name fields shown")
+        expect(ecoPage.state).toBeDisplayed()
+        console.log("State fields shown")
+        expect(ecoPage.Building).toBeDisplayed()
+        console.log("Building/Area/Locality fields shown")
+        expect(ecoPage.contactName).toBeDisplayed()
+        console.log("Contact Name Filed is Shown")
+        expect(ecoPage.contactEmail).toBeDisplayed()
+        console.log("Contact Email Filed is Shown")
+        Base.swipeUp()
+        expect(ecoPage.contactPhone).toBeDisplayed()
+        console.log("Contact Phone Filed is Shown")
+        expect(ecoPage.submitBtn).toBeDisplayed()
+        console.log("Submit Button  Filed is Shown")
+        expect(ecoPage.flowForVendor).toBeDisplayed()
+        console.log("Inspection flow for Vendor is Shown")        
+    })
+    it('TC_03:Verify the Functionality of Seller on ECO with Register as VeTechnician', async () => {
+        await browser.url('/') 
+        await ecoPage.traverseToECO()
+        await (await ecoPage.Seller).click()
+        expect(ecoPage.seller_RegiAsTechnician).toBeDisplayed()
+        console.log("Register As a Technician is Displayed")
+        await (await ecoPage.RegiAsTechnician).click()
+        console.log("Clicked on Resister as Technician")
+        expect(ecoPage.createUrAccount).toBeDisplayed()
+        console.log("Create Your Account heading is displayed")
+        expect(ecoPage.mandatoryNote).toBeDisplayed()
+        console.log("All fields are mandatory note is displayed")
+        expect(ecoPage.firstName).toBeDisplayed()
+        console.log("First Name field is Shown")
+        expect(ecoPage.lastName).toBeDisplayed()
+        console.log("Last Name field is Shown")
+        expect(ecoPage.emailId).toBeDisplayed()
+        console.log("Email ID field is Shown")
+        expect(ecoPage.phoneNo).toBeDisplayed()
+        console.log("Phone Number field is Shown")
+        expect(ecoPage.pinCode).toBeDisplayed()
+        console.log("Pin Code field is Shown")
+        expect(ecoPage.cityName).toBeDisplayed()
+        console.log("Enter City  Name field is Shown")
+        expect(ecoPage.stateTechnician).toBeDisplayed()
+        console.log("State field is Shown")
+        expect(ecoPage.area).toBeDisplayed()
+        console.log("Building/Area/Locality field is Shown")
+        expect(ecoPage.passwordTechnician).toBeDisplayed()
+        console.log("Password field is Shown")
+        expect(ecoPage.submitBtn).toBeDisplayed()
+        console.log(" Submit Button is Shown")
+        expect(ecoPage.flowForTechnician).toBeDisplayed()
+        console.log("INSPECTION FLOW FOR TECHNICIAN is Shown")
+    })
     it('TC_04 Verify Features on ECO for Four Wheelers', async () => {
-        await browser.url('/user/login')
+        await browser.url('/') 
         await  ecoPage.traverseToECO()
         await (await ecoPage.Seller).isDisplayed()
         console.log("Seller is availbale on ECO page")
@@ -78,7 +152,7 @@ describe('ECOInspection', () => {
         console.log("Inspection Checkpoints for Four Wheeler Displayed");
     });
     it('TC_05 Verify Features on ECO for Two Wheelers', async () => {
-       await browser.url('/user/login')
+       await browser.url('/') 
         expect(await ecoPage.featurs_TwoWheelers).toBeDisplayed()
         await(await ecoPage.featurs_TwoWheelers).click()
         console.log("Clicked on Two Wheelers");
@@ -89,7 +163,7 @@ describe('ECOInspection', () => {
         console.log(await (await ecoPage.tires_Wheels).getText())
     });
     it('TC_06 Verify Car Inspection Service on Eco', async () => {
-         await browser.url('/user/login')
+         await browser.url('/') 
         expect(await ecoPage.ECO_Offering).toBeDisplayed()
         console.log("ECO Offering Heading displayed for Cars and the Bikes")
         expect(await ecoPage.Cars).toBeDisplayed()
@@ -115,7 +189,7 @@ describe('ECOInspection', () => {
         console.log("Link to Download Sample report is displayed")
     });
     it('TC_07 Verify Bike Inspection  Service on ECO', async () => {
-        await browser.url('/user/login')
+       await browser.url('/') 
         await ecoPage.traverseToECO()
         expect(await ecoPage.ECO_Offering).toBeDisplayed()
         console.log("ECO Offering Heading displayed for Cars and the Bikes")
@@ -144,9 +218,9 @@ describe('ECOInspection', () => {
         console.log("Title Certificate Amount is Shown")
         console.log(await (await ecoPage.titleAmt).getText())
         console.log("Link to Download Sample report is displayed")
-    });*/
+    });
     it('TC_08 Verify scooter Inspection  Service on Eco', async () => {
-        await browser.url('/user/login')
+        await browser.url('/') 
         await ecoPage.traverseToECO()
         await (await ecoPage.seller).click()
         expect(ecoPage.RegiAsVendor).toBeDisplayed()
@@ -169,7 +243,7 @@ describe('ECOInspection', () => {
         console.log("Book Insoection Button is show")
     });
     it('TC_09 Verify Sign up functionality on ECO', async () => {
-        await browser.url('/user/login')
+        await browser.url('/') 
         await ecoPage.traverseToECO()
         await (await ecoPage.Seller).click()
         await browser.pause(3000)
@@ -187,7 +261,7 @@ describe('ECOInspection', () => {
         console.log(await (await signUpHeading).getText())     
     });
     it('TC_10 Verify Watch ECO TV functionality', async () => {
-        await browser.url('/user/login')
+        await browser.url('/') 
         await ecoPage.traverseToECO()
         await (await ecoPage.Technician).click()
         await browser.pause(3000)
