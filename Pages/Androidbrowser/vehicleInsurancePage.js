@@ -28,34 +28,31 @@ class vehicleInsurance {
    get trimValue() { return base.getByText('ATOM 3') }
    get selectCondition(){return base.getByText("Select Vehicle Condition")}
    get selectType(){return base.getByText("Select a Vehicle Type")} 
-get vehicleDetails(){return base.getByClass("android.widget.EditText")}
-get pickModel(){return base.getByText("Tata Indigo LS 2003")}
-get maruti(){return base.getByText('E.g Maruti Suzuki')}
+   get vehicleDetails(){return base.getByClass("android.widget.EditText")}
+  get pickModel(){return base.getByText("Tata Indigo LS 2003")}
+  get maruti(){return base.getByText('E.g Maruti Suzuki')}
 //get choiceforVehicle(){return base.getByText('Tata Indigo CS LS TDI 2008')}
 //get BackBtn1() { return base.getByResourceId('previous_btn') }
 //get name() { return base.getByResourceId('name') }
 //get email() { return base.getByResourceId('email') }
 //get phone() { return base.getByText('Contact Number') }
  //get nextBtn2() { return base.getByResourceId('nextBtn2') }
- get phnVerificationPage(){return base.getByText("Phone Number Verification")}
-get placeHolderFOrVehicle(){return $('//input[@name="product_title"]')}
- get BackBtn1() { return $('//button[normalize-space()="Back"]') }
+get phnVerificationPage(){return base.getByText("Phone Number Verification")}
+get placeHolderFOrVehicle(){return $('//input[@name="product_title"]')}get BackBtn1() { return $('//button[normalize-space()="Back"]') }
 get name() { return $('//input[@name="first_name"]') }
 get email() { return $('//input[@name="email"]') }
 get phone() { return $('//input[@name="phone"]') }
- get nextBtn2() { return $('//button[@id="nextBtn2"]') }
- get phnVerificationPage(){return base.getByText("Phone Number Verification")}
+get nextBtn2() { return $('//button[@id="nextBtn2"]') }
+get phnVerificationPage(){return base.getByText("Phone Number Verification")}
 
 async input(){
     await (await this.makeDropDown).click()
     //await(await this.makeValue).waitForExist({ timeout: 5000 })
     await (await this.makeValue).click()
     await (await this.modelDropdown).click()
-    //await(await this.modelValue).waitForExist({ timeout: 5000 })
     await base.swipeUp()
     await (await this.modelValue).click()
     await (await this.yearDropdown).click()
-   // await(await this.yearValue).waitForExist({ timeout: 5000 })
     await(await this.yearValue).click()
     await (await this.trimDropDown).click()
     await (await this.trimValue).click()

@@ -240,10 +240,6 @@ it("TC_10 Verify the Back Button Functionality on Personal Information page of I
         console.log("Back Button Shown on Vehicle Information Page")
         await (await vehicleInsurancePage.BackBtn1).click()
         console.log("Back Button is clickable")
-        //await browser.pause(3000)
-        //await (await vehicleInsurancePage.selectCondition).waitForDisplayed({ timeout: 5000 })
-        //expect(await vehicleInsurancePage.selectCondition).toBeDisplayed()
-       // console.log("After ckick on Back Button user able to navigate to Pravious Page")
     });
     
 it("TC_11 Verify the Next Button Functionality on Personal Information page of Insurance", async () => {

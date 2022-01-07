@@ -10,13 +10,11 @@ class Login {
     get continueBtn(){return base.getByResourceId("continueEmail")}
     get myAccount(){return base.getByText("My Account")}
     get allowBtn(){return base.getByText("Allow")}
-    get blockBtn(){return base.getByText("Block")}
     get errorMsgForInvalidPasswd(){return base.getByText("Your username or password is incorrect")}
     get errorMsgForInvalidId(){return base.getByText("User does not exist")}
     get errorMsgForBlankID(){return base.getByText("Please enter a valid Email address.")}
     get errorMsgForBlankPass(){return base.getByText("Please enter a password.")}
     get loginWithFacebook(){return base.getByContDesc("Refresh Login with Facebook")}
     get faceBookPage(){return base.getByText("Log in to your Facebook account to connect to Droom")}
-    
 }
 module.exports = new Login();
