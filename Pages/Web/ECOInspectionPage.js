@@ -1,9 +1,10 @@
 const Base = require('../../BaseClass/base')
+
 class ECO {
-    get shop_by_category() { return $('//span[text()="Categories"]') }
-    get Certification_Services() { return $('//span[contains(text(),"Certification Services")]') }
-    get ECO() { return $('(//div[contains(text(),"Inspection")])[2]') }
-    get ECOHeading() { return $('//h1[normalize-space()="Inspect vehicle within few minutes"]') }
+    get detectLocation() { return $('#detectMyLocation')}
+    get shop_by_category() { return $('#nav_category_button') }
+    get Inspection() { return $('//div[text()="Inspection"]') }
+    get ECOHeading() { return $('//h1[@class="d-margin-bottom-20 d-font-size-32 d-text-transform-capitalize body-bold-font"]') }
     get Buyer() { return $('//span[text()="Buyer"]') }
     get Seller() { return $('//span[text()="Seller"]') }
     get RegiAsVendor() { return $('//a[text()="Register as Vendor"]') }
@@ -31,12 +32,12 @@ class ECO {
     get wheel_Repair() { return $('//a[@href="#wheel-repair-service"]') }
     get Brakes_ReapairService() { return $('//a[@href="#brakes-repair-service"]') }
     get front_Brake() { return $('//label[normalize-space()="Front Brake Pads (set of 4)"]') }
-    get Estimated_RepairCost() { return $('//div[@class="row step2"]//h3[1]') }
+    get Estimated_RepairCost() { return $('//div[@class="row step2"]//h3') }
     get ECO_Offering() { return $('//h2[normalize-space()="ECO Offerings"]') }
     get cars_OnECO_Offering() { return $('(//a[normalize-space()="Cars"])[2]') }
     get bikes_OnECO_Offering() { return $('(//a[normalize-space()="Bikes"])[2]') }
     get inspection_Services() { return $('(//div[normalize-space()="Inspection Services"])[1]') }
-    get basic_Insection() { return $('(//div[normalize-space()="Basic Inspection"])[1]') }
+    get basic_Inspection() { return $('(//div[normalize-space()="Basic Inspection"])[1]') }
     get premium_Inspection() { return $('(//div[normalize-space()="Premium Inspection"])[1]') }
     get premium_Plus_Inspection() { return $('//div[normalize-space()="Premium+ Inspection"]') }
     get amount_basic() { return $('(//div[contains(text(),"₹")])[1]') }
@@ -58,7 +59,7 @@ class ECO {
     get home() { return $('//a[normalize-space()="Home"]') }
     get signUp(){return $('//a[normalize-space()="Sign up"]')}
     get create_Account(){return $('(//h2[normalize-space()="Create your account"])[1]')}
-    get Watch_ECOTV(){return $('//a[normalize-space()="Watch ECO TV"]')}
+    get Watch_ECOTV(){return $('//a[text()=" Watch ECO TV"]')}
     get video(){return $('//button[@aria-label="Play"]')}
     get play_btn(){return $('//button[@aria-label="Play (k)"]')}
     get speaker(){return $('//button[@aria-label="Mute (m)"]')}
@@ -69,11 +70,7 @@ class ECO {
     get inspection(){return $('//a[normalize-space()="Get Inspection"]')}
     
     async traverseToECO() {
-        await (await this.shop_by_category).waitForClickable({ timeout: 3000 })
-        await (await this.shop_by_category).click()
-        console.log("Clicked on Shop By category")
-        await (await this.ECO).click()
-        console.log("Clicked on ECO serive")
+        browser.url('https://qa2.droom.in/eco')
         await(await this.ECOHeading).waitForDisplayed()
         expect(await this.ECOHeading).toBeDisplayed()
         console.log(await (await this.ECOHeading).getText())
