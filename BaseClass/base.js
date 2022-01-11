@@ -13,6 +13,17 @@ class Base
  get afterLoginPopup(){return this.getByResourceId("in.droom:id/imgViewForClose")}
  //get userInfo(){return this.getByResourceId("in.droom:id/user_info_flow")}
  get userInfo() {return this.getByResourceId("in.droom:id/textview_useremail")}
+
+ //android browser locator
+    get loginwithEmailBtn(){return this.getByText("Email Login with Email")}
+    get emailField(){return this.getByResourceId("email")}
+    get passwordField(){return this.getByResourceId("password")}
+    get continueBtn(){return this.getByResourceId("continueEmail")}
+    get myAccount(){return this.getByText("My Account")}
+    get settings() {return this.getByText("Settings")}
+    get logout() {return this.getByText("Logout")}
+
+
  async loginAsBuyer()
  {
    try{
@@ -95,21 +106,37 @@ class Base
     }
     async androidLoginAsBuyer()
     {
-        //await (await this.mainPopup).isDisplayed()
-        // await (await this.mainPopup).click()
-         //await (await this.myAccount).click()
          await (await this.menu).click()
          await (await this.login).click()
          await (await this.loginwithemailBtn).click()
-        await (await this.emailText).setValue("vtest1@gmail.com")
-        // await (await this.loginViaPassBtn).click()
+         await (await this.emailText).setValue("vtest1@gmail.com")
          await (await this.passText).setValue("Vtest@123")
-        // await (await this.showPassword).click()
-         //await (await this.loginFinal).click()
-        // expect(await this.userInfo).toBeDisplayed()
-        await(await this.continueBtn).click()
-        expect(await this.userInfo).toBeDisplayed()
+         await(await this.continueBtn).click()
+         expect(await this.userInfo).toBeDisplayed()
          console.log("User is able to Login using valid credentials")
+    }
+
+    async androidBrowserLoginAsBuyer(){
+      await browser.url('/user/login')
+      await(await this.loginwithEmailBtn).click()
+      //await (await this.emailField).setValue("vikasy898@gmail.com")
+      await (await this.emailField).setValue("vtest1@gmail.com")
+      await(await this.passwordField).setValue("Vtest@123")
+      await(await this.continueBtn).click()
+      await browser.pause(2000)
+      expect(await this.myAccount).toBeDisplayed()
+    }
+
+    async logoutandroidBrowserBuyer(){
+      await browser.pause('2000')
+      await (await this.menu).click()
+      await this.swipeUp()
+      //await this.swipeUp()
+     // await browser.pause('2000')
+      await this.scrollToExactText('Settings')
+      await (await this.settings).click()
+      await (await this.logout).click()
+      console.log("user logout successfully")
     }
 
 }
