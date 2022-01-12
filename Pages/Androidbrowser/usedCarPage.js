@@ -8,18 +8,22 @@ class Usedcar {
     get scooteroption() {return base.getByText("Scooter")}
     get newRadio() {return base.getByText("New")}
     get usedRadio() {return base.getByText("Used")}
+    get textFieldLocation(){return base.getByResourceId("react-select-2-input")}
+    get locationLbl(){return base.getByText("Location")}
+    get searchField(){return base.getByResourceId("req_mmyt")}
     get location() {return base.getByResourceId("Pune, Maharashtra, India")}
     get searchLocation() {return base.getByText("Search My Location")}
     get currentLocation(){return base.getByText("Current Location")}
     get TypeToLocation(){return base.getByText("Type to search Location")}
     get cityName() {return base.getByText("Delhi, India")}
+     get pune() {return base.getByText("Pune, Maharashtra, India")}
     get nextBtn() {return base.getByText("Next")}
     get errormsg() {return base.getByText("Please Select The City")}
     get heading1() {return base.getByText("Select, What You Want To Buy !")}
     get heading2() {return base.getByText("Let's Find Your Dream Car")}
     get subHeading() {return base.getByText("Search or Select Car you are looking for")}
     get enterVehicleHeading() {return base.getByText("Enter Your Vehicle Details")}
-    get searchField() {return base.getByText("Enter Vehicle Name")}
+    //get searchField() {return base.getByText("Enter Vehicle Name")}
     get droomSuggest() {return base.getByText("Let Droom Suggest for you")}
    // get selectVehicle() {return base.getByText("Select Vehicle")}
    get myReq(){return base.getByText("My Requirements")}
@@ -67,21 +71,19 @@ class Usedcar {
     get type1() {return base.getByResourceId("in.droom:id/autoCompleteTextView")}
     get lastStep() {return base.getByText("Last Step to Go! Few More Details")}
     get doyouNeed() {return base.getByResourceId("in.droom:id/txt_are_you_flexible_for")}
-    get insurance() {return base.getByResourceId("in.droom:id/txt_insurance")}
-    get loan() {return base.getByResourceId("in.droom:id/txt_smb_loan")}
+    get insurance() {return base.getByText("Insurance")}
+    get loan() {return base.getByText("Loan")}
     get loantoggle() {return base.getByResourceId("in.droom:id/loan_toggle")}
-    get rcTransfer() {return base.getByResourceId("in.droom:id/txt_rc_transfer")}
-    get roadAssistance() {return base.getByResourceId("in.droom:id/txt_road_side_assitance")}
-    get quickBuy() {return base.getByResourceId("in.droom:id/txt_how_quickly_do_you_want_to_buy")}
-    get weeks() {return base.getByResourceId("in.droom:id/radio_one_four_week")}
-    get exchange() {return base.getByResourceId("in.droom:id/txt_do_you_wish_to_exchange_your_vehicle")}
-    get exchangetoggle() {return base.getByResourceId("in.droom:id/yes_toggle")}
+    get rcTransfer() {return base.getByText("RC Transfer")}
+    get roadAssistance() {return base.getByText("Road Side Assistance")}
+    get quickBuy() {return base.getByText("How Quickly Do You Want to Buy?")}
+    get weeks() {return base.getByText("1-4 Weeks")}
+    get exchange() {return base.getByText("Do You Wish to Exchange Your Vehicle")}
+    get exchangetoggle() {return base.getByText("Yes")}
     get submitheading() {return base.getByText("Great! More Information Gives Best Results")}
     get almostdone() {return base.getByText("You are Almost Done!")}
     get reqCount() {return base.getByText("We found 0 matches as per your requirement")}
-get selectFromDropDown(){return base.getByText("Select From Dropdown")}
-   
-    
+    get selectFromDropDown(){return base.getByText("Select From Dropdown")}
    
     async droomSuggestCar(){
         await (await this.selecttype).click()
