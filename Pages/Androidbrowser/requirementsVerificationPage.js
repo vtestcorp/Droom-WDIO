@@ -1,10 +1,8 @@
 const base = require("../../BaseClass/base");
 
 class RequirementsVerification {
-    get acceptcontinue() { return base.getByText('Accept & continue') }
-    get next() { return base.getByText('Next') }
-    get yes() { return base.getByText('No, thanks') }
-    get allow() { return base.getByText('Allow') }
+    get welcomemsg() {return base.getByText('Welcome, Vtest1 !')}
+   // get logo() {return base.}
     get menu() { return base.getByText('Menu') }
     get cancel() { return base.getByText('×') }
     get login() { return base.getByText('Login') }
@@ -30,10 +28,6 @@ class RequirementsVerification {
     get manual() { return base.getByText('Ext Color') }
     get best_Matches() { return base.getByTextContains('Best Matches') }
     get my_Matches() { return base.getByTextContains('My Matches') }
-    async chromeConditions() {
-        await (await this.acceptcontinue).click()
-        await (await this.next).click()
-        await (await this.yes).click()
-    }
+   
 }
 module.exports = new RequirementsVerification();

@@ -94,5 +94,6 @@ class ECO {
         await (await this.next).click()
     }
 }
+
 module.exports = new ECO()
     
