@@ -4,24 +4,25 @@ class obv {
     get menu (){return base.getByText("Menu")}
     get valuation(){return base.getByText("Valuation")}
     get pricingCalculator(){return base.getByText("Used Vehicle Pricing Calculator")}
-    get IwanttoBuy(){return base.getByText("I Want to Buy")}
-    get IwanttoSell(){return base.getByText("I Want to Sell")}
+    get IwanttoBuy(){return base.getByContDesc("I want to Buy")}
+    get IwanttoSell(){return base.getByContDesc("I want to Sell")}
     get fromIndividual(){return base.getByText("From Individual")}
+    get fromIndividual1() {return base.getByText("From an Individual")}
     get fromDealer(){return base.getByText("From Dealer")}
-    get selectCategory(){return base.getByResourceId("category")}
+    get selectCategory(){return base.getByResourceId("category")}   
     get selectMake(){return base.getByResourceId("make")}
     get selectModel(){return base.getByResourceId("model")}
     get selectYear(){return base.getByResourceId("year")}
     get selectTrim(){return base.getByResourceId("trim")}
     get kmsDriven(){return base.getByResourceId("kms_driven")}
-    get submit(){return base.getByText("Submit")}
+    get getReport(){return base.getByText("Get Report")}
     get checkObvBtn(){return base.getByText("Check OBV")}
     get valueAt(){return base.getByText("Automobile From Individual In Good Condition Is Valued At")}
     get car(){return base.getByResourceIdNText("android:id/text1","Car")}
     get audi(){return base.getByResourceIdNText("android:id/text1","Audi")}
     get a3(){return base.getByResourceIdNText("android:id/text1","A3")}
     get yr2020(){return base.getByResourceIdNText("android:id/text1","2020")}
-    get TdiPPlus(){return base.getByResourceIdNText("android:id/text1","35 Tdi Premium Plus")}
+    get TdiPPlus(){return base.getByText("35 TDI PREMIUM PLUS")}
     get smallpopUp(){return base.getByText("x")}
     get toIndividual(){return base.getByText("To an Individual")}
     get toDealer(){return base.getByText("To a Dealer")}
@@ -36,6 +37,7 @@ class obv {
     get subTitleonOBV(){return base.getByText("Used Vehicle Pricing Calculator shows the pricing of Used Automobiles")}
     get checkObvBtn(){return base.getByText("Check OBV")}
 //used
+get usedHeading(){return base.getByText("Used Vehicle Pricing Calculator shows the pricing of Used Automobiles")}
 get selectCategory(){return base.getByText("Select Category")}
 get selectMake(){return base.getByText("Select Make")}
 get selectModel(){return base.getByText("Select Model")}
@@ -44,8 +46,6 @@ get selectTrim(){return base.getByText("Select Trim")}
 get kmsDriven(){return base.getByResourceId("kms_driven")}
 get checkPrice(){return base.getByText("Check Price")}
 get usedcar2(){return base.getByText("/  Used car")}
-get usedInfo(){return base.getByText("Used Vehicle Pricing Calculator shows the pricing of Used Automobiles")}
-get headingOnOptions(){return base.getByText("Check Fair Market Value for any Vehicle")}
 //New
 get newCategory(){return base.getByText("Select Category")}
 get newMake(){return base.getByText("Select Make")}
@@ -58,7 +58,9 @@ get newTrimName(){return base.getByText("40 TFSI PREMIUM PLUS")}
 get newModelName(){return base.getByText("get CheckPriceOnNew")}
 get newCheckPrice(){return base.getByText("Check Price")}
 get pricingCalculator2(){return base.getByText("Vehicle Pricing Calculator")}
-get priceForNew(){return base.getByText("Price of New Vehicle is")}
+get locationOn_New() { return $('(//input[contains(@class,"select")])[1]') }
+get search_location() { return $('(//input[contains(@class,"lp-search")])[2]') }
+get delhi() { return $('//li[@class="d-display-block d-padding-2 clickable"]') }
 //Exchange
 get exchangeInfo(){return base.getText("Select the Vehicle you want to Exchange Your Current Vehicle With and Know The Price Difference.")}
 get IwanttoExchange(){return base.getByText("I want to Exchange:")}
@@ -78,21 +80,9 @@ get modelNameWith(){return base.getByText("3 Series")}
 get withTrim(){return base.getByResourceId("exchangenewtrim")}
 get trimNameWith(){return base.getByText("M340I")}
 get checkExchangePrice(){return base.getByText("Check Exchange Price")}
-get info() { return base.getByText("Info")}
+get headingExchnagePrice() { return base.getByText("")}
 //Future Price
-get futurePriceInfo(){return base.getByText("Know the Estimated Re-Selling Price for your vehicle in coming years.")}
-get checkfutureEsti(){return base.getByText("Check Future Estimate")}
-get futureForNewLbl(){return base.getByContDesc("For New")}
-get futureCategory(){return base.getByText("Select Category")}
-get futureMake(){return base.getByText("Select Make")}
-get futureModel(){return base.getByText("Select Model")}
-get futureTrim(){return base.getByText("Select Trim")}
-get futureResaleyr(){return base.getByText("Year of Resale")}
-get futureyr2025(){return base.getByText("2022")}
-get futurekmsDriven(){return base.getByResourceId("futurenewexpected_kms_driven")}
-get obvValueForFuture(){return base.getByText("OBV Value By")}
-
-
+get futurePriceInfo(){return base.getByText("Select the Vehicle you want to Exchange Your Current Vehicle With and Know The Price Difference.")}
 //Residual
 get residualInfo(){return base.getByText("Residual Value of the vehicle provides an estimate of the worth of the vehicle at the end of the lease.")}
 get lableForNew(){return base.getByText("For New")}
@@ -104,21 +94,14 @@ get resiModel(){return base.getByText("Select Model")}
 get resiTrim(){return base.getByText("Select Trim")}
 get resiTenure(){return base.getByResourceId("leasenewtenure")}
 get resiKmsDriven(){return base.getByResourceId("leasenewkms_driven_month")}
-get residualResult1(){return base.getByText("/  Result")}
-get residualResult(){return base.getByText("Residual Price of")}
 get sampleReport(){return base.getByText("Sample Report (Page 2 Of 4)")}
 get BtnPrevious(){return base.getByText("Previous")}
 get BtnNext(){return base.getByText("Next")}
 get headingReport(){return base.getByText("OBV Value For All Conditions")}
 get page2(){return base.getByText("Sample Report (Page 2 Of 4)")}
-
-
 async traverseToValuation() {
-    console.log("Traversing to Valuation") 
-    await (await this.menu).waitForExist({ timeout: 50000 })
-     await browser.pause(8000)
+    console.log("Traversing to Valuation")  
     await (await this.menu).click()
-    await browser.pause(3000)
     console.log("Clicked on Menu")
     await base.swipeUp()
     await (await this.valuation).click()
@@ -171,10 +154,10 @@ async traverseToOptions()
     console.log("I want To Buy From Individual is shown on Page")
     base.swipeUp()
     await this.inputForSubmit()
-    expect(await this.submit).toBeDisplayed()
-    console.log("Submit Button is availbale")
-    await(await this.submit).click()
-    console.log("Clicked on Submit Button")
+    expect(await this.getReport).toBeDisplayed()
+    console.log("Get Report Button is available")
+    await(await this.getReport).click()
+    console.log("Clicked on Get Report")
     expect(await this.checkObvBtn).toBeDisplayed()
     console.log("Check OBV button is displayed")
     expect(await this.valueAt).toBeDisplayed()
@@ -193,7 +176,7 @@ async inputToUsed(){
     await(await this.selectModel).click()
     await(await this.a3).click()
     console.log("Selected the required Model")
-    await base.swipeup()
+   // await base.swipeup()
     await(await this.selectYear).click()
     console.log("Clicked on the year")
     await(await this.yr2020).click()
@@ -209,10 +192,17 @@ async inputToUsed(){
     await driver.pressKeyCode(7, undefined, undefined);
     await driver.pressKeyCode(7, undefined, undefined);
     console.log("Set the value for KMS driven")
-    await(await this.submit).click()
-    console.log("Clicked on Submit Button")
+    expect(await this.checkPrice).toBeDisplayed()
+    console.log("Check Price Displayed")
+    await browser.pause(3000)
+    await(await this.checkPrice).click()
+    console.log("Clicked on Check Price Report")
 }
 async inputToNew(){
+    console.log("Taking Inputs for New")
+    //await (await this.smallpopUp).waitForExist()
+    //console.log("Help pop Up is Displayed")
+    //await (await this.smallpopUp).click()
     await(await this.newCategory).click()
     console.log("Clicked on Select Category")
     await(await this.car).click()
@@ -227,10 +217,27 @@ async inputToNew(){
     await(await this.newTrim).click()
     console.log("Clicked on New Trim")
     await(await this.newTrimName).click()
+    await(await this.locationOn_New).click()
+    console.log("Clicked on Location")
+    await base.switchToWebview()
+    await (await this.search_location).click()
+    console.log("At WebView")
+    await(await this.search_location).setValue("Delhi")
+    expect(await this.search_location).toBeDisplayed()
+    await base.switchToNativeApp()
+    console.log("At Native")
+    await base.switchToWebview()
+    await (await this.delhi).waitForDisplayed()
+    expect(await this.delhi).toBeDisplayed()
+    await (await this.delhi).click()
+    await base.switchToNativeApp()
     await(await this.CheckPriceOnNew).click()
 }
 async inputToExchange(){
     console.log("Taking Inputs For Exchage Vechile")
+    //await (await this.smallpopUp).waitForExist()
+    //console.log("Help pop Up is Displayed")
+   // await (await this.smallpopUp).click()
     base.swipeUp()
     await(await this.exchangeCategory).click()
     console.log("Clicked On select Category")
@@ -271,37 +278,11 @@ async inputToExchange(){
     await(await this.trimNameWithNameWith).click()
 
 }
-async inputToFuturePrice(){
-    console.log("Taking Inouts for Future Price")
-    await(await this.futureCategory).click()
-    console.log("Clicked on Select Category")
-    await(await this.car).click()
-    console.log("Clicked On Car Category")
-    await(await this.futureMake).click()
-    console.log("Clicked on Make")
-    await(await this.audi).click()
-    console.log("Selected the Make")
-    await(await this.futureModel).click()
-    await(await this.ModelNamenew).click()
-    console.log("Selected the New Model Name")
-    await(await this.futureTrim).click()
-    console.log("Clicked on New Trim")
-    await(await this.newTrimName).click()
-    await(await this.futureResaleyr).click()
-     await(await this.futureyr2025).click()
-     console.log("Selected the year of Resale")
-    console.log("Clicked on KmsDriven")
-    await driver.hideKeyboard()
-    await driver.pressKeyCode(9, undefined, undefined);
-    await driver.pressKeyCode(7, undefined, undefined);
-    await driver.pressKeyCode(7, undefined, undefined);
-    console.log("Set the value for KMS driven")
-    await(await this.checkfutureEsti).click()
-    console.log("Clicked on Check Future Estimate Button")
-}
-
 async inputToResidaul(){
     console.log("Taking Inputs For Exchage Vechile")
+    //await (await this.smallpopUp).waitForExist()
+    //console.log("Help pop Up is Displayed")
+   // await (await this.smallpopUp).click()
     base.swipeUp()
     await(await this.resiCategory).click()
     console.log("Clicked On select Category")
@@ -332,7 +313,7 @@ async inputToResidaul(){
     console.log("Set the value for KMS driven")
     await(await this.chkResidualEstimate).click()
     console.log("Clicked on Check Residual Estimate")
-
+//result page is not there
 }
 }
 module.exports = new obv()
