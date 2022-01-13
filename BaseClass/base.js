@@ -119,8 +119,8 @@ class Base
     async androidBrowserLoginAsBuyer(){
       await browser.url('/user/login')
       await(await this.loginwithEmailBtn).click()
-      //await (await this.emailField).setValue("vikasy898@gmail.com")
-      await (await this.emailField).setValue("vtest1@gmail.com")
+      await (await this.emailField).setValue("vikasy898@gmail.com")
+      //await (await this.emailField).setValue("vtest1@gmail.com")
       await(await this.passwordField).setValue("Vtest@123")
       await(await this.continueBtn).click()
       await browser.pause(2000)
