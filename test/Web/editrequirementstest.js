@@ -1,9 +1,46 @@
-const base = require("../../BaseClass/base");
+// const base = require("../../BaseClass/base");
 const editrequirementspage = require("../../Pages/Web/editrequirementspage");
 
 describe('Edit Requirements', async () => {
+    it('Tc_04 Verify user should be able to edit color', async () => {
+        await editrequirementspage.loginAsBuyer()
+        await(await $('(//a[text()="My Requirements"])[2]')).click();
+        console.log("Before Edit color:")
+        expect(await editrequirementspage.newExtColor).toBeDisplayed()
+        console.log(await (await editrequirementspage.newExtColor).getText())
+        await (await editrequirementspage.editBtn).waitForExist({timeout : 2000})
+        await (await editrequirementspage.editBtn).click()
+        await browser.pause('2000')
+        await editrequirementspage.goBackTillColor()
+        await (await editrequirementspage.newColor).click()
+        await editrequirementspage.clickOnNext()
+        await editrequirementspage.clickOnNext()
+        await editrequirementspage.clickOnNext()
+        await editrequirementspage.clickOnSubmit()
+        await(await $('//span[text()="View All Matches "]')).click();
+        await (await editrequirementspage.requirement).click()
+        console.log("After Edit color:")
+        expect(await editrequirementspage.newExtColor).toBeDisplayed()
+        console.log(await (await editrequirementspage.newExtColor).getText())
+    });
+    it('Tc_01 Verify user should be able to edit location', async () => {
+        browser.url('/') 
+        await editrequirementspage.loginAsBuyer()
+        await editrequirementspage.CreateRequiRement()
+        console.log("Before Edit Location:")
+        expect(await editrequirementspage.rLocation).toBeDisplayed()
+        console.log(await (await editrequirementspage.rLocation).getText())
+        await (await editrequirementspage.editBtn).click()
+        await editrequirementspage.goBackTillLocation()
+        await editrequirementspage.Enterloaction()
+        await editrequirementspage.submitRequirements()
+        expect(editrequirementspage.rLocation).toBeDisplayed()
+        console.log("After Edit Location:")
+        expect(await editrequirementspage.rLocation).toBeDisplayed()
+        console.log(await (await editrequirementspage.rLocation).getText())
+    });
     it('Tc_02 Verify user should be able to edit price range', async () => {
-        await base.loginAsBuyer()
+         browser.url('/')  
         await editrequirementspage.CreateRequiRement()
         console.log("Old Price Range:")
         expect(await editrequirementspage.priceRange).toBeDisplayed()
@@ -44,21 +81,7 @@ describe('Edit Requirements', async () => {
         expect(await editrequirementspage.kmsrange).toBeDisplayed()
         console.log(await (await editrequirementspage.kmsrange).getText())
     });
-    it('Tc_04 Verify user should be able to edit color', async () => {
-        console.log("Before Edit color:")
-        expect(await editrequirementspage.newExtColor).toBeDisplayed()
-        console.log(await (await editrequirementspage.newExtColor).getText())
-        await (await editrequirementspage.editBtn).click()
-        await editrequirementspage.goBackTillColor()
-        await (await editrequirementspage.newColor).click()
-        await editrequirementspage.clickOnNext()
-        await editrequirementspage.clickOnNext()
-        await editrequirementspage.clickOnSubmit()
-        await (await editrequirementspage.requirement).click()
-        console.log("After Edit color:")
-        expect(await editrequirementspage.newExtColor).toBeDisplayed()
-        console.log(await (await editrequirementspage.newExtColor).getText())
-    });
+    
     it('Tc_05 Verify user should be able to edit Do you also need option', async () => {
         browser.url('/')
         await editrequirementspage.CreateRequiRement()
@@ -156,20 +179,6 @@ describe('Edit Requirements', async () => {
         expect(await editrequirementspage.carName).toBeDisplayed()
         console.log(await (await editrequirementspage.carName).getText())
     });
-    it('Tc_01 Verify user should be able to edit location', async () => {
-        browser.url('/')
-        await editrequirementspage.CreateRequiRement()
-        console.log("Before Edit Location:")
-        expect(await editrequirementspage.rLocation).toBeDisplayed()
-        console.log(await (await editrequirementspage.rLocation).getText())
-        await (await editrequirementspage.editBtn).click()
-        await editrequirementspage.goBackTillLocation()
-        await editrequirementspage.Enterloaction()
-        await editrequirementspage.submitRequirements()
-        expect(editrequirementspage.rLocation).toBeDisplayed()
-        console.log("After Edit Location:")
-        expect(await editrequirementspage.rLocation).toBeDisplayed()
-        console.log(await (await editrequirementspage.rLocation).getText())
-    });
+    
 
 });

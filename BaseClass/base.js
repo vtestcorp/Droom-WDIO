@@ -11,6 +11,7 @@ class Base
  get showPassword(){return this.getByResourceId("in.droom:id/text_input_end_icon")}
 // get loginFinal(){return this.getByResourceId("in.droom:id/btn_login_via_otp_email")}
  get afterLoginPopup(){return this.getByResourceId("in.droom:id/imgViewForClose")}
+
  //get userInfo(){return this.getByResourceId("in.droom:id/user_info_flow")}
  get userInfo() {return this.getByResourceId("in.droom:id/textview_useremail")}
 

@@ -12,7 +12,6 @@ describe("Login Via Password", () => {
          await (await LoginWithPasswordPage.allowBtn).click()
       }
       catch { }
-   
       await browser.url('/user/login')
       console.log('User Launch URL')
       expect(await LoginWithPasswordPage.loginToAccount).toBeDisplayed()
@@ -36,7 +35,6 @@ describe("Login Via Password", () => {
       expect(await LoginWithPasswordPage.myAccount).toBeDisplayed()
       console.log("User Logged in Successfully")
    });
-   
    it("TC_02 Login with Valid UserName and Invalid Password", async () => {
        await browser.url('/user/login')
       console.log('User Launch URL')
@@ -163,7 +161,6 @@ describe("Login Via Password", () => {
       expect(await LoginWithPasswordPage.errorMsgForBlankPass).toHaveTextContaining('Please enter a password.')
       console.log("Error message displayed as :Please enter a password.")
    });
-   
    it("TC_01 To Verify Login With Social Login", async () => {
      await browser.url('/user/login')
       console.log('User Launch URL')
