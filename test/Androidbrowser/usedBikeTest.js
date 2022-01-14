@@ -7,7 +7,7 @@ describe('Used Bike', async () => {
         await driver.launchApp()
     });
 
-   /* it('Tc_01 Verify Bike option is the display with used Condition to the buyer', async () => {
+    it('Tc_01 Verify Bike option is the display with used Condition to the buyer', async () => {
         await base.androidBrowserLoginAsBuyer()
         console.log("login As Buyer")
         await browser.pause(5000)
@@ -77,7 +77,7 @@ describe('Used Bike', async () => {
          await (await usedBikePage.nextBtn).click()
          expect(await usedBikePage.errormsg).toBeDisplayed()
          console.log('error message displayed')
-     });*/
+     });
 
      it('TC_04 Verify user able to select Bike model from Entering your vehicle details as per requirement', async () => {
           await base.androidBrowserLoginAsBuyer()

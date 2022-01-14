@@ -7,28 +7,70 @@ describe('Unlock fee payments', async () => {
         await driver.closeApp()
         await driver.launchApp()
     });
-    it('TC_01 Verify the token amount for car is 999', async () => {
-         await unlockFeePaymentPage.chromeConditions()
+    it('TC_01 Verify The Token Amount For Car Is 999', async () => {
          browser.url('/user/login')
          await base.androidBrowserLoginAsBuyer()
-         await base.swipeUp()
-         await (await unlockFeePaymentPage.my_Requirements).click()
+         console.log("user login sucessfully")
+         await (await unlockFeePaymentPage.buy).click()
+         await (await unlockFeePaymentPage.carCategory).click()
+         console.log('user select car category')
          await (await unlockFeePaymentPage.new_Requirement).click()
-         await unlockFeePaymentPage.createRForCar()
+         await unlockFeePaymentPage.selectCar()
+         await browser.pause(2000)
+         expect(await unlockFeePaymentPage.best_Matches).toBeDisplayed()
          await (await unlockFeePaymentPage.best_Matches).click()
          expect(await unlockFeePaymentPage.tokenForCar).toBeDisplayed()
          console.log("Token amount for car:")
          console.log(await (await unlockFeePaymentPage.tokenForCar).getText())
+         //await base.logoutandroidBrowserBuyer()
      });
+
+     it('TC_02 Verify the token amount for bike is 499', async () => {
+        browser.url('/user/login')
+        await base.androidBrowserLoginAsBuyer()
+        console.log("user login sucessfully")
+        await (await unlockFeePaymentPage.buy).click()
+        await (await unlockFeePaymentPage.bikeCategory).click()
+         console.log('user select Bike category')
+         await (await unlockFeePaymentPage.new_Requirement).click()
+         await unlockFeePaymentPage.selectBike()
+         await browser.pause(2000)
+         expect(await unlockFeePaymentPage.best_Matches).toBeDisplayed()
+         await (await unlockFeePaymentPage.best_Matches).click()
+         expect(await unlockFeePaymentPage.tokenForBike).toBeDisplayed()
+         console.log("Token amount for car:")
+         console.log(await (await unlockFeePaymentPage.tokenForBike).getText())
+        // await base.logoutandroidBrowserBuyer()
+        });
+
+
      it('TC_03 Verify proceed to checkout option is display for car', async () => {
-         await unlockFeePaymentPage.chromeConditions()
-         browser.url('/user/login')
-         await base.androidBrowserLoginAsBuyer()
-         await (await unlockFeePaymentPage.cart).click()
-         expect(await unlockFeePaymentPage.Proceed_To_Checkout).toBeDisplayed()
- 
-     });
-     it('TC_05 Verify the functionality after click on proceed to checkout button for car', async () => {
+        browser.url('/user/login')
+        await base.androidBrowserLoginAsBuyer()
+        console.log("user login sucessfully")
+        await (await unlockFeePaymentPage.buy).click()
+        await (await unlockFeePaymentPage.carCategory).click()
+        console.log('user select car category')
+        await (await unlockFeePaymentPage.new_Requirement).click()
+        await unlockFeePaymentPage.selectCar()
+        await browser.pause('2000')
+        browser.url('/product/volkswagen-vento-16l-highline-2011-613dff1133c70bf2048b4574')
+      //  await unlockFeePaymentPage.switchToWebview()
+       await browser.pause('2000')
+       // await (await unlockFeePaymentPage.matchCar).click()
+     //   await unlockFeePaymentPage.switchToNativeApp()
+        console.log("clicked on match car")
+        expect(await unlockFeePaymentPage.bookNow).toBeDisplayed()
+        console.log(await (await unlockFeePaymentPage.bookNow).isClickable())
+        console.log("Application shows Book Now")
+        await (await unlockFeePaymentPage.bookNow).click()
+        console.log("Application shows Congratulations Item has been successfully added to the cart")
+        expect(await unlockFeePaymentPage.proceedTocheckout).toBeDisplayed()
+        console.log("Application shows Proceed To Checkout Option is display for car")
+        });
+
+        
+    /* it('TC_05 Verify the functionality after click on proceed to checkout button for car', async () => {
          await unlockFeePaymentPage.chromeConditions()
          browser.url('/user/login')
          await base.androidBrowserLoginAsBuyer()
@@ -118,5 +160,5 @@ describe('Unlock fee payments', async () => {
          expect(await unlockFeePaymentPage.Remove).toBeDisplayed()
          console.log("Remove button displayed")
     });
-
+*/
 });
