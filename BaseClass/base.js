@@ -28,21 +28,33 @@ class Base
  async loginAsBuyer()
  {
    try{
-   await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
-   await (await $('(//button[@class="close em-show-later"])[2]')).click();}
+   await (await $('(//div[@class="modal-body"])[23]')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+   await (await $('#detectMyLocation')).click();}
    catch{ }
    await(await $('#user_details')).click();
    await(await $("a[class='btn btn-primary btn-block']")).click();
    await(await $('(//button[@id="loginWithEmail"])')).click();
-   //await(await $("#email")).setValue("vtest1@gmail.com");
-  await(await $("#email")).setValue("vikasy898@gmail.com");
-   //await(await $(".d-letter-spacing-1[href='#viaPassword']")).click();
+   await(await $("#email")).setValue("vtest1@gmail.com");
    await(await $("#password")).setValue("Vtest@123");
-   //await(await $("#password")).setValue("Hemant@123");
    await(await $('(//button[@id="continueEmail"])')).click();
-   //await(await $("input[value='Login']")).click();
    await(await $("div[class='profile'] img[alt='Seller image']")).waitForDisplayed({timeout:10000});
    await browser.pause(2000);      
+ }
+
+ async webProdLogin(){
+  try{
+    await (await $('(//div[@class="modal-body"])[23]')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+    await (await $('#detectMyLocation')).click();}
+    catch{ }
+    await(await $('#user_details')).click();
+    await(await $("a[class='btn btn-primary btn-block']")).click();
+    await(await $('(//button[@id="loginWithEmail"])')).click();
+    await(await $("#email")).setValue("vikasy898@gmail.com");
+    await(await $("#password")).setValue("Vtest@123");
+    await(await $('(//button[@id="continueEmail"])')).click();
+    await(await $("div[class='profile'] img[alt='Seller image']")).waitForDisplayed({timeout:10000});
+    await browser.pause(2000);   
+
  }
     async getByResourceId(id)
     {
@@ -120,8 +132,16 @@ class Base
     async androidBrowserLoginAsBuyer(){
       await browser.url('/user/login')
       await(await this.loginwithEmailBtn).click()
+      await (await this.emailField).setValue("vtest1@gmail.com")
+      await(await this.passwordField).setValue("Vtest@123")
+      await(await this.continueBtn).click()
+      await browser.pause(2000)
+      expect(await this.myAccount).toBeDisplayed()
+    }
+    async androidBrowserProdLoginAsBuyer(){
+      await browser.url('/user/login')
+      await(await this.loginwithEmailBtn).click()
       await (await this.emailField).setValue("vikasy898@gmail.com")
-      //await (await this.emailField).setValue("vtest1@gmail.com")
       await(await this.passwordField).setValue("Vtest@123")
       await(await this.continueBtn).click()
       await browser.pause(2000)
