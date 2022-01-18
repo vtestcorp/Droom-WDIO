@@ -134,21 +134,21 @@ it('TC_04 Verify the functionality of I want to sell to an Individual', async ()
     console.log("Grade is displayed on OBV page after submitting required details")
     console.log("OBV Pricing Report suggested the Good value of vehicle.. by analysing all the inputs given by the user.")
   });
-  
+
  it('TC_07 Verify used functionality on vehicle pricing calulator on OBV', async () => {
     //await browser.url('/user/login') 
     //await obvPage.traverseToValuation()
     //await obvPage.traverseToOptions()
-    await browser.url('/obv')
+     await browser.url('/obv')
     console.log("User is on Orange Book Value Page")
     expect(await obvPage.usedHeading).toBeDisplayed()
     expect(await obvPage.used).toBeDisplayed()
     console.log("Used option is Displayed On Pricing Calculator")
     await(await obvPage.used).click()
     console.log("Clicked On Used Option")
-    expect(await obvPage.IwanttoBuy).toBeDisplayed()
-    console.log("Buyer Tab displayed as :"+await(await obvPage.IwanttoBuy).getText())
-    await(await obvPage.IwanttoBuy).click()
+    expect(await obvPage.IwanttoBuy1).toBeDisplayed()
+    console.log("Buyer Tab displayed as :"+await(await obvPage.IwanttoBuy1).getText())
+    await(await obvPage.IwanttoBuy1).click()
     console.log("Clicked on I want to Buy")
     await obvPage.inputToUsed()
     expect(await obvPage.usedcar2).toBeDisplayed()
@@ -156,8 +156,8 @@ it('TC_04 Verify the functionality of I want to sell to an Individual', async ()
 });
 it('TC_08 Verify new functionality on vehicle pricing calulator on OBV', async () => {
     await browser.url('/obv') 
-   // await obvPage.traverseToValuation()
-    //await obvPage.traverseToOptions()
+    //await obvPage.traverseToValuation()
+  //  await obvPage.traverseToOptions()
     expect(await obvPage.newTab).toBeDisplayed()
     console.log("New option is Displayed On Pricing Calculator")
     await(await obvPage.newTab).click()
@@ -168,7 +168,8 @@ it('TC_08 Verify new functionality on vehicle pricing calulator on OBV', async (
 });
 it('TC_09 Verify exchange functionality on vehicle pricing calulator of OBV', async () => {
     await browser.url('/obv') 
-    //await obvPage.traverseToValuation()
+    //await browser.url('/user/login') 
+  //  await obvPage.traverseToValuation()
    // await obvPage.traverseToOptions()
     expect(await obvPage.exchange).toBeDisplayed()
     console.log("Exchange option is Displayed On Pricing Calculator")
@@ -176,7 +177,7 @@ it('TC_09 Verify exchange functionality on vehicle pricing calulator of OBV', as
     console.log("Clicked On Exchange Option")
     expect(await obvPage.exchangeInfo).toBeDisplayed()
     console.log("Exchange Information is Displayed On Pricing Calculator as---")
-    console.log(await(await obvPage.exchangeInfo).getText())
+    //console.log(await(await obvPage.exchangeInfo).getText())
     expect(await obvPage.IwanttoExchange).toBeDisplayed()
     console.log(await("Sub Heading Shown as-- :"+await obvPage.IwanttoExchange).getText())
     expect(await obvPage.lableWith).toBeDisplayed()
@@ -196,10 +197,11 @@ it('TC_09 Verify exchange functionality on vehicle pricing calulator of OBV', as
     expect(await Orange_Book_ValuePage.headingExchnagePrice).toHaveTextContaining("Amount You will need to pay for this Exchange")
     console.log("After click on the Check Exchange  price Amount You will need to pay for this Exchange is displayed")
  });
- it('TC_10 Verify Residual functionality on vehicle pricing calulator of OBV', async () => {
-    await browser.url('/user/login') 
-    //await obvPage.traverseToValuation()
-    //await obvPage.traverseToOptions()
+it('TC_10 Verify Residual functionality on vehicle pricing calulator of OBV', async () => {
+    await browser.url('/obv') 
+   // await browser.url('/user/login') 
+  //  await obvPage.traverseToValuation()
+   // await obvPage.traverseToOptions()
     expect(await obvPage.residual).toBeDisplayed()
     console.log("Residual option is Displayed On Pricing Calculator")
     await(await obvPage.residual).click()
@@ -237,5 +239,4 @@ it('TC_11 Verify the functionality of Pricing Certificate', async () => {
     expect(await obvPage.sampleReport).toBeDisplayed()
     console.log("After click on Previous Button User able to see Previous page of report")
 });
-
 });

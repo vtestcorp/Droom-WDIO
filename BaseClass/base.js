@@ -161,6 +161,7 @@ class Base
     }
 
 
+
     async switchToWebview() {
         let x = driver.getContexts()
             ; (await x).forEach(myFunction)
@@ -180,5 +181,6 @@ class Base
             }
         }
     }
+
 }
 module.exports=new Base()

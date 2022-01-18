@@ -1,82 +1,23 @@
 const base = require("../../BaseClass/base")
 
 class checkHistory {
-    get acceptcontinue() { return base.getByText('Accept & continue') }
-    get next() { return base.getByText('Next') }
-    get yes() { return base.getByText('No, thanks') }
-    get userLogin() { return base.getByResourceId('userLogin') }
-    get Login_Password() { return base.getByText('Login Via Password') }
-    get password() { return base.getByResourceId('password') }
-    get login() { return base.getByText('Login') }
-    get allow() { return base.getByText('Allow') }
-    get manage_buying() { return base.getByText('Manage Your Buying and Selling, and Get Help on Your Vehicles') }
-    get menu() { return base.getByText('Menu') }
-    get my_Requirements() { return base.getByTextContains('My Requirements') }
-    get new_Requirement() { return base.getByText('+ Add New Requirement') }
-    get car() { return base.getByTextContains('Car Car') }
-    get cancel() { return base.getByText('x') }
-    get Select() { return base.getByText('Select...') }
-    get pune() { return base.getByText('Pune, Maharashtra, India') }
-    get next_btn() { return base.getByText('Next') }
-    get current_Location() { return base.getByText('Current Location') }
-    get select_From() { return base.getByText('Select From Dropdown') }
-    get let_Droom_Suggest_for_you() { return base.getByText('Let Droom Suggest for you') }
-    get Sedan() { return base.getByText('Sedan Sedan') }
-    get submit() { return base.getByText('Submit') }
-    get View_All_Matches() { return base.getByText('View All Matches') }
-    get page1() { return base.getByText('Let Us Know What You Are Looking For') }
-    get add_More_Detail() { return base.getByText('Add More Detail') }
-    get KMS_Driven_Range() { return base.getByText('KMS Driven Range') }
-    get manual() { return base.getByText('Manual Manual') }
-    get Close() { return base.getByContDesc('Close') }
-    get not_Decided() { return base.getByText('Not Decided') }
-    get best_Matches() { return base.getByTextContains('Best Matches') }
-    get tokenForCar() { return base.getByText('Rs. 999 only') }
-    get bike() { return base.getByTextContains('Bike Bike') }
-    get pay_Best() { return base.getByText('Pay Best Match Unlock Fee') }
-    get Droom_Pay() { return base.getByText('Droom Pay') }
-    get cart() { return base.getByText('') }
-    get Proceed_To_Checkout() { return base.getByText('Proceed To Checkout') }
-    get name() { return base.getByText('Vtest1 Corp') }
-    get mob_number() { return base.getByText('9999999999') }
-    get Address() { return base.getByText('xyz, pune, 411014, maharashtra') }
-    get Edit() { return base.getByText('Edit') }
-    get Remove() { return base.getByContDesc('Remove') }
-    get His() { return base.getByContDesc('Add Miles') }
-    get per() { return base.getByTextContains('Premium Certificate') }
-    get Check_any_Vehicle() { return base.getByTextContains('Check any Vehicle') }
-    get vehicle_reg_no() { return base.getByResourceId('vehicle_reg_no')}
-    get gold() { return base.getByResourceId('gold') }
-    get platinum() { return base.getByResourceId('platinum') }
-    get Sample_Report() { return base.getByText('View Sample Report') }
-    get home() { return base.getByText('Home') }
-    get moreOptions(){return base.getByText("More actions")}
-    get menu (){return base.getByText("Menu")}
-    get history(){return base.getByText("History")}
-    get heading(){return base.getByText("Check any Vehicle's History Online!")}
-    get goldCertificate(){return base.getByText("Gold Certificate")}
-    get platinumCertificate(){return base.getByText("Platinum Certificate")}
-    get createReq(){return base. getByContDesc("Create Requirement")}
-    
-async traverseToHistory() {
-        console.log("Traversing to Check Hstory")  
-        await (await this.menu).waitForExist({ timeout: 50000 })
-        await browser.pause(9000)
-        await (await this.menu).click()
-        console.log("Clicked on Menu")
-        await browser.pause(3000)
-        console.log("Clicked on Menu")
-        await base.swipeUp()
-        await (await this.history).click()
-        console.log("Clicked on History")
-        await browser.pause(3000)
-}
-        async chromeConditions() {
 
-        await (await this.acceptcontinue).click()
-        await (await this.next).click()
-        await (await this.yes).click()
-    }
+    get title() {return base.getByText('CHECK ANY VEHICLE’S HISTORY ONLINE!')}
+    get registredVehicleRegNo() {return base.getByResourceId('vehicle_reg_no')}
+    get checkHistoryBtn() {return base.getByText('Check History')}
+    get certificateLink() {return base.getByText('View Sample Vehicle History Certificate')}
+    get vehicleCertificate() {return base.getByText('Vehicle History Certificate')}
+    get faq() {return base.getByText('FAQS')}
+    get point1() {return base.getByText('Can I sell Vehicle History certificate?')}
+    get point2() {return base.getByText('How is a Droom Vehicle certificate helpful?')}
+    get point3() {return base.getByText('Why is the Vehicle History certificate I am looking for not available on the website?')}
+    get point4() {return base.getByText('How will I receive my Vehicle History certificate?')}
+    get point5() {return base.getByText('What is the cost of History certificate?')}
+    get sampleCertificate() {return base.getByText('Sample Vehicle History Certificate')}
+    get home() {return base.getByText('Home')}
+    get homeurl() {return base.getByResourceId('com.android.chrome:id/url_bar')}
+
+    
     async swipeUp1() {
         const { width, height } = await driver.getWindowRect()
         await browser.touchPerform([

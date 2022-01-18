@@ -4,8 +4,8 @@ const searchPage = require('../../Pages/Web/searchPage')
 describe('Search', () => {
     it('TC_01 Verify Search functionality on Main header', async () => {
         try{
-            await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
-            await (await $('(//button[@class="close em-show-later"])[2]')).click();}
+            await (await $('(//div[@class="modal-body"])[23]')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+            await (await $('#detectMyLocation')).click();}
             catch{ }
         expect(await searchPage.search_Box).toBeDisplayed()
         console.log(await (await searchPage.search_Box ).isClickable())
@@ -19,15 +19,20 @@ describe('Search', () => {
         console.log("Using Seacth box user is able to search required items")
     });
     it('TC_02 Verify Search functionality on Vista Link', async () => {
-        await (await (searchPage.home2)).click()
-        console.log("Scrolling to the Vista Link")
+        try{await (await (searchPage.home2)).click()
+        console.log("Scrolling to the Vista Link")}
+        catch{ }
+        try{
+       await (await $('(//div[@class="modal-body"])[23]')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+       await (await $('#detectMyLocation')).click();}
+       catch{ }
         await (await searchPage.shop_by_category).waitForExist({ timeout: 5000 })
-        await (await searchPage.buyingTools).scrollIntoView()
-        console.log("Scrolling to the Buying Tool");
+       // await (await searchPage.buyingTools).scrollIntoView()
+       // console.log("Scrolling to the Buying Tool");
         await (await searchPage.car).scrollIntoView()
         console.log("Scrolling to the Vista link of Cars")
-        expect(await searchPage.vistaLink).toBeDisplayed()
-        console.log(await (await searchPage.vistaLink).getText())
+       // expect(await searchPage.vistaLink).toBeDisplayed()
+        //console.log(await (await searchPage.vistaLink).getText())
         await (await searchPage.car).click()
         console.log("Clicked On Vista Link of New and Used Cars for Sale")
         expect(await searchPage.car_Heading).toHaveTextContaining("Cars for Sale")
@@ -38,8 +43,8 @@ describe('Search', () => {
             await (await searchPage.home2).click();}
             catch{ }
              try{
-            await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
-            await (await $('(//button[@class="close em-show-later"])[2]')).click();}
+            await (await $('(//div[@class="modal-body"])[23]')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+            await (await $('#detectMyLocation')).click();}
             catch{ }
         await (await searchPage.search_Box).click()
         console.log("Clicked on Search Box")
@@ -55,8 +60,8 @@ describe('Search', () => {
             await (await searchPage.home2).click();}
             catch{ }
              try{
-            await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
-            await (await $('(//button[@class="close em-show-later"])[2]')).click();}
+            await (await $('(//div[@class="modal-body"])[23]')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+            await (await $('#detectMyLocation')).click();}
             catch{ }
         await (await searchPage.search_Box).click()
         console.log("Clicked on Search Box")
@@ -81,8 +86,8 @@ describe('Search', () => {
             await (await searchPage.home2).click();}
             catch{ }
              try{
-            await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
-            await (await $('(//button[@class="close em-show-later"])[2]')).click();}
+            await (await $('(//div[@class="modal-body"])[23]')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+            await (await $('#detectMyLocation')).click();}
             catch{ }
         expect(searchPage.search_Box).toBeDisplayed()
         console.log("Search Box is Present On Home Page")
@@ -100,8 +105,8 @@ describe('Search', () => {
             await (await searchPage.home2).click();}
             catch{ }
             try{
-                await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
-                await (await $('(//button[@class="close em-show-later"])[2]')).click();}
+                await (await $('(//div[@class="modal-body"])[23]')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+                await (await $('#detectMyLocation')).click();}
                 catch{ }
         expect(await searchPage.search_Box).toBeDisplayed()
         await (await searchPage.search_Box).click();
@@ -123,8 +128,8 @@ describe('Search', () => {
             await (await searchPage.home2).click();}
             catch{ }
             try{
-                await (await $('.jss1')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
-                await (await $('(//button[@class="close em-show-later"])[2]')).click();}
+                await (await $('(//div[@class="modal-body"])[23]')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
+                await (await $('#detectMyLocation')).click();}
                 catch{ }
         expect(await searchPage.search_Box).toBeDisplayed()
         await (await searchPage.search_Box).click()
