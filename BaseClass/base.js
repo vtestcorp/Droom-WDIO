@@ -160,5 +160,27 @@ class Base
       console.log("user logout successfully")
     }
 
+
+
+    async switchToWebview() {
+        let x = driver.getContexts()
+            ; (await x).forEach(myFunction)
+        function myFunction(elem) {
+            if (elem.search("WEBVIEW") >= 0) {
+                driver.switchContext(elem)
+            }
+        }
+
+    }
+    async switchToNativeApp() {
+        let x = driver.getContexts()
+            ; (await x).forEach(myFunction)
+        function myFunction(elem) {
+            if (elem.search("NATIVE_APP") >= 0) {
+                driver.switchContext(elem)
+            }
+        }
+    }
+
 }
 module.exports=new Base()
