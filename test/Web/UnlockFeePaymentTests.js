@@ -1,9 +1,10 @@
 const Base = require('../../BaseClass/base')
 const UnlockFeePayment = require('../../Pages/Web/UnlockFeePaymentPage')
 const LoginWithPasswordPage = require('../../Pages/Web/LoginViaPasswordPage')
+//This module is executed on prod url
 describe("Unlock Fee Payment", () => {
   it("TC_01 Verify The Tokan Amount For Car Is 999", async () => {
-        await Base.loginAsBuyer()
+        await Base.webProdLogin()
         await (await UnlockFeePayment.buy).click()
         await (await UnlockFeePayment.carCategory).click()
         await (await UnlockFeePayment.addnewRequirement).click()
@@ -24,7 +25,7 @@ describe("Unlock Fee Payment", () => {
     });
 
     it("TC_02 Verify The Tokan Amount For Bike Is 499", async () => {
-        await Base.loginAsBuyer()
+        await Base.webProdLogin()
         await (await UnlockFeePayment.buy).click()
         await (await UnlockFeePayment.bikeCategory).click()
         await (await UnlockFeePayment.addnewRequirement).click()
@@ -45,7 +46,7 @@ describe("Unlock Fee Payment", () => {
     });
 
     it("TC_04 Verify Proceed To Checkout Option Is Display For Bike", async () => {
-        await Base.loginAsBuyer()
+        await Base.webProdLogin()
         await (await UnlockFeePayment.buy).click()
         await (await UnlockFeePayment.bikeCategory).click()
         await (await UnlockFeePayment.addnewRequirement).click()
@@ -89,7 +90,7 @@ describe("Unlock Fee Payment", () => {
     });
 
     it("TC_03 Verify Proceed To Checkout Option Is Display For Car", async () => {
-        await Base.loginAsBuyer()
+        await Base.webProdLogin()
         await (await UnlockFeePayment.buy).click()
         await (await UnlockFeePayment.carCategory).click()
         await (await UnlockFeePayment.addnewRequirement).click()
