@@ -54,7 +54,6 @@ describe('Check History', async () => {
         console.log(await (await checkHistoryPage.point5).getText())
         console.log("Frequently Asked Question Displayed")
     });
-
     it("TC_05 To Verify The View Sample Vehicle History Certificate Link Is Functional", async () => {
         browser.url('/history')
         await browser.pause(3000)
@@ -67,9 +66,7 @@ describe('Check History', async () => {
         expect(await checkHistoryPage.sampleCertificate).toBeDisplayed()
         console.log(await (await checkHistoryPage.sampleCertificate).getText())
         console.log("Sample Certificate Displayed")
-
     });
-
     it("TC_06 To Verify The Home Option Is Functional On History Page", async () => {
         browser.url('/history')
         expect(await checkHistoryPage.home).toBeDisplayed()

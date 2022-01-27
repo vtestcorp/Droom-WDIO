@@ -6,8 +6,8 @@ describe('Requirements Verification', async () => {
         await driver.launchApp()
     });
     it('TC_01 Validate all requirements created userLogin are displayed', async () => {
-        browser.url('/user/login')
-        await base.androidBrowserLoginAsBuyer()
+       // browser.url('/user/login')
+        await base.androidBrowserProdLoginAsBuyer()
         expect(await requirementsVerificationPage.welcomemsg).toBeDisplayed()
         console.log(await (await requirementsVerificationPage.welcomemsg).getText())
         console.log("Buyer login Successfully")
@@ -24,10 +24,10 @@ describe('Requirements Verification', async () => {
     });
 
     it('TC_02 Verify requirements score is a display', async () => {
-        browser.url('/account')
-        await browser.pause('4000')
+       // browser.url('/account')
+        //await browser.pause('4000')
        //browser.url('/user/login')
-       // await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
        expect(await requirementsVerificationPage.welcomemsg).toBeDisplayed()
         console.log(await (await requirementsVerificationPage.welcomemsg).getText())
         console.log("Buyer login Successfully")
@@ -45,9 +45,9 @@ describe('Requirements Verification', async () => {
 
    it('TC_03 Verify requirements name is editable', async () => {
         //browser.url('/user/login')
-        browser.url('/account')
-        await browser.pause('4000')
-      //  await base.androidBrowserLoginAsBuyer()
+        //browser.url('/account')
+       // await browser.pause('4000')
+        await base.androidBrowserProdLoginAsBuyer()
         expect(await requirementsVerificationPage.welcomemsg).toBeDisplayed()
         console.log(await (await requirementsVerificationPage.welcomemsg).getText())
         console.log("Buyer login Successfully")
@@ -64,9 +64,9 @@ describe('Requirements Verification', async () => {
 
     it('TC_04 Verify Add New Requirements link is available', async () => {
         //browser.url('/user/login')
-      //  await base.androidBrowserLoginAsBuyer()
-      browser.url('/account')
-      await browser.pause('4000')
+        await base.androidBrowserProdLoginAsBuyer()
+     // browser.url('/account')
+      //await browser.pause('4000')
         expect(await requirementsVerificationPage.welcomemsg).toBeDisplayed()
         console.log(await (await requirementsVerificationPage.welcomemsg).getText())
         console.log("Buyer login Successfully")
@@ -81,8 +81,9 @@ describe('Requirements Verification', async () => {
        // await base.logoutandroidBrowserBuyer()
     });
    it('TC_05 Verify all static contents are display', async () => {
-    browser.url('/account')
-    await browser.pause('4000')
+   // browser.url('/account')
+   // await browser.pause('4000')
+   await base.androidBrowserProdLoginAsBuyer()
         expect(await requirementsVerificationPage.welcomemsg).toBeDisplayed()
         console.log(await (await requirementsVerificationPage.welcomemsg).getText())
         console.log("Buyer login Successfully")
@@ -110,8 +111,9 @@ describe('Requirements Verification', async () => {
        // await base.logoutandroidBrowserBuyer()
     });
     it('TC_06 Verify payments status of requirements are display ', async () => {
-        browser.url('/account')
-      await browser.pause('4000')
+        //browser.url('/account')
+     // await browser.pause('4000')
+        await base.androidBrowserProdLoginAsBuyer()
         expect(await requirementsVerificationPage.welcomemsg).toBeDisplayed()
         console.log(await (await requirementsVerificationPage.welcomemsg).getText())
         console.log("Buyer login Successfully")

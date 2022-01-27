@@ -7,7 +7,7 @@ const UsedCarPage = require('../../Pages/Androidbrowser/usedCarPage');
         await driver.launchApp()
     });
  it('TC_01 Verify car option is the display with used Condition to the buyer', async () => {
-    await base.androidBrowserLoginAsBuyer()
+    await base.androidBrowserProdLoginAsBuyer()
     console.log("logeed is as Buyer")
     await browser.pause("1000")
    // await (await UsedCarPage.menu).click()
@@ -40,7 +40,7 @@ const UsedCarPage = require('../../Pages/Androidbrowser/usedCarPage');
     });
     
     it('TC_02 Verify user able to select location using location option', async () => {
-     await base.androidBrowserLoginAsBuyer()
+     await base.androidBrowserProdLoginAsBuyer()
     console.log("logeed is as Buyer")
     await browser.pause("1000")
    // await (await UsedCarPage.menu).click()
@@ -74,7 +74,7 @@ const UsedCarPage = require('../../Pages/Androidbrowser/usedCarPage');
     console.log("User able to select location and navigate to next window")
    });
    it('TC_03 Verify error message without entering location', async () => {
-    await base.androidBrowserLoginAsBuyer()
+    await base.androidBrowserProdLoginAsBuyer()
     console.log("logeed is as Buyer")
     await browser.pause("1000")
     await base.swipeUp()
@@ -101,7 +101,7 @@ const UsedCarPage = require('../../Pages/Androidbrowser/usedCarPage');
    });
    
  it('TC_04 Verify user able to select car model from Entering your vehicle details as per requirement', async () => {
-    await base.androidBrowserLoginAsBuyer()
+    await base.androidBrowserProdLoginAsBuyer()
     console.log("logeed is as Buyer")
     await browser.pause("1000")
    // await (await UsedCarPage.menu).click()
@@ -136,7 +136,7 @@ const UsedCarPage = require('../../Pages/Androidbrowser/usedCarPage');
     console.log("User can select Car using Search Field")
    });
    it('TC_05 Verify user able to select car model through select from the dropdown as per requirement', async () => {
-    await base.androidBrowserLoginAsBuyer()
+    await base.androidBrowserProdLoginAsBuyer()
     console.log("logeed is as Buyer")
     await browser.pause("1000")
    // await (await UsedCarPage.menu).click()
@@ -175,7 +175,7 @@ const UsedCarPage = require('../../Pages/Androidbrowser/usedCarPage');
     console.log('successfully Car selected from dropdown')
    });
  it('TC_06 Verify user able to select car model through Let Droom Suggest for you as per requirement', async () => {
-   await base.androidBrowserLoginAsBuyer()
+   await base.androidBrowserProdLoginAsBuyer()
     console.log("logeed is as Buyer")
     await browser.pause("1000")
    // await (await UsedCarPage.menu).click()
@@ -221,7 +221,7 @@ const UsedCarPage = require('../../Pages/Androidbrowser/usedCarPage');
    });
    it('TC_07 Verify user able to select used car as per the budget', async () => {
     
-     await base.androidBrowserLoginAsBuyer()
+     await base.androidBrowserProdLoginAsBuyer()
     console.log("logeed is as Buyer")
     await browser.pause("1000")
    // await (await UsedCarPage.menu).click()
@@ -291,7 +291,7 @@ const UsedCarPage = require('../../Pages/Androidbrowser/usedCarPage');
     });
  
    it('TC_08 Verify user able to select use car as per the Fuel type', async () => {
-     await base.androidBrowserLoginAsBuyer()
+     await base.androidBrowserProdLoginAsBuyer()
     console.log("logeed is as Buyer")
     await browser.pause("1000")
    // await (await UsedCarPage.menu).click()
@@ -352,7 +352,7 @@ const UsedCarPage = require('../../Pages/Androidbrowser/usedCarPage');
     console.log("user able to select fuel type")
   });
  it('TC_09 Verify user able to select used car as per the KMS Driven Range',async () =>{
-   await base.androidBrowserLoginAsBuyer()
+   await base.androidBrowserProdLoginAsBuyer()
     console.log("logeed is as Buyer")
     await browser.pause("1000")
    // await (await UsedCarPage.menu).click()
@@ -410,7 +410,7 @@ const UsedCarPage = require('../../Pages/Androidbrowser/usedCarPage');
 
   });
   it('TC_10 Verify user able to select use car as per the Exterior Color', async () => {
-    await base.androidLoginAsBuyer()
+    await base.androidBrowserProdLoginAsBuyer()
     await (await UsedCarPage.buy).click()
     await (await UsedCarPage.carimg).click() 
     await (await UsedCarPage.caroption).click()
@@ -442,7 +442,7 @@ const UsedCarPage = require('../../Pages/Androidbrowser/usedCarPage');
   });
 
   it('TC_11 Verify user able to select use car as per the Transmission Type', async () => {
-    await base.androidLoginAsBuyer()
+    await base.androidBrowserProdLoginAsBuyer()
     await (await UsedCarPage.buy).click()
     await (await UsedCarPage.carimg).click() 
     await (await UsedCarPage.caroption).click()
@@ -476,7 +476,7 @@ const UsedCarPage = require('../../Pages/Androidbrowser/usedCarPage');
   });
 
    it('TC_12 Verify user able to select use car as per the Do you also need option', async () => {
-    await base.androidLoginAsBuyer()
+    await base.androidBrowserProdLoginAsBuyer()
     await (await UsedCarPage.buy).click()
     await (await UsedCarPage.carimg).click() 
     await (await UsedCarPage.caroption).click()
@@ -521,7 +521,7 @@ const UsedCarPage = require('../../Pages/Androidbrowser/usedCarPage');
 
 
   it('TC_13 Verify user is able to select use car as per the How Quickly Do You Want to Buy? option', async () => {
-    await base.androidLoginAsBuyer()
+    await base.androidBrowserProdLoginAsBuyer()
     await (await UsedCarPage.buy).click()
     await (await UsedCarPage.carimg).click() 
     await (await UsedCarPage.caroption).click()
@@ -556,7 +556,7 @@ const UsedCarPage = require('../../Pages/Androidbrowser/usedCarPage');
   });
 
    it('TC_14 Verify user is able to select use car as per the Do You Wish to Exchange Your Vehicle option', async () => {
-    await base.androidLoginAsBuyer()
+    await base.androidBrowserProdLoginAsBuyer()
     await (await UsedCarPage.buy).click()
     await (await UsedCarPage.carimg).click() 
     await (await UsedCarPage.caroption).click()
@@ -591,7 +591,7 @@ const UsedCarPage = require('../../Pages/Androidbrowser/usedCarPage');
    });
  
   it('TC_15 Validation for match count while requirement creation and in requirement page', async () => {
-    await base.androidLoginAsBuyer()
+    await base.androidBrowserProdLoginAsBuyer()
     await (await UsedCarPage.buy).click()
     await (await UsedCarPage.carimg).click() 
     await (await UsedCarPage.caroption).click()

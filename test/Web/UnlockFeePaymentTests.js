@@ -1,7 +1,6 @@
 const Base = require('../../BaseClass/base')
 const UnlockFeePayment = require('../../Pages/Web/UnlockFeePaymentPage')
 const LoginWithPasswordPage = require('../../Pages/Web/LoginViaPasswordPage')
-//This module is executed on prod url
 describe("Unlock Fee Payment", () => {
   it("TC_01 Verify The Tokan Amount For Car Is 999", async () => {
         await Base.webProdLogin()

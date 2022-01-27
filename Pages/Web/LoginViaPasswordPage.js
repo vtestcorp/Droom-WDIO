@@ -1,3 +1,4 @@
+const loginData = require('./loginData')
 class Login {
     get popup() { return $('(//div[@class="modal-body"])[23]') }
     get detectLocation() { return $('#detectMyLocation')}
@@ -28,8 +29,8 @@ class Login {
     } 
     async loginwithValidCredentials() {
         await (await this.loginWithEmail).click()
-        await (await this.emailTB).setValue("Vtest1@gmail.com")
-        await (await this.passwordTB).setValue("Vtest@123")
+        await (await this.emailTB).setValue(loginData.validUserName)
+        await (await this.passwordTB).setValue(loginData.validPassword)
         await (await this.login).waitForDisplayed({ timeout: 1000 })
         await (await this.login).click()
         console.log('User Successfully login to application with valid credentials')
@@ -43,9 +44,9 @@ class Login {
     }
     async loginWithValidUsernameInvalidPassword() {
         await (await this.loginWithEmail).click()
-        await (await this.emailTB).setValue("Vtest1@gmail.com")
+        await (await this.emailTB).setValue(loginData.validUserName)
         console.log('User entered Valid Username')
-        await (await this.passwordTB).setValue("Vtest@12")
+        await (await this.passwordTB).setValue(loginData.invalidPassword)
         console.log('User entered Invalid Password')
         await (await this.login).waitForDisplayed({ timeout: 2000 })
         await (await this.login).click()
@@ -53,17 +54,17 @@ class Login {
     }
     async loginWithInvalidUserValidPassword() {
         await (await this.loginWithEmail).click()
-        await (await this.emailTB).setValue("Vtest13@gmail.com")
+        await (await this.emailTB).setValue(loginData.invalidUsername)
         console.log('User entered Invalid Username')
-        await (await this.passwordTB).setValue("Vtest@123")
+        await (await this.passwordTB).setValue(loginData.validPassword)
         console.log('User entered Valid Password')
         await (await this.login).click()
         console.log('User is unable to login Invalid Username and Valid Password')
     }
     async loginwithInValidCredentials() {
         await (await this.loginWithEmail).click()
-        await (await this.emailTB).setValue("Vtest13@gmail.com")
-        await (await this.passwordTB).setValue("Vtest@1237")
+        await (await this.emailTB).setValue(loginData.invalidUsername)
+        await (await this.passwordTB).setValue(loginData.invalidPassword)
         await (await this.login).waitForDisplayed({ timeout: 2000 })
         await (await this.login).click()
         console.log('User unable to Login with Invalid Credentials')
@@ -75,7 +76,7 @@ class Login {
     }
     async verifyBlankPassword() {
         await (await this.loginWithEmail).click()
-        await (await this.emailTB).setValue("Vtest1@gmail.com")
+        await (await this.emailTB).setValue(loginData.validPassword)
         console.log('User entered Valid Username')
         await (await this.login).waitForDisplayed({ timeout: 2000 })
         await (await this.login).click()

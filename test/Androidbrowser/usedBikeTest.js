@@ -8,7 +8,7 @@ describe('Used Bike', async () => {
     });
 
     it('Tc_01 Verify Bike option is the display with used Condition to the buyer', async () => {
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         console.log("login As Buyer")
         await browser.pause(5000)
         await base.swipeUp()
@@ -35,7 +35,7 @@ describe('Used Bike', async () => {
     });
 
     it('Tc_02 Verify user able to select location using location option', async () => {
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         console.log("login As Buyer")
         await browser.pause(5000)
         await base.swipeUp()
@@ -61,7 +61,7 @@ describe('Used Bike', async () => {
     });
 
     it('TC_03 Verify error message without entering location', async () => {
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         console.log("login As Buyer")
         await browser.pause(5000)
         await base.swipeUp()
@@ -80,7 +80,7 @@ describe('Used Bike', async () => {
      });
 
      it('TC_04 Verify user able to select Bike model from Entering your vehicle details as per requirement', async () => {
-          await base.androidBrowserLoginAsBuyer()
+          await base.androidBrowserProdLoginAsBuyer()
           console.log("login As Buyer")
           await browser.pause(5000)
           await base.swipeUp()
@@ -104,7 +104,7 @@ describe('Used Bike', async () => {
          });
 
     it('TC_05 Verify user able to select bike model through select from the dropdown as per requirement', async () => {
-            await base.androidBrowserLoginAsBuyer()
+            await base.androidBrowserProdLoginAsBuyer()
             console.log("login As Buyer")
             await browser.pause(5000)
             await base.swipeUp()
@@ -126,7 +126,7 @@ describe('Used Bike', async () => {
         });
            
     it('TC_06 Verify user able to select bike model through Let Droom Suggest for you as per requirement', async () => {
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         console.log("login As Buyer")
         await browser.pause(5000)
         await base.swipeUp()
@@ -160,7 +160,7 @@ describe('Used Bike', async () => {
     });
 
     it('TC_07 Verify user able to select use bike as per the budget', async () => {
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         console.log("login As Buyer")
         await browser.pause(5000)
         await base.swipeUp()
@@ -213,7 +213,7 @@ describe('Used Bike', async () => {
         });
 
         it('TC_08 Verify user able to select use bike as per the KMS Driven Range', async () => {
-            await base.androidBrowserLoginAsBuyer()
+            await base.androidBrowserProdLoginAsBuyer()
             console.log("login As Buyer")
             await browser.pause(5000)
             await base.swipeUp()
@@ -258,7 +258,7 @@ describe('Used Bike', async () => {
         });
 
         it('TC_09 Verify user able to select use bike as per the Color', async () => {
-            await base.androidBrowserLoginAsBuyer()
+            await base.androidBrowserProdLoginAsBuyer()
             console.log("login As Buyer")
             await browser.pause(5000)
             await base.swipeUp()
@@ -298,7 +298,7 @@ describe('Used Bike', async () => {
         });
 
         it('TC_10 Verify user able to select use bike as per the Do you also need option', async () => {
-            await base.androidBrowserLoginAsBuyer()
+            await base.androidBrowserProdLoginAsBuyer()
             console.log("login As Buyer")
             await browser.pause(5000)
             await base.swipeUp()
@@ -338,7 +338,7 @@ describe('Used Bike', async () => {
         });
 
         it('TC_11 Verify user is able to select use bike as per the How Quickly Do You Want to Buy? option', async () => {
-            await base.androidBrowserLoginAsBuyer()
+            await base.androidBrowserProdLoginAsBuyer()
             console.log("login As Buyer")
             await browser.pause(5000)
             await base.swipeUp()
@@ -376,7 +376,7 @@ describe('Used Bike', async () => {
         });
 
         it('TC_12 Validation for match count while requirement creation and in requirement page', async () => {
-            await base.androidBrowserLoginAsBuyer()
+            await base.androidBrowserProdLoginAsBuyer()
             console.log("login As Buyer")
             await browser.pause(5000)
             await base.swipeUp()
@@ -408,7 +408,7 @@ describe('Used Bike', async () => {
         });
 
         it('TC_13 Verify user is able to select use bike as per the Do You Wish to Exchange Your Vehicle option', async () => {
-            await base.androidBrowserLoginAsBuyer()
+            await base.androidBrowserProdLoginAsBuyer()
             console.log("login As Buyer")
             await browser.pause(5000)
             await base.swipeUp()

@@ -3,6 +3,7 @@ class OBV {
     get home() { return $('//a[text()="Home"]') }
     get services() { return $('//span[contains(text(),"Certification Services")]') }
      get shop_by_category() { return $('//span[text()="Categories"]') }
+
     get obv() { return $('//div[contains(text(),"Valuation")]') }
     get pricing_cal() { return $('//h2[normalize-space()="Used Vehicle Pricing Calculator"]') }
     get buyer_tab() { return $('//a[normalize-space()="I Want to Buy"]') }

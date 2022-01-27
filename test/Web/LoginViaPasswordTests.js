@@ -1,5 +1,6 @@
 const LoginWithPasswordPage = require('../../Pages/Web/LoginViaPasswordPage')
 describe("Login Via Password", () => {  
+  
    it("TC_01 Login With Valid Username and Valid Password", async () => {
       try {
          await (await LoginWithPasswordPage.popup).waitForDisplayed({ timeout: 20000, timeoutMsg: "Popup not displayed" })
@@ -88,7 +89,7 @@ describe("Login Via Password", () => {
       await (await LoginWithPasswordPage.password).setValue("Hemant@123")
       console.log("User entered facebook credentials for droom login")
       await (await LoginWithPasswordPage.facebooklogin).click()
-      await browser.switchWindow('qa2.droom.in')
+      await browser.switchWindow('droom.in')
       browser.refresh()
       expect(await LoginWithPasswordPage.welcomemsg).toHaveTextContaining('Welcome,')
       console.log("User sucessfully login to droom through facebook credentials")

@@ -1,3 +1,4 @@
+const loginData = require('../../Pages/Web/loginData')
 const base = require("../../BaseClass/base");
 const page = require("../../Pages/Android/LoginWithPassword")
 
@@ -6,24 +7,21 @@ describe("Login Via Password", ()=>{
       await driver.closeApp()
       await driver.launchApp()
     });  
-
       it("TC01_Login With Valid Username and Valid Password", async()=>{
-
          await (await page.menu).click()
          console.log("Clicked on Menu")
-         await (await page.login).click()
+         await (await page.logi).click()
          console.log("Clicked on Login button")
          await (await page.loginwithemailBtn).click()
          console.log("Clicked on Login with Email button")
-         await (await page.emailText).setValue("vtest1@gmail.com")
+         await (await page.emailText).setValue(loginData.validUserName)
          console.log("User Entered Valid UserName")
-         await (await page.passText).setValue("Vtest@123")
+         await (await page.passText).setValue(loginData.validPassword)
          console.log("User Entered Valid Password")
          await(await page.continueBtn).click()
          expect(await page.userInfo).toBeDisplayed()
          console.log("User is able to Login using valid credentials")
       });
-
       it("TC02_Login with Valid UserName and Invalid Password", async()=>{
          await (await page.menu).click()
          console.log("Clicked on Menu")
@@ -31,9 +29,9 @@ describe("Login Via Password", ()=>{
          console.log("Clicked on Login button")
          await (await page.loginwithemailBtn).click()
          console.log("Clicked on Login with Email button")
-         await (await page.emailText).setValue("vtest1@gmail.com")
+         await (await page.emailText).setValue(loginData.validUserName)
          console.log("User Entered Valid UserName")
-         await (await page.passText).setValue("Vtest@1234")
+         await (await page.passText).setValue(loginData.invalidPassword)
          console.log("User Entered Invalid Password")
          await(await page.continueBtn).click()
          await (await page.incorrectCredPopup).waitForDisplayed()
@@ -48,9 +46,9 @@ describe("Login Via Password", ()=>{
          console.log("Clicked on Login button")
          await (await page.loginwithemailBtn).click()
          console.log("Clicked on Login with Email button")
-         await (await page.emailText).setValue("vtest14@gmail.com")
+         await (await page.emailText).setValue(loginData.invalidUsername)
          console.log("User Entered Invalid UserName")
-         await (await page.passText).setValue("Vtest@123")
+         await (await page.passText).setValue(loginData.validPassword)
          console.log("User Entered Valid Password")
          await(await page.continueBtn).click()
          await (await page.incorrectCredPopup).waitForDisplayed()
@@ -65,9 +63,9 @@ describe("Login Via Password", ()=>{
          console.log("Clicked on Login button")
          await (await page.loginwithemailBtn).click()
          console.log("Clicked on Login with Email button")
-         await (await page.emailText).setValue("vtest14@gmail.com")
+         await (await page.emailText).setValue(loginData.invalidUsername)
          console.log("User Entered Invalid UserName")
-         await (await page.passText).setValue("Vtest@1235")
+         await (await page.passText).setValue(loginData.invalidPassword)
          console.log("User Entered Invalid Password")
          await(await page.continueBtn).click()
          await (await page.incorrectCredPopup).waitForDisplayed()
@@ -83,7 +81,7 @@ describe("Login Via Password", ()=>{
          await (await page.loginwithemailBtn).click()
          console.log("Clicked on Login with Email button")
          console.log("Email textbox leave as blank")
-         await (await page.passText).setValue("Vtest@123")
+         await (await page.passText).setValue(loginData.validPassword)
          console.log("User Entered Valid Password")
          await(await page.continueBtn).click()
           expect(await page.blankEmailMsg).toHaveTextContaining('Please Enter Email')
@@ -97,11 +95,10 @@ describe("Login Via Password", ()=>{
          console.log("Clicked on Login button")
          await (await page.loginwithemailBtn).click()
          console.log("Clicked on Login with Email button")
-         await (await page.emailText).setValue("vtest1@gmail.com")
+         await (await page.emailText).setValue(loginData.validUserName)
          console.log("User Entered Valid UserName")
          await(await page.continueBtn).click()
          expect(await page.blanckPasswordMsg).toHaveTextContaining('Please enter password')
          console.log("Error message displayed as : Please enter password")
          });
-
    });

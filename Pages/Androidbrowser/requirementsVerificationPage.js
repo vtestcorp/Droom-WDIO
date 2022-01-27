@@ -1,8 +1,7 @@
 const base = require("../../BaseClass/base");
 
 class RequirementsVerification {
-    get welcomemsg() {return base.getByText('Welcome, Vtest1 !')}
-   // get logo() {return base.}
+    get welcomemsg() {return base.getByText('My Account')}
     get menu() { return base.getByText('Menu') }
     get cancel() { return base.getByText('×') }
     get login() { return base.getByText('Login') }

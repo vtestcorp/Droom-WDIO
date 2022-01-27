@@ -9,7 +9,6 @@ class Search {
     get vistaLink() { return base.getByText("Super Cars")}
     get vistaLinkResult(){return base.getByText("Luxury / Super Cars")}
     get trendingSearch(){return base.getByResourceId("in.droom:id/txtViewForSort")}
-
     get popular_search() { return ('//h5[normalize-space()="Trending Searches"]') }
     get submit_req() { return ('//span[normalize-space()="Submit My Requirement"]') }
     get recent_search() { return ('//h5[normalize-space()="Recent Searches"]') }

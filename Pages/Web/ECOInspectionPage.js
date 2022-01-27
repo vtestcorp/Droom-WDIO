@@ -70,7 +70,7 @@ class ECO {
     get inspection(){return $('//a[normalize-space()="Get Inspection"]')}
     
     async traverseToECO() {
-        browser.url('https://qa2.droom.in/eco')
+        browser.url('https://droom.in/eco')
         await(await this.ECOHeading).waitForDisplayed()
         expect(await this.ECOHeading).toBeDisplayed()
         console.log(await (await this.ECOHeading).getText())
