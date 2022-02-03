@@ -3,7 +3,7 @@ const usedbikepage = require("../../Pages/Web/usedbikepage");
 
 describe('Used Bike', async () => {
     it('Tc_01 Verify Bike option is the display with used Condition to the buyer', async () => {
-        await base.loginAsBuyer()
+        await base.webProdLogin()
         await usedbikepage.submitRequirement()
         await usedbikepage.bikeCondition()
         expect(await usedbikepage.carimg).toBeDisplayed()

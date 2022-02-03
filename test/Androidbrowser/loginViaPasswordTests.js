@@ -1,3 +1,4 @@
+const loginData = require('../../Pages/Web/loginData')
 const LoginWithPasswordPage = require('../../Pages/androidbrowser/LoginViaPasswordPage')
 describe("Login Via Password", () => {
 
@@ -7,11 +8,12 @@ describe("Login Via Password", () => {
     });
    it("TC_01 Login With Valid Username and Valid Password", async () => {
      
-      try {
+      /*try {
          await (await LoginWithPasswordPage.allowBtn).waitForDisplayed({ timeout: 20000, timeoutMsg: "Popup not displayed" })
          await (await LoginWithPasswordPage.allowBtn).click()
       }
       catch { }
+      */
       await browser.url('/user/login')
       console.log('User Launch URL')
       expect(await LoginWithPasswordPage.loginToAccount).toBeDisplayed()
@@ -26,9 +28,9 @@ describe("Login Via Password", () => {
       console.log("Enter Email Text field displayed")
       expect(await LoginWithPasswordPage.passwordField).toBeDisplayed()
       console.log("Enter Password Text field displayed")
-      await (await LoginWithPasswordPage.emailField).setValue("vtest1@gmail.com")
+      await (await LoginWithPasswordPage.emailField).setValue(loginData.validUserName)
       console.log("Set value for EmailID")
-      await(await LoginWithPasswordPage.passwordField).setValue("Vtest@123")
+      await(await LoginWithPasswordPage.passwordField).setValue(loginData.validPassword)
       console.log("Set value for Password")
       await(await LoginWithPasswordPage.continueBtn).click()
       console.log("Clicked on Continue Button after setting ID and Password")
@@ -50,9 +52,9 @@ describe("Login Via Password", () => {
       console.log("Enter Email Text field displayed")
       expect(await LoginWithPasswordPage.passwordField).toBeDisplayed()
       console.log("Enter Password Text field displayed")
-      await (await LoginWithPasswordPage.emailField).setValue("vtest1@gmail.com")
+      await (await LoginWithPasswordPage.emailField).setValue(loginData.validUserName)
       console.log("Set value for EmailID")
-      await(await LoginWithPasswordPage.passwordField).setValue("Vtest@12345")
+      await(await LoginWithPasswordPage.passwordField).setValue(loginData.invalidPassword)
       console.log("Set Incorrect value for Password")
       await(await LoginWithPasswordPage.continueBtn).click()
       console.log("Clicked on Continue Button after setting ID and Incorrect Password")
@@ -75,9 +77,9 @@ describe("Login Via Password", () => {
       console.log("Enter Email Text field displayed")
       expect(await LoginWithPasswordPage.passwordField).toBeDisplayed()
       console.log("Enter Password Text field displayed")
-      await (await LoginWithPasswordPage.emailField).setValue("vtest@gmail.com")
+      await (await LoginWithPasswordPage.emailField).setValue(loginData.invalidUsername)
       console.log("Set Incorrect value for EmailID")
-      await(await LoginWithPasswordPage.passwordField).setValue("Vtest@123")
+      await(await LoginWithPasswordPage.passwordField).setValue(loginData.validPassword)
       console.log("Set value for Password")
       await(await LoginWithPasswordPage.continueBtn).click()
       console.log("Clicked on Continue Button after setting ID and Password")
@@ -100,9 +102,9 @@ describe("Login Via Password", () => {
       console.log("Enter Email Text field displayed")
       expect(await LoginWithPasswordPage.passwordField).toBeDisplayed()
       console.log("Enter Password Text field displayed")
-      await (await LoginWithPasswordPage.emailField).setValue("vtest@gmail.com")
+      await (await LoginWithPasswordPage.emailField).setValue(loginData.invalidUsername)
       console.log("Set Incorrect value for EmailID")
-      await(await LoginWithPasswordPage.passwordField).setValue("Vtest@12345")
+      await(await LoginWithPasswordPage.passwordField).setValue(loginData.invalidPassword)
       console.log("Set Incorrect value for Password")
       await(await LoginWithPasswordPage.continueBtn).click()
       console.log("Clicked on Continue Button after setting ID and Password")
@@ -125,9 +127,9 @@ describe("Login Via Password", () => {
       console.log("Enter Email Text field displayed")
       expect(await LoginWithPasswordPage.passwordField).toBeDisplayed()
       console.log("Enter Password Text field displayed")
-      await (await LoginWithPasswordPage.emailField).setValue("vtest@gmail.com")
+      await (await LoginWithPasswordPage.emailField).setValue("")
       console.log("Set Incorrect value for EmailID")
-      await(await LoginWithPasswordPage.passwordField).setValue("Vtest@12345")
+      await(await LoginWithPasswordPage.passwordField).setValue(loginData.validPassword)
       console.log("Set Incorrect value for Password")
       await(await LoginWithPasswordPage.continueBtn).click()
       console.log("Clicked on Continue Button after setting ID and Password")
@@ -151,9 +153,9 @@ describe("Login Via Password", () => {
       console.log("Enter Email Text field displayed")
       expect(await LoginWithPasswordPage.passwordField).toBeDisplayed()
       console.log("Enter Password Text field displayed")
-      await (await LoginWithPasswordPage.emailField).setValue("vtest@gmail.com")
+      await (await LoginWithPasswordPage.emailField).setValue(loginData.validUserName)
       console.log("Set Incorrect value for EmailID")
-      await(await LoginWithPasswordPage.passwordField).setValue("Vtest@12345")
+      await(await LoginWithPasswordPage.passwordField).setValue(" ")
       console.log("Set Incorrect value for Password")
       await(await LoginWithPasswordPage.continueBtn).click()
       console.log("Clicked on Continue Button after setting ID and Password")

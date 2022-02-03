@@ -1,7 +1,7 @@
 const video = require('wdio-video-reporter');
 exports.config = {
     specs: [
-        './test/Web/*.js'
+        './test/Web/LoginViaPasswordTests.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -22,7 +22,7 @@ exports.config = {
     }],
     logLevel: 'info',
     bail: 0,
-    baseUrl: 'http://qa2.droom.in/',
+    baseUrl: 'http://droom.in/',
     waitforTimeout: 15000,
     connectionRetryTimeout: 80000,
     connectionRetryCount: 3,

@@ -9,7 +9,7 @@ describe('Unlock fee payments', async () => {
     });
     it('TC_01 Verify The Token Amount For Car Is 999', async () => {
          browser.url('/user/login')
-         await base.androidBrowserLoginAsBuyer()
+         await base.androidBrowserProdLoginAsBuyer()
          console.log("user login sucessfully")
          await (await unlockFeePaymentPage.buy).click()
          await (await unlockFeePaymentPage.carCategory).click()
@@ -27,7 +27,7 @@ describe('Unlock fee payments', async () => {
 
      it('TC_02 Verify the token amount for bike is 499', async () => {
         browser.url('/user/login')
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         console.log("user login sucessfully")
         await (await unlockFeePaymentPage.buy).click()
         await (await unlockFeePaymentPage.bikeCategory).click()
@@ -46,7 +46,7 @@ describe('Unlock fee payments', async () => {
 
      it('TC_03 Verify proceed to checkout option is display for car', async () => {
         browser.url('/user/login')
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         console.log("user login sucessfully")
         await (await unlockFeePaymentPage.buy).click()
         await (await unlockFeePaymentPage.carCategory).click()
@@ -70,10 +70,10 @@ describe('Unlock fee payments', async () => {
         });
 
         
-    /* it('TC_05 Verify the functionality after click on proceed to checkout button for car', async () => {
-         await unlockFeePaymentPage.chromeConditions()
+     it('TC_05 Verify the functionality after click on proceed to checkout button for car', async () => {
+         //await unlockFeePaymentPage.chromeConditions()
          browser.url('/user/login')
-         await base.androidBrowserLoginAsBuyer()
+         await base.androidBrowserProdLoginAsBuyer()
          await (await unlockFeePaymentPage.cart).click()
          expect(await unlockFeePaymentPage.Proceed_To_Checkout).toBeDisplayed()
          await (await unlockFeePaymentPage.Proceed_To_Checkout).click()
@@ -89,9 +89,9 @@ describe('Unlock fee payments', async () => {
          console.log("Remove button displayed")
      })
      it('TC_07 Verify Account Tab after click on Payment', async () => {
-         await unlockFeePaymentPage.chromeConditions()
+         //await unlockFeePaymentPage.chromeConditions()
          browser.url('/user/login')
-         await base.androidBrowserLoginAsBuyer()
+         await base.androidBrowserProdLoginAsBuyer()
          await (await unlockFeePaymentPage.cart).click()
          expect(await unlockFeePaymentPage.Proceed_To_Checkout).toBeDisplayed()
          await (await unlockFeePaymentPage.Proceed_To_Checkout).click()
@@ -123,9 +123,9 @@ describe('Unlock fee payments', async () => {
          console.log("PaytmCash Card option displayed")
      });
     it('TC_02 Verify the token amount for bike is 499', async () => {
-        await unlockFeePaymentPage.chromeConditions()
+       // await unlockFeePaymentPage.chromeConditions()
         browser.url('/user/login')
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         await base.swipeUp()
         await (await unlockFeePaymentPage.my_Requirements).click()
         await (await unlockFeePaymentPage.new_Requirement).waitForDisplayed({ timeout: 10000 })
@@ -143,9 +143,9 @@ describe('Unlock fee payments', async () => {
          expect(await unlockFeePaymentPage.Proceed_To_Checkout).toBeDisplayed()
     });
     it('TC_06 Verify the functionality after click on proceed to checkout button for bike', async () => {
-        await unlockFeePaymentPage.chromeConditions()
+        //await unlockFeePaymentPage.chromeConditions()
          browser.url('/user/login')
-         await base.androidBrowserLoginAsBuyer()
+         await base.androidBrowserProdLoginAsBuyer()
          await (await unlockFeePaymentPage.cart).click()
          expect(await unlockFeePaymentPage.Proceed_To_Checkout).toBeDisplayed()
          await (await unlockFeePaymentPage.Proceed_To_Checkout).click()
@@ -160,5 +160,5 @@ describe('Unlock fee payments', async () => {
          expect(await unlockFeePaymentPage.Remove).toBeDisplayed()
          console.log("Remove button displayed")
     });
-*/
+
 });

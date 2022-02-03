@@ -4,7 +4,7 @@ const UsedCarPage = require('../../Pages/Web/UsedCarPage');
 
 describe('Used Car', async () => {
   it('Tc_01 Verify car option is the display with used Condition to the buyer', async () => {
-  await UsedCarPage.loginAsBuyer()
+   await Base.webProdLogin()
     await (await UsedCarPage.home).click()
     console.log('clicked on Home')
     await UsedCarPage.submitRequirement()

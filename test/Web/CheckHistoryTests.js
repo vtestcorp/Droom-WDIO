@@ -2,7 +2,7 @@ const CheckHistory = require('../../Pages/Web/CheckHistoryPage')
 const Base = require('../../BaseClass/base')
 describe("Check History", () => {
     it("TC_01 To Verify Functionality Of Check History", async () => {
-        await Base.loginAsBuyer()
+        await Base.webProdLogin()
         await (await CheckHistory.categories).click()
         await (await CheckHistory.history).click()
         console.log("Navigate to History Page")
@@ -17,8 +17,6 @@ describe("Check History", () => {
         expect(await CheckHistory.vehicleCertificate).toBeDisplayed()
         console.log("Application show Vehicle History Certificate")
         });
-
-
        it("TC_02 To Verify About Menu On History Page", async () => {
         await (await CheckHistory.historylink).click()
         expect(await CheckHistory.aboutTab).toBeDisplayed()

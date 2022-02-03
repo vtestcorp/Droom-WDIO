@@ -7,8 +7,6 @@ describe('ECO Inspection', () => {
             await (await $('(//div[@class="modal-body"])[23]')).waitForDisplayed({timeout:20000,timeoutMsg:"Popup not displayed"});
             await (await ECO_InspectionPage.detectLocation).click()
             }
-   
-
         catch{ }
         await ECO_InspectionPage.traverseToECO()
         expect(await ECO_InspectionPage.Seller).toBeDisplayed()
@@ -82,7 +80,7 @@ describe('ECO Inspection', () => {
         console.log(await (await ECO_InspectionPage.tires_Wheels).getText())
     });
     it('TC_06 Verify Car Inspection Service on Eco', async () => {
-        browser.url('https://qa2.droom.in/eco')
+        browser.url('https://droom.in/eco')
         expect(await ECO_InspectionPage.ECO_Offering).toBeDisplayed()
         console.log("ECO Offering Heading displayed for Cars and the Bikes")
         expect(await ECO_InspectionPage.cars_OnECO_Offering).toBeDisplayed()
@@ -106,7 +104,7 @@ describe('ECO Inspection', () => {
         console.log("Link to Download Premium plus Inspection report is displayed")
     });
     it('TC_07 Verify Bike Inspection  Service on ECO', async () => {
-        browser.url('https://qa2.droom.in/eco')
+        browser.url('https://droom.in/eco')
         expect(await ECO_InspectionPage.ECO_Offering).toBeDisplayed()
         console.log("ECO Offering Heading displayed for Cars and the Bikes")
         expect(await ECO_InspectionPage.bikes_OnECO_Offering_OnECO_Offering).toBeDisplayed()
@@ -130,7 +128,7 @@ describe('ECO Inspection', () => {
         console.log("Link to Download Premium plus Inspection report is displayed")
     });
     it('TC_08 Verify scooter Inspection  Service on Eco', async () => {
-        browser.url('https://qa2.droom.in/eco')
+        browser.url('https://droom.in/eco')
         await (await ECO_InspectionPage.Seller).click()
         expect(ECO_InspectionPage.RegiAsVendor).toBeDisplayed()
         console.log("Register As a Vendor is Displayed")
@@ -147,7 +145,7 @@ describe('ECO Inspection', () => {
         console.log("Scooter Inspection page show")
     });
     it('TC_09 Verify Sign up functionality on ECO', async () => {
-        browser.url('https://qa2.droom.in/eco')
+        browser.url('https://droom.in/eco')
         await (await ECO_InspectionPage.Seller).click()
         expect(await ECO_InspectionPage.RegiAsVendor).toBeDisplayed()
         console.log("Register As a Vendor is Displayed")

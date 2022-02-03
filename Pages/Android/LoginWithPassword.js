@@ -1,7 +1,6 @@
 const base = require("../../BaseClass/base");
 class LoginWithPassword
 {
-
     get menu() {return base.getByText("Menu")}
     get login() {return base.getByText("Login")}
     get loginwithemailBtn() {return base.getByText("Login with Email")}

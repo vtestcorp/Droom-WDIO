@@ -1,3 +1,4 @@
+const loginData = require('../../Pages/Web/loginData')
 const base = require("../../BaseClass/base");
 class Login {
     get menu(){return base.getByText("Menu") }

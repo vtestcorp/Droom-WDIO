@@ -6,9 +6,9 @@ describe('Edit Requirements', async () => {
         await driver.launchApp()
     });
     it('TC_07 Verify user should be able to edit How Quickly Do You Want to Buy option', async () => {
-        await editRequirementsPage.chromeConditions()
+       // await editRequirementsPage.chromeConditions()
         browser.url('/user/login')
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         await base.swipeUp()
         await (await editRequirementsPage.my_Requirements).click()
         await (await editRequirementsPage.new_Requirement).click()
@@ -36,9 +36,9 @@ describe('Edit Requirements', async () => {
     });
 
     it('TC_06 Verify user should be able to edit Vehicle Details', async () => {
-        await editRequirementsPage.chromeConditions()
+        //await editRequirementsPage.chromeConditions()
         browser.url('/user/login')
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         await base.swipeUp()
         await (await editRequirementsPage.my_Requirements).click()
         await (await editRequirementsPage.new_Requirement).click()
@@ -60,9 +60,9 @@ describe('Edit Requirements', async () => {
         console.log(await (await editRequirementsPage.Hyundai_Verna).getText())
     });
     it('TC_03 Verify user should be able to edit KMS Driven Range', async () => {
-        await editRequirementsPage.chromeConditions()
+        //await editRequirementsPage.chromeConditions()
         browser.url('/user/login')
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         await base.swipeUp()
         await (await editRequirementsPage.my_Requirements).click()
         await (await editRequirementsPage.new_Requirement).click()
@@ -87,9 +87,9 @@ describe('Edit Requirements', async () => {
         console.log(await (await editRequirementsPage.new_Km_driven).getText())
     });
     it('TC_09 Verify user should be able to edit  Vehicle Details and multiple vehicles', async () => {
-        await editRequirementsPage.chromeConditions()
+       // await editRequirementsPage.chromeConditions()
         browser.url('/user/login')
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         await base.swipeUp()
         await (await editRequirementsPage.my_Requirements).click()
         await (await editRequirementsPage.new_Requirement).click()
@@ -111,9 +111,9 @@ describe('Edit Requirements', async () => {
         console.log(await (await editRequirementsPage.vehicles_name).getText())
     });
     it('TC_04 Verify user should be able to edit color', async () => {
-        await editRequirementsPage.chromeConditions()
+       // await editRequirementsPage.chromeConditions()
         browser.url('/user/login')
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         await base.swipeUp()
         await (await editRequirementsPage.my_Requirements).click()
         await (await editRequirementsPage.new_Requirement).click()
@@ -140,9 +140,9 @@ describe('Edit Requirements', async () => {
         console.log(await (await editRequirementsPage.red).getText())
     });
     it('TC_05 Verify user should be able to edit Service You Need option', async () => {
-        await editRequirementsPage.chromeConditions()
+        //await editRequirementsPage.chromeConditions()
         browser.url('/user/login')
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         await base.swipeUp()
         await (await editRequirementsPage.my_Requirements).click()
         await (await editRequirementsPage.new_Requirement).click()
@@ -172,9 +172,9 @@ describe('Edit Requirements', async () => {
         console.log(await (await editRequirementsPage.rc_tranfer).getText())
     });
     it('TC_02 Verify user should be able to edit price range', async () => {
-        await editRequirementsPage.chromeConditions()
+        //await editRequirementsPage.chromeConditions()
         browser.url('/user/login')
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         await base.swipeUp()
         await (await editRequirementsPage.my_Requirements).click()
         await (await editRequirementsPage.new_Requirement).click()
@@ -196,9 +196,9 @@ describe('Edit Requirements', async () => {
         console.log(await (await editRequirementsPage.new_price_range).getText())
     });
     it('TC_01 Verify user should be able to edit location', async () => {
-        await editRequirementsPage.chromeConditions()
+        //await editRequirementsPage.chromeConditions()
         browser.url('/user/login')
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         await base.swipeUp()
         await (await editRequirementsPage.my_Requirements).click()
         await (await editRequirementsPage.new_Requirement).click()
@@ -225,9 +225,9 @@ describe('Edit Requirements', async () => {
         console.log(await (await editRequirementsPage.rc_tranfer).getText())
     })
     it('TC_08 Verify user should be able to edit Do You Wish to Exchange Your Vehicle option', async () => {
-        await editRequirementsPage.chromeConditions()
+       // await editRequirementsPage.chromeConditions()
         browser.url('/user/login')
-        await base.androidBrowserLoginAsBuyer()
+        await base.androidBrowserProdLoginAsBuyer()
         await base.swipeUp()
         await (await editRequirementsPage.my_Requirements).click()
         await (await editRequirementsPage.new_Requirement).click()

@@ -2,7 +2,7 @@ const Base = require('../../BaseClass/base')
 const VehicleInsurance = require('../../Pages/Web/VehicleInsurancePage')
 describe("Vehicle Insurance", () => {
     it("TC_01 Verify The Functionality Of Get Insurance", async () => {
-        await Base.loginAsBuyer()
+        await Base.webProdLogin()
         browser.url('/insurance')
         console.log("User Navigate to Insurance Page")
         expect(browser).toHaveTitle("Car Insurance Online – Buy Bike & Scooter Insurance at Best Price | Droom")
@@ -154,8 +154,6 @@ describe("Vehicle Insurance", () => {
         console.log(await (await VehicleInsurance.modelValue).getValue())
         console.log("User able to select Model value")
     });
-
-
     it("TC_08 Verify Select Year Functionality Of Select From Dropdown Option", async () => {
        await browser.back()
        //await Base.loginAsBuyer()

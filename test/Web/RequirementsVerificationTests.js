@@ -3,7 +3,7 @@ const requirementsverificationpage = require("../../Pages/Web/RequirementsVerifi
 
 describe('Requirements page verification', async () => {
     it('Tc_01 Validate all requirements created are displayed', async () => {
-        await base.loginAsBuyer()
+        await base.webProdLogin()
         await (await requirementsverificationpage.profile).click()
         await (await requirementsverificationpage.requirements).click()
         expect(await requirementsverificationpage.count).toBeDisplayed()

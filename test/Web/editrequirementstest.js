@@ -1,9 +1,9 @@
-// const base = require("../../BaseClass/base");
+ const base = require("../../BaseClass/base");
 const editrequirementspage = require("../../Pages/Web/editrequirementspage");
 
 describe('Edit Requirements', async () => {
     it('Tc_04 Verify user should be able to edit color', async () => {
-        await editrequirementspage.loginAsBuyer()
+        await base.webProdLogin()
         await(await $('(//a[text()="My Requirements"])[2]')).click();
         console.log("Before Edit color:")
         expect(await editrequirementspage.newExtColor).toBeDisplayed()
@@ -24,8 +24,8 @@ describe('Edit Requirements', async () => {
         console.log(await (await editrequirementspage.newExtColor).getText())
     });
     it('Tc_01 Verify user should be able to edit location', async () => {
-        browser.url('/') 
-        await editrequirementspage.loginAsBuyer()
+       // browser.url('/') 
+        await base.webProdLogin()()
         await editrequirementspage.CreateRequiRement()
         console.log("Before Edit Location:")
         expect(await editrequirementspage.rLocation).toBeDisplayed()
@@ -40,7 +40,7 @@ describe('Edit Requirements', async () => {
         console.log(await (await editrequirementspage.rLocation).getText())
     });
     it('Tc_02 Verify user should be able to edit price range', async () => {
-         browser.url('/')  
+         //browser.url('/')  
         await editrequirementspage.CreateRequiRement()
         console.log("Old Price Range:")
         expect(await editrequirementspage.priceRange).toBeDisplayed()
